@@ -1,0 +1,91 @@
+# {
+#   "domain": "nationwide-intermediary_co_uk",
+#   "numOfApplying": "1",
+#   "numOfdependants": 1,
+#   "annualIncome": 70000,
+#   "otherAnnualIncome": 0,
+#   "mortgageTerm": "20",
+#   "existingMortgageCustomer": "No",
+#   "mortgFor": "Remortgage existing property",
+#   "dependantChildren": "1",
+#   "propertyValue": 400000,
+#   "loanValue": 150000,
+#   "ownership": "Standard",
+#   "propertyTenure": "Freehold",
+#   "propertyType": "Detached house",
+#   "dayOfBirth": 22,
+#   "mountOfBirth": 9,
+#   "yearOfBirth": 1982,
+#   "haveDependents": "No",
+#   "retirementAge": 70,
+#   "retired": "No",
+#   "clientEmployeed": "Employed",
+#   "jobYears": "20",
+#   "employmentType": "Permanent",
+#   "otherJobs": "No",
+#   "buildingInsurance": "100",
+#   "hasOtherIncome": "No"
+# }
+
+---
+lender: 'Nationwide'
+logo: 'nationwide'
+domain: 'nationwide-intermediary.co.uk'
+affordability: 'https://www.nationwide.co.uk/products/mortgages/our-mortgages/mortgage-calculators/mortgage-quick-quote'
+description:
+  - { css: '[name="content_2$contentgeneralone_0$grid_e84c8646a6e843519969278c6a972711_0$column_445cf532bf6942ddb816ec28cd37bc07_0$Calculator$ctl06$ctl09$ctl15$sole_or_joint"]', inputName: numOfApplying }
+  - { css: '#main_no_of_dependants', inputName: numOfdependants }
+  - { css: '#main_first_gross_income', inputName: annualIncome }
+  - { css: '#requested_term_yy', inputName: mortgageTermmYears  }
+  - { css: '[class="button buttonStyle01 continue"]', action: click }
+extraction:
+  price: { css: '#result_mortgage_amount' }
+#
+# affordability: 'https://www.nationwide-intermediary.co.uk/calculators/affordability-calculator'
+# description:
+#   - { waitFor: 2000 }
+#   - { css: '[name="AffCalc-q0-NumberOfApplicants"]', inputName: numOfApplying }
+#   - { css: '[name="AffCalc-q1-ApplicationType"]', inputName: mortgFor }
+#   - { css: '#AffCalc-q2-BorrowingAmount', inputName: loanValue }
+#   - { css: '#AffCalc-q3-MortgageTermYears', inputName: mortgageTermmYears }
+#   - { css: '#AffCalc-q4-OwnershipType', inputName: ownership }
+#   - { css: '[name="AffCalc-q6-PropertyFound"]', inputName: PropertyFound}
+#   # - { css: '#AffCalc-q7-PropertyTenure', inputName: propertyTenure }
+#   # - { css: '#AffCalc-q8-PropertyType', inputName: propertyType }
+#   - { css: '#AffCalc-q9-PurchasePrice', inputName: propertyValue }
+#   - { css: 'fieldset.Affordability-step.Affordability-step--0 > div.Affordability-stepFooter > a', action: click }
+#
+#   # Second page
+#   - { css: '#AffCalc-q14-Day', inputName: dayOfBirth }
+#   - { css: '#AffCalc-q14-Month', inputName: mountOfBirth }
+#   - { css: '#AffCalc-q14-Year', inputName: yearOfBirth }
+#   - { css: '[name="AffCalc-q15-HaveDependents"]', inputName: haveDependents }
+#   - { css: '[name="AffCalc-q17-IsCustomerRetired"]', inputName: retired }
+#   - { css: '#AffCalc-q18-RetirementAge', inputName: retirementAge }
+#   - { css: 'fieldset.Affordability-step.Affordability-step--0 > div.Affordability-stepFooter > a', action: click }
+#
+#   # Third page
+#   - { css: '#AffCalc-q24-EmploymentCategory', inputName: clientEmployeed }
+#   - { css: '#AffCalc-q25-EmploymentType', inputName: employmentType }
+#   - { css: '#AffCalc-q27-JobYears', inputName: jobYears }
+#   - { css: '#AffCalc-q32-GrossAnnualIncome', inputName: annualIncome }
+#   - { css: '[name="AffCalc-q42-HasSecondJob"]', inputName: otherJobs }
+#   - { css: '[name="AffCalc-q61-HasOtherIncome"]', inputName: hasOtherIncome }
+#   - { css: 'fieldset.Affordability-step.Affordability-step--0 > div.Affordability-stepFooter > a', action: click }
+#
+#   # Forth page
+#   - { css: '[name="AffCalc-q154-HasExistingMortgages"]', inputName: existingMortgageCustomer }
+#   - { css: '#AffCalc-q163-BuildingInsurance', inputName: buildingInsurance }
+#   - { css: 'fieldset.Affordability-step.Affordability-step--0 > div.Affordability-stepFooter > a', action: click }
+#
+#
+#
+#
+# #   - { css: '#ctl00_ContentPlaceHolder_ctl00_children', inputName: dependantChildren }
+# #   - { css: '#ctl00_ContentPlaceHolder_ctl00_propertyValue', inputName: propertyValue  }
+# #   - { css: '#ctl00_ContentPlaceHolder_ctl00_amount', inputName: loanValue }
+# #   - { css: '#ctl00_ContentPlaceHolder_ctl00_term', inputName: mortgageTerm }
+# #   - { css: '#ctl00_ContentPlaceHolder_ctl00_annualincome1', inputName: annualIncome }
+# #   - { css: '#ctl00_ContentPlaceHolder_ctl00_submitproduct', action: click }
+# extraction:
+#   price: { css: '#result_mortgage_amount' }

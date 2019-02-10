@@ -1,0 +1,26 @@
+#
+# {
+#   "domain": "halifax-intermediaries_co_uk",
+#   "numOfApplying": "1",
+#   "annualIncome": 70000,
+#   "mortgageTermmYears": "20",
+#   "otherProperties": "No",
+#   "numOfdependants": "1",
+#   "propertyValue": 400000,
+#   "loanValue": 150000
+# }
+---
+lender: 'Halifax'
+logo: 'halifax'
+domain: 'halifax-intermediaries.co.uk'
+affordability: 'https://www.halifax-intermediaries.co.uk/tools_and_calculators/mortgage_affordability_calculator/default.aspx'
+description:
+  - { css: '[name="ctl00$ContentPlaceHolder$ctl00$adults"]', inputName: numOfApplying }
+  - { css: '#ctl00_ContentPlaceHolder_ctl00_children', inputName: numOfdependants }
+  - { css: '#ctl00_ContentPlaceHolder_ctl00_propertyValue', inputName: propertyValue  }
+  - { css: '#ctl00_ContentPlaceHolder_ctl00_amount', inputName: loanValue }
+  - { css: '#ctl00_ContentPlaceHolder_ctl00_term', inputName: mortgageTermmYears }
+  - { css: '#ctl00_ContentPlaceHolder_ctl00_annualincome1', inputName: annualIncome }
+  - { css: '#ctl00_ContentPlaceHolder_ctl00_submitproduct', action: click }
+extraction:
+  price: { css: '#ctl00_ContentPlaceHolder_ctl00_loanamount' }

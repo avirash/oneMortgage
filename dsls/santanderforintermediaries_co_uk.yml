@@ -1,0 +1,76 @@
+---
+# domain: lloydsbank.com
+# affordability: https://www.lloydsbank.com/mortgages/mortgage-calculator.asp#p:inputs
+# description:
+#   - { css: '[name="existingMortgageCustomer"]', inputName: existingMortgageCustomer }
+#   - { css: '[name="existingCurrentAccountCustomer"]', inputName: existingCurrentAccountCustomer }
+#   - { css: '[name="radioMortgFor"]', inputName: mortgFor }
+#
+#   - { css: '#borrowaccordionAccordionHeading', action: click }
+#   - { css: '[name="applicationType"]', inputName: numOfApplying }
+#   - { css: '[name="noOfDependents"]', inputName: numOfDependants }
+#
+#   - { css: '#collapse-borrow > div > div.step.step-2 > div.applicant-1 > div:nth-child(2) > fieldset > div.field-input > div > div > input', inputName: 'annualIncome' }
+#   - { css: '#collapse-borrow > div > div.step.step-2 > div.applicant-1 > div:nth-child(3) > fieldset > div.field-input > div > div > input', inputName: 'otherAnnualIncome' }
+#   - { css: '#collapse-borrow > div > div.step.step-2 > div.applicant-1 > div:nth-child(4) > fieldset > div.field-input > div > div > input', inputName: 'monthlyCommitments' }
+#
+#   - { css: '[name="mortgageTerm"]', inputName: mortgageTerm }
+#
+# extraction:
+#   price: { css: '[class="mla"]'}
+
+# "input": {
+#         "numOfApplying": 2,
+#         "numOfDependants": 1,
+#         "annualIncome": 70000,
+#         "otherAnnualIncome": 0,
+#         "monthlyCommitments": 1000,
+#         "mortgageTerm": "20",
+#         "existingMortgageCustomer": "Yes",
+#         "existingCurrentAccountCustomer": "Yes",
+#         "mortgFor": "Moving to another home"
+#     }
+
+
+
+
+# {
+#   "domain": "santanderforintermediaries_co_uk",
+#   "numOfApplying": "Single",
+#   "mortgFor": "Purchase",
+#   "deposit": 150000,
+#   "mortgageTermmYears": "20",
+#   "mortgageSchema": "No",
+#   "otherProperties": "No",
+#   "annualIncome": 70000,
+#   "monthlyCommitmented": "No"
+# }
+
+lender: 'Santander'
+domain: 'santanderforintermediaries.co.uk'
+affordability: 'https://www.santanderforintermediaries.co.uk/calculators-and-forms/affordability/'
+logo: 'santander'
+description:
+
+  - { waitFor: 2000 }
+  # first page
+  - { css: '[name="ApplicationType"]', inputName: numOfApplying }
+  # - { css: '#tbFinancialDependents', inputName: numOfDependants }
+  - { css: '[name="MortgageType"]', inputName: mortgageType }
+  - { css: '#tbDeposit',  inputName: deposit }
+  - { css: '#tbLoanTermYears', inputName: mortgageTermmYears }
+  - { css: '[name="EquityLoanScheme"]', inputName: mortgageSchema }
+  - { css: '[name="OtherProperties"]', inputName: otherProperties }
+  - { css: '#btnContinue', action: click }
+
+  # second page
+  - { css: '#tbPermanentEmploymentBasicSalary1', inputName: annualIncome }
+  - { css: '#btnContinue', action: click }
+
+  # third page
+  - { css: 'input[id*="Expenditure"].offset', inputName: monthlyCommitmented }
+
+  - { css: '#btnContinue', action: click }
+  # - { css: '#btnNetIncomeCalculate', action: click }
+extraction:
+  price: { css: '#pnlStep4 > div > div > div > div > div.affordResultsWrap > p.resultSuccess.noImg > strong > span' }

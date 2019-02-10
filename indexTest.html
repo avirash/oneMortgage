@@ -1,0 +1,577 @@
+<html>
+  <head>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+          /* body {
+          margin-top:40px;
+        } */
+        .stepwizard-step p {
+          margin-top: 10px;
+        }
+        .stepwizard-row {
+          display: table-row;
+        }
+        .stepwizard {
+          display: table;
+          width: 60%;
+          position: relative;
+        }
+        .stepwizard-step button[disabled] {
+          opacity: 1 !important;
+          filter: alpha(opacity=100) !important;
+        }
+        .stepwizard-row:before {
+          top: 14px;
+          bottom: 0;
+          position: absolute;
+          content: " ";
+          width: 83%;
+          height: 1px;
+          background-color: #ccc;
+          z-order: 0;
+        }
+        .stepwizard-step {
+          display: table-cell;
+          /* text-align: center; */
+          position: relative;
+        }
+        .btn-circle {
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          padding: 6px 0;
+          font-size: 12px;
+          line-height: 1.428571429;
+          border-radius: 15px;
+        }
+        table, th, td {
+          /* border: 1px solid black; */
+          border-bottom: 1px solid #ddd;
+          text-align: left;
+        }
+
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        tr:hover {
+          background-color: #f5f5f5;
+        }
+
+        td {
+          width: 350px;
+        }
+
+    </style>
+  </head>
+<body>
+  <div class="container">
+
+  <div class="stepwizard col-md-offset-3">
+      <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+          <a href="#mortgage" type="button" class="btn btn-primary btn-circle">1</a>
+          <p>Mortgage</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#client" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+          <p>Client(s)</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#income" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+          <p>Income</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#outgoings" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+          <p>Outgoings</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#results" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
+          <p>Results</p>
+        </div>
+      </div>
+    </div>
+
+    <form role="form" action="" method="post">
+  <!-- mortgage -->
+        <div class="row setup-content" id="mortgage" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+          <div class="col-xs-12 col-md-offset-0">
+            <div class="col-md-12">
+              <h3> Mortgage Details </h3>
+              <fieldset class="form-group">
+                  <label class="control-label"> How many people are applying? </label>
+                   <div class="form-check">
+                       <label class="form-check-label">
+                         <input type="radio" class="form-check-input" name="numOfApplying" id="numOfApplying1" value="1" checked> 1
+                        </label>
+                     </div>
+                   <div class="form-check disabled">
+                     <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="numOfApplying" id="numOfApplying2" value="2"> 2
+                     </label>
+                   </div>
+              </fieldset>
+
+              <div class="form-group">
+                <label class="control-label" for="mortgageType">Mortgage type</label>
+                <div class="input-group col-md-3">
+                  <select id="mortgageType" class="form-control col-md-6">
+                     <option selected>Purchase</option>
+                     <option>Remortgage</option>
+                  </select>
+                 </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> What's the purchase price? </label>
+                <div class="input-group col-md-3">
+                    <span style="background: white" class="input-group-addon">£</span>
+                    <input id="propertyValue" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label"> How much would your client(s) like to borrow? </label>
+              <div class="input-group col-md-3">
+                    <span style="background: white" class="input-group-addon">£</span>
+                    <input id="loanValue" maxlength="10" type="tel" class="form-control" placeholder="0" required="required"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label"> How long does the mortgage term need to be? </label>
+              <div class="control-group">
+                 <div class="controls form-inline">
+                     <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="input-small" placeholder="YY" id="mortgageTermmYears" required="required">
+                     <label for="mortgageTermmYears"> Years </label>&nbsp;
+                     <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="0" max="12" class="input-small" placeholder="MM" id="mortgageTermmMounts">
+                     <label for="mortgageTermmMounts"> Mounts </label>
+                  </div>
+                </div>
+             </div>
+
+             <div class="form-group">
+               <label class="control-label" for="mortgageSchema">Select the relevant mortgage schema</label>
+               <div class="input-group col-md-3">
+                 <select id="mortgageSchema" class="form-control col-md-6">
+                    <option>Help to Buy Equity Share</option>
+                    <option>Shared Equity</option>
+                    <option>Shared Ownership</option>
+                    <option selected>Other</option>
+                 </select>
+                </div>
+             </div>
+
+            <div class="form-group">
+              <label class="control-label" for="methodOfRepayment">Method of repayment </label>
+              <div class="input-group col-md-4">
+                <select id="methodOfRepayment" class="form-control col-md-6">
+                   <option selected>Capital and interest</option>
+                   <option>Interest only - sale of mortgaged property</option>
+                   <option>Interest only - endowment or investment</option>
+                   <option>Part and part - sale of mortgaged property</option>
+                   <option>Part and part - endowment or investmen</option>
+                </select>
+              </div>
+           </div>
+
+          <div class="form-group">
+            <label class="control-label"> If any of the loan is required on Interest Only please enter the amount </label>
+            <div class="input-group col-md-3">
+                  <span style="background: white" class="input-group-addon">£</span>
+                  <input id="requiredInterest" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <!--Mortgage affordability calculator
+            Based on your inputs, we may be able to lend your client(s) the following -->
+            <label class="control-label"> If any of the loan is required on Interest Only please enter the monthly premium paid on the repayment plan(s) </label>
+            <div class="input-group col-md-3">
+                  <span style="background: white" class="input-group-addon">£</span>
+                  <input id="requiredInterestMonthly" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+              </div>
+          </div>
+          <div class="form-group ">
+            <div class="input-group col-md-12">
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+              </div>
+          </div>
+
+            </div>
+          </div>
+        </div>
+  <!-- clinets -->
+        <div class="row setup-content" id="client" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+          <div class="col-xs-12 col-md-offset-0">
+            <div class="col-md-12">
+              <h3> Client(s) </h3>
+
+              <div class="form-group">
+                <label class="control-label"> Number of financial dependants </label>
+
+                <div class="control-group">
+                   <div class="controls form-inline">
+                     <input type="tel" style="margin-bottom: 5px;text-align: center;width:60px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40"  placeholder="0" id="childUnder5"> &nbsp;
+                      <label for="childUnder5"> Aged 0-5 </label>
+                   </div>
+                   <div class="controls form-inline">
+                     <input type="tel" style="margin-bottom: 5px;text-align: center;width:60px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40"  placeholder="0" id="childUnder11"> &nbsp;
+                      <label for="childUnder11"> Aged 6-11 </label>
+                   </div>
+                   <div class="controls form-inline">
+                     <input type="tel" style="margin-bottom: 5px;text-align: center;width:60px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40"  placeholder="0" id="childUnder17"> &nbsp;
+                      <label for="childUnder17"> Aged 12-17 </label>
+                   </div>
+                   <div class="controls form-inline">
+                     <input type="tel" style="margin-bottom: 5px;text-align: center;width:60px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40"  placeholder="0" id="childOver18"> &nbsp;
+                      <label for="childOver18"> Aged 18 or over </label>
+                   </div>
+
+                 </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> What's your client's date of birth? </label>
+                <div class="control-group">
+                   <div class="controls form-inline">
+                     <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="input-small" placeholder="DD" id="dayOfBirth" required="required">
+                      <label for="dayOfBirth"> Day </label>&nbsp;
+                      <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="input-small" placeholder="MM" id="mountOfBirth" required="required">
+                       <label for="mountOfBirth"> Month </label>&nbsp;
+                      <input type="tel" style="text-align: center;width:55px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="4" min="0" max="12" class="input-small" placeholder="YYYY" id="yearOfBirth" required="required">
+                       <label for="yearOfBirth"> Year </label>
+                   </div>
+                 </div>
+             </div>
+             <fieldset class="form-group">
+                 <label class="control-label"> Is your client retired? </label>
+                  <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="retired" id="retiredYes" value="Yes"> Yes
+                       </label>
+                    </div>
+                  <div class="form-check disabled">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="retired" id="retiredNo" value="No" checked> No
+                    </label>
+                  </div>
+              </fieldset>
+              <div class="form-group">
+                <label class="control-label"> What's their planned retirement age? </label>
+                <div class="input-group col-md-3">
+                      <input style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" id="retirementAge" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                  </div>
+              </div>
+              <fieldset class="form-group">
+                  <label class="control-label"> Will your client own any other properties on completion of this mortgage? </label>
+                   <div class="form-check">
+                       <label class="form-check-label">
+                         <input type="radio" class="form-check-input" name="otherProperties" id="otherPropertiesYes" value="Yes" > Yes
+                        </label>
+                     </div>
+                   <div class="form-check disabled">
+                     <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="otherProperties" id="otherPropertiesNo" value="No" checked> No
+                     </label>
+                   </div>
+              </fieldset>
+              <div class="form-group ">
+                <div class="input-group col-md-12">
+                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+  <!-- income -->
+        <div class="row setup-content" id="income" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+          <div class="col-xs-12 col-md-offset-0">
+            <div class="col-md-12">
+              <h3> Income </h3>
+              <div class="form-group">
+                <label class="control-label"> What is the annual salary before tax? </label>
+                <div class="input-group col-md-3">
+                      <span style="background: white" class="input-group-addon">£</span>
+                      <input id="annualIncome" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> What's your annual bonus? (optional) </label>
+                <div class="input-group col-md-3">
+                      <span style="background: white" class="input-group-addon">£</span>
+                      <input id="annualBonus" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> What's your total overtime annually? (optional) </label>
+                <div class="input-group col-md-3">
+                      <span style="background: white" class="input-group-addon">£</span>
+                      <input id="totalOvertimeAnnually" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> What's your total commission annually? (optional) </label>
+                <div class="input-group col-md-3">
+                      <span style="background: white" class="input-group-addon">£</span>
+                      <input id="totalOvertimeAnnually" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                  </div>
+              </div>
+
+              <fieldset class="form-group">
+                  <label class="control-label"> Are you aware of any future changes to personal/ financial circumstances (optional) </label>
+                   <div class="form-check">
+                       <label class="form-check-label">
+                         <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances" id="numOfApplyingYes" value="Yes"> Yes
+                        </label>
+                     </div>
+                   <div class="form-check disabled">
+                     <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances" id="numOfApplyingNo" value="No" checked> No
+                     </label>
+                   </div>
+              </fieldset>
+              <!-- <div class="form-group">
+                <label class="control-label" for="methodOfRepayment"> What income do you receive annually from other sources? (optional) </label>
+                <div class="input-group col-md-4">
+                  <select id="receiveAnnuallyFrom" class="form-control col-md-6">
+                     <option selected>Second job</option>
+                     <option> Investment income</option>
+                     <option> Maintenance payments</option>
+                     <option> Rental income </option>
+                     <option> Fostering income</option>
+                     <option> Other</option>
+                  </select>
+                </div>
+              </div> -->
+
+              <div class="form-group">
+                <div class="input-group col-md-12">
+                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  <!-- Outgoings -->
+        <div class="row setup-content" id="outgoings" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+          <div class="col-xs-12 col-md-offset-0">
+            <div class="col-md-12">
+              <h3> Outgoings </h3>
+              <div class="form-group">
+                <label class="control-label"> Credit commitment monthly payments to remain </label>
+                <div class="input-group col-md-3">
+                      <span style="background: white" class="input-group-addon">£</span>
+                      <input id="commitmentMonthlyPaymentsRemain" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> Total credit card balances remaining </label>
+                <div class="input-group col-md-3">
+                      <span style="background: white" class="input-group-addon">£</span>
+                      <input id="creditCardBalancesRemain" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> Buy to Let monthly mortgage payments to remain </label>
+                <div class="input-group col-md-3">
+                      <span style="background: white" class="input-group-addon">£</span>
+                      <input id="monthlyMortgagePaymentsRemain" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> Other mortgage payments </label>
+                <div class="input-group col-md-3">
+                      <span style="background: white" class="input-group-addon">£</span>
+                      <input id="otherMortgagePayments" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                  </div>
+              </div>
+
+              <fieldset class="form-group">
+                  <label class="control-label"> Do you want to enter any monthly committed expenditure? </label>
+                   <div class="form-check">
+                       <label class="form-check-label">
+                         <input type="radio" class="form-check-input" name="monthlyCommitmented" id="monthlyCommitmentedYes" value="Yes" > Yes
+                        </label>
+                     </div>
+                   <div class="form-check disabled">
+                     <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="monthlyCommitmented" id="monthlyCommitmentedNo" value="No" checked> No
+                     </label>
+                   </div>
+              </fieldset>
+
+              <div class="form-group">
+                <div class="input-group col-md-12">
+                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+  <!-- Results -->
+        <div class="row setup-content" id="results">
+          <div class="col-xs-6 col-md-offset-3">
+            <div class="col-md-12">
+              <h3> Results </h3>
+              <p>Please note our affordability calculator is only for guidance purposes. The maximum loan available may be impacted by the Loan to Value.</p>
+              <button class="btn btn-success btn-lg pull-right" type="submit" id="calculate"> Calculate </button>
+            </div>
+          </div>
+        </div>
+    </form>
+    <div class="stepwizard col-md-offset-3">
+      <image id="loader" style="display: none" class="col-md-offset-1" src="https://cdn-images-1.medium.com/max/1600/1*W8cj-FRc58UozzcMWqVPZw.gif" />
+      <table id="tableResults" style="width:100%;display: none">
+          <tr>
+            <th>Lender</th>
+            <th>Price</th>
+          </tr>
+      </table>
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+
+        $('input[type="radio"]').on('change', function() {
+          var name = $(this).attr('name')
+          $(`[name="${name}"]`).each(function(id, el) {
+              $(this).prop('checked', false)
+          })
+          $(this).prop('checked', true)
+        })
+
+        var endPoint = 'http://localhost:3000'
+        var navListItems = $('div.setup-panel div a'),
+                allWells = $('.setup-content'),
+                allNextBtn = $('.nextBtn');
+
+        allWells.hide();
+
+        navListItems.click(function (e) {
+            e.preventDefault();
+            var $target = $($(this).attr('href')),
+                    $item = $(this);
+
+            if (!$item.hasClass('disabled')) {
+                navListItems.removeClass('btn-primary').addClass('btn-default');
+                $item.addClass('btn-primary');
+                allWells.hide();
+                $target.show();
+                $target.find('input:eq(0)').focus();
+            }
+        });
+
+        allNextBtn.click(function(){
+            var curStep = $(this).closest(".setup-content"),
+                curStepBtn = curStep.attr("id"),
+                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                curInputs = curStep.find("input[type='number'],input[type='tel'],input[type='url']"),
+                isValid = true;
+
+            $(".form-group").removeClass("has-error");
+            for(var i=0; i<curInputs.length; i++){
+                if (!curInputs[i].validity.valid || ($(curInputs[i]).prop('required') && $(curInputs[i]).val() === "0" )){
+                    isValid = false;
+                    $(curInputs[i]).closest(".form-group").addClass("has-error");
+                    $(curInputs[i]).focus()
+                }
+            }
+
+            if (isValid)
+                nextStepWizard.removeAttr('disabled').trigger('click');
+        });
+
+        $('#calculate').click(function(ev){
+          $(this).prop('disabled', true)
+          $("#loader").css('display','block')
+          ev.preventDefault();
+
+          var data = {}
+          $("#tableResults").find("tr:gt(0)").remove();
+          $("#tableResults").css('display','none')
+          $('form input, form select').each(function(id, el) {
+            if (el.tagName === 'INPUT') {
+              if (['tel', 'text', 'number'].includes(el.type)) data[el.id] = el.value || 0
+              if (el.type === 'radio' && $(el).is(':checked')) data[$(el).attr('name')] = el.value
+            }
+            if (el.tagName === 'SELECT') {
+              data[el.id] = $(el).find(":selected").text()
+            }
+          })
+
+          $.ajax({
+             url: `${endPoint}/getExtractionInput/`,
+             method: 'POST',
+             contentType: 'application/x-www-form-urlencoded',
+             headers: {
+               'Access-Control-Allow-Origin': '*',
+               'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+             },
+             data,
+             success: function(data) {
+               for (var lender of data.results ) {
+                 sendRequerst(lender)
+               }
+             },
+             error: function(request,msg,error) {
+              // $(this).prop('disabled', true)
+             //  alert(error)
+             }
+         });
+         $(this).prop('disabled', false)
+
+        })
+
+        $('div.setup-panel div a.btn-primary').trigger('click');
+
+
+        function sendRequerst(input) {
+          let data = input
+          $.ajax({
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            contentType: 'application/x-www-form-urlencoded',
+            url: `${endPoint}/aff_calc`,
+             success: function(data) {
+               $("#loader").css('display','none')
+               if (data.results.length) {
+                 for (var result of data.results) {
+                   for ( var extracted of result.extarcted) {
+                     var table = document.getElementById('tableResults')
+                     table.style.display = 'block'
+                     var row = table.insertRow(1)
+                     var cell1 = row.insertCell(0);
+                     var cell2 = row.insertCell(1)
+                     cell1.innerHTML = result.lender
+                     cell2.innerHTML = extracted.price
+                   }
+                 }
+               }
+               console.log(data);
+             },
+             error: function(request,msg,error) {
+               console.log(error);
+             //  alert(error)
+             }
+         })
+        }
+      });
+      </script>
+</body>
+</html>
