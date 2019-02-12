@@ -967,25 +967,14 @@
                                          </label>
                                        </div>
                                    </div>
-                                   <div class="form-group">
+                                   <div id="retirementAgeDiv" class="form-group" style="display: none">
                                      <label class="control-label"> What's their planned retirement age? </label>
                                      <div class="input-group col-md-3">
                                            <input style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" id="retirementAge" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                        </div>
                                    </div>
-                                   <fieldset class="form-group">
-                                       <label class="control-label"> Will your client own any other properties on completion of this mortgage? </label>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                              <input type="radio" class="form-check-input" name="otherProperties" id="otherPropertiesYes" value="Yes" > Yes
-                                             </label>
-                                          </div>
-                                        <div class="form-check disabled">
-                                          <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="otherProperties" id="otherPropertiesNo" value="No" checked> No
-                                          </label>
-                                        </div>
-                                   </fieldset>
+
+
                                    <div class="form-group ">
                                      <div class="input-group col-md-12">
                                              <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
@@ -1045,19 +1034,387 @@
                                           </label>
                                         </div>
                                    </fieldset>
-                                   <!-- <div class="form-group">
-                                     <label class="control-label" for="methodOfRepayment"> What income do you receive annually from other sources? (optional) </label>
-                                     <div class="input-group col-md-4">
-                                       <select id="receiveAnnuallyFrom" class="form-control col-md-6">
-                                          <option selected>Second job</option>
-                                          <option> Investment income</option>
-                                          <option> Maintenance payments</option>
-                                          <option> Rental income </option>
-                                          <option> Fostering income</option>
-                                          <option> Other</option>
-                                       </select>
-                                     </div>
-                                   </div> -->
+                                   <div id="advacedSalaryAanualIncomeClick" class="form-group">
+                                     <a  class="icon-plus" style="word-spacing: -4px; color: #20a8d8; cursor: pointer; font-size: 16px;"> Advaced salary options for anual income </a>
+                                   </div>
+
+                                   <div id="advacedSalaryAanualIncomeDiv" class="form-group" style="display: none">
+
+                                     <div id="fixedTermContractPAYEDiv" class="form-group">
+                                       <label class="control-label"> Fixed term contract (PAYE)  </label>
+                                       <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="fixedTermContract" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                         </div>
+                                      </div>
+
+                                      <div id="renewableContractPAYEDiv" class="form-group">
+                                        <label class="control-label"> Short-term renewable contract (PAYE) </label>
+                                        <div class="input-group col-md-3">
+                                              <span style="background: white" class="input-group-addon">£</span>
+                                              <input id="renewableContractPAYE" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                          </div>
+                                       </div>
+
+                                       <div id="salaryForDirectorLimitDiv" class="form-group">
+                                         <label class="control-label"> Salary for director of a limited company </label>
+                                         <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="salaryForDirectorLimit" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                           </div>
+                                        </div>
+
+                                        <div id="netProfitSoleTraderDiv" class="form-group">
+                                          <label class="control-label"> Net profit of a sole trader/partnership  </label>
+                                          <div class="input-group col-md-3">
+                                                <span style="background: white" class="input-group-addon">£</span>
+                                                <input id="netProfitSoleTrader" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                            </div>
+                                         </div>
+
+                                         <div id="directorDividendsDiv" class="form-group">
+                                           <label class="control-label"> Director's dividends  </label>
+                                           <div class="input-group col-md-3">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="directorDividends" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                             </div>
+                                          </div>
+
+                                          <div id="pensionsAndAnnuitiesDiv" class="form-group">
+                                            <label class="control-label"> Private/company pensions and annuities </label>
+                                            <div class="input-group col-md-3">
+                                                  <span style="background: white" class="input-group-addon">£</span>
+                                                  <input id="pensionsAndAnnuities" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+
+                                           <div id="statePensionDiv" class="form-group">
+                                             <label class="control-label"> State pension </label>
+                                             <div class="input-group col-md-3">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="statePension" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               </div>
+                                            </div>
+
+                                            <div id="employedInFfamilyBusinessDiv" class="form-group">
+                                              <label class="control-label"> Employed in a family business </label>
+                                              <div class="input-group col-md-3">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="employedInFfamilyBusiness" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+
+                                             <div id="receiveAnyBonusOrCommissionDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                               <div class="form-group">
+                                                   <label class="control-label"> Does applicant 1 receive any bonus or commission? </label>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                          <input type="radio" class="form-check-input" name="receiveAnyBonusOrCommission" id="receiveAnyBonusOrCommissionYes" value="Yes"> Yes
+                                                         </label>
+                                                      </div>
+                                                    <div class="form-check disabled">
+                                                      <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="receiveAnyBonusOrCommission" id="receiveAnyBonusOrCommissionNo" value="No" checked> No
+                                                      </label>
+                                                    </div>
+                                                </div>
+
+                                                <div id="bounsPaidEveryMonthDiv"class="form-group" style="display: none">
+                                                    <label class="control-label"> Is the bonus or commission paid at least every month? </label>
+                                                     <div class="form-check">
+                                                         <label class="form-check-label">
+                                                           <input type="radio" class="form-check-input" name="bounsPaidEveryMonth" id="bounsPaidEveryMonthYes" value="Yes"> Yes
+                                                          </label>
+                                                       </div>
+                                                     <div class="form-check disabled">
+                                                       <label class="form-check-label">
+                                                         <input type="radio" class="form-check-input" name="bounsPaidEveryMonth" id="bounsPaidEveryMonthNo" value="No" checked> No
+                                                       </label>
+                                                     </div>
+                                                 </div>
+
+                                               <div id="receiveAnyBonusOrCommissionBoard" style="display: none">
+                                                 <div id="bounsPaidEveryMonthDetailsDiv">
+                                                   <div id="howOftenBounsPaidDiv" class="form-group" >
+                                                     <label class="control-label" for="propertyLegalStatus"> How often is the bonus or commission paid?  </label>
+                                                     <div class="input-group col-md-5">
+                                                       <select id="howOftenBounsPaid" class="form-control col-md-7">
+                                                          <option value='1' selected>Quarterly</option>
+                                                          <option  value='2'> Annually</option>
+                                                          <option value-'3'>Othert</option>
+                                                       </select>
+                                                     </div>
+                                                   </div>
+                                                 <div id="bounsPaymentInputs" class="form-group">
+                                                    <label class="control-label"> Enter the latest three months' bonus or commission payments from the payslips. </label>
+                                                      <div id="bonusOrCommissionQuarterly1Div" class="">
+                                                        <label class="control-label"> </label>
+                                                        <div class="input-group col-md-5">
+                                                           <span style="background: white" class="input-group-addon">£</span>
+                                                           <input id="bonusOrCommissionQuarterly1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                       </div>
+                                                     </div>
+                                                     <div id="bonusOrCommissionQuarterly2Div" class="">
+                                                       <label class="control-label"> </label>
+                                                       <div class="input-group col-md-5">
+                                                            <span style="background: white" class="input-group-addon">£</span>
+                                                            <input id="bonusOrCommissionQuarterly2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                        </div>
+                                                      </div>
+                                                      <div id="bonusOrCommissionQuarterly3Div" class="">
+                                                        <label class="control-label"> </label>
+                                                        <div class="input-group col-md-5">
+                                                             <span style="background: white" class="input-group-addon">£</span>
+                                                             <input id="bonusOrCommissionQuarterly3" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                         </div>
+                                                       </div>
+                                                 </div>
+                                               </div>
+                                             </div>
+                                            </div>
+                                             <div id="receiveAnyOvertimeDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                               <div class="form-group">
+                                                   <label class="control-label"> Does applicant 1 receive any overtime? </label>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                          <input type="radio" class="form-check-input" name="receiveAnyOvertime" id="receiveAnyOvertimeYes" value="Yes"> Yes
+                                                         </label>
+                                                      </div>
+                                                    <div class="form-check disabled">
+                                                      <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="receiveAnyOvertime" id="receiveAnyOvertimeNo" value="No" checked> No
+                                                      </label>
+                                                    </div>
+                                                </div>
+
+                                                <div id="overtimePaidEveryMonthDiv"class="form-group" style="display: none">
+                                                    <label class="control-label"> Is the overtime paid at least every month?  </label>
+                                                     <div class="form-check">
+                                                         <label class="form-check-label">
+                                                           <input type="radio" class="form-check-input" name="overtimePaidEveryMonth" id="overtimePaidEveryMonthYes" value="Yes"> Yes
+                                                          </label>
+                                                       </div>
+                                                     <div class="form-check disabled">
+                                                       <label class="form-check-label">
+                                                         <input type="radio" class="form-check-input" name="overtimePaidEveryMonth" id="overtimePaidEveryMonthNo" value="No" checked> No
+                                                       </label>
+                                                     </div>
+                                                 </div>
+
+                                               <div id="receiveAnyOvertimeBoard" style="display: none">
+                                                 <div id="overtimePaidEveryMonthDetailsDiv">
+                                                   <div id="howOftenOvertimePaidDiv" class="form-group" >
+                                                     <label class="control-label" for="propertyLegalStatus"> How often is the applicant paid?   </label>
+                                                     <div class="input-group col-md-5">
+                                                       <select id="howOftenOvertimePaid" class="form-control col-md-7">
+                                                          <option value='1' selected>Monthly</option>
+                                                          <option value='2'> Four weekly</option>
+                                                          <option value='3'>Fortnightly</option>
+                                                          <option value='4'>Weekly</option>
+                                                       </select>
+                                                     </div>
+                                                   </div>
+                                               </div>
+                                               <div id="overtimePaymentInputs" class="form-group">
+                                                  <label id="overtimeTitle" class="control-label"> Enter the latest three months' bonus or commission payments from the payslips. </label>
+                                                    <div id="overtime1LatestMonthly1Div" class="">
+                                                      <label class="control-label"> </label>
+                                                      <div class="input-group col-md-5">
+                                                         <span style="background: white" class="input-group-addon">£</span>
+                                                         <input id="overtime1LatestMonthly1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                     </div>
+                                                   </div>
+                                                   <div id="overtime1LatestMonthly2Div" class="">
+                                                     <label class="control-label"> </label>
+                                                     <div class="input-group col-md-5">
+                                                          <span style="background: white" class="input-group-addon">£</span>
+                                                          <input id="overtime1LatestMonthly2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      </div>
+                                                    </div>
+                                                    <div id="overtime1LatestMonthly3Div" class="">
+                                                      <label class="control-label"> </label>
+                                                      <div class="input-group col-md-5">
+                                                           <span style="background: white" class="input-group-addon">£</span>
+                                                           <input id="overtime1LatestMonthly3" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                       </div>
+                                                     </div>
+                                               </div>
+                                             </div>
+                                            </div>
+                                             <div id="earnAnyEmployedAllowancesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                               <div class="form-group">
+                                                   <label class="control-label"> Do they earn any employed allowances?  </label>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                          <input type="radio" class="form-check-input" name="earnAnyEmployedAllowances" id="earnAnyEmployedAllowancesYes" value="Yes"> Yes
+                                                         </label>
+                                                      </div>
+                                                    <div class="form-check disabled">
+                                                      <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="earnAnyEmployedAllowances" id="earnAnyEmployedAllowancesNo" value="No" checked> No
+                                                      </label>
+                                                    </div>
+                                                </div>
+
+
+                                               <div id="earnAnyEmployedAllowancesBoard" style="display: none">
+                                                   <h4> Please enter the annual equivalent </h4>
+                                                   <div id="carAllowanceDiv" class="form-group">
+                                                     <label class="control-label"> Car allowance </label>
+                                                     <div class="input-group col-md-3">
+                                                           <span style="background: white" class="input-group-addon">£</span>
+                                                           <input id="carAllowance" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                       </div>
+                                                    </div>
+
+                                                   <div id="weightingLargeTownDiv" class="form-group">
+                                                     <label class="control-label"> London weighting/large town allowance </label>
+                                                     <div class="input-group col-md-3">
+                                                           <span style="background: white" class="input-group-addon">£</span>
+                                                           <input id="weightingLargeTown" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                       </div>
+                                                    </div>
+
+                                                    <div id="permanentShiftAllowanceDiv" class="form-group">
+                                                      <label class="control-label"> Permanent shift allowance </label>
+                                                      <div class="input-group col-md-3">
+                                                            <span style="background: white" class="input-group-addon">£</span>
+                                                            <input id="permanentShiftAllowance" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                        </div>
+                                                     </div>
+
+                                                     <div id="indefiniteMortgageSubsidiesDiv" class="form-group">
+                                                       <label class="control-label"> Indefinite mortgage subsidies or housing allowances </label>
+                                                       <div class="input-group col-md-3">
+                                                             <span style="background: white" class="input-group-addon">£</span>
+                                                             <input id="indefiniteMortgageSubsidies" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                         </div>
+                                                      </div>
+
+                                                      <div id="long-termMortgageSubsidiesDiv" class="form-group">
+                                                        <label class="control-label"> Long-term mortgage subsidies or housing allowance </label>
+                                                        <div class="input-group col-md-3">
+                                                              <span style="background: white" class="input-group-addon">£</span>
+                                                              <input id="long-termMortgageSubsidies" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                          </div>
+                                                       </div>
+                                               </div>
+                                             </div>
+
+                                             <div id="receiveAnyGovernmentBenefitsDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                               <div class="form-group">
+                                                   <label class="control-label"> Do they receive any government benefits? </label>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                          <input type="radio" class="form-check-input" name="receiveAnyGovernmentBenefits" id="receiveAnyGovernmentBenefitsYes" value="Yes"> Yes
+                                                         </label>
+                                                      </div>
+                                                    <div class="form-check disabled">
+                                                      <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="receiveAnyGovernmentBenefits" id="receiveAnyGovernmentBenefitsNo" value="No" checked> No
+                                                      </label>
+                                                    </div>
+                                                </div>
+
+                                               <div id="receiveAnyGovernmentBenefitsBoard" style="display: none">
+                                                  <h4> Please enter the annual equivalent </h4>
+                                                  <div id="childBenefitbDiv" class="form-group">
+                                                    <label class="control-label"> Child benefit </label>
+                                                    <div class="input-group col-md-3">
+                                                          <span style="background: white" class="input-group-addon">£</span>
+                                                          <input id="childBenefit" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      </div>
+                                                   </div>
+
+                                                   <div id="childTaxCreditsDiv" class="form-group">
+                                                     <label class="control-label"> Child tax credits </label>
+                                                     <div class="input-group col-md-3">
+                                                           <span style="background: white" class="input-group-addon">£</span>
+                                                           <input id="childTaxCredits" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                       </div>
+                                                    </div>
+
+                                                    <div id="workingTaxCreditsDiv" class="form-group">
+                                                      <label class="control-label"> Working tax credits </label>
+                                                      <div class="input-group col-md-3">
+                                                            <span style="background: white" class="input-group-addon">£</span>
+                                                            <input id="workingTaxCredits" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                        </div>
+                                                     </div>
+
+                                                     <div id="indefiniteStateBenefitsDiv" class="form-group">
+                                                       <label class="control-label"> Indefinite state benefits (DWP/HMRC) </label>
+                                                       <div class="input-group col-md-3">
+                                                             <span style="background: white" class="input-group-addon">£</span>
+                                                             <input id="indefiniteStateBenefits" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                         </div>
+                                                      </div>
+
+                                               </div>
+                                             </div>
+
+                                             <div id="earmAnyOtherAnnualIncome" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                               <div class="form-group">
+                                                   <label class="control-label"> Do they earn or receive any other annual income?  </label>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                          <input type="radio" class="form-check-input" name="earmAnyOtherAnnualIncome" id="earmAnyOtherAnnualIncomeYes" value="Yes"> Yes
+                                                         </label>
+                                                      </div>
+                                                    <div class="form-check disabled">
+                                                      <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="earmAnyOtherAnnualIncome" id="earmAnyOtherAnnualIncomeNo" value="No" checked> No
+                                                      </label>
+                                                    </div>
+                                                </div>
+
+                                               <div id="earmAnyOtherAnnualIncomeBoard" style="display: none">
+                                                 <h4> Please enter the annual equivalent </h4>
+
+                                                   <div id="secondJobDiv" class="form-group">
+                                                     <label class="control-label"> Second job </label>
+                                                     <div class="input-group col-md-3">
+                                                           <span style="background: white" class="input-group-addon">£</span>
+                                                           <input id="secondJob" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                       </div>
+                                                    </div>
+
+                                                    <div id="investmentIncomeDiv" class="form-group">
+                                                      <label class="control-label"> Investment income  </label>
+                                                      <div class="input-group col-md-3">
+                                                            <span style="background: white" class="input-group-addon">£</span>
+                                                            <input id="investmentIncome" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                        </div>
+                                                     </div>
+
+                                                     <div id="maintenancePaymentsDiv" class="form-group">
+                                                       <label class="control-label"> Maintenance payments </label>
+                                                       <div class="input-group col-md-3">
+                                                             <span style="background: white" class="input-group-addon">£</span>
+                                                             <input id="maintenancePayments" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                         </div>
+                                                      </div>
+
+                                                      <div id="rentalIncomeDiv" class="form-group">
+                                                        <label class="control-label"> Rental income </label>
+                                                        <div class="input-group col-md-3">
+                                                              <span style="background: white" class="input-group-addon">£</span>
+                                                              <input id="rentalIncome" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                          </div>
+                                                       </div>
+
+                                                       <div id="fosteringIncomeDiv" class="form-group">
+                                                         <label class="control-label"> Fostering income </label>
+                                                         <div class="input-group col-md-3">
+                                                               <span style="background: white" class="input-group-addon">£</span>
+                                                               <input id="fosteringIncome" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                           </div>
+                                                        </div>
+                                               </div>
+                                             </div>
+
+                                   </div>
+
 
                                    <div class="form-group">
                                      <div class="input-group col-md-12">
@@ -1460,7 +1817,7 @@
       <script src="https://coreui.io/demo/vendors/@coreui/coreui-pro/js/coreui.min.js"></script>
       <script type="text/javascript">
           $(document).ready(function () {
-
+          /// mortgage
             $('#advancedQuestionsDiv > a').on('click', function(ev){
                 if ($(this).attr('class')=='icon-plus') {
                   $(this).attr('class','icon-close')
@@ -1493,7 +1850,7 @@
                   $('#mortgageFreePropertiesDiv').css('display','none')
                 }
             })
-///
+
             $('#mortgagedProperties, #mortgageFreeProperties').on('change', function(ev) {
               let currentId = `${ev.target.id}Details`
               let originalId = ev.target.id
@@ -1648,282 +2005,469 @@
                 $(interestOnlyBalance).after(yearAndMonthsInput)
               }
               ev.stopPropagation()
-          }
+             }
 
-          function propertyUseEvent(ev) {
-            ev.preventDefault()
-            let currentSecion = ev.data.currentId
-            let scope = (currentSecion.toLowerCase().includes('free')) ? 'Free' : ''
-              let div = document.getElementById(ev.data.parentDiv)
-              let index = (ev.target.id).replace('propertyUse','')
-              let selected = $(this).find(':selected')
-              let value = parseInt(selected.attr('value'))
-              if ([1, 2].includes(value)) {
-                $(`#propertyUseBody${scope}Div${index}`).remove()
-                let fatherDivId = document.querySelector(`#${ev.data.parentDiv}`)
-                let propertyUseBody = generatePropertyUseBodyForLet(index, scope)
-                fatherDivId.appendChild(propertyUseBody)
-                $('[id*="typeOfMortgage"]').bind('change', {currentId: currentSecion} ,typeOfMortgageEvent)
-                return div
-              } else  {
-                $(`#propertyUseBody${scope}Div${index}`).remove()
-                let fatherDivId = document.querySelector(`#${currentSecion}Div${index}`)
-                let propertyUseBody = generatePropertyUseBodyForRelatives(index, scope)
-                fatherDivId.appendChild(propertyUseBody)
-                $('[id*="typeOfMortgage"]').bind('change', {currentId: currentSecion} ,typeOfMortgageEvent)
-                return div
-              }
-
-        }
-
-          function createYearAndMonthsInput(id, labelText){
-            let div = document.createElement('div')
-            div.setAttribute('class', 'form-group')
-            div.id = `${id}Div`
-
-            let label = document.createElement('label')
-            label.innerHTML = labelText
-            label.setAttribute('class', 'control-label')
-
-            let innerDiv = document.createElement('div')
-            innerDiv.setAttribute('class', 'control-group')
-
-            let divInline = document.createElement('div')
-            divInline.setAttribute('class', 'controls form-inline')
-
-            let inputYear = document.createElement('input')
-            inputYear.setAttribute('class', 'form-control')
-            inputYear.maxlength = '2'
-            inputYear.type = 'tel'
-            inputYear.max = '30'
-            inputYear.min = '1'
-            inputYear.placeholder = 'YY'
-            inputYear.id = `${id}Years`
-            inputYear.style = 'text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;'
-
-            let labelYear = document.createElement('label')
-            labelYear.for = `${id}Years`
-            labelYear.innerHTML = 'Years'
-            labelYear.setAttribute('class', 'control-label')
-            labelYear.style = 'margin-left: 5px'
-
-
-            let inputMonths = document.createElement('input')
-            inputMonths.setAttribute('class', 'form-control')
-            inputMonths.maxlength = '2'
-            inputMonths.type = 'tel'
-            inputMonths.max = '12'
-            inputMonths.min = '1'
-            inputMonths.placeholder = 'MM'
-            inputMonths.id = `${id}Months`
-            inputMonths.style = 'text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;margin-left: 3px;'
-
-
-            let labelMonths = document.createElement('label')
-            labelMonths.for = `${id}Months`
-            labelMonths.innerHTML = 'Months'
-            labelMonths.setAttribute('class', 'control-label')
-            labelMonths.style = 'margin-left: 5px'
-
-            divInline.appendChild(inputYear)
-            divInline.appendChild(labelYear)
-            divInline.appendChild(inputMonths)
-            divInline.appendChild(labelMonths)
-
-            innerDiv.appendChild(divInline)
-            div.appendChild(label)
-            div.appendChild(innerDiv)
-
-            return div
-          }
-
-
-          function createRadioInput(id, labelText) {
-              let fieldset = document.createElement('fieldset')
-              fieldset.setAttribute('class', 'form-group')
-
-              let outterLabel = document.createElement('label')
-              outterLabel.innerHTML = labelText
-              outterLabel.setAttribute('class', 'control-label')
-
-              let divYes = document.createElement('div')
-              let divNo = document.createElement('div')
-
-              divYes.setAttribute('class', 'form-check')
-              divNo.setAttribute('class', 'form-check')
-
-              let labelYes = document.createElement('label')
-              let labelNo = document.createElement('label')
-
-              labelYes.setAttribute('class', 'control-label')
-              labelNo.setAttribute('class', 'control-label')
-
-              let inputYes = document.createElement('input')
-              let inputNo = document.createElement('input')
-
-              inputYes.id = id + 'Yes'
-              inputYes.name = id
-              inputYes.value = 'Yes'
-              inputYes.type = 'radio'
-              inputYes.setAttribute('class', 'form-check-input')
-              inputYes.innerHTML = 'Yes'
-
-              inputNo.id = id + 'No'
-              inputNo.name = id
-              inputNo.type = 'radio'
-              inputNo.value = 'No'
-              inputNo.setAttribute('class', 'form-check-input')
-              inputNo.innerHTML = 'No'
-              inputNo.checked = true
-
-              labelYes.appendChild(inputYes)
-              divYes.appendChild(labelYes)
-
-              labelNo.appendChild(inputNo)
-              divNo.appendChild(labelNo)
-
-              fieldset.appendChild(outterLabel)
-              fieldset.appendChild(divYes)
-              fieldset.appendChild(divNo)
-
-              return fieldset
-          }
-
-
-          function createDropdown(options, id, labelText) {
-              let div = document.createElement('div')
-              div.setAttribute('class', 'form-group')
-
-              let label = document.createElement('label')
-              label.for = id
-              label.innerHTML = labelText
-              label.setAttribute('class', 'control-label')
-
-              let innerDiv = document.createElement('div')
-              innerDiv.setAttribute('class', 'input-group col-md-8')
-
-              div.appendChild(label)
-              let selecet = document.createElement('select')
-              selecet.id = id
-              selecet.setAttribute('class', 'form-control col-md-7')
-
-              for (let i = 0 ; i < options.length; i++) {
-                let inputOption = options[i]
-                let option = document.createElement('option')
-                option.value = inputOption.value || inputOption.text
-                option.text = inputOption.text
-                if (option.selected) option.selected = true
-                selecet.options.add(option);
-              }
-              innerDiv.appendChild(selecet)
-              div.appendChild(innerDiv)
-
-              return div
+            function propertyUseEvent(ev) {
+                ev.preventDefault()
+                let currentSecion = ev.data.currentId
+                let scope = (currentSecion.toLowerCase().includes('free')) ? 'Free' : ''
+                  let div = document.getElementById(ev.data.parentDiv)
+                  let index = (ev.target.id).replace('propertyUse','')
+                  let selected = $(this).find(':selected')
+                  let value = parseInt(selected.attr('value'))
+                  if ([1, 2].includes(value)) {
+                    $(`#propertyUseBody${scope}Div${index}`).remove()
+                    let fatherDivId = document.querySelector(`#${ev.data.parentDiv}`)
+                    let propertyUseBody = generatePropertyUseBodyForLet(index, scope)
+                    fatherDivId.appendChild(propertyUseBody)
+                    $('[id*="typeOfMortgage"]').bind('change', {currentId: currentSecion} ,typeOfMortgageEvent)
+                    return div
+                  } else  {
+                    $(`#propertyUseBody${scope}Div${index}`).remove()
+                    let fatherDivId = document.querySelector(`#${currentSecion}Div${index}`)
+                    let propertyUseBody = generatePropertyUseBodyForRelatives(index, scope)
+                    fatherDivId.appendChild(propertyUseBody)
+                    $('[id*="typeOfMortgage"]').bind('change', {currentId: currentSecion} ,typeOfMortgageEvent)
+                    return div
+                  }
             }
 
-
-
-            function createCurrencyInput(id, labelText) {
+            function createYearAndMonthsInput(id, labelText){
               let div = document.createElement('div')
-              div.setAttribute('class','form-group')
+              div.setAttribute('class', 'form-group')
               div.id = `${id}Div`
 
               let label = document.createElement('label')
-              label.for = id
-              label.setAttribute('class', 'control-label')
               label.innerHTML = labelText
-
-              div.appendChild(label)
+              label.setAttribute('class', 'control-label')
 
               let innerDiv = document.createElement('div')
-              innerDiv.setAttribute('class', 'input-group col-md-5')
+              innerDiv.setAttribute('class', 'control-group')
 
-              let span = document.createElement('span')
-              span.style.background = 'white'
-              span.setAttribute('class', 'input-group-addon')
-              span.innerHTML = '£'
+              let divInline = document.createElement('div')
+              divInline.setAttribute('class', 'controls form-inline')
 
-              let input = document.createElement('input')
-              input.id = id
-              input.setAttribute('class', 'form-control')
-              input.maxlength = '10'
-              input.type = 'tel'
-              input.placeholder = '0'
+              let inputYear = document.createElement('input')
+              inputYear.setAttribute('class', 'form-control')
+              inputYear.maxlength = '2'
+              inputYear.type = 'tel'
+              inputYear.max = '30'
+              inputYear.min = '1'
+              inputYear.placeholder = 'YY'
+              inputYear.id = `${id}Years`
+              inputYear.style = 'text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;'
 
-              innerDiv.appendChild(span)
-              innerDiv.appendChild(input)
+              let labelYear = document.createElement('label')
+              labelYear.for = `${id}Years`
+              labelYear.innerHTML = 'Years'
+              labelYear.setAttribute('class', 'control-label')
+              labelYear.style = 'margin-left: 5px'
 
+
+              let inputMonths = document.createElement('input')
+              inputMonths.setAttribute('class', 'form-control')
+              inputMonths.maxlength = '2'
+              inputMonths.type = 'tel'
+              inputMonths.max = '12'
+              inputMonths.min = '1'
+              inputMonths.placeholder = 'MM'
+              inputMonths.id = `${id}Months`
+              inputMonths.style = 'text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;margin-left: 3px;'
+
+
+              let labelMonths = document.createElement('label')
+              labelMonths.for = `${id}Months`
+              labelMonths.innerHTML = 'Months'
+              labelMonths.setAttribute('class', 'control-label')
+              labelMonths.style = 'margin-left: 5px'
+
+              divInline.appendChild(inputYear)
+              divInline.appendChild(labelYear)
+              divInline.appendChild(inputMonths)
+              divInline.appendChild(labelMonths)
+
+              innerDiv.appendChild(divInline)
+              div.appendChild(label)
               div.appendChild(innerDiv)
+
               return div
             }
 
-            $('[name="provideMoreDetails"]').on('change', function(ev) {
-              if ($(this).attr('value') === 'Yes') {
-                $('#mortgagedPropertiesDiv').css('display','block')
-                $('#mortgageFreePropertiesDiv').css('display','block')
-              } else {
-                $('#mortgagedPropertiesDiv').css('display','none')
-                $('#mortgageFreePropertiesDiv').css('display','none')
+            function createRadioInput(id, labelText) {
+                let fieldset = document.createElement('fieldset')
+                fieldset.setAttribute('class', 'form-group')
+
+                let outterLabel = document.createElement('label')
+                outterLabel.innerHTML = labelText
+                outterLabel.setAttribute('class', 'control-label')
+
+                let divYes = document.createElement('div')
+                let divNo = document.createElement('div')
+
+                divYes.setAttribute('class', 'form-check')
+                divNo.setAttribute('class', 'form-check')
+
+                let labelYes = document.createElement('label')
+                let labelNo = document.createElement('label')
+
+                labelYes.setAttribute('class', 'control-label')
+                labelNo.setAttribute('class', 'control-label')
+
+                let inputYes = document.createElement('input')
+                let inputNo = document.createElement('input')
+
+                inputYes.id = id + 'Yes'
+                inputYes.name = id
+                inputYes.value = 'Yes'
+                inputYes.type = 'radio'
+                inputYes.setAttribute('class', 'form-check-input')
+                inputYes.innerHTML = 'Yes'
+
+                inputNo.id = id + 'No'
+                inputNo.name = id
+                inputNo.type = 'radio'
+                inputNo.value = 'No'
+                inputNo.setAttribute('class', 'form-check-input')
+                inputNo.innerHTML = 'No'
+                inputNo.checked = true
+
+                labelYes.appendChild(inputYes)
+                divYes.appendChild(labelYes)
+
+                labelNo.appendChild(inputNo)
+                divNo.appendChild(labelNo)
+
+                fieldset.appendChild(outterLabel)
+                fieldset.appendChild(divYes)
+                fieldset.appendChild(divNo)
+
+                return fieldset
               }
 
-            })
+            function createDropdown(options, id, labelText) {
+                let div = document.createElement('div')
+                div.setAttribute('class', 'form-group')
+
+                let label = document.createElement('label')
+                label.for = id
+                label.innerHTML = labelText
+                label.setAttribute('class', 'control-label')
+
+                let innerDiv = document.createElement('div')
+                innerDiv.setAttribute('class', 'input-group col-md-8')
+
+                div.appendChild(label)
+                let selecet = document.createElement('select')
+                selecet.id = id
+                selecet.setAttribute('class', 'form-control col-md-7')
+
+                for (let i = 0 ; i < options.length; i++) {
+                  let inputOption = options[i]
+                  let option = document.createElement('option')
+                  option.value = inputOption.value || inputOption.text
+                  option.text = inputOption.text
+                  if (option.selected) option.selected = true
+                  selecet.options.add(option);
+                }
+                innerDiv.appendChild(selecet)
+                div.appendChild(innerDiv)
+
+                return div
+              }
+
+            function createCurrencyInput(id, labelText) {
+                let div = document.createElement('div')
+                div.setAttribute('class','form-group')
+                div.id = `${id}Div`
+
+                let label = document.createElement('label')
+                label.for = id
+                label.setAttribute('class', 'control-label')
+                label.innerHTML = labelText
+
+                div.appendChild(label)
+
+                let innerDiv = document.createElement('div')
+                innerDiv.setAttribute('class', 'input-group col-md-5')
+
+                let span = document.createElement('span')
+                span.style.background = 'white'
+                span.setAttribute('class', 'input-group-addon')
+                span.innerHTML = '£'
+
+                let input = document.createElement('input')
+                input.id = id
+                input.setAttribute('class', 'form-control')
+                input.maxlength = '10'
+                input.type = 'tel'
+                input.placeholder = '0'
+
+                innerDiv.appendChild(span)
+                innerDiv.appendChild(input)
+
+                div.appendChild(innerDiv)
+                return div
+              }
+
+            $('[name="provideMoreDetails"]').on('change', function(ev) {
+                if ($(this).attr('value') === 'Yes') {
+                  $('#mortgagedPropertiesDiv').css('display','block')
+                  $('#mortgageFreePropertiesDiv').css('display','block')
+                } else {
+                  $('#mortgagedPropertiesDiv').css('display','none')
+                  $('#mortgageFreePropertiesDiv').css('display','none')
+                }
+
+              })
 
             $('#methodOfRepaymentDiv').on('change', function(ev) {
-              let value = $(this).find(":selected").attr('value')
-              if (['4', '5'].includes(value)) {
-                  $('#requiredInterestDiv').css('display','block')
-                  $('#requiredInterestMonthlyDiv').css('display','block')
-              } else {
-                $('#requiredInterestDiv').css('display','none')
-                $('#requiredInterestMonthlyDiv').css('display','none')
-              }
-            })
+                let value = $(this).find(":selected").attr('value')
+                if (['4', '5'].includes(value)) {
+                    $('#requiredInterestDiv').css('display','block')
+                    $('#requiredInterestMonthlyDiv').css('display','block')
+                } else {
+                  $('#requiredInterestDiv').css('display','none')
+                  $('#requiredInterestMonthlyDiv').css('display','none')
+                }
+              })
 
             $('#typeOfOwnerShip').on('change', function(ev) {
-              if ($(this).find(":selected").attr('value') === '1') {
-                  $('#equityLoanDiv').css('display','block')
-              } else {
-                $('#equityLoanDiv').css('display','none')
-              }
-            })
+                if ($(this).find(":selected").attr('value') === '1') {
+                    $('#equityLoanDiv').css('display','block')
+                } else {
+                  $('#equityLoanDiv').css('display','none')
+                }
+              })
 
             $('[name="foundNewHome"]').on('change', function(ev) {
-              if ($(this).attr('value') === 'Yes') {
-                $('#propertyLegalStatusDiv').css('display','block')
-                $('#propertyTypeDiv').css('display','block')
-              } else {
-                $('#propertyLegalStatusDiv').css('display','none')
-                $('#propertyTypeDiv').css('display','none')
-              }
+                if ($(this).attr('value') === 'Yes') {
+                  $('#propertyLegalStatusDiv').css('display','block')
+                  $('#propertyTypeDiv').css('display','block')
+                } else {
+                  $('#propertyLegalStatusDiv').css('display','none')
+                  $('#propertyTypeDiv').css('display','none')
+                }
 
-            })
+              })
 
             $('[name="borrowMoreThan90"]').on('change', function(ev) {
-              if ($(this).attr('value') === 'No' || '') {
-                $('#provideMoreDetailsDiv').css('display','block')
-              } else {
-                alert('you cannot')
-                $('#provideMoreDetailsDiv').css('display','none')
-              }
-
-            })
-
+                 if ($(this).attr('value') === 'No' || '') {
+                   $('#provideMoreDetailsDiv').css('display','block')
+                 } else {
+                   alert('you cannot')
+                   $('#provideMoreDetailsDiv').css('display','none')
+                 }
+               })
 
             $('[name="otherProperty"]').on('change', function(ev) {
-               if ($(this).attr('value') === 'No') {
-                  $('#borrowMoreThan').css('display','none')
+                 if ($(this).attr('value') === 'No') {
+                    $('#borrowMoreThan').css('display','none')
+                 } else {
+                   $('#borrowMoreThan').css('display','block')
+                 }
+              })
+              // prevent multi selections in radio button
+            $('input[type="radio"]').on('change', function() {
+                var name = $(this).attr('name')
+                $(`[name="${name}"]`).each(function(id, el) {
+                    $(this).prop('checked', false)
+                })
+                $(this).prop('checked', true)
+              })
+          /// incomings
+           $('[name="retired"]').on('change', function(ev){
+             if ($(this).attr('value') === 'No') {
+                $('#retirementAgeDiv').css('display','none')
+             } else {
+               $('#retirementAgeDiv').css('display','block')
+             }
+           })
+
+           $('#advacedSalaryAanualIncomeClick > a').on('click', function(ev){
+               if ($(this).attr('class')=='icon-plus') {
+                 $(this).attr('class','icon-close')
+                 $(this).text(' Close Advanced')
+                 $('#advacedSalaryAanualIncomeDiv').css('display','block')
+
                } else {
-                 $('#borrowMoreThan').css('display','block')
+                 $(this).attr('class','icon-plus')
+                 $(this).text(' Advaced salary options for anual income ')
+                 $('#advacedSalaryAanualIncomeDiv').css('display','none')
                }
             })
-            // prevent multi selections in radio button
-            $('input[type="radio"]').on('change', function() {
-              var name = $(this).attr('name')
-              $(`[name="${name}"]`).each(function(id, el) {
-                  $(this).prop('checked', false)
-              })
-              $(this).prop('checked', true)
-            })
+           $('[name="earmAnyOtherAnnualIncome"]').on('change', function(ev){
+             if ($(this).attr('value') === 'No') {
+                $('#earmAnyOtherAnnualIncomeBoard').css('display','none')
+             } else {
+               $('#earmAnyOtherAnnualIncomeBoard').css('display','block')
+             }
+           })
+
+           $('[name="receiveAnyGovernmentBenefits"]').on('change', function(ev){
+             if ($(this).attr('value') === 'No') {
+                $('#receiveAnyGovernmentBenefitsBoard').css('display','none')
+             } else {
+               $('#receiveAnyGovernmentBenefitsBoard').css('display','block')
+             }
+           })
+
+           $('[name="earnAnyEmployedAllowances"]').on('change', function(ev){
+             if ($(this).attr('value') === 'No') {
+                $('#earnAnyEmployedAllowancesBoard').css('display','none')
+             } else {
+               $('#earnAnyEmployedAllowancesBoard').css('display','block')
+             }
+           })
+
+           $('[name="receiveAnyBonusOrCommission"]').on('change', function(ev){
+             if ($(this).attr('value') === 'No') {
+                $('#bounsPaidEveryMonthDiv').css('display','none')
+             } else {
+               $('#bounsPaidEveryMonthDiv').css('display','block')
+             }
+           })
+
+           $('[name="bounsPaidEveryMonth"]').on('change', function(ev){
+             if ($(this).attr('value') === 'No') {
+                $('#receiveAnyBonusOrCommissionBoard').css('display','none')
+             } else {
+               $('#receiveAnyBonusOrCommissionBoard').css('display','block')
+             }
+           })
+
+           $('[name="receiveAnyOvertime"]').on('change', function(ev){
+             if ($(this).attr('value') === 'No') {
+                $('#overtimePaidEveryMonthDiv').css('display','none')
+             } else {
+               $('#overtimePaidEveryMonthDiv').css('display','block')
+             }
+           })
+
+           $('[name="overtimePaidEveryMonth"]').on('change', function(ev){
+             if ($(this).attr('value') === 'No') {
+                $('#receiveAnyOvertimeBoard').css('display','none')
+             } else {
+               $('#receiveAnyOvertimeBoard').css('display','block')
+             }
+           })
+
+           $('#howOftenBounsPaid').on('change', function(ev) {
+              $('#bounsPaymentInputs').remove()
+              let selctedValue = $(this).find(":selected").attr('value')
+              let div = document.createElement('div')
+              let howOftenBounsPaidDiv = document.getElementById('howOftenBounsPaidDiv')
+              div.id = 'bounsPaymentInputs'
+              div.setAttribute('class', 'form-group')
+
+               if (selctedValue === '1') {
+                   let bonusOrCommissionQuarterly1 = createCurrencyInput('bonusOrCommissionQuarterly1', '')
+                   let bonusOrCommissionQuarterly2 = createCurrencyInput('bonusOrCommissionQuarterly2', '')
+                   let bonusOrCommissionQuarterly3 = createCurrencyInput('bonusOrCommissionQuarterly3', '')
+                   bonusOrCommissionQuarterly1.setAttribute('class', '')
+                   bonusOrCommissionQuarterly2.setAttribute('class', '')
+                   bonusOrCommissionQuarterly3.setAttribute('class', '')
+
+                   let label = document.createElement('label')
+                   label.innerHTML = `Enter the latest three months' bonus or commission payments from the payslips.`
+
+                   div.appendChild(label)
+                   div.appendChild(bonusOrCommissionQuarterly1)
+                   div.appendChild(bonusOrCommissionQuarterly2)
+                   div.appendChild(bonusOrCommissionQuarterly3)
+               } else if (selctedValue === '2') {
+                  let bonusOrCommissionAnnually = createCurrencyInput('bonusOrCommissionAnnually', 'How much bonus or commission is earned annually?')
+                  div.appendChild(bonusOrCommissionAnnually)
+
+               } else {
+                 let bonusOrCommission1AnnualEquivalent = createCurrencyInput('bonusOrCommission1AnnualEquivalent', 'How much bonus or commission is earned annually or annual equivalent?')
+                 div.appendChild(bonusOrCommission1AnnualEquivalent)
+               }
+               $(howOftenBounsPaidDiv).after(div)
+             })
+
+             $('#howOftenOvertimePaid').on('change', function(ev) {
+                $('#overtimePaymentInputs').remove()
+                let selctedValue = $(this).find(":selected").attr('value')
+                let div = document.createElement('div')
+                let label = document.createElement('label')
+                label.setAttribute('class', 'control-label')
+
+                let howOftenOvertimePaidDiv = document.getElementById('howOftenOvertimePaidDiv')
+                div.id = 'overtimePaymentInputs'
+                div.setAttribute('class', 'form-group')
+
+                 if (selctedValue === '1') {
+                     label.innerHTML = `Enter the latest three months' overtime payments from the payslips`
+                     div.appendChild(label)
+                      for (let i = 1; i <= 3 ; i++ ) {
+                          let overtime1LatestFourWeekly = createCurrencyInput(`overtime1LatestMonthly${i}`, '')
+                          overtime1LatestFourWeekly.setAttribute('class', '')
+                          div.appendChild(overtime1LatestFourWeekly)
+                      }
+
+                 } else if (selctedValue === '2') {
+                   label.innerHTML = `Enter the latest three months' overtime payments from the payslips`
+                   div.appendChild(label)
+                    for (let i = 1; i <= 3 ; i++ ) {
+                        let overtime1LatestFourWeekly = createCurrencyInput(`overtime1LatestFourWeekly${i}`, '')
+                        overtime1LatestFourWeekly.setAttribute('class', '')
+                        div.appendChild(overtime1LatestFourWeekly)
+                    }
+
+                 } else if (selctedValue === '3') {
+                   label.innerHTML = `Enter the latest six lots of fortnightly overtime payments from the payslips`
+                   div.appendChild(label)
+                   let delta = 0
+                    for (let i = 1; i <= 3 ; i++ ) {
+                        let overtime1LatestFourWeekly = createCurrencyInput(`overtime1LatestFortnightly${i}`, `Weeks ${i + delta}+${i + delta+1} and ${i + delta+2}+${i + delta+3}`)
+                        let overtime1LatestFourWeekly2 = createCurrencyInput(`overtime1LatestFortnightly${i+1}`, '')
+
+                        delta = delta + 3
+                        let innerLabel = document.createElement('label')
+                        overtime1LatestFourWeekly.setAttribute('class', '')
+                        overtime1LatestFourWeekly2.setAttribute('class', '')
+                        div.appendChild(overtime1LatestFourWeekly)
+                        div.appendChild(overtime1LatestFourWeekly2)
+                        innerLabel.innerHTML = 'Sub Total: '
+                        let resultLabel = document.createElement('label')
+                        resultLabel.innerHTML = ' 0 '
+                        div.appendChild(document.createElement('label'))
+                        div.appendChild(innerLabel)
+                        div.appendChild(resultLabel)
+                    }
+                 } else {
+                     label.innerHTML = `Enter the latest 12 weeks' overtime payments from the payslips`
+                     div.appendChild(label)
+                     let delta = 0
+                     for (let i = 1; i <= 3; i++ ) {
+                         let overtime1LatestFourWeekly = createCurrencyInput(`overtime1LatestWeekly${i}`, `Weeks ${i + delta}-${i + delta + 3}`)
+                         let overtime1LatestFourWeekly2 = createCurrencyInput(`overtime1LatestWeekly${i+1}`, '')
+                         let overtime1LatestFourWeekly3 = createCurrencyInput(`overtime1LatestWeekly${i+2}`, '')
+                         let overtime1LatestFourWeekly4 = createCurrencyInput(`overtime1LatestWeekly${i+3}`, '')
+
+                         delta = delta + 3
+
+                         let innerLabel = document.createElement('label')
+                         overtime1LatestFourWeekly.setAttribute('class', '')
+                         overtime1LatestFourWeekly2.setAttribute('class', '')
+                         overtime1LatestFourWeekly3.setAttribute('class', '')
+                         overtime1LatestFourWeekly4.setAttribute('class', '')
+
+                         div.appendChild(overtime1LatestFourWeekly)
+                         div.appendChild(overtime1LatestFourWeekly2)
+                         div.appendChild(overtime1LatestFourWeekly3)
+                         div.appendChild(overtime1LatestFourWeekly4)
+
+                         innerLabel.innerHTML = 'Sub Total: '
+                         let resultLabel = document.createElement('label')
+                         resultLabel.innerHTML = ' 0 '
+                         div.appendChild(document.createElement('label'))
+                         div.appendChild(innerLabel)
+                         div.appendChild(resultLabel)
+                     }
+                 }
+                 $(howOftenOvertimePaidDiv).after(div)
+               })
 
             var endPoint = 'http://localhost:3000'
             var navListItems = $('div.setup-panel div a'),
