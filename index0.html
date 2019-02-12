@@ -57,7 +57,6 @@
             position: relative;
           }
           .stepwizard-step button[disabled] {
-            width: 50px;
             opacity: 1 !important;
             filter: alpha(opacity=100) !important;
             background-color: #ff9f07;
@@ -67,17 +66,17 @@
             bottom: 0;
             position: absolute;
             content: " ";
-            width: 87%;
+            width: 83%;
             height: 1px;
             /* background-color: #ccc; */
             z-order: 2;
             background-color: #ff9f07;
           }
           .stepwizard-step {
-            width: 150px;
             display: table-cell;
             /* text-align: center; */
             position: relative;
+            width: 200px;
           }
 
           .btn-circled {
@@ -634,42 +633,38 @@
                      <div class="animated fadeIn">
                        <div class="container-canceled">
 
-                       <div class="stepwizard col-md-offset-3">
-                           <div class="stepwizard-row setup-panel">
-                             <div class="stepwizard-step">
-                               <a href="#mortgage" type="button" class="btn btn-primary btn-circled">1</a>
-                               <p>Mortgage</p>
-                             </div>
-                             <div class="stepwizard-step">
-                               <a href="#otherProperties" type="button" class="btn btn-circled" disabled="disabled">2</a>
-                               <p>Other properties</p>
-                             </div>
-                             <div class="stepwizard-step">
-                               <a href="#client" type="button" class="btn btn-circled" disabled="disabled">3</a>
-                               <p>Client(s)</p>
-                             </div>
-                             <div class="stepwizard-step">
-                               <a href="#income" type="button" class="btn btn-circled" disabled="disabled">4</a>
-                               <p>Income</p>
-                             </div>
-                             <div class="stepwizard-step">
-                               <a href="#outgoings" type="button" class="btn btn-circled" disabled="disabled">5</a>
-                               <p>Outgoings</p>
-                             </div>
-                             <div class="stepwizard-step">
-                               <a href="#results" type="button" class="btn btn-circled" disabled="disabled">6</a>
-                               <p>Results</p>
+                         <div class="stepwizard col-md-offset-3">
+                             <div class="stepwizard-row setup-panel">
+                               <div class="stepwizard-step">
+                                 <a href="#mortgage" type="button" class="btn btn-primary btn-circled">1</a>
+                                 <p>Mortgage</p>
+                               </div>
+                               <div class="stepwizard-step">
+                                 <a href="#client" type="button" class="btn btn-circled" disabled="disabled">2</a>
+                                 <p>Client(s)</p>
+                               </div>
+                               <div class="stepwizard-step">
+                                 <a href="#income" type="button" class="btn btn-circled" disabled="disabled">3</a>
+                                 <p>Income</p>
+                               </div>
+                               <div class="stepwizard-step">
+                                 <a href="#outgoings" type="button" class="btn btn-circled" disabled="disabled">4</a>
+                                 <p>Outgoings</p>
+                               </div>
+                               <div class="stepwizard-step">
+                                 <a href="#results" type="button" class="btn btn-circled" disabled="disabled">5</a>
+                                 <p>Results</p>
+                               </div>
                              </div>
                            </div>
-                         </div>
 
                          <form role="form" action="" method="post">
                        <!-- mortgage -->
                              <div class="row setup-content" id="mortgage" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
                                <div class="col-xs-12 col-md-offset-0">
                                  <div class="col-md-12">
-                                   <h3> Mortgage Details </h3>
-                                   <fieldset class="form-group">
+                                    <h3> Mortgage Details </h3>
+                                    <fieldset class="form-group">
                                        <label class="control-label"> How many people are applying? </label>
                                         <div class="form-check">
                                             <label class="form-check-label">
@@ -683,230 +678,239 @@
                                         </div>
                                    </fieldset>
 
-                                   <div class="form-group">
-                                     <label class="control-label"> What's the purchase price? </label>
-                                     <div class="input-group col-md-3">
-                                         <span style="background: white" class="input-group-addon">£</span>
-                                         <input id="propertyValue" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
-                                     </div>
-                                 </div>
-
-                                 <div class="form-group">
-                                   <label class="control-label"> How much would your client(s) like to borrow? </label>
-                                   <div class="input-group col-md-3">
-                                         <span style="background: white" class="input-group-addon">£</span>
-                                         <input id="loanValue" maxlength="10" type="tel" class="form-control" placeholder="0" required="required"/>
-                                     </div>
-                                 </div>
-
-                                 <div class="form-group">
-                                   <label class="control-label"> How long does the mortgage term need to be? </label>
-                                   <div class="control-group">
-                                      <div class="controls form-inline">
-                                          <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="YY" id="mortgageTermmYears" required="required">
-                                          <label for="mortgageTermmYears" style="margin-left: 5px;"> Years </label>&nbsp;
-                                          <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="0" max="12" class="form-control" placeholder="MM" id="mortgageTermmMounts">
-                                          <label for="mortgageTermmMounts" style="margin-left: 5px;"> Mounts </label>
+                                    <div class="form-group">
+                                       <label class="control-label"> What's the purchase price? </label>
+                                       <div class="input-group col-md-3">
+                                           <span style="background: white" class="input-group-addon">£</span>
+                                           <input id="propertyValue" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
                                        </div>
                                      </div>
-                                  </div>
 
-                                  <!-- <div class="form-group">
-                                    <label class="control-label" for="mortgageSchema">Select the relevant mortgage schema</label>
-                                    <div class="input-group col-md-5">
-                                      <select id="mortgageSchema" class="form-control col-md-7">
-                                         <option>Help to Buy Equity Share</option>
-                                         <option>Shared Equity</option>
-                                         <option>Shared Ownership</option>
-                                         <option selected>Other</option>
-                                      </select>
-                                     </div>
-                                  </div> -->
-
-                                  <div class="form-group">
-                                    <label class="control-label" for="typeOfOwnerShip">Select the relevant mortgage schema</label>
-                                    <div class="input-group col-md-5">
-                                      <select id="typeOfOwnerShip" class="form-control col-md-7">
-                                         <option selected>Standard</option>
-                                         <option>Shared Equity</option>
-                                         <option>Shared Ownership</option>
-                                         <option>Right to buy</option>
-                                      </select>
-                                     </div>
-                                  </div>
-
-
-                                 <div class="form-group">
-                                   <label class="control-label" for="methodOfRepayment">Method of repayment </label>
-                                   <div class="input-group col-md-5">
-                                     <select id="methodOfRepayment" class="form-control col-md-7">
-                                        <option selected>Capital and interest</option>
-                                        <option>Interest only - sale of mortgaged property</option>
-                                        <option>Interest only - endowment or investment</option>
-                                        <option>Part and part - sale of mortgaged property</option>
-                                        <option>Part and part - endowment or investmen</option>
-                                     </select>
+                                    <div class="form-group">
+                                     <label class="control-label"> How much would your client(s) like to borrow? </label>
+                                     <div class="input-group col-md-3">
+                                           <span style="background: white" class="input-group-addon">£</span>
+                                           <input id="loanValue" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                       </div>
                                    </div>
-                                </div>
 
-                               <!-- <div class="form-group">
-                                 <label class="control-label"> If any of the loan is required on Interest Only please enter the amount </label>
-                                 <div class="input-group col-md-3">
-                                       <span style="background: white" class="input-group-addon">£</span>
-                                       <input id="requiredInterest" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                   </div>
-                               </div> -->
+                                    <div class="form-group">
+                                         <label class="control-label"> How long does the mortgage term need to be? </label>
+                                         <div class="control-group">
+                                            <div class="controls form-inline">
+                                                <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="YY" id="mortgageTermYears" required="required">
+                                                <label for="mortgageTermYears" style="margin-left: 5px;"> Years </label>&nbsp;
+                                                <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="0" max="12" class="form-control" placeholder="MM" id="mortgageTermMonths">
+                                                <label for="mortgageTermMonths" style="margin-left: 5px;"> Months </label>
+                                             </div>
+                                           </div>
+                                        </div>
 
-                               <!-- <div class="form-group"> -->
-                                 <!--Mortgage affordability calculator
-                                 Based on your inputs, we may be able to lend your client(s) the following -->
-                                 <!-- <label class="control-label"> If any of the loan is required on Interest Only please enter the monthly premium paid on the repayment plan(s) </label>
-                                 <div class="input-group col-md-3">
-                                       <span style="background: white" class="input-group-addon">£</span>
-                                       <input id="requiredInterestMonthly" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                   </div>
-                               </div> -->
+                                        <!-- <div class="form-group">
+                                          <label class="control-label" for="mortgageSchema">Select the relevant mortgage schema</label>
+                                          <div class="input-group col-md-5">
+                                            <select id="mortgageSchema" class="form-control col-md-7">
+                                               <option>Help to Buy Equity Share</option>
+                                               <option>Shared Equity</option>
+                                               <option>Shared Ownership</option>
+                                               <option selected>Other</option>
+                                            </select>
+                                           </div>
+                                        </div> -->
 
-                               <fieldset id="clientFountNewHouse" class="form-group">
-                                   <label class="control-label"> Has your client(s) found a new home?  </label>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                          <input type="radio" class="form-check-input" name="foundNewHome" id="foundNewHomeYes" value="Yes"> Yes
-                                         </label>
+                                    <div class="form-group">
+                                      <label class="control-label" for="typeOfOwnerShip">Select the relevant mortgage schema</label>
+                                      <div class="input-group col-md-5">
+                                        <select id="typeOfOwnerShip" class="form-control col-md-7">
+                                           <option value="1">Help to Buy</option>
+                                           <option value="2">Shared Equity</option>
+                                           <option value="3">Shared Ownership</option>
+                                           <option value="4" selected>Other</option>
+                                        </select>
+                                       </div>
+                                    </div>
+
+                                    <div id="equityLoanDiv" class="form-group" style="display: none">
+                                      <label class="control-label"> How much is the equity loan?? </label>
+                                      <div class="input-group col-md-3">
+                                        <span style="background: white" class="input-group-addon">£</span>
+                                        <input id="equityLoan" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                       </div>
-                                    <div class="form-check disabled">
-                                      <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="foundNewHome" id="foundNewHomeNo" value="No" checked> No
-                                      </label>
                                     </div>
-                               </fieldset>
 
-                              <div id="propertyTypeDiv" class="form-group" style="display: none">
-                                <label class="control-label" for="propertyType">What sort of property is it? </label>
-                                <div class="input-group col-md-5">
-                                  <select id="propertyType" class="form-control col-md-7">
-                         	          <option value="1" selected>Detached house</option>
-                         	          <option value="2">Semi-detached house</option>
-                         	          <option value="3">Terraced house</option>
-                         	          <option value="11">Detached bungalow</option>
-                         	          <option value="12">Semi-detached bungalow</option>
-                         	          <option value="13">Terraced bungalow</option>
-                         	          <option value="31">Purpose-built flat/maisonette</option>
-                         	          <option value="32">Converted flat/maisonette</option>
-                         	        </select>
-                                 </div>
-                               </div>
+                                    <div id="methodOfRepaymentDiv"class="form-group">
+                                     <label class="control-label" for="methodOfRepayment">Method of repayment </label>
+                                     <div class="input-group col-md-5">
+                                       <select id="methodOfRepayment" class="form-control col-md-7">
+                                          <option value="1" selected>Capital and interest</option>
+                                          <option value="2">Interest only - sale of mortgaged property</option>
+                                          <option value="3">Interest only - endowment or investment</option>
+                                          <option value="4">Part and part - sale of mortgaged property</option>
+                                          <option value="5" >Part and part - endowment or investmen</option>
+                                       </select>
+                                     </div>
+                                    </div>
 
-                               <div id="propertyLegalStatusDiv" class="form-group" style="display: none">
-                                 <label class="control-label" for="propertyLegalStatus"> What's the property's legal status? </label>
-                                 <div class="input-group col-md-5">
-                                   <select id="propertyLegalStatus" class="form-control col-md-7">
-                                      <option selected>freehold</option>
-                                      <option>leashold</option>
-                                      <option>Interest only - endowment or investment</option>
-                                      <option>commonhold</option>
-                                      <option>Ownership Scotland</option>
-                                   </select>
-                                 </div>
-                              </div>
+                                    <div id="requiredInterestDiv" class="form-group" style="display: none">
+                                      <label class="control-label"> What is the amount required on interest only? </label>
+                                      <div class="input-group col-md-3">
+                                            <span style="background: white" class="input-group-addon">£</span>
+                                            <input id="requiredInterest" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                        </div>
+                                     </div>
 
-                               <div class="form-group ">
-                                 <div class="input-group col-md-12">
-                                         <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
-                                   </div>
-                               </div>
+                                    <div id="advancedQuestionsDiv" class="form-group">
+                                      <a  class="icon-plus" style="word-spacing: -4px; color: #20a8d8; cursor: pointer; font-size: 16px;"> Advanced Questions</a>
+                                    </div>
+
+                                    <div id="requiredInterestMonthlyDiv" class="form-group" style="display: none">
+                                      <label class="control-label"> If any of the loan is required on Interest Only please enter the monthly premium paid on the repayment plan(s) </label>
+                                      <div class="input-group col-md-3">
+                                            <span style="background: white" class="input-group-addon">£</span>
+                                            <input id="requiredInterestMonthly" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                        </div>
+                                    </div>
+
+                                    <fieldset id="clientFountNewHouse" class="form-group" style="display: none">
+                                        <label class="control-label"> Has your client(s) found a new home?  </label>
+                                         <div class="form-check">
+                                             <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="foundNewHome" id="foundNewHomeYes" value="Yes"> Yes
+                                              </label>
+                                           </div>
+                                         <div class="form-check disabled">
+                                           <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="foundNewHome" id="foundNewHomeNo" value="No" checked> No
+                                           </label>
+                                         </div>
+                                    </fieldset>
+
+                                    <div id="propertyLegalStatusDiv" class="form-group" style="display: none">
+                                      <label class="control-label" for="propertyLegalStatus"> What's the property's legal status? </label>
+                                      <div class="input-group col-md-5">
+                                        <select id="propertyLegalStatus" class="form-control col-md-7">
+                                           <option selected>freehold</option>
+                                           <option>leashold</option>
+                                           <option>Interest only - endowment or investment</option>
+                                           <option>commonhold</option>
+                                           <option>Ownership Scotland</option>
+                                        </select>
+                                      </div>
+                                    </div>
+
+                                    <div id="propertyTypeDiv" class="form-group" style="display: none">
+                                     <label class="control-label" for="propertyType">What sort of property is it? </label>
+                                     <div class="input-group col-md-5">
+                                       <select id="propertyType" class="form-control col-md-7">
+                                          <option value="1" selected>Detached house</option>
+                                          <option value="2">Semi-detached house</option>
+                                          <option value="3">Terraced house</option>
+                                          <option value="11">Detached bungalow</option>
+                                          <option value="12">Semi-detached bungalow</option>
+                                          <option value="13">Terraced bungalow</option>
+                                          <option value="31">Purpose-built flat/maisonette</option>
+                                          <option value="32">Converted flat/maisonette</option>
+                                        </select>
+                                      </div>
+                                     </div>
+
+                                    <fieldset id="otherPropertyDiv" class="form-group" style="display: none">
+                                        <label class="control-label"> Will your client own any other properties on completion of this mortgage ? </label>
+                                         <div class="form-check">
+                                             <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="otherProperty" id="otherPropertyYes" value="Yes"> Yes
+                                              </label>
+                                           </div>
+                                         <div class="form-check disabled">
+                                           <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="otherProperty" id="otherPropertyNo" value="No" checked> No
+                                           </label>
+                                         </div>
+                                    </fieldset>
+
+                                    <fieldset  id="borrowMoreThan" class="form-group" style="display: none">
+                                        <label class="control-label"> Are the applicants looking to borrow more than 90% LTV? </label>
+                                         <div class="form-check">
+                                             <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="borrowMoreThan90" id="borrowMoreThan90Yes" value="Yes"> Yes
+                                              </label>
+                                           </div>
+                                         <div class="form-check disabled">
+                                           <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="borrowMoreThan90" id="borrowMoreThan90No" value="No" > No
+                                           </label>
+                                         </div>
+                                    </fieldset>
+
+                                    <fieldset id="provideMoreDetailsDiv" class="form-group" style="display: none">
+                                        <label class="control-label"> We'll need to consider the running costs for these properties. Do you want to provide these details now? </label>
+                                         <div class="form-check">
+                                             <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="provideMoreDetails" id="provideMoreDetailsYes" value="Yes"> Yes
+                                              </label>
+                                           </div>
+                                         <div class="form-check disabled">
+                                           <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="provideMoreDetails" id="provideMoreDetailsNo" value="No" checked> No
+                                           </label>
+                                         </div>
+                                    </fieldset>
+
+                                    <div id="mortgagedPropertiesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;display: none;" >
+                                      <div class="form-group" style="margin-top: 10px;">
+                                        <label class="control-label" for="mortgagedProperties">Number of mortgaged properties; including properties outside the UK?</label>
+                                        <div class="input-group col-md-5">
+                                          <select id="mortgagedProperties" class="form-control col-md-7">
+                                             <option value="0" selected>0</option>
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                             <option value="5">5</option>
+                                          </select>
+                                         </div>
+                                      </div>
+
+                                      <div id="mortgagedPropertiesBoard">
+
+                                      </div>
+                                    </div>
+
+                                    <div id="mortgageFreePropertiesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;display: none">
+                                      <div class="form-group" style="margin-top: 10px;">
+                                        <label class="control-label" for="mortgageFreeProperties">Number of mortgage-free properties; including properties outside the UK?</label>
+                                        <div class="input-group col-md-5">
+                                          <select id="mortgageFreeProperties" class="form-control col-md-7">
+                                            <option value="0" selected>0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                          </select>
+                                         </div>
+                                      </div>
+
+                                      <div id="mortgageFreePropertiesBoard">
+
+                                      </div>
+                                    </div>
+
+
+                                    <div class="form-group ">
+                                       <div class="input-group col-md-12">
+                                               <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
+                                         </div>
+                                     </div>
 
                                  </div>
                                </div>
                              </div>
-                        <!-- otherProperties -->
-                        <div class="row setup-content" id="otherProperties" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
-                          <div class="col-xs-12 col-md-offset-0">
-                            <div class="col-md-12">
-                              <h3> Other Properties </h3>
-
-                              <fieldset class="form-group">
-                                  <label class="control-label"> Will your client own any other properties on completion of this mortgage ? </label>
-                                   <div class="form-check">
-                                       <label class="form-check-label">
-                                         <input type="radio" class="form-check-input" name="otherProperty" id="otherPropertyYes" value="Yes"> Yes
-                                        </label>
-                                     </div>
-                                   <div class="form-check disabled">
-                                     <label class="form-check-label">
-                                       <input type="radio" class="form-check-input" name="otherProperty" id="otherPropertyNo" value="No" checked> No
-                                     </label>
-                                   </div>
-                              </fieldset>
-
-                              <fieldset  id="borrowMoreThan" class="form-group" style="display: none">
-                                  <label class="control-label"> Are the applicants looking to borrow more than 90% LTV? </label>
-                                   <div class="form-check">
-                                       <label class="form-check-label">
-                                         <input type="radio" class="form-check-input" name="borrowMoreThan90" id="borrowMoreThan90Yes" value="Yes"> Yes
-                                        </label>
-                                     </div>
-                                   <div class="form-check disabled">
-                                     <label class="form-check-label">
-                                       <input type="radio" class="form-check-input" name="borrowMoreThan90" id="borrowMoreThan90No" value="No" checked> No
-                                     </label>
-                                   </div>
-                              </fieldset>
-
-                              <div class="form-group">
-                                <label class="control-label"> What's your client's date of birth? </label>
-                                <div class="control-group">
-                                   <div class="controls form-inline">
-                                     <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="DD" id="dayOfBirth" required="required">
-                                      <label for="dayOfBirth" style="margin-left: 5px;"> Day </label>&nbsp;
-                                      <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="MM" id="mountOfBirth" required="required">
-                                       <label for="mountOfBirth" style="margin-left: 5px;"> Month </label>&nbsp;
-                                      <input type="tel" style="text-align: center;width:55px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="4" min="0" max="12" class="form-control" placeholder="YYYY" id="yearOfBirth" required="required">
-                                       <label for="yearOfBirth" style="margin-left: 5px;"> Year </label>
-                                   </div>
-                                 </div>
-                             </div>
-                             <div class="form-group">
-                                 <label class="control-label"> Is your client retired? </label>
-                                  <div class="form-check">
-                                      <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="retired" id="retiredYes" value="Yes"> Yes
-                                       </label>
-                                    </div>
-                                  <div class="form-check disabled">
-                                    <label class="form-check-label">
-                                      <input type="radio" class="form-check-input" name="retired" id="retiredNo" value="No" checked> No
-                                    </label>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                <label class="control-label"> What's their planned retirement age? </label>
-                                <div class="input-group col-md-3">
-                                      <input style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" id="retirementAge" maxlength="10" type="tel" class="form-control" placeholder="0" />
-                                  </div>
-                              </div>
-                              <fieldset class="form-group">
-                                  <label class="control-label"> Will your client own any other properties on completion of this mortgage? </label>
-                                   <div class="form-check">
-                                       <label class="form-check-label">
-                                         <input type="radio" class="form-check-input" name="otherProperties" id="otherPropertiesYes" value="Yes" > Yes
-                                        </label>
-                                     </div>
-                                   <div class="form-check disabled">
-                                     <label class="form-check-label">
-                                       <input type="radio" class="form-check-input" name="otherProperties" id="otherPropertiesNo" value="No" checked> No
-                                     </label>
-                                   </div>
-                              </fieldset>
-                              <div class="form-group ">
-                                <div class="input-group col-md-12">
-                                        <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
-                                  </div>
-                              </div>
-
-                            </div>
-                          </div>
-                        </div>
                        <!-- clinets -->
                              <div class="row setup-content" id="client" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
                                <div class="col-xs-12 col-md-offset-0">
@@ -1457,6 +1461,431 @@
       <script type="text/javascript">
           $(document).ready(function () {
 
+            $('#advancedQuestionsDiv > a').on('click', function(ev){
+                if ($(this).attr('class')=='icon-plus') {
+                  $(this).attr('class','icon-close')
+                  $(this).text(' Close Advanced')
+                  if ($('#requiredInterestDiv').css('display') !== 'none')  $('#requiredInterestMonthlyDiv').css('display','block')
+                  $('#clientFountNewHouse').css('display','block')
+                  $('#otherPropertyDiv').css('display','block')
+                  if ( $('#foundNewHomeYes').prop('checked') ) {
+                    $('#propertyLegalStatusDiv').css('display','block')
+                    $('#propertyTypeDiv').css('display','block')
+                  }
+                  if ( $('#otherPropertyYes').prop('checked') ) $('#borrowMoreThan').css('display','block')
+                  if ( $('#borrowMoreThan90No').prop('checked') ) $('#provideMoreDetailsDiv').css('display','block')
+                  if ( $('#provideMoreDetailsYes').prop('checked')) {
+                    $('#mortgagedPropertiesDiv').css('display','block')
+                    $('#mortgageFreePropertiesDiv').css('display','block')
+                  }
+
+                } else {
+                  $(this).attr('class','icon-plus')
+                  $(this).text(' Advanced Questions')
+                  $('#requiredInterestMonthlyDiv').css('display','none')
+                  $('#clientFountNewHouse').css('display','none')
+                  $('#propertyLegalStatusDiv').css('display','none')
+                  $('#propertyTypeDiv').css('display','none')
+                  $('#otherPropertyDiv').css('display','none')
+                  $('#borrowMoreThan').css('display','none')
+                  $('#provideMoreDetailsDiv').css('display','none')
+                  $('#mortgagedPropertiesDiv').css('display','none')
+                  $('#mortgageFreePropertiesDiv').css('display','none')
+                }
+            })
+///
+            $('#mortgagedProperties, #mortgageFreeProperties').on('change', function(ev) {
+              let currentId = `${ev.target.id}Details`
+              let originalId = ev.target.id
+              let value = parseInt($(this).find(":selected").attr('value'))
+              let mainDiv = document.querySelector(`#${originalId}Board`)
+              if (value === 0) {
+                $(`#${originalId}Board`).css('display','none')
+              } else {
+                let delta = 0
+                let numOfDivs = ($(`[id*="${currentId}Div"]`) || [] ).length
+                if ( numOfDivs < value ) {
+                  delta = value - numOfDivs
+                  for (let i = 0; i < delta; i++) {
+                     let propertyUse = createMortgagePropertyDiv(numOfDivs + i + 1, currentId)
+                     mainDiv.appendChild(propertyUse)
+
+                    $('[id*="propertyUse"]').bind('change', { parentDiv: `${currentId}Div${numOfDivs + i + 1}` , currentId},  propertyUseEvent)
+                  }
+                } else if (numOfDivs > value) {
+                  delta =  numOfDivs - value
+                  for (let i = 0 ; i < delta  ;i++) {
+                    let divToRemove = `#${currentId}Div${numOfDivs - i}`
+                    $(divToRemove).remove()
+                  }
+                }
+                $('[id*="typeOfMortgage"]').bind('change', {currentId} ,typeOfMortgageEvent)
+              }
+            })
+
+            function createMortgagePropertyDiv(index, divId) {
+              let div = document.createElement('div')
+              div.id = `${divId}Div${index}`
+              div.style['border-color'] = '#ff9f07'
+              div.style['border-style'] = 'solid'
+              div.setAttribute('class', 'form-group col-md-12 form-group')
+
+              let h3 = document.createElement('h3')
+              h3.innerHTML = (divId.includes('mortgageFreeProperties')) ? `Mortgage-free property ${index} details` : `Mortgaged property ${index} details`
+
+              div.appendChild(h3)
+
+              let propertyUse =  createDropdown([
+                { text: "It's already let", value: 1 , selected: true},
+                { text: "It's to be let", value: 2  },
+                { text: "Holiday home/second home (for own use)", value: 3  },
+                { text: "Home for dependent relative", value: 4  }
+              ], `propertyUse${(index)}`, 'Property use', div.id)
+
+              div.appendChild(propertyUse)
+
+              let propertyUseBody = generatePropertyUseBodyForLet(index, divId)
+              div.appendChild(propertyUseBody)
+              return div
+            }
+
+            function generatePropertyUseBodyForRelatives(index, container){
+              let scope = (container.toLowerCase().includes('free')) ? 'Free' : ''
+              let div = document.createElement('div')
+              div.id = `propertyUseBody${scope}Div${index}`
+              let currencyInput = createCurrencyInput(`estimatedPropertyValue${scope}${index}`, 'Estimated property value')
+              let mortgageBalance = createCurrencyInput(`mortgageBalance${scope}${index}`, 'Mortgage balance')
+              let typeOfMortgage =  createDropdown([
+                { text: "Interest only", value: 1 , selected: true},
+                { text: "Repayment", value: 2  },
+                { text: "Part and part", value: 3  }
+              ], `typeOfMortgage${scope}${(index)}`, 'Type of mortgage')
+              let monthlyMortgagePaymentInput = createCurrencyInput(`monthlyMortgagePayment${index}`, 'Monthly mortgage payment')
+              let monthlyUtilities = createCurrencyInput(`monthlyUtilities${scope}${index}`, 'Monthly utilities (gas, water, electric)')
+              let monthlyCouncilTax = createCurrencyInput(`monthlyCouncilTax${scope}${index}`, 'Monthly council tax')
+              let monthlyPropertyMaintenance = createCurrencyInput(`monthlyPropertyMaintenance${scope}${index}`, 'Monthly property maintenance')
+              let monthlyGroundRent = createCurrencyInput(`monthlyGroundRent${scope}${index}`, 'Monthly ground rent / service charges')
+              let otherMonthlyCostsForproperty = createCurrencyInput(`otherMonthlyCostsForproperty${scope}${index}`, 'Other monthly costs for this property')
+
+              let h3 = document.createElement('h3')
+              h3.innerHTML = `Monthly property costs`
+
+              div.appendChild(currencyInput)
+              div.appendChild(mortgageBalance)
+              div.appendChild(typeOfMortgage)
+              div.appendChild(monthlyMortgagePaymentInput)
+              div.appendChild(h3)
+              div.appendChild(monthlyUtilities)
+              div.appendChild(monthlyCouncilTax)
+              div.appendChild(monthlyPropertyMaintenance)
+              div.appendChild(monthlyGroundRent)
+              div.appendChild(otherMonthlyCostsForproperty)
+
+              return div
+            }
+
+            function generatePropertyUseBodyForLet(index, container) {
+              let scope = (container.toLowerCase().includes('free')) ? 'Free' : ''
+              let div = document.createElement('div')
+              div.id = `propertyUseBody${scope}Div${index}`
+              let currencyInput = createCurrencyInput(`estimatedPropertyValue${scope}${(index)}`, 'Estimated property value')
+              let mortgageBalance = createCurrencyInput(`mortgageBalance${scope}${(index)}`, 'Mortgage balance')
+
+              let typeOfMortgage =  createDropdown([
+                { text: "Interest only", value: 1 , selected: true},
+                { text: "Repayment", value: 2  },
+                { text: "Part and part", value: 3  }
+              ], `typeOfMortgage${scope}${(index)}`, 'Type of mortgage')
+
+              let monthlyMortgagePaymentInput = createCurrencyInput(`monthlyMortgagePayment${scope}${(index)}`, 'Monthly mortgage payment')
+              let monthlyGrossRent = createCurrencyInput(`monthlyGrossRent${scope}${(index)}`, 'Monthly gross rent')
+              let rentReceivedForeignCurrency = createRadioInput(`rentReceivedForeignCurrency${scope}${(index)}`, 'Will the rent be received in a foreign currency?')
+
+              let monthlyAgentFees = createCurrencyInput(`monthlyAgentFees${scope}${(index)}`, `Monthly agent's fees (if applicable)`)
+              let monthlyAllowance = createCurrencyInput(`monthlyAllowance${scope}${(index)}`, 'Monthly allowance for rental voids')
+              let monthlyPropertyMaintenance = createCurrencyInput(`monthlyPropertyMaintenance${scope}${(index)}`, `Monthly property maintenance`)
+              let otherMonthlyCostsForproperty = createCurrencyInput(`otherMonthlyCostsForproperty${scope}${(index)}`, 'Other monthly costs for this property')
+
+              div.appendChild(currencyInput)
+              div.appendChild(mortgageBalance)
+              div.appendChild(typeOfMortgage)
+              div.appendChild(monthlyMortgagePaymentInput)
+              div.appendChild(monthlyGrossRent)
+              div.appendChild(rentReceivedForeignCurrency)
+
+              div.appendChild(monthlyAgentFees)
+              div.appendChild(monthlyAllowance)
+              div.appendChild(monthlyPropertyMaintenance)
+              div.appendChild(otherMonthlyCostsForproperty)
+
+              return div
+
+            }
+
+            function typeOfMortgageEvent(ev) {
+              ev.preventDefault()
+              let currentSecion = ev.data.currentId
+              let scope = (currentSecion.toLowerCase().includes('free')) ? 'Free' : ''
+              let index = (ev.target.id).replace('typeOfMortgage','').replace('Free','')
+              let selected = $(this).find(':selected')
+              let value = parseInt(selected.attr('value'))
+              let selectDiv = document.querySelector(`select[id="typeOfMortgage${scope}${index}"]`).parentNode.parentNode
+              $(`#repaymentBalance${scope}${index}Div`).remove()
+              $(`#interestOnlyBalance${scope}${index}Div`).remove()
+              $(`#remainingTerm${scope}${index}Div`).remove()
+              if (value === 1) {
+              } else if (value === 2)  {
+                if (!(document.getElementById(`remainingTerm${scope}${index}Years`))) {
+                  let yearAndMonthsInput = createYearAndMonthsInput(`remainingTerm${scope}${index}`, 'Remaining term')
+                  $(selectDiv).after(yearAndMonthsInput)
+                }
+              } else {
+                let repaymentBalance  = createCurrencyInput(`repaymentBalance${scope}${index}`, `Repayment balance `)
+                let interestOnlyBalance = createCurrencyInput(`interestOnlyBalance${scope}${index}`, 'Interest only balance')
+                let yearAndMonthsInput = createYearAndMonthsInput(`remainingTerm${scope}${index}`, 'Remaining term')
+                $(selectDiv).after(repaymentBalance)
+                $(repaymentBalance).after(interestOnlyBalance)
+                $(interestOnlyBalance).after(yearAndMonthsInput)
+              }
+              ev.stopPropagation()
+          }
+
+          function propertyUseEvent(ev) {
+            ev.preventDefault()
+            let currentSecion = ev.data.currentId
+            let scope = (currentSecion.toLowerCase().includes('free')) ? 'Free' : ''
+              let div = document.getElementById(ev.data.parentDiv)
+              let index = (ev.target.id).replace('propertyUse','')
+              let selected = $(this).find(':selected')
+              let value = parseInt(selected.attr('value'))
+              if ([1, 2].includes(value)) {
+                $(`#propertyUseBody${scope}Div${index}`).remove()
+                let fatherDivId = document.querySelector(`#${ev.data.parentDiv}`)
+                let propertyUseBody = generatePropertyUseBodyForLet(index, scope)
+                fatherDivId.appendChild(propertyUseBody)
+                $('[id*="typeOfMortgage"]').bind('change', {currentId: currentSecion} ,typeOfMortgageEvent)
+                return div
+              } else  {
+                $(`#propertyUseBody${scope}Div${index}`).remove()
+                let fatherDivId = document.querySelector(`#${currentSecion}Div${index}`)
+                let propertyUseBody = generatePropertyUseBodyForRelatives(index, scope)
+                fatherDivId.appendChild(propertyUseBody)
+                $('[id*="typeOfMortgage"]').bind('change', {currentId: currentSecion} ,typeOfMortgageEvent)
+                return div
+              }
+
+        }
+
+          function createYearAndMonthsInput(id, labelText){
+            let div = document.createElement('div')
+            div.setAttribute('class', 'form-group')
+            div.id = `${id}Div`
+
+            let label = document.createElement('label')
+            label.innerHTML = labelText
+            label.setAttribute('class', 'control-label')
+
+            let innerDiv = document.createElement('div')
+            innerDiv.setAttribute('class', 'control-group')
+
+            let divInline = document.createElement('div')
+            divInline.setAttribute('class', 'controls form-inline')
+
+            let inputYear = document.createElement('input')
+            inputYear.setAttribute('class', 'form-control')
+            inputYear.maxlength = '2'
+            inputYear.type = 'tel'
+            inputYear.max = '30'
+            inputYear.min = '1'
+            inputYear.placeholder = 'YY'
+            inputYear.id = `${id}Years`
+            inputYear.style = 'text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;'
+
+            let labelYear = document.createElement('label')
+            labelYear.for = `${id}Years`
+            labelYear.innerHTML = 'Years'
+            labelYear.setAttribute('class', 'control-label')
+            labelYear.style = 'margin-left: 5px'
+
+
+            let inputMonths = document.createElement('input')
+            inputMonths.setAttribute('class', 'form-control')
+            inputMonths.maxlength = '2'
+            inputMonths.type = 'tel'
+            inputMonths.max = '12'
+            inputMonths.min = '1'
+            inputMonths.placeholder = 'MM'
+            inputMonths.id = `${id}Months`
+            inputMonths.style = 'text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;margin-left: 3px;'
+
+
+            let labelMonths = document.createElement('label')
+            labelMonths.for = `${id}Months`
+            labelMonths.innerHTML = 'Months'
+            labelMonths.setAttribute('class', 'control-label')
+            labelMonths.style = 'margin-left: 5px'
+
+            divInline.appendChild(inputYear)
+            divInline.appendChild(labelYear)
+            divInline.appendChild(inputMonths)
+            divInline.appendChild(labelMonths)
+
+            innerDiv.appendChild(divInline)
+            div.appendChild(label)
+            div.appendChild(innerDiv)
+
+            return div
+          }
+
+
+          function createRadioInput(id, labelText) {
+              let fieldset = document.createElement('fieldset')
+              fieldset.setAttribute('class', 'form-group')
+
+              let outterLabel = document.createElement('label')
+              outterLabel.innerHTML = labelText
+              outterLabel.setAttribute('class', 'control-label')
+
+              let divYes = document.createElement('div')
+              let divNo = document.createElement('div')
+
+              divYes.setAttribute('class', 'form-check')
+              divNo.setAttribute('class', 'form-check')
+
+              let labelYes = document.createElement('label')
+              let labelNo = document.createElement('label')
+
+              labelYes.setAttribute('class', 'control-label')
+              labelNo.setAttribute('class', 'control-label')
+
+              let inputYes = document.createElement('input')
+              let inputNo = document.createElement('input')
+
+              inputYes.id = id + 'Yes'
+              inputYes.name = id
+              inputYes.value = 'Yes'
+              inputYes.type = 'radio'
+              inputYes.setAttribute('class', 'form-check-input')
+              inputYes.innerHTML = 'Yes'
+
+              inputNo.id = id + 'No'
+              inputNo.name = id
+              inputNo.type = 'radio'
+              inputNo.value = 'No'
+              inputNo.setAttribute('class', 'form-check-input')
+              inputNo.innerHTML = 'No'
+              inputNo.checked = true
+
+              labelYes.appendChild(inputYes)
+              divYes.appendChild(labelYes)
+
+              labelNo.appendChild(inputNo)
+              divNo.appendChild(labelNo)
+
+              fieldset.appendChild(outterLabel)
+              fieldset.appendChild(divYes)
+              fieldset.appendChild(divNo)
+
+              return fieldset
+          }
+
+
+          function createDropdown(options, id, labelText) {
+              let div = document.createElement('div')
+              div.setAttribute('class', 'form-group')
+
+              let label = document.createElement('label')
+              label.for = id
+              label.innerHTML = labelText
+              label.setAttribute('class', 'control-label')
+
+              let innerDiv = document.createElement('div')
+              innerDiv.setAttribute('class', 'input-group col-md-8')
+
+              div.appendChild(label)
+              let selecet = document.createElement('select')
+              selecet.id = id
+              selecet.setAttribute('class', 'form-control col-md-7')
+
+              for (let i = 0 ; i < options.length; i++) {
+                let inputOption = options[i]
+                let option = document.createElement('option')
+                option.value = inputOption.value || inputOption.text
+                option.text = inputOption.text
+                if (option.selected) option.selected = true
+                selecet.options.add(option);
+              }
+              innerDiv.appendChild(selecet)
+              div.appendChild(innerDiv)
+
+              return div
+            }
+
+
+
+            function createCurrencyInput(id, labelText) {
+              let div = document.createElement('div')
+              div.setAttribute('class','form-group')
+              div.id = `${id}Div`
+
+              let label = document.createElement('label')
+              label.for = id
+              label.setAttribute('class', 'control-label')
+              label.innerHTML = labelText
+
+              div.appendChild(label)
+
+              let innerDiv = document.createElement('div')
+              innerDiv.setAttribute('class', 'input-group col-md-5')
+
+              let span = document.createElement('span')
+              span.style.background = 'white'
+              span.setAttribute('class', 'input-group-addon')
+              span.innerHTML = '£'
+
+              let input = document.createElement('input')
+              input.id = id
+              input.setAttribute('class', 'form-control')
+              input.maxlength = '10'
+              input.type = 'tel'
+              input.placeholder = '0'
+
+              innerDiv.appendChild(span)
+              innerDiv.appendChild(input)
+
+              div.appendChild(innerDiv)
+              return div
+            }
+
+            $('[name="provideMoreDetails"]').on('change', function(ev) {
+              if ($(this).attr('value') === 'Yes') {
+                $('#mortgagedPropertiesDiv').css('display','block')
+                $('#mortgageFreePropertiesDiv').css('display','block')
+              } else {
+                $('#mortgagedPropertiesDiv').css('display','none')
+                $('#mortgageFreePropertiesDiv').css('display','none')
+              }
+
+            })
+
+            $('#methodOfRepaymentDiv').on('change', function(ev) {
+              let value = $(this).find(":selected").attr('value')
+              if (['4', '5'].includes(value)) {
+                  $('#requiredInterestDiv').css('display','block')
+                  $('#requiredInterestMonthlyDiv').css('display','block')
+              } else {
+                $('#requiredInterestDiv').css('display','none')
+                $('#requiredInterestMonthlyDiv').css('display','none')
+              }
+            })
+
+            $('#typeOfOwnerShip').on('change', function(ev) {
+              if ($(this).find(":selected").attr('value') === '1') {
+                  $('#equityLoanDiv').css('display','block')
+              } else {
+                $('#equityLoanDiv').css('display','none')
+              }
+            })
 
             $('[name="foundNewHome"]').on('change', function(ev) {
               if ($(this).attr('value') === 'Yes') {
@@ -1468,6 +1897,17 @@
               }
 
             })
+
+            $('[name="borrowMoreThan90"]').on('change', function(ev) {
+              if ($(this).attr('value') === 'No' || '') {
+                $('#provideMoreDetailsDiv').css('display','block')
+              } else {
+                alert('you cannot')
+                $('#provideMoreDetailsDiv').css('display','none')
+              }
+
+            })
+
 
             $('[name="otherProperty"]').on('change', function(ev) {
                if ($(this).attr('value') === 'No') {
