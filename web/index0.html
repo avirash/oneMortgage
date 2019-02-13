@@ -1,0 +1,1688 @@
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <meta name="description" content="OneMortgage - Communicate with all lenders in one place">
+      <title>OneMortgage - Communicate with all lenders in one place </title>
+      <link href="https://coreui.io/demo/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+      <link href="https://coreui.io/demo/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+      <link href="https://coreui.io/demo/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+      <link href="https://coreui.io/demo/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <link href="https://coreui.io/demo/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/amaranth" type="text/css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link href="css/aff_calc.css" rel="stylesheet">
+   </head>
+   <body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show">
+      <div class="pace  pace-inactive">
+         <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
+         </div>
+         <div class="pace-activity"></div>
+      </div>
+      <header class="app-header navbar">
+         <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="navbar-brand" href="#">
+            <h3 style="color: #ff9f07;margin-top: 10px;font-family: amaranth;font-style: italic;">One</h3>
+            <h3 style="margin-top: 10px;color: black;font-family: amaranth;font-style: italic;">Mortgage</h3>
+         </div>
+         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <ul class="nav navbar-nav d-md-down-none">
+            <li class="nav-item px-3">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item px-3">
+               <a class="nav-link" href="#">History</a>
+            </li>
+            <li class="nav-item px-3">
+               <a class="nav-link" href="#">Settings</a>
+            </li>
+         </ul>
+         <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item dropdown d-md-down-none">
+               <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+               <i class="icon-bell"></i>
+               <span class="badge badge-pill badge-danger">5</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                  <div class="dropdown-header text-center">
+                     <strong>You have 5 notifications</strong>
+                  </div>
+                  <a class="dropdown-item" href="#">
+                  <i class="icon-user-follow text-success"></i> New user registered</a>
+                  <a class="dropdown-item" href="#">
+                  <i class="icon-user-unfollow text-danger"></i> User deleted</a>
+                  <a class="dropdown-item" href="#">
+                  <i class="icon-chart text-info"></i> Sales report is ready</a>
+                  <a class="dropdown-item" href="#">
+                  <i class="icon-basket-loaded text-primary"></i> New client</a>
+                  <a class="dropdown-item" href="#">
+                  <i class="icon-speedometer text-warning"></i> Server overloaded</a>
+                  <div class="dropdown-header text-center">
+                     <strong>Server</strong>
+                  </div>
+                  <a class="dropdown-item" href="#">
+                     <div class="text-uppercase mb-1">
+                        <small>
+                        <b>CPU Usage</b>
+                        </small>
+                     </div>
+                     <span class="progress progress-xs">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                     </span>
+                     <small class="text-muted">348 Processes. 1/4 Cores.</small>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                     <div class="text-uppercase mb-1">
+                        <small>
+                        <b>Memory Usage</b>
+                        </small>
+                     </div>
+                     <span class="progress progress-xs">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                     </span>
+                     <small class="text-muted">11444GB/16384MB</small>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                     <div class="text-uppercase mb-1">
+                        <small>
+                        <b>SSD 1 Usage</b>
+                        </small>
+                     </div>
+                     <span class="progress progress-xs">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                     </span>
+                     <small class="text-muted">243GB/256GB</small>
+                  </a>
+               </div>
+            </li>
+            <li class="nav-item dropdown d-md-down-none">
+               <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+               <i class="icon-list"></i>
+               <span class="badge badge-pill badge-warning">15</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                  <div class="dropdown-header text-center">
+                     <strong>You have 5 pending tasks</strong>
+                  </div>
+                  <a class="dropdown-item" href="#">
+                     <div class="small mb-1">Upgrade NPM &amp; Bower
+                        <span class="float-right">
+                        <strong>0%</strong>
+                        </span>
+                     </div>
+                     <span class="progress progress-xs">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                     </span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                     <div class="small mb-1">ReactJS Version
+                        <span class="float-right">
+                        <strong>25%</strong>
+                        </span>
+                     </div>
+                     <span class="progress progress-xs">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                     </span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                     <div class="small mb-1">VueJS Version
+                        <span class="float-right">
+                        <strong>50%</strong>
+                        </span>
+                     </div>
+                     <span class="progress progress-xs">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                     </span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                     <div class="small mb-1">Add new layouts
+                        <span class="float-right">
+                        <strong>75%</strong>
+                        </span>
+                     </div>
+                     <span class="progress progress-xs">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                     </span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                     <div class="small mb-1">Angular 2 Cli Version
+                        <span class="float-right">
+                        <strong>100%</strong>
+                        </span>
+                     </div>
+                     <span class="progress progress-xs">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                     </span>
+                  </a>
+                  <a class="dropdown-item text-center" href="#">
+                  <strong>View all tasks</strong>
+                  </a>
+               </div>
+            </li>
+            <li class="nav-item dropdown d-md-down-none">
+               <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+               <i class="icon-envelope-letter"></i>
+               <span class="badge badge-pill badge-info">7</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                  <div class="dropdown-header text-center">
+                     <strong>You have 4 messages</strong>
+                  </div>
+                  <a class="dropdown-item" href="#">
+                     <div class="message">
+                        <div class="py-3 mr-3 float-left">
+                           <div class="avatar">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                              <span class="avatar-status badge-success"></span>
+                           </div>
+                        </div>
+                        <div>
+                           <small class="text-muted">John Doe</small>
+                           <small class="text-muted float-right mt-1">Just now</small>
+                        </div>
+                        <div class="text-truncate font-weight-bold">
+                           <span class="fa fa-exclamation text-danger"></span> Important message
+                        </div>
+                        <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</div>
+                     </div>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                     <div class="message">
+                        <div class="py-3 mr-3 float-left">
+                           <div class="avatar">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+                              <span class="avatar-status badge-warning"></span>
+                           </div>
+                        </div>
+                        <div>
+                           <small class="text-muted">John Doe</small>
+                           <small class="text-muted float-right mt-1">5 minutes ago</small>
+                        </div>
+                        <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                        <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</div>
+                     </div>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                     <div class="message">
+                        <div class="py-3 mr-3 float-left">
+                           <div class="avatar">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+                              <span class="avatar-status badge-danger"></span>
+                           </div>
+                        </div>
+                        <div>
+                           <small class="text-muted">John Doe</small>
+                           <small class="text-muted float-right mt-1">1:52 PM</small>
+                        </div>
+                        <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                        <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</div>
+                     </div>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                     <div class="message">
+                        <div class="py-3 mr-3 float-left">
+                           <div class="avatar">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                              <span class="avatar-status badge-info"></span>
+                           </div>
+                        </div>
+                        <div>
+                           <small class="text-muted">John Doe</small>
+                           <small class="text-muted float-right mt-1">4:03 PM</small>
+                        </div>
+                        <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                        <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</div>
+                     </div>
+                  </a>
+                  <a class="dropdown-item text-center" href="#">
+                  <strong>View all messages</strong>
+                  </a>
+               </div>
+            </li>
+            <li class="nav-item dropdown">
+               <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+               <img class="img-avatar" src="https://coreui.io/demo/img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+               </a>
+               <div class="dropdown-menu dropdown-menu-right">
+                  <div class="dropdown-header text-center">
+                     <strong>Account</strong>
+                  </div>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-bell-o"></i> Updates
+                  <span class="badge badge-info">42</span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-envelope-o"></i> Messages
+                  <span class="badge badge-success">42</span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-tasks"></i> Tasks
+                  <span class="badge badge-danger">42</span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-comments"></i> Comments
+                  <span class="badge badge-warning">42</span>
+                  </a>
+                  <div class="dropdown-header text-center">
+                     <strong>Settings</strong>
+                  </div>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-user"></i> Profile</a>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-wrench"></i> Settings</a>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-usd"></i> Payments
+                  <span class="badge badge-dark">42</span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-file"></i> Projects
+                  <span class="badge badge-primary">42</span>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-shield"></i> Lock Account</a>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-lock"></i> Logout</a>
+               </div>
+            </li>
+         </ul>
+         <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+      </header>
+      <div class="app-body">
+         <div class="sidebar">
+            <nav class="sidebar-nav ps ps--active-y">
+               <ul class="nav">
+                  <li class="nav-item">
+                     <a class="nav-link active" href="#">
+                     <i class="nav-icon icon-speedometer"></i> Dashboard
+                     </a>
+                  </li>
+                  <li class="nav-title">DIRECT CALCULATORS</li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="aff_calc.html">
+                     <i class="nav-icon icon-drop"></i> Affordability</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="nav-icon icon-pencil"></i> Buy To Let</a>
+                  </li>
+                  <li class="nav-title">ORIGINATION</li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="nav-icon icon-puzzle"></i> Lenders Criteria</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="nav-icon icon-cursor"></i> Submit Application</a>
+                  </li>
+                  <li class="nav-divider"></li>
+                  <li class="nav-title">History</li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                     <i class="nav-icon icon-star"></i> Users</a>
+                  </li>
+               </ul>
+               <div class="ps__rail-x" style="left: 0px; bottom: -472px;">
+                  <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+               </div>
+               <div class="ps__rail-y" style="top: 472px; height: 716px; right: 0px;">
+                  <div class="ps__thumb-y" tabindex="0" style="top: 285px; height: 431px;"></div>
+               </div>
+            </nav>
+            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+         </div>
+         <main class="main">
+            <ol class="breadcrumb">
+               <li class="breadcrumb-item">Home</li>
+               <li class="breadcrumb-item">
+                  <a href="#">Direct Calculators</a>
+               </li>
+               <li class="breadcrumb-item active">Affordability</li>
+               <li class="breadcrumb-menu d-md-down-none">
+                  <div class="btn-group" role="group" aria-label="Button group">
+                     <a class="btn" href="#">
+                     <i class="icon-speech"></i>
+                     </a>
+                     <a class="btn" href="./">
+                     <i class="icon-graph"></i> &nbsp;Dashboard</a>
+                     <a class="btn" href="#">
+                     <i class="icon-settings"></i> &nbsp;Settings</a>
+                  </div>
+               </li>
+            </ol>
+            <div class="container-fluid-canceled">
+               <div id="ui-view">
+                  <div>
+                     <div class="animated fadeIn">
+                        <div class="container-canceled">
+                           <div class="stepwizard col-md-offset-3">
+                              <div class="stepwizard-row setup-panel">
+                                 <div class="stepwizard-step">
+                                    <a href="#mortgage" type="button" class="btn btn-primary btn-circled">1</a>
+                                    <p>Mortgage</p>
+                                 </div>
+                                 <div id="newStep" class="stepwizard-step" style="display: none">
+                                    <a href="#otherProperty1b" type="button" class="btn btn-circled" disabled="disabled">1b</a>
+                                    <p style="margin-left: -30px">OtherProperty</p>
+                                 </div>
+                                 <div class="stepwizard-step">
+                                    <a href="#client" type="button" class="btn btn-circled" disabled="disabled">2</a>
+                                    <p>Client(s)</p>
+                                 </div>
+                                 <div class="stepwizard-step">
+                                    <a href="#income" type="button" class="btn btn-circled" disabled="disabled">3</a>
+                                    <p>Income</p>
+                                 </div>
+                                 <div class="stepwizard-step">
+                                    <a href="#outgoings" type="button" class="btn btn-circled" disabled="disabled">4</a>
+                                    <p>Outgoings</p>
+                                 </div>
+                                 <div class="stepwizard-step">
+                                    <a href="#results" type="button" class="btn btn-circled" disabled="disabled">5</a>
+                                    <p>Results</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <form role="form" action="" method="post">
+                              <!-- mortgage -->
+                              <div class="row setup-content" id="mortgage" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+                                 <div class="col-xs-12 col-md-offset-0">
+                                    <!--div class="col-md-12"-->
+                                    <h3> Mortgage </h3>
+                                       <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;">
+                                         <label class="control-label"></label>
+                                         <fieldset class="form-group">
+                                            <label class="control-label"> How many people are applying? </label>
+                                            <div class="form-check">
+                                               <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="numOfApplying" id="numOfApplying1" value="1" checked> 1
+                                               </label>
+                                            </div>
+                                            <div class="form-check disabled">
+                                               <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="numOfApplying" id="numOfApplying2" value="2"> 2
+                                               </label>
+                                            </div>
+                                         </fieldset>
+                                         <div class="form-group">
+                                            <label class="control-label"> What's the purchase price? </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="propertyValue" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
+                                            </div>
+                                         </div>
+                                         <div class="form-group">
+                                            <label class="control-label"> How much would your client(s) like to borrow? </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="loanValue" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                            </div>
+                                         </div>
+                                         <div class="form-group">
+                                            <label class="control-label"> How long does the mortgage term need to be? </label>
+                                            <div class="control-group">
+                                               <div class="controls form-inline">
+                                                  <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="YY" id="mortgageTermYears" required="required">
+                                                  <label for="mortgageTermYears" style="margin-left: 5px;"> Years </label>&nbsp;
+                                                  <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="0" max="12" class="form-control" placeholder="MM" id="mortgageTermMonths">
+                                                  <label for="mortgageTermMonths" style="margin-left: 5px;"> Months </label>
+                                               </div>
+                                            </div>
+                                         </div>
+                                         <!-- <div class="form-group">
+                                            <label class="control-label" for="mortgageSchema">Select the relevant mortgage schema</label>
+                                            <div class="input-group col-md-5">
+                                              <select id="mortgageSchema" class="form-control col-md-7">
+                                                 <option>Help to Buy Equity Share</option>
+                                                 <option>Shared Equity</option>
+                                                 <option>Shared Ownership</option>
+                                                 <option selected>Other</option>
+                                              </select>
+                                             </div>
+                                            </div> -->
+                                         <div class="form-group">
+                                            <label class="control-label" for="typeOfOwnerShip">Select the relevant mortgage schema</label>
+                                            <div class="input-group col-md-5">
+                                               <select id="typeOfOwnerShip" class="form-control col-md-7">
+                                                  <option value="1">Help to Buy</option>
+                                                  <option value="2">Shared Equity</option>
+                                                  <option value="3">Shared Ownership</option>
+                                                  <option value="4" selected>Other</option>
+                                               </select>
+                                            </div>
+                                         </div>
+
+                                         <div id="equityLoanDiv" class="form-group" style="display: none">
+                                            <label class="control-label"> How much is the equity loan?? </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="equityLoan" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                            </div>
+                                         </div>
+                                         <div id="methodOfRepaymentDiv"class="form-group">
+                                            <label class="control-label" for="methodOfRepayment">Method of repayment </label>
+                                            <div class="input-group col-md-5">
+                                               <select id="methodOfRepayment" class="form-control col-md-7">
+                                                  <option value="1" selected>Capital and interest</option>
+                                                  <option value="2">Interest only - sale of mortgaged property</option>
+                                                  <option value="3">Interest only - endowment or investment</option>
+                                                  <option value="4">Part and part - sale of mortgaged property</option>
+                                                  <option value="5" >Part and part - endowment or investmen</option>
+                                               </select>
+                                            </div>
+                                         </div>
+
+                                         </div>
+
+                                        <div id='firstAffPageSecondTab' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px">
+                                          <h4> Advanced Questions </h4>
+                                       <div id="requiredInterestDiv" class="form-group" style="display: none">
+                                          <label class="control-label"> What is the amount required on interest only? </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="requiredInterest" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                          </div>
+                                       </div>
+                                       <div id="requiredInterestMonthlyDiv" class="form-group" style="display: none">
+                                          <label class="control-label"> If any of the loan is required on Interest Only please enter the monthly premium paid on the repayment plan(s) </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="requiredInterestMonthly" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                          </div>
+                                       </div>
+                                       <fieldset id="clientFountNewHouse" class="form-group" style="display: none">
+                                          <label class="control-label"> Has your client(s) found a new home?  </label>
+                                          <div class="form-check">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="foundNewHome" id="foundNewHomeYes" value="Yes"> Yes
+                                             </label>
+                                          </div>
+                                          <div class="form-check disabled">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="foundNewHome" id="foundNewHomeNo" value="No" checked> No
+                                             </label>
+                                          </div>
+                                       </fieldset>
+                                       <div id="propertyLegalStatusDiv" class="form-group" style="display: none">
+                                          <label class="control-label" for="propertyLegalStatus"> What's the property's legal status? </label>
+                                          <div class="input-group col-md-5">
+                                             <select id="propertyLegalStatus" class="form-control col-md-7">
+                                                <option selected>freehold</option>
+                                                <option>leashold</option>
+                                                <option>Interest only - endowment or investment</option>
+                                                <option>commonhold</option>
+                                                <option>Ownership Scotland</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div id="propertyTypeDiv" class="form-group" style="display: none">
+                                          <label class="control-label" for="propertyType">What sort of property is it? </label>
+                                          <div class="input-group col-md-5">
+                                             <select id="propertyType" class="form-control col-md-7">
+                                                <option value="1" selected>Detached house</option>
+                                                <option value="2">Semi-detached house</option>
+                                                <option value="3">Terraced house</option>
+                                                <option value="11">Detached bungalow</option>
+                                                <option value="12">Semi-detached bungalow</option>
+                                                <option value="13">Terraced bungalow</option>
+                                                <option value="31">Purpose-built flat/maisonette</option>
+                                                <option value="32">Converted flat/maisonette</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <fieldset id="otherPropertyDiv" class="form-group" style="display: none">
+                                          <label class="control-label"> Will your client own any other properties on completion of this mortgage ? </label>
+                                          <div class="form-check">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="otherProperty" id="otherPropertyYes" value="Yes"> Yes
+                                             </label>
+                                          </div>
+                                          <div class="form-check disabled">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="otherProperty" id="otherPropertyNo" value="No" checked> No
+                                             </label>
+                                          </div>
+                                       </fieldset>
+                                       <fieldset  id="borrowMoreThan" class="form-group" style="display: none">
+                                          <label class="control-label"> Are the applicants looking to borrow more than 90% LTV? </label>
+                                          <div class="form-check">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="borrowMoreThan90" id="borrowMoreThan90Yes" value="Yes"> Yes
+                                             </label>
+                                          </div>
+                                          <div class="form-check disabled">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="borrowMoreThan90" id="borrowMoreThan90No" value="No" > No
+                                             </label>
+                                          </div>
+                                       </fieldset>
+                                       <fieldset id="provideMoreDetailsDiv" class="form-group" style="display: none">
+                                          <label class="control-label"> We'll need to consider the running costs for these properties. Do you want to provide these details now? </label>
+                                          <div class="form-check">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="provideMoreDetails" id="provideMoreDetailsYes" value="Yes"> Yes
+                                             </label>
+                                          </div>
+                                          <div class="form-check disabled">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="provideMoreDetails" id="provideMoreDetailsNo" value="No" checked> No
+                                             </label>
+                                          </div>
+                                       </fieldset>
+                                       <!-- <div id="mortgagedPropertiesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;display: none;" >
+                                          <div class="form-group" style="margin-top: 10px;">
+                                             <label class="control-label" for="mortgagedProperties">Number of mortgaged properties; including properties outside the UK?</label>
+                                             <div class="input-group col-md-5">
+                                                <select id="mortgagedProperties" class="form-control col-md-7">
+                                                   <option value="0" selected>0</option>
+                                                   <option value="1">1</option>
+                                                   <option value="2">2</option>
+                                                   <option value="3">3</option>
+                                                   <option value="4">4</option>
+                                                   <option value="5">5</option>
+                                                </select>
+                                             </div>
+                                          </div>
+                                          <div id="mortgagedPropertiesBoard">
+                                          </div>
+                                       </div>
+                                       <div id="mortgageFreePropertiesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;display: none">
+                                          <div class="form-group" style="margin-top: 10px;">
+                                             <label class="control-label" for="mortgageFreeProperties">Number of mortgage-free properties; including properties outside the UK?</label>
+                                             <div class="input-group col-md-5">
+                                                <select id="mortgageFreeProperties" class="form-control col-md-7">
+                                                   <option value="0" selected>0</option>
+                                                   <option value="1">1</option>
+                                                   <option value="2">2</option>
+                                                   <option value="3">3</option>
+                                                   <option value="4">4</option>
+                                                   <option value="5">5</option>
+                                                   <option value="6">6</option>
+                                                   <option value="7">7</option>
+                                                   <option value="8">8</option>
+                                                   <option value="9">9</option>
+                                                   <option value="10">10</option>
+                                                </select>
+                                             </div>
+                                          </div>
+                                          <div id="mortgageFreePropertiesBoard">
+                                          </div>
+                                       </div> -->
+
+                                     </div>
+                                     <div id="advancedQuestionsDiv" class="form-group">
+                                        <a  class="icon-plus" style="word-spacing: -4px; color: #20a8d8; cursor: pointer; font-size: 16px;"> Advanced Questions</a>
+                                     </div>
+                                       <div class="form-group ">
+                                          <div class="input-group col-md-12">
+                                             <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
+                                          </div>
+                                       </div>
+                                    <!--/div-->
+                                 </div>
+                              </div>
+                              <!-- 1b other properties -->
+                              <div class="row setup-content" id="otherProperty1b" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+                                    <div class="col-xs-12 col-md-offset-0">
+                                      <h3>Other properties</h3>
+                                      <div id="mortgagedPropertiesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;" >
+                                      <label class="control-label"></label>
+                                       <div class="form-group" style="margin-top: 10px;">
+                                          <label class="control-label" for="mortgagedProperties">Number of mortgaged properties; including properties outside the UK?</label>
+                                          <div class="input-group col-md-5">
+                                             <select id="mortgagedProperties" class="form-control col-md-7">
+                                                <option value="0" selected>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div id="mortgagedPropertiesBoard">
+                                       </div>
+                                    </div>
+                                      <div id="mortgageFreePropertiesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;">
+                                       <div class="form-group" style="margin-top: 10px;">
+                                          <label class="control-label" for="mortgageFreeProperties">Number of mortgage-free properties; including properties outside the UK?</label>
+                                          <div class="input-group col-md-5">
+                                             <select id="mortgageFreeProperties" class="form-control col-md-7">
+                                                <option value="0" selected>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div id="mortgageFreePropertiesBoard">
+                                       </div>
+                                    </div>
+                                    <div class="form-group ">
+                                      <div class="input-group col-md-12">
+                                          <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                              <!-- clinets -->
+                              <div class="row setup-content" id="client" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+                                 <div class="col-xs-12 col-md-offset-0">
+                                   <h3> Client(s) </h3>
+                                    <div class="col-md-12" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;margin-top: 0px">
+                                       <label class="control-label"></label>
+                                       <div class="form-group">
+                                          <label class="control-label">Number of financial dependants </label>
+                                          <div class="control-group">
+                                             <div class="controls form-inline">
+                                                <input type="tel" style="margin-bottom: 5px;text-align: center;width:60px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40"  placeholder="0" id="childUnder5"> &nbsp;
+                                                <label for="childUnder5"> Aged 0-5 </label>
+                                             </div>
+                                             <div class="controls form-inline">
+                                                <input type="tel" style="margin-bottom: 5px;text-align: center;width:60px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40"  placeholder="0" id="childUnder11"> &nbsp;
+                                                <label for="childUnder11"> Aged 6-11 </label>
+                                             </div>
+                                             <div class="controls form-inline">
+                                                <input type="tel" style="margin-bottom: 5px;text-align: center;width:60px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40"  placeholder="0" id="childUnder17"> &nbsp;
+                                                <label for="childUnder17"> Aged 12-17 </label>
+                                             </div>
+                                             <div class="controls form-inline">
+                                                <input type="tel" style="margin-bottom: 5px;text-align: center;width:60px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40"  placeholder="0" id="childOver18"> &nbsp;
+                                                <label for="childOver18"> Aged 18 or over </label>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label">What's your client's date of birth? </label>
+                                          <div class="control-group">
+                                             <div class="controls form-inline">
+                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="DD" id="dayOfBirth" required="required">
+                                                <label for="dayOfBirth" style="margin-left: 5px;"> Day </label>&nbsp;
+                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="MM" id="mountOfBirth" required="required">
+                                                <label for="mountOfBirth" style="margin-left: 5px;"> Month </label>&nbsp;
+                                                <input type="tel" style="text-align: center;width:55px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="4" min="0" max="12" class="form-control" placeholder="YYYY" id="yearOfBirth" required="required">
+                                                <label for="yearOfBirth" style="margin-left: 5px;"> Year </label>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label">Is your client retired? </label>
+                                          <div class="form-check">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="retired" id="retiredYes" value="Yes" checked> Yes
+                                             </label>
+                                          </div>
+                                          <div class="form-check disabled">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="retired" id="retiredNo" value="No"> No
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div id="retirementAgeDiv" class="form-group" style="display: none">
+                                          <label class="control-label">What's their planned retirement age? </label>
+                                          <div class="input-group col-md-3">
+                                             <input style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" id="retirementAge" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                    <div class="form-group ">
+                                       <div class="input-group col-md-12">
+                                          <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- income -->
+                              <div class="row setup-content" id="income" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+                                 <div class="col-xs-12 col-md-offset-0">
+                                    <!--div class="col-md-12"-->
+                                    <h3> Income </h3>
+                                     <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px; margin-top: 0px">
+                                       <label class="control-label"></label>
+                                       <div class="form-group">
+                                          <label class="control-label">What is the annual salary before tax? </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="annualIncome" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label">What's your annual bonus? (optional) </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="annualBonus" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label">What's your total overtime annually? (optional) </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="totalOvertimeAnnually" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label">What's your total commission annually? (optional) </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="totalOvertimeAnnually" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                       <fieldset class="form-group">
+                                          <label class="control-label">Are you aware of any future changes to personal/ financial circumstances (optional) </label>
+                                          <div class="form-check">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances" id="numOfApplyingYes" value="Yes"> Yes
+                                             </label>
+                                          </div>
+                                          <div class="form-check disabled">
+                                             <label class="form-check-label">
+                                             <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances" id="numOfApplyingNo" value="No" checked> No
+                                             </label>
+                                          </div>
+                                       </fieldset>
+                                     </div>
+                                       <!--div id='incomingAffPageSecondTab' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px"-->
+                                       <div id="advacedSalaryAanualIncomeDiv" class="form-group" style="display: none">
+                                         <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;margin-top: 0px">
+                                            <h4>Advaced salary options for annual income</h4>
+                                            <div id="fixedTermContractPAYEDiv" class="form-group">
+                                               <label class="control-label"> Fixed term contract (PAYE)  </label>
+                                               <div class="input-group col-md-3">
+                                                  <span style="background: white" class="input-group-addon">£</span>
+                                                  <input id="fixedTermContract" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               </div>
+                                            </div>
+                                            <div id="renewableContractPAYEDiv" class="form-group">
+                                               <label class="control-label"> Short-term renewable contract (PAYE) </label>
+                                               <div class="input-group col-md-3">
+                                                  <span style="background: white" class="input-group-addon">£</span>
+                                                  <input id="renewableContractPAYE" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               </div>
+                                            </div>
+                                            <div id="salaryForDirectorLimitDiv" class="form-group">
+                                               <label class="control-label"> Salary for director of a limited company </label>
+                                               <div class="input-group col-md-3">
+                                                  <span style="background: white" class="input-group-addon">£</span>
+                                                  <input id="salaryForDirectorLimit" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               </div>
+                                            </div>
+                                            <div id="netProfitSoleTraderDiv" class="form-group">
+                                               <label class="control-label"> Net profit of a sole trader/partnership  </label>
+                                               <div class="input-group col-md-3">
+                                                  <span style="background: white" class="input-group-addon">£</span>
+                                                  <input id="netProfitSoleTrader" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               </div>
+                                            </div>
+                                            <div id="directorDividendsDiv" class="form-group">
+                                               <label class="control-label"> Director's dividends  </label>
+                                               <div class="input-group col-md-3">
+                                                  <span style="background: white" class="input-group-addon">£</span>
+                                                  <input id="directorDividends" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               </div>
+                                            </div>
+                                            <div id="pensionsAndAnnuitiesDiv" class="form-group">
+                                               <label class="control-label"> Private/company pensions and annuities </label>
+                                               <div class="input-group col-md-3">
+                                                  <span style="background: white" class="input-group-addon">£</span>
+                                                  <input id="pensionsAndAnnuities" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               </div>
+                                            </div>
+                                            <div id="statePensionDiv" class="form-group">
+                                               <label class="control-label"> State pension </label>
+                                               <div class="input-group col-md-3">
+                                                  <span style="background: white" class="input-group-addon">£</span>
+                                                  <input id="statePension" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               </div>
+                                            </div>
+                                            <div id="employedInFfamilyBusinessDiv" class="form-group">
+                                               <label class="control-label"> Employed in a family business </label>
+                                               <div class="input-group col-md-3">
+                                                  <span style="background: white" class="input-group-addon">£</span>
+                                                  <input id="employedInFfamilyBusiness" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               </div>
+                                            </div>
+                                          </div>
+                                          <!-- <div id="receiveAnyBonusOrCommissionDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                             <div class="form-group">
+                                                <label class="control-label"> Does applicant 1 receive any bonus or commission? </label>
+                                                <div class="form-check">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="receiveAnyBonusOrCommission" id="receiveAnyBonusOrCommissionYes" value="Yes"> Yes
+                                                   </label>
+                                                </div>
+                                                <div class="form-check disabled">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="receiveAnyBonusOrCommission" id="receiveAnyBonusOrCommissionNo" value="No" checked> No
+                                                   </label>
+                                                </div>
+                                             </div>
+                                             <div id="bounsPaidEveryMonthDiv"class="form-group" style="display: none">
+                                                <label class="control-label"> Is the bonus or commission paid at least every month? </label>
+                                                <div class="form-check">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="bounsPaidEveryMonth" id="bounsPaidEveryMonthYes" value="Yes"> Yes
+                                                   </label>
+                                                </div>
+                                                <div class="form-check disabled">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="bounsPaidEveryMonth" id="bounsPaidEveryMonthNo" value="No" checked> No
+                                                   </label>
+                                                </div>
+                                             </div>
+                                             <div id="receiveAnyBonusOrCommissionBoard" style="display: none">
+                                                <div id="bounsPaidEveryMonthDetailsDiv">
+                                                   <div id="howOftenBounsPaidDiv" class="form-group" >
+                                                      <label class="control-label" for="propertyLegalStatus"> How often is the bonus or commission paid?  </label>
+                                                      <div class="input-group col-md-5">
+                                                         <select id="howOftenBounsPaid" class="form-control col-md-7">
+                                                            <option value='1' selected>Quarterly</option>
+                                                            <option  value='2'> Annually</option>
+                                                            <option value-'3'>Othert</option>
+                                                         </select>
+                                                      </div>
+                                                   </div>
+                                                   <div id="bounsPaymentInputs" class="form-group">
+                                                      <label class="control-label"> Enter the latest three months' bonus or commission payments from the payslips. </label>
+                                                      <div id="bonusOrCommissionQuarterly1Div" class="">
+                                                         <label class="control-label"> </label>
+                                                         <div class="input-group col-md-5">
+                                                            <span style="background: white" class="input-group-addon">£</span>
+                                                            <input id="bonusOrCommissionQuarterly1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                         </div>
+                                                      </div>
+                                                      <div id="bonusOrCommissionQuarterly2Div" class="">
+                                                         <label class="control-label"> </label>
+                                                         <div class="input-group col-md-5">
+                                                            <span style="background: white" class="input-group-addon">£</span>
+                                                            <input id="bonusOrCommissionQuarterly2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                         </div>
+                                                      </div>
+                                                      <div id="bonusOrCommissionQuarterly3Div" class="">
+                                                         <label class="control-label"> </label>
+                                                         <div class="input-group col-md-5">
+                                                            <span style="background: white" class="input-group-addon">£</span>
+                                                            <input id="bonusOrCommissionQuarterly3" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div id="receiveAnyOvertimeDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                             <div class="form-group">
+                                                <label class="control-label"> Does applicant 1 receive any overtime? </label>
+                                                <div class="form-check">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="receiveAnyOvertime" id="receiveAnyOvertimeYes" value="Yes"> Yes
+                                                   </label>
+                                                </div>
+                                                <div class="form-check disabled">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="receiveAnyOvertime" id="receiveAnyOvertimeNo" value="No" checked> No
+                                                   </label>
+                                                </div>
+                                             </div>
+                                             <div id="overtimePaidEveryMonthDiv"class="form-group" style="display: none">
+                                                <label class="control-label"> Is the overtime paid at least every month?  </label>
+                                                <div class="form-check">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="overtimePaidEveryMonth" id="overtimePaidEveryMonthYes" value="Yes"> Yes
+                                                   </label>
+                                                </div>
+                                                <div class="form-check disabled">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="overtimePaidEveryMonth" id="overtimePaidEveryMonthNo" value="No" checked> No
+                                                   </label>
+                                                </div>
+                                             </div>
+                                             <div id="receiveAnyOvertimeBoard" style="display: none">
+                                                <div id="overtimePaidEveryMonthDetailsDiv">
+                                                   <div id="howOftenOvertimePaidDiv" class="form-group" >
+                                                      <label class="control-label" for="propertyLegalStatus"> How often is the applicant paid?   </label>
+                                                      <div class="input-group col-md-5">
+                                                         <select id="howOftenOvertimePaid" class="form-control col-md-7">
+                                                            <option value='1' selected>Monthly</option>
+                                                            <option value='2'> Four weekly</option>
+                                                            <option value='3'>Fortnightly</option>
+                                                            <option value='4'>Weekly</option>
+                                                         </select>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div id="overtimePaymentInputs" class="form-group">
+                                                   <label id="overtimeTitle" class="control-label"> Enter the latest three months' bonus or commission payments from the payslips. </label>
+                                                   <div id="overtime1LatestMonthly1Div" class="">
+                                                      <label class="control-label"> </label>
+                                                      <div class="input-group col-md-5">
+                                                         <span style="background: white" class="input-group-addon">£</span>
+                                                         <input id="overtime1LatestMonthly1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      </div>
+                                                   </div>
+                                                   <div id="overtime1LatestMonthly2Div" class="">
+                                                      <label class="control-label"> </label>
+                                                      <div class="input-group col-md-5">
+                                                         <span style="background: white" class="input-group-addon">£</span>
+                                                         <input id="overtime1LatestMonthly2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      </div>
+                                                   </div>
+                                                   <div id="overtime1LatestMonthly3Div" class="">
+                                                      <label class="control-label"> </label>
+                                                      <div class="input-group col-md-5">
+                                                         <span style="background: white" class="input-group-addon">£</span>
+                                                         <input id="overtime1LatestMonthly3" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div> -->
+                                          <div id="earnAnyEmployedAllowancesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                             <div class="form-group">
+                                                <label class="control-label"> Do they earn any employed allowances?  </label>
+                                                <div class="form-check">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="earnAnyEmployedAllowances" id="earnAnyEmployedAllowancesYes" value="Yes"> Yes
+                                                   </label>
+                                                </div>
+                                                <div class="form-check disabled">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="earnAnyEmployedAllowances" id="earnAnyEmployedAllowancesNo" value="No" checked> No
+                                                   </label>
+                                                </div>
+                                             </div>
+                                             <div id="earnAnyEmployedAllowancesBoard" style="display: none">
+                                                <h4> Please enter the annual equivalent </h4>
+                                                <div id="carAllowanceDiv" class="form-group">
+                                                   <label class="control-label"> Car allowance </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="carAllowance" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="weightingLargeTownDiv" class="form-group">
+                                                   <label class="control-label"> London weighting/large town allowance </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="weightingLargeTown" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="permanentShiftAllowanceDiv" class="form-group">
+                                                   <label class="control-label"> Permanent shift allowance </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="permanentShiftAllowance" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="indefiniteMortgageSubsidiesDiv" class="form-group">
+                                                   <label class="control-label"> Indefinite mortgage subsidies or housing allowances </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="indefiniteMortgageSubsidies" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="long-termMortgageSubsidiesDiv" class="form-group">
+                                                   <label class="control-label"> Long-term mortgage subsidies or housing allowance </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="long-termMortgageSubsidies" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div id="receiveAnyGovernmentBenefitsDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                             <div class="form-group">
+                                                <label class="control-label"> Do they receive any government benefits? </label>
+                                                <div class="form-check">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="receiveAnyGovernmentBenefits" id="receiveAnyGovernmentBenefitsYes" value="Yes"> Yes
+                                                   </label>
+                                                </div>
+                                                <div class="form-check disabled">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="receiveAnyGovernmentBenefits" id="receiveAnyGovernmentBenefitsNo" value="No" checked> No
+                                                   </label>
+                                                </div>
+                                             </div>
+                                             <div id="receiveAnyGovernmentBenefitsBoard" style="display: none">
+                                                <h4> Please enter the annual equivalent </h4>
+                                                <div id="childBenefitbDiv" class="form-group">
+                                                   <label class="control-label"> Child benefit </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="childBenefit" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="childTaxCreditsDiv" class="form-group">
+                                                   <label class="control-label"> Child tax credits </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="childTaxCredits" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="workingTaxCreditsDiv" class="form-group">
+                                                   <label class="control-label"> Working tax credits </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="workingTaxCredits" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="indefiniteStateBenefitsDiv" class="form-group">
+                                                   <label class="control-label"> Indefinite state benefits (DWP/HMRC) </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="indefiniteStateBenefits" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div id="earmAnyOtherAnnualIncome" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                             <div class="form-group">
+                                                <label class="control-label"> Do they earn or receive any other annual income?  </label>
+                                                <div class="form-check">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="earmAnyOtherAnnualIncome" id="earmAnyOtherAnnualIncomeYes" value="Yes"> Yes
+                                                   </label>
+                                                </div>
+                                                <div class="form-check disabled">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="earmAnyOtherAnnualIncome" id="earmAnyOtherAnnualIncomeNo" value="No" checked> No
+                                                   </label>
+                                                </div>
+                                             </div>
+                                             <div id="earmAnyOtherAnnualIncomeBoard" style="display: none">
+                                                <h4> Please enter the annual equivalent </h4>
+                                                <div id="secondJobDiv" class="form-group">
+                                                   <label class="control-label"> Second job </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="secondJob" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="investmentIncomeDiv" class="form-group">
+                                                   <label class="control-label"> Investment income  </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="investmentIncome" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="maintenancePaymentsDiv" class="form-group">
+                                                   <label class="control-label"> Maintenance payments </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="maintenancePayments" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="rentalIncomeDiv" class="form-group">
+                                                   <label class="control-label"> Rental income </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="rentalIncome" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                                <div id="fosteringIncomeDiv" class="form-group">
+                                                   <label class="control-label"> Fostering income </label>
+                                                   <div class="input-group col-md-3">
+                                                      <span style="background: white" class="input-group-addon">£</span>
+                                                      <input id="fosteringIncome" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div id="monthlyDeductions" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                             <h4> Monthly deductions </h4>
+                                             <div id="monthlyDeductionsShownBeforeTaxDiv" class="form-group">
+                                                <label class="control-label"> Monthly deductions shown on the payslip before tax </label>
+                                                <div class="input-group col-md-3">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="monthlyDeductionsShownBeforeTax" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                             <div id="long-monthlyDeductionsShownAfterTaxDiv" class="form-group">
+                                                <label class="control-label"> Monthly deductions shown on the payslip after tax </label>
+                                                <div class="input-group col-md-3">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="monthlyDeductionsShownAfterTax" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                             <div class="form-group">
+                                                <label class="control-label"> Student loans? </label>
+                                                <div class="form-check">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="studentLoans" id="studentLoansYes" value="Yes"> Yes
+                                                   </label>
+                                                </div>
+                                                <div class="form-check disabled">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="studentLoans" id="studentLoansNo" value="No" checked> No
+                                                   </label>
+                                                </div>
+                                             </div>
+                                             <div class="form-group">
+                                                <label class="control-label"> On completion of the mortgage will the applicant's main residence be in Scotland? </label>
+                                                <div class="form-check">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="residenceInScotland" id="residenceInScotlandYes" value="Yes"> Yes
+                                                   </label>
+                                                </div>
+                                                <div class="form-check disabled">
+                                                   <label class="form-check-label">
+                                                   <input type="radio" class="form-check-input" name="residenceInScotland" id="residenceInScotlandNo" value="No" checked> No
+                                                   </label>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    <!--/div-->
+                                    <div id="advacedSalaryAanualIncomeClick" class="form-group">
+                                       <a  class="icon-plus" style="word-spacing: -4px; color: #20a8d8; cursor: pointer; font-size: 16px;"> Advaced salary options for annual income </a>
+                                    </div>
+                                    <div class="form-group">
+                                       <div class="input-group col-md-12">
+                                          <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Outgoings -->
+                              <div class="row setup-content" id="outgoings" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+                                 <div class="col-xs-12 col-md-offset-0">
+                                   <h3> Outgoings </h3>
+                                   <div class="">
+                                   <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px; margin-top: 0px">
+                                       <label class="control-label"></label>
+                                       <div class="form-group">
+                                          <label class="control-label"> What's the total your client owes on all credit cards? </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="totalCreditCards" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label"> Total credit card balance </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="creditCardBalances" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label"> Monthly loan payments </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="monthlyLoanPayments" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label"> Monthly hire purchase payments </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="monthlyHirePurchasePayments" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label"> Maintenance / other committed payments </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="otherCommittedPayments" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label"> Other mortgage payments </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="otherMortgagePayments" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div id='outgoingsAffPageSecondTab' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px">
+                                      <h4> Advaced Outgoings Question </h4>
+                                      <div class="form-group">
+                                         <label class="control-label"> Please enter the total monthly payments for all credit commitments excluding credit cards and mortgages on other properties </label>
+                                         <div class="input-group col-md-3">
+                                            <span style="background: white" class="input-group-addon">£</span>
+                                            <input id="commitmentsExcludingCreditCards" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                         </div>
+                                      </div>
+                                      <div class="form-group">
+                                         <label class="control-label"> Please enter the total combined outstanding balance for all credit cards  </label>
+                                         <div class="input-group col-md-3">
+                                            <span style="background: white" class="input-group-addon">£</span>
+                                            <input id="totalCombinedOutstandingBalance" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                         </div>
+                                         </div>
+                                        <fieldset class="form-group">
+                                       <label class="control-label"> Do you want to enter any monthly committed expenditure? </label>
+                                       <div class="form-check">
+                                          <label class="form-check-label">
+                                          <input type="radio" class="form-check-input" name="monthlyCommitmented" id="monthlyCommitmentedYes" value="Yes" > Yes
+                                          </label>
+                                       </div>
+                                       <div class="form-check disabled">
+                                          <label class="form-check-label">
+                                          <input type="radio" class="form-check-input" name="monthlyCommitmented" id="monthlyCommitmentedNo" value="No" checked> No
+                                          </label>
+                                       </div>
+                                    </fieldset>
+                                    </div>
+                                    <div id='outgoingsCommitmentsAndExpenditure' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px">
+                                      <h4>These expenditure items may apply to your client and should be included if appropriate.</h4>
+                                      <div class="form-group">
+                                         <label class="control-label"> Childcare and education </label>
+                                         <div class="input-group col-md-3">
+                                            <span style="background: white" class="input-group-addon">£</span>
+                                            <input id="childcareAndEducation" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                         </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                         <label class="control-label"> Maintenance payments </label>
+                                         <div class="input-group col-md-3">
+                                            <span style="background: white" class="input-group-addon">£</span>
+                                            <input id="maintenancePayments" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                         </div>
+                                        </div>
+
+                                         <div class="form-group">
+                                            <label class="control-label"> Existing life and health insurance and private pensions </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="healthInsurancePayments" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                            </div>
+                                         </div>
+
+                                         <div class="form-group">
+                                            <label class="control-label"> Ground rent (monthly equivalent)  </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="ground rent" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                             <label class="control-label"> Service charge (monthly equivalent) </label>
+                                             <div class="input-group col-md-3">
+                                                <span style="background: white" class="input-group-addon">£</span>
+                                                <input id="serviceCharge" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                             </div>
+                                          </div>
+
+                                          <div class="form-group">
+                                             <label class="control-label"> Feudal duty/rent charge/chief rent (monthly equivalent)  </label>
+                                             <div class="input-group col-md-3">
+                                                <span style="background: white" class="input-group-addon">£</span>
+                                                <input id="rentCharge" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                             </div>
+                                           </div>
+                                           <div class="form-group">
+                                              <label class="control-label"> Additional committed expenditure </label>
+                                              <div class="input-group col-md-3">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="additionalCommittedExpenditure" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                              </div>
+                                           </div>
+                                    </div>
+                                     </div>
+                                    <div id="advacedOutgoingsClick" class="form-group">
+                                       <a  class="icon-plus" style="word-spacing: -4px; color: #20a8d8; cursor: pointer; font-size: 16px;"> Advaced Outgoings Question </a>
+                                    </div>
+                                    <div class="form-group">
+                                       <div class="input-group col-md-12">
+                                          <button  style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 </div>
+                              </div>
+                              <!-- Results -->
+                              <div class="row setup-content" id="results">
+                                 <div class="col-xs-6 col-md-offset-3">
+                                    <div class="col-md-12">
+                                       <h3> Results </h3>
+                                       <p>Please note our affordability calculator is only for guidance purposes. The maximum loan available may be impacted by the Loan to Value.</p>
+                                       <!-- <button style="background-color: #ff9f07;border-color: #ff9f07;" class="btn btn-success btn-lg pull-right" type="submit" id="calculate"> Calculate </button> -->
+                                    </div>
+                                    <div class="col-md-12 col-md-offset-3">
+                                       <image id="loader" style="display: none" class="col-md-offset-1" src="https://cdn-images-1.medium.com/max/1600/1*W8cj-FRc58UozzcMWqVPZw.gif" />
+                                       <table id="tableResults"  class="table table-responsive-sm" style="width:100%;display: none">
+                                          <thead>
+                                             <tr>
+                                                <th>Lender Logo</th>
+                                                <th>Lender Name</th>
+                                                <th>Price</th>
+                                             </tr>
+                                          </thead>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </main>
+         <aside class="aside-menu">
+            <ul class="nav nav-tabs" role="tablist">
+               <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">
+                  <i class="icon-list"></i>
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                  <i class="icon-speech"></i>
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+                  <i class="icon-settings"></i>
+                  </a>
+               </li>
+            </ul>
+            <div class="tab-content">
+               <div class="tab-pane active" id="timeline" role="tabpanel">
+                  <div class="list-group list-group-accent">
+                     <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Today</div>
+                     <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
+                        <div class="avatar float-right">
+                           <img class="img-avatar" src="https://coreui.io/demo/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                        </div>
+                        <div>Meeting with
+                           <strong>Lucas</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                        <i class="icon-calendar"></i>&nbsp; 1 - 3pm</small>
+                        <small class="text-muted">
+                        <i class="icon-location-pin"></i>&nbsp; Palo Alto, CA</small>
+                     </div>
+                     <div class="list-group-item list-group-item-accent-info">
+                        <div class="avatar float-right">
+                           <img class="img-avatar" src="https://coreui.io/demo/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                        </div>
+                        <div>Skype with
+                           <strong>Megan</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                        <i class="icon-calendar"></i>&nbsp; 4 - 5pm</small>
+                        <small class="text-muted">
+                        <i class="icon-social-skype"></i>&nbsp; On-line</small>
+                     </div>
+                     <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Tomorrow</div>
+                     <div class="list-group-item list-group-item-accent-danger list-group-item-divider">
+                        <div>New UI Project -
+                           <strong>deadline</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                        <i class="icon-calendar"></i>&nbsp; 10 - 11pm</small>
+                        <small class="text-muted">
+                        <i class="icon-home"></i>&nbsp; creativeLabs HQ</small>
+                        <div class="avatars-stack mt-2">
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list-group-item list-group-item-accent-success list-group-item-divider">
+                        <div>
+                           <strong>#10 Startups.Garden</strong> Meetup
+                        </div>
+                        <small class="text-muted mr-3">
+                        <i class="icon-calendar"></i>&nbsp; 1 - 3pm</small>
+                        <small class="text-muted">
+                        <i class="icon-location-pin"></i>&nbsp; Palo Alto, CA</small>
+                     </div>
+                     <div class="list-group-item list-group-item-accent-primary list-group-item-divider">
+                        <div>
+                           <strong>Team meeting</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                        <i class="icon-calendar"></i>&nbsp; 4 - 6pm</small>
+                        <small class="text-muted">
+                        <i class="icon-home"></i>&nbsp; creativeLabs HQ</small>
+                        <div class="avatars-stack mt-2">
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                           <div class="avatar avatar-xs">
+                              <img class="img-avatar" src="https://coreui.io/demo/img/avatars/8.jpg" alt="admin@bootstrapmaster.com">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab-pane p-3" id="messages" role="tabpanel">
+                  <div class="message">
+                     <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                           <img class="img-avatar" src="https://coreui.io/demo/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                           <span class="avatar-status badge-success"></span>
+                        </div>
+                     </div>
+                     <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                     </div>
+                     <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                     <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                  </div>
+                  <hr>
+                  <div class="message">
+                     <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                           <img class="img-avatar" src="https://coreui.io/demo/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                           <span class="avatar-status badge-success"></span>
+                        </div>
+                     </div>
+                     <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                     </div>
+                     <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                     <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                  </div>
+                  <hr>
+                  <div class="message">
+                     <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                           <img class="img-avatar" src="https://coreui.io/demo/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                           <span class="avatar-status badge-success"></span>
+                        </div>
+                     </div>
+                     <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                     </div>
+                     <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                     <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                  </div>
+                  <hr>
+                  <div class="message">
+                     <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                           <img class="img-avatar" src="https://coreui.io/demo/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                           <span class="avatar-status badge-success"></span>
+                        </div>
+                     </div>
+                     <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                     </div>
+                     <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                     <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                  </div>
+                  <hr>
+                  <div class="message">
+                     <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                           <img class="img-avatar" src="https://coreui.io/demo/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                           <span class="avatar-status badge-success"></span>
+                        </div>
+                     </div>
+                     <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                     </div>
+                     <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                     <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                  </div>
+               </div>
+               <div class="tab-pane p-3" id="settings" role="tabpanel">
+                  <h6>Settings</h6>
+                  <div class="aside-options">
+                     <div class="clearfix mt-4">
+                        <small>
+                        <b>Option 1</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                        <input class="switch-input" type="checkbox" checked="">
+                        <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                     </div>
+                     <div>
+                        <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+                     </div>
+                  </div>
+                  <div class="aside-options">
+                     <div class="clearfix mt-3">
+                        <small>
+                        <b>Option 2</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                        <input class="switch-input" type="checkbox">
+                        <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                     </div>
+                     <div>
+                        <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+                     </div>
+                  </div>
+                  <div class="aside-options">
+                     <div class="clearfix mt-3">
+                        <small>
+                        <b>Option 3</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                        <input class="switch-input" type="checkbox">
+                        <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="aside-options">
+                     <div class="clearfix mt-3">
+                        <small>
+                        <b>Option 4</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                        <input class="switch-input" type="checkbox" checked="">
+                        <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                     </div>
+                  </div>
+                  <hr>
+                  <h6>System Utilization</h6>
+                  <div class="text-uppercase mb-1 mt-4">
+                     <small>
+                     <b>CPU Usage</b>
+                     </small>
+                  </div>
+                  <div class="progress progress-xs">
+                     <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small class="text-muted">348 Processes. 1/4 Cores.</small>
+                  <div class="text-uppercase mb-1 mt-2">
+                     <small>
+                     <b>Memory Usage</b>
+                     </small>
+                  </div>
+                  <div class="progress progress-xs">
+                     <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small class="text-muted">11444GB/16384MB</small>
+                  <div class="text-uppercase mb-1 mt-2">
+                     <small>
+                     <b>SSD 1 Usage</b>
+                     </small>
+                  </div>
+                  <div class="progress progress-xs">
+                     <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small class="text-muted">243GB/256GB</small>
+                  <div class="text-uppercase mb-1 mt-2">
+                     <small>
+                     <b>SSD 2 Usage</b>
+                     </small>
+                  </div>
+                  <div class="progress progress-xs">
+                     <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small class="text-muted">25GB/256GB</small>
+               </div>
+            </div>
+         </aside>
+      </div>
+      <footer class="app-footer">
+         <div>
+            <!-- <a href="https://coreui.io/pro/">OneMortgage</a> -->
+            <a style="color: #ff9f07;font-family: amaranth;font-style: italic;">One</a>
+            <a style="margin-left: -3px;color: black;font-family: amaranth;font-style: italic;">Mortgage</a>
+            <span>© 2019.</span>
+         </div>
+         <div class="ml-auto">
+            <span>Powered by</span>
+            <a style="color: #ff9f07;font-family: amaranth;font-style: italic;">One</a>
+            <a style="margin-left: -3px;color: black;font-family: amaranth;font-style: italic;">Mortgage</a>
+         </div>
+      </footer>
+      <script src="https://coreui.io/demo/vendors/@coreui/coreui-pro/js/coreui.min.js"></script>
+      <script src="js/form_action.js"></script>
+      <script type="text/javascript"></script>
+   </body>
+</html>
