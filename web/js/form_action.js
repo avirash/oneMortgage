@@ -709,7 +709,7 @@ $(document).ready(function () {
      })
 
   var endPoint = 'http://localhost:3000'
-  var navListItems = $('div.setup-panel div a'),
+  var navListItems = $('div.setup-panel div a,div.setup-panel div img'),
           allWells = $('.setup-content'),
           allNextBtn = $('.nextBtn');
 
@@ -717,13 +717,16 @@ $(document).ready(function () {
 
   navListItems.click(function (e) {
       e.preventDefault();
-      var $target = $($(this).attr('href')),
-              $item = $(this);
+      if($(this).prop("tagName") === 'IMG') {
+        $target = $($(this).prev().attr('href'))
+        $item = $(this);
+      } else {
+        var $target = $($(this).attr('href')),
+                $item =$(this).prev();
+      }
 
       if (!$item.hasClass('disabled')) {
-          //navListItems.removeClass('btn-primary').addClass('btn-default');
-          // $item.addClass('btn-primary');
-          allWells.hide();
+          allWells.hide();          
           $target.show();
           $target.find('input:eq(0)').focus();
       }
@@ -732,11 +735,17 @@ $(document).ready(function () {
   // next step in the form
   allNextBtn.click(function(){
       var curStep = $(this).closest(".setup-content"),
-          curStepBtn = curStep.attr("id"),
-          nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-          curInputs = curStep.find("input[type='number'],input[type='tel'],input[type='url']"),
-          isValid = true;
+      curStepBtn = curStep.attr("id"),
+      curStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]'),
+      prev = curStepWizard.prev(),
+      curInputs = curStep.find("input[type='number'],input[type='tel'],input[type='url']"),
+      isValid = true
 
+      var nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a")
+
+      if (curStepBtn === 'mortgage' && !$('#provideMoreDetailsYes').prop('checked')) {
+            nextStepWizard = $('div.setup-panel div a[href="#otherProperty1b"]').parent().next().children("a")
+        }
 
       $(".form-group").removeClass("has-error");
       for(var i=0; i<curInputs.length; i++){
@@ -748,14 +757,10 @@ $(document).ready(function () {
       }
 
       if (isValid) {
-        if (nextStepWizard[0].innerHTML === '5') {
-          nextStepWizard.removeAttr('disabled')
-          $('#calculate').trigger('click')
-
-        } else {
-          nextStepWizard.removeAttr('disabled').trigger('click');
-        }
-
+        $(curStepWizard).css('display', 'none')
+        $(curStepWizard).next().css('display', 'inline-table')
+        nextStepWizard.removeAttr('disabled').trigger('click');
+        if (nextStepWizard[0].innerHTML === '5')  calculate()
         }
   });
 
@@ -782,10 +787,8 @@ $(document).ready(function () {
   }
 
   // send request to get meta data and then async requests to affordability
-  $('#calculate').click(function(ev){
-    $(this).prop('disabled', true)
+  function calculate() {
     $("#loader").fadeIn('slow')
-    ev.preventDefault();
 
     var data = {}
     $("#tableResults").find("tr:gt(0)").remove();
@@ -816,13 +819,9 @@ $(document).ready(function () {
        },
        error: function(request,msg,error) {
          $("#loader").fadeOut('slow')
-        // $(this).prop('disabled', true)
-       //  alert(error)
        }
    });
-   $(this).prop('disabled', false)
-
-  })
+  }
 
   $('div.setup-panel div a.btn-primary').trigger('click');
 

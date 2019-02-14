@@ -70,6 +70,20 @@ a:hover {
   color: white;
 }
 
+.checkCircle {
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  text-align: center !important;
+  /* padding: 6px 0 !important; */
+  font-size: 12px !important;
+  line-height: 1.428571429 !important;
+  border-radius: 15px !important;
+  background-color: #ff9f07;
+  border-color: #ff9f07;
+  color: white;
+}
+
 .btn-circled:hover {
   z-index: 1;
   width: 30px;
