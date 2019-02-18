@@ -1,3 +1,7 @@
+var inputCollection = {}
+let mortgageDetails = [{index: 1 }]
+let mortgageDetailsFree = [{index: 1 }]
+
 $(document).ready(function () {
 /// mortgage
   $('#advancedQuestionsDiv > a').on('click', function(ev){
@@ -52,7 +56,7 @@ $(document).ready(function () {
            let propertyUse = createMortgagePropertyDiv(numOfDivs + i + 1, currentId)
            mainDiv.appendChild(propertyUse)
 
-          $('[id*="propertyUse"]').bind('change', { parentDiv: `${currentId}Div${numOfDivs + i + 1}` , currentId},  propertyUseEvent)
+          $(`[id="propertyUse${i + 1}"]`).bind('change', { parentDiv: `${currentId}Div${numOfDivs + i + 1}` , currentId},  propertyUseEvent)
         }
       } else if (numOfDivs > value) {
         delta =  numOfDivs - value
@@ -61,13 +65,14 @@ $(document).ready(function () {
           $(divToRemove).remove()
         }
       }
-      $('[id*="typeOfMortgage"]').bind('change', {currentId} ,typeOfMortgageEvent)
+      $(`[id*="typeOfMortgage${i + 1}"]`).bind('change', {currentId} ,typeOfMortgageEvent)
     }
   })
 
   function createMortgagePropertyDiv(index, divId) {
     let div = document.createElement('div')
     div.id = `${divId}Div${index}`
+    let scope = (div.id .toLowerCase().includes('free')) ? 'Free' : ''
     div.style['border-color'] = '#ff9f07'
     div.style['border-style'] = 'solid'
     div.setAttribute('class', 'form-group col-md-12 form-group')
@@ -82,7 +87,7 @@ $(document).ready(function () {
       { text: "It's to be let", value: 2  },
       { text: "Holiday home/second home (for own use)", value: 3  },
       { text: "Home for dependent relative", value: 4  }
-    ], `propertyUse${(index)}`, 'Property use', div.id)
+    ], `propertyUse${scope}${(index)}`, 'Property use', div.id)
 
     div.appendChild(propertyUse)
 
@@ -177,7 +182,7 @@ $(document).ready(function () {
     $(`#remainingTerm${scope}${index}Div`).remove()
     if (value === 1) {
     } else if (value === 2)  {
-      if (!(document.getElementById(`remainingTerm${scope}${index}Years`))) {
+      if (!(document.getElementById(`remainingTerm${scope}${index}`))) {
         let yearAndMonthsInput = createYearAndMonthsInput(`remainingTerm${scope}${index}`, 'Remaining term')
         $(selectDiv).after(yearAndMonthsInput)
       }
@@ -233,35 +238,35 @@ $(document).ready(function () {
     divInline.setAttribute('class', 'controls form-inline')
 
     let inputYear = document.createElement('input')
-    inputYear.setAttribute('class', 'form-control')
+    inputYear.setAttribute('class', 'form-control mortgageDetails')
     inputYear.maxlength = '2'
     inputYear.type = 'tel'
     inputYear.max = '30'
     inputYear.min = '1'
     inputYear.placeholder = 'YY'
-    inputYear.id = `${id}Years`
+    inputYear.id = `Years${id}`
     inputYear.style = 'text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;'
 
     let labelYear = document.createElement('label')
-    labelYear.for = `${id}Years`
+    labelYear.for = `Years${id}`
     labelYear.innerHTML = 'Years'
     labelYear.setAttribute('class', 'control-label')
     labelYear.style = 'margin-left: 5px'
 
 
     let inputMonths = document.createElement('input')
-    inputMonths.setAttribute('class', 'form-control')
+    inputMonths.setAttribute('class', 'form-control mortgageDetails')
     inputMonths.maxlength = '2'
     inputMonths.type = 'tel'
     inputMonths.max = '12'
     inputMonths.min = '1'
     inputMonths.placeholder = 'MM'
-    inputMonths.id = `${id}Months`
+    inputMonths.id = `Months${id}`
     inputMonths.style = 'text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;margin-left: 3px;'
 
 
     let labelMonths = document.createElement('label')
-    labelMonths.for = `${id}Months`
+    labelMonths.for = `Months${id}`
     labelMonths.innerHTML = 'Months'
     labelMonths.setAttribute('class', 'control-label')
     labelMonths.style = 'margin-left: 5px'
@@ -305,14 +310,14 @@ $(document).ready(function () {
       inputYes.name = id
       inputYes.value = 'Yes'
       inputYes.type = 'radio'
-      inputYes.setAttribute('class', 'form-check-input')
+      inputYes.setAttribute('class', 'form-check-input mortgageDetails')
       inputYes.innerHTML = 'Yes'
 
       inputNo.id = id + 'No'
       inputNo.name = id
       inputNo.type = 'radio'
       inputNo.value = 'No'
-      inputNo.setAttribute('class', 'form-check-input')
+      inputNo.setAttribute('class', 'form-check-input mortgageDetails')
       inputNo.innerHTML = 'No'
       inputNo.checked = true
 
@@ -344,11 +349,12 @@ $(document).ready(function () {
       div.appendChild(label)
       let selecet = document.createElement('select')
       selecet.id = id
-      selecet.setAttribute('class', 'form-control col-md-7')
+      selecet.setAttribute('class', 'form-control col-md-7 mortgageDetails')
 
       for (let i = 0 ; i < options.length; i++) {
         let inputOption = options[i]
         let option = document.createElement('option')
+        // option.setAttribute('class', 'mortgageDetails')
         option.value = inputOption.value || inputOption.text
         option.text = inputOption.text
         if (option.selected) option.selected = true
@@ -382,7 +388,7 @@ $(document).ready(function () {
 
       let input = document.createElement('input')
       input.id = id
-      input.setAttribute('class', 'form-control')
+      input.setAttribute('class', 'form-control mortgageDetails')
       input.maxlength = '10'
       input.type = 'tel'
       input.placeholder = '0'
@@ -467,13 +473,21 @@ $(document).ready(function () {
          $('#provideMoreDetailsDiv').fadeIn('slow')
        } else {
          alert('you cannot')
+         $('#provideMoreDetailsNo').prop('checked', true)
          $('#provideMoreDetailsDiv').fadeOut('slow')
+         $('#newStep').css('display', 'none')
+
        }
      })
 
   $('[name="otherProperty"]').on('change', function(ev) {
        if ($(this).attr('value') === 'No') {
           $('#borrowMoreThan').fadeOut('slow')
+          $('#provideMoreDetailsDiv').fadeOut('slow')
+          $('#borrowMoreThan90No').prop('checked', false)
+          $('#borrowMoreThan90Yes').prop('checked', false)
+          $('#provideMoreDetailsNo').prop('checked', true)
+          $('#newStep').css('display', 'none')
        } else {
          $('#borrowMoreThan').fadeIn('slow')
        }
@@ -726,7 +740,7 @@ $(document).ready(function () {
       }
 
       if (!$item.hasClass('disabled')) {
-          allWells.hide();          
+          allWells.hide();
           $target.show();
           $target.find('input:eq(0)').focus();
       }
@@ -738,7 +752,7 @@ $(document).ready(function () {
       curStepBtn = curStep.attr("id"),
       curStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]'),
       prev = curStepWizard.prev(),
-      curInputs = curStep.find("input[type='number'],input[type='tel'],input[type='url']"),
+      curInputs = curStep.find("input[type='number']:visible,input[type='tel']:visible,input[type='url']:visible"),
       isValid = true
 
       var nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a")
@@ -757,6 +771,7 @@ $(document).ready(function () {
       }
 
       if (isValid) {
+        collectInputs()
         $(curStepWizard).css('display', 'none')
         $(curStepWizard).next().css('display', 'inline-table')
         nextStepWizard.removeAttr('disabled').trigger('click');
@@ -785,23 +800,64 @@ $(document).ready(function () {
     x = x.replace(/,/g,'')
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+  }
 
+  function insertToMortgageArray(el, array){
+    let cleanedId = el.id.replace('Yes','').replace('No','')
+    let index =  parseInt(cleanedId[cleanedId.length-1])
+    let exists = array.find( x => x.index === index )
+
+    if (!exists) {
+      exists = { index }
+      array.push(exists)
+    }
+    insertToInputObject(el,exists)
+  }
+
+  function insertToInputObject(el, obj){
+    if (el.tagName === 'INPUT') {
+      if (['tel', 'text', 'number'].includes(el.type)) obj[el.id] = el.value.replace(/,/g,'') || 0
+      if (el.type === 'radio' && $(el).is(':checked')) obj[$(el).attr('name')] = el.value
+    }
+    if (el.tagName === 'SELECT') {
+      obj[el.id] = $(el).find(":selected").text()
+    }
+  }
   // send request to get meta data and then async requests to affordability
-  function calculate() {
-    $("#loader").fadeIn('slow')
-
-    var data = {}
-    $("#tableResults").find("tr:gt(0)").remove();
-    $("#tableResults").fadeOut('slow')
-    $('form input, form select').each(function(id, el) {
-      if (el.tagName === 'INPUT') {
-        if (['tel', 'text', 'number'].includes(el.type)) data[el.id] = el.value.replace(/,/g,'') || 0
-        if (el.type === 'radio' && $(el).is(':checked')) data[$(el).attr('name')] = el.value
-      }
-      if (el.tagName === 'SELECT') {
-        data[el.id] = $(el).find(":selected").text()
+  function collectInputs() {
+    $('form input:visible, form select:visible').each(function(id, el) {
+      if ($(el).attr('class') && $(el).attr('class').includes('mortgageDetails')) {
+        let cleanedId = el.id.replace('Yes','').replace('No','')
+        if(el.id && el.id.includes("Free")){
+          insertToMortgageArray(el,mortgageDetailsFree)
+        } else {
+          insertToMortgageArray(el,mortgageDetails)
+        }
+      } else {
+         insertToInputObject(el, inputCollection)
       }
     })
+
+    console.log(mortgageDetailsFree);
+    inputCollection['mortgageDetails'] = mortgageDetails
+    inputCollection['mortgageDetailsFree'] = mortgageDetailsFree
+    // $('.mortgageDetails').each(function(id, el) {
+    //   if(el.id && el.id.includes("Free")){
+    //
+    //   } else {
+    //
+    //   }
+    // }
+
+  }
+
+  function calculate() {
+    $("#loader").fadeIn('slow')
+    $("#tableResults").find("tr:gt(0)").remove();
+    $("#tableResults").fadeOut('slow')
+    console.log(inputCollection);
 
     $.ajax({
        url: `${endPoint}/getExtractionInput/`,
@@ -811,7 +867,7 @@ $(document).ready(function () {
          'Access-Control-Allow-Origin': '*',
          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
        },
-       data,
+       data: inputCollection,
        success: function(data) {
          for (var lender of data.results ) {
            sendRequerst(lender)

@@ -490,25 +490,26 @@
                                                </select>
                                             </div>
                                          </div>
-
+                                         <div id="requiredInterestDiv" class="form-group" style="display: none">
+                                            <label class="control-label"> What is the amount required on interest only? </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="requiredInterest" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                            </div>
+                                         </div>
+                                         <div id="requiredInterestMonthlyDiv" class="form-group" style="display: none">
+                                            <label class="control-label"> Change it to be "What is the monthly premium paid on the repayment plan(s)? </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="requiredInterestMonthly" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                            </div>
+                                         </div>
                                          </div>
 
                                         <div id='firstAffPageSecondTab' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px">
                                           <h4> Advanced Questions </h4>
-                                       <div id="requiredInterestDiv" class="form-group" style="display: none">
-                                          <label class="control-label"> What is the amount required on interest only? </label>
-                                          <div class="input-group col-md-3">
-                                             <span style="background: white" class="input-group-addon">£</span>
-                                             <input id="requiredInterest" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                          </div>
-                                       </div>
-                                       <div id="requiredInterestMonthlyDiv" class="form-group" style="display: none">
-                                          <label class="control-label"> If any of the loan is required on Interest Only please enter the monthly premium paid on the repayment plan(s) </label>
-                                          <div class="input-group col-md-3">
-                                             <span style="background: white" class="input-group-addon">£</span>
-                                             <input id="requiredInterestMonthly" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                          </div>
-                                       </div>
+
+
                                        <fieldset id="clientFountNewHouse" class="form-group" style="display: none">
                                           <label class="control-label"> Has your client(s) found a new home?  </label>
                                           <div class="form-check">
@@ -576,7 +577,7 @@
                                           </div>
                                        </fieldset>
                                        <fieldset id="provideMoreDetailsDiv" class="form-group" style="display: none">
-                                          <label class="control-label"> We'll need to consider the running costs for these properties. Do you want to provide these details now? </label>
+                                          <label class="control-label"> Some of the lenders need to consider the running costs for these properties. Do you want to provide these details now? </label>
                                           <div class="form-check">
                                              <label class="form-check-label">
                                              <input type="radio" class="form-check-input" name="provideMoreDetails" id="provideMoreDetailsYes" value="Yes"> Yes
@@ -696,7 +697,7 @@
                               <div class="row setup-content" id="client" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
                                  <div class="col-xs-12 col-md-offset-0">
                                    <h3> Client(s) </h3>
-                                    <div class="col-md-12" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;margin-top: 0px">
+                                    <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;margin-top: 0px">
                                        <label class="control-label"></label>
                                        <div class="form-group">
                                           <label class="control-label">Number of financial dependants </label>
