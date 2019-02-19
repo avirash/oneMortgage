@@ -58,7 +58,7 @@ $(document).ready(function () {
       if ($(this).attr('class')=='icon-plus') {
         $(this).attr('class','icon-close')
         $(this).text(' Close Advanced')
-        if ($('#requiredInterestDiv').css('display') !== 'none')  $('#requiredInterestMonthlyDiv').fadeIn('slow')
+      //  if ($('#requiredInterestDiv').css('display') !== 'none')  $('#requiredInterestMonthlyDiv').fadeIn('slow')
         $('#clientFountNewHouse').fadeIn('slow')
         $('#otherPropertyDiv').fadeIn('slow')
         if ( $('#foundNewHomeYes').prop('checked') ) {
@@ -77,7 +77,7 @@ $(document).ready(function () {
       } else {
         $(this).attr('class','icon-plus')
         $(this).text(' Advanced Questions')
-        $('#requiredInterestMonthlyDiv').fadeOut('slow')
+        //$('#requiredInterestMonthlyDiv').fadeOut('slow')
         $('#clientFountNewHouse').fadeOut('slow')
         $('#propertyLegalStatusDiv').fadeOut('slow')
         $('#propertyTypeDiv').fadeOut('slow')
@@ -505,16 +505,24 @@ fieldset.innerHTML =
 
   $('#methodOfRepaymentDiv').on('change', function(ev) {
       let value = $(this).find(":selected").attr('value')
-      if (['4', '5'].includes(value)) {
-          // $('#requiredInterestDiv').fadeIn('slow')
-          // $('#requiredInterestMonthlyDiv').fadeIn('slow')
-          $('#requiredInterestDiv').fadeIn('slow')
-          $('#requiredInterestMonthlyDiv').fadeIn('slow')
+      if (['2', '3'].includes(value)) {
+        $('#requiredInterestDiv').fadeIn('slow')
+        $('#repaymentStrategyAmountDiv').fadeIn('slow')
+        $('#isRepaymentStrategySaleDiv').fadeIn('slow')
+        $('#requiredInterestMonthlyDiv').fadeOut('slow')
+        $('#capitalAndInterestAmountDiv').fadeOut('slow')
+      } else if (['4', '5'].includes(value)) {
+        $('#requiredInterestDiv').fadeIn('slow')
+        $('#repaymentStrategyAmountDiv').fadeIn('slow')
+        $('#isRepaymentStrategySaleDiv').fadeIn('slow')
+        $('#requiredInterestMonthlyDiv').fadeIn('slow')
+        $('#capitalAndInterestAmountDiv').fadeIn('slow')
       } else {
-        //$('#requiredInterestDiv').fadeOut('slow')
         $('#requiredInterestDiv').fadeOut("slow")
         $('#requiredInterestMonthlyDiv').fadeOut("slow")
-        //$('#requiredInterestMonthlyDiv').fadeOut('slow')
+        $('#capitalAndInterestAmountDiv').fadeOut('slow')
+        $('#repaymentStrategyAmountDiv').fadeOut("slow")
+        $('#isRepaymentStrategySaleDiv').fadeOut("slow")
       }
     })
 

@@ -490,6 +490,7 @@
                                                </select>
                                             </div>
                                          </div>
+
                                          <div id="requiredInterestDiv" class="form-group" style="display: none">
                                             <label class="control-label"> What is the amount required on interest only? </label>
                                             <div class="input-group col-md-3">
@@ -497,13 +498,45 @@
                                                <input id="requiredInterest" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                             </div>
                                          </div>
+
+                                         <div id="capitalAndInterestAmountDiv" class="form-group" style="display: none">
+                                            <label class="control-label"> What is the amount required on Capital and Interest? </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="capitalAndInterestAmount" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                            </div>
+                                         </div>
+
+                                         <div id="repaymentStrategyAmountDiv" class="form-group" style="display: none">
+                                            <label class="control-label"> What is the current repayment strategy value? </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="repaymentStrategyAmount" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                            </div>
+                                         </div>
+
+                                         <fieldset id="isRepaymentStrategySaleDiv" class="form-group" style="display: none">
+                                            <label class="control-label"> Is repayment strategy sale of main residence? </label>
+                                            <div class="form-check">
+                                               <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="isRepaymentStrategySale" id="isRepaymentStrategySaleYes" value="Yes" checked> Yes
+                                               </label>
+                                            </div>
+                                            <div class="form-check">
+                                               <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="isRepaymentStrategySale" id="isRepaymentStrategySaleNo" value="No"> No
+                                               </label>
+                                            </div>
+                                         </fieldset>
+
+
                                          <div id="requiredInterestMonthlyDiv" class="form-group" style="display: none">
                                             <label class="control-label"> What is the monthly premium paid on the repayment plan(s)? </label>
                                             <div class="input-group col-md-3">
                                                <span style="background: white" class="input-group-addon">£</span>
                                                <input id="requiredInterestMonthly" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                             </div>
-                                         </div>
+                                          </div>
                                          </div>
 
                                         <div id='firstAffPageSecondTab' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px">
@@ -1529,6 +1562,13 @@
                                           </div>
                                        </div>
                                        <div class="form-group">
+                                          <label class="control-label"> Feudal duty/rent charge/chief rent (monthly equivalent)  </label>
+                                          <div class="input-group col-md-3">
+                                             <span style="background: white" class="input-group-addon">£</span>
+                                             <input id="rentCharge" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                        </div>
+                                       <div class="form-group">
                                           <label class="control-label"> Other mortgage payments </label>
                                           <div class="input-group col-md-3">
                                              <span style="background: white" class="input-group-addon">£</span>
@@ -1607,13 +1647,6 @@
                                              </div>
                                           </div>
 
-                                          <div class="form-group">
-                                             <label class="control-label"> Feudal duty/rent charge/chief rent (monthly equivalent)  </label>
-                                             <div class="input-group col-md-3">
-                                                <span style="background: white" class="input-group-addon">£</span>
-                                                <input id="rentCharge" maxlength="10" type="tel" class="form-control" placeholder="0" />
-                                             </div>
-                                           </div>
                                            <div class="form-group">
                                               <label class="control-label"> Additional committed expenditure </label>
                                               <div class="input-group col-md-3">
