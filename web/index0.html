@@ -417,7 +417,7 @@
                                                <input type="radio" class="form-check-input" name="numOfApplying" id="numOfApplying1" value="1" checked> 1
                                                </label>
                                             </div>
-                                            <div class="form-check disabled">
+                                            <div class="form-check">
                                                <label class="form-check-label">
                                                <input type="radio" class="form-check-input" name="numOfApplying" id="numOfApplying2" value="2"> 2
                                                </label>
@@ -498,7 +498,7 @@
                                             </div>
                                          </div>
                                          <div id="requiredInterestMonthlyDiv" class="form-group" style="display: none">
-                                            <label class="control-label"> Change it to be "What is the monthly premium paid on the repayment plan(s)? </label>
+                                            <label class="control-label"> What is the monthly premium paid on the repayment plan(s)? </label>
                                             <div class="input-group col-md-3">
                                                <span style="background: white" class="input-group-addon">£</span>
                                                <input id="requiredInterestMonthly" maxlength="10" type="tel" class="form-control" placeholder="0"/>
@@ -767,110 +767,220 @@
                                     <!--div class="col-md-12"-->
                                     <h3> Income </h3>
                                      <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px; margin-top: 0px">
-                                       <label class="control-label"></label>
-                                       <div class="form-group">
-                                          <label class="control-label">What is the annual salary before tax? </label>
-                                          <div class="input-group col-md-3">
-                                             <span style="background: white" class="input-group-addon">£</span>
-                                             <input id="annualIncome" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
-                                          </div>
+                                       <div id="genericApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
+                                         <h4>Applicant 1</h4>
+                                         <!--label class="control-label"></label-->
+                                         <div class="form-group">
+                                            <label class="control-label">What is the annual salary before tax? </label>
+                                            <div class="input-group col-md-6">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="annualIncome1" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
+                                            </div>
+                                         </div>
+                                         <div class="form-group">
+                                            <label class="control-label">What's your annual bonus? (optional) </label>
+                                            <div class="input-group col-md-6">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="annualBonus1" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                            </div>
+                                         </div>
+                                         <div class="form-group">
+                                            <label class="control-label">What's your total overtime annually? (optional) </label>
+                                            <div class="input-group col-md-6">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="totalOvertimeAnnually1" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                            </div>
+                                         </div>
+                                         <div class="form-group">
+                                            <label class="control-label">What's your total commission annually? (optional) </label>
+                                            <div class="input-group col-md-6">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="totalOvertimeAnnually1" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                            </div>
+                                         </div>
+                                         <fieldset class="form-group">
+                                            <label class="control-label">Are you aware of any future changes to personal/ financial circumstances (optional) </label>
+                                            <div class="form-check">
+                                               <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances1" id="numOfApplyingYes1" value="Yes"> Yes
+                                               </label>
+                                            </div>
+                                            <div class="form-check disabled">
+                                               <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances1" id="numOfApplyingNo1" value="No" checked> No
+                                               </label>
+                                            </div>
+                                         </fieldset>
                                        </div>
-                                       <div class="form-group">
-                                          <label class="control-label">What's your annual bonus? (optional) </label>
-                                          <div class="input-group col-md-3">
-                                             <span style="background: white" class="input-group-addon">£</span>
-                                             <input id="annualBonus" maxlength="10" type="tel" class="form-control" placeholder="0" />
-                                          </div>
-                                       </div>
-                                       <div class="form-group">
-                                          <label class="control-label">What's your total overtime annually? (optional) </label>
-                                          <div class="input-group col-md-3">
-                                             <span style="background: white" class="input-group-addon">£</span>
-                                             <input id="totalOvertimeAnnually" maxlength="10" type="tel" class="form-control" placeholder="0" />
-                                          </div>
-                                       </div>
-                                       <div class="form-group">
-                                          <label class="control-label">What's your total commission annually? (optional) </label>
-                                          <div class="input-group col-md-3">
-                                             <span style="background: white" class="input-group-addon">£</span>
-                                             <input id="totalOvertimeAnnually" maxlength="10" type="tel" class="form-control" placeholder="0" />
-                                          </div>
-                                       </div>
-                                       <fieldset class="form-group">
-                                          <label class="control-label">Are you aware of any future changes to personal/ financial circumstances (optional) </label>
-                                          <div class="form-check">
-                                             <label class="form-check-label">
-                                             <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances" id="numOfApplyingYes" value="Yes"> Yes
-                                             </label>
-                                          </div>
-                                          <div class="form-check disabled">
-                                             <label class="form-check-label">
-                                             <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances" id="numOfApplyingNo" value="No" checked> No
-                                             </label>
-                                          </div>
-                                       </fieldset>
+                                     <div id="genericApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                        <!--label class="control-label"></label-->
+                                        <h4>Applicant 2</h4>
+                                        <div class="form-group">
+                                           <label class="control-label">What is the annual salary before tax? </label>
+                                           <div class="input-group col-md-6">
+                                              <span style="background: white" class="input-group-addon">£</span>
+                                              <input id="annualIncome2" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
+                                           </div>
+                                        </div>
+                                        <div class="form-group">
+                                           <label class="control-label">What's your annual bonus? (optional) </label>
+                                           <div class="input-group col-md-6">
+                                              <span style="background: white" class="input-group-addon">£</span>
+                                              <input id="annualBonus2" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                           </div>
+                                        </div>
+                                        <div class="form-group">
+                                           <label class="control-label">What's your total overtime annually? (optional) </label>
+                                           <div class="input-group col-md-6">
+                                              <span style="background: white" class="input-group-addon">£</span>
+                                              <input id="totalOvertimeAnnually2" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                           </div>
+                                        </div>
+                                        <div class="form-group">
+                                           <label class="control-label">What's your total commission annually? (optional) </label>
+                                           <div class="input-group col-md-6">
+                                              <span style="background: white" class="input-group-addon">£</span>
+                                              <input id="totalOvertimeAnnually2" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                           </div>
+                                        </div>
+                                        <fieldset class="form-group">
+                                           <label class="control-label">Are you aware of any future changes to personal/ financial circumstances (optional) </label>
+                                           <div class="form-check">
+                                              <label class="form-check-label">
+                                              <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances2" id="numOfApplyingYes2" value="Yes"> Yes
+                                              </label>
+                                           </div>
+                                           <div class="form-check disabled">
+                                              <label class="form-check-label">
+                                              <input type="radio" class="form-check-input" name="expectedChangeToFinancialCircumstances2" id="numOfApplyingNo2" value="No" checked> No
+                                              </label>
+                                           </div>
+                                        </fieldset>
+                                      </div>
                                      </div>
                                        <!--div id='incomingAffPageSecondTab' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px"-->
                                        <div id="advacedSalaryAanualIncomeDiv" class="form-group" style="display: none">
-                                         <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;margin-top: 0px">
-                                            <h4>Advaced salary options for annual income</h4>
-                                            <div id="fixedTermContractPAYEDiv" class="form-group">
-                                               <label class="control-label"> Fixed term contract (PAYE)  </label>
-                                               <div class="input-group col-md-3">
-                                                  <span style="background: white" class="input-group-addon">£</span>
-                                                  <input id="fixedTermContract" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                               </div>
+                                         <div class="col-md-12 container form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;margin-top: 0px">
+                                           <h3>Advaced salary options</h3>
+                                           <div id="advacedSalaryApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
+                                             <h4>Applicant 1</h4>
+                                              <div class="form-group" id="fixedTermContractPAYEDiv1" >
+                                                 <label class="control-label"> Fixed term contract (PAYE)  </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="fixedTermContract1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div class="form-group" id="renewableContractPAYEDiv1" >
+                                                 <label class="control-label"> Short-term renewable contract (PAYE) </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="renewableContractPAYE1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div class="form-group" id="salaryForDirectorLimitDiv1" >
+                                                 <label class="control-label"> Salary for director of a limited company </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="salaryForDirectorLimit1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div class="form-group" id="netProfitSoleTraderDiv1" >
+                                                 <label class="control-label"> Net profit of a sole trader/partnership  </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="netProfitSoleTrader1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div class="form-group" id="directorDividendsDiv1" >
+                                                 <label class="control-label"> Director's dividends  </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="directorDividends1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div class="form-group" id="pensionsAndAnnuitiesDiv1" >
+                                                 <label class="control-label"> Private/company pensions and annuities </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="pensionsAndAnnuities1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div class="form-group" id="statePensionDiv1" >
+                                                 <label class="control-label"> State pension </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="statePension1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div class="form-group"id="employedInFfamilyBusinessDiv1" >
+                                                 <label class="control-label"> Employed in a family business </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="employedInFfamilyBusiness1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
                                             </div>
-                                            <div id="renewableContractPAYEDiv" class="form-group">
-                                               <label class="control-label"> Short-term renewable contract (PAYE) </label>
-                                               <div class="input-group col-md-3">
-                                                  <span style="background: white" class="input-group-addon">£</span>
-                                                  <input id="renewableContractPAYE" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                               </div>
-                                            </div>
-                                            <div id="salaryForDirectorLimitDiv" class="form-group">
-                                               <label class="control-label"> Salary for director of a limited company </label>
-                                               <div class="input-group col-md-3">
-                                                  <span style="background: white" class="input-group-addon">£</span>
-                                                  <input id="salaryForDirectorLimit" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                               </div>
-                                            </div>
-                                            <div id="netProfitSoleTraderDiv" class="form-group">
-                                               <label class="control-label"> Net profit of a sole trader/partnership  </label>
-                                               <div class="input-group col-md-3">
-                                                  <span style="background: white" class="input-group-addon">£</span>
-                                                  <input id="netProfitSoleTrader" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                               </div>
-                                            </div>
-                                            <div id="directorDividendsDiv" class="form-group">
-                                               <label class="control-label"> Director's dividends  </label>
-                                               <div class="input-group col-md-3">
-                                                  <span style="background: white" class="input-group-addon">£</span>
-                                                  <input id="directorDividends" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                               </div>
-                                            </div>
-                                            <div id="pensionsAndAnnuitiesDiv" class="form-group">
-                                               <label class="control-label"> Private/company pensions and annuities </label>
-                                               <div class="input-group col-md-3">
-                                                  <span style="background: white" class="input-group-addon">£</span>
-                                                  <input id="pensionsAndAnnuities" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                               </div>
-                                            </div>
-                                            <div id="statePensionDiv" class="form-group">
-                                               <label class="control-label"> State pension </label>
-                                               <div class="input-group col-md-3">
-                                                  <span style="background: white" class="input-group-addon">£</span>
-                                                  <input id="statePension" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                               </div>
-                                            </div>
-                                            <div id="employedInFfamilyBusinessDiv" class="form-group">
-                                               <label class="control-label"> Employed in a family business </label>
-                                               <div class="input-group col-md-3">
-                                                  <span style="background: white" class="input-group-addon">£</span>
-                                                  <input id="employedInFfamilyBusiness" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                               </div>
-                                            </div>
-                                          </div>
+                                           <div id="advacedSalaryApplicant2" class="col-xs-6" style="padding-left: 0px;display: none">
+                                            <h4>Applicant 2</h4>
+                                             <div class="form-group" id="fixedTermContractPAYEDiv2" >
+                                                <label class="control-label"> Fixed term contract (PAYE)  </label>
+                                                <div class="input-group col-md-6">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="fixedTermContract2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                             <div class="form-group" id="renewableContractPAYEDiv2" >
+                                                <label class="control-label"> Short-term renewable contract (PAYE) </label>
+                                                <div class="input-group col-md-6">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="renewableContractPAYE2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                             <div class="form-group" id="salaryForDirectorLimitDiv2" >
+                                                <label class="control-label"> Salary for director of a limited company </label>
+                                                <div class="input-group col-md-6">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="salaryForDirectorLimit2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                             <div class="form-group" id="netProfitSoleTraderDiv2" >
+                                                <label class="control-label"> Net profit of a sole trader/partnership  </label>
+                                                <div class="input-group col-md-6">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="netProfitSoleTrader2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                             <div class="form-group" id="directorDividendsDiv2" >
+                                                <label class="control-label"> Director's dividends  </label>
+                                                <div class="input-group col-md-6">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="directorDividends2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                             <div class="form-group" id="pensionsAndAnnuitiesDiv2" >
+                                                <label class="control-label"> Private/company pensions and annuities </label>
+                                                <div class="input-group col-md-6">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="pensionsAndAnnuities2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                             <div class="form-group" id="statePensionDiv2" >
+                                                <label class="control-label"> State pension </label>
+                                                <div class="input-group col-md-6">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="statePension2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                             <div class="form-group"id="employedInFfamilyBusinessDiv2" >
+                                                <label class="control-label"> Employed in a family business </label>
+                                                <div class="input-group col-md-6">
+                                                   <span style="background: white" class="input-group-addon">£</span>
+                                                   <input id="employedInFfamilyBusiness2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                </div>
+                                             </div>
+                                           </div>
+                                         </div>
                                           <!-- <div id="receiveAnyBonusOrCommissionDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
                                              <div class="form-group">
                                                 <label class="control-label"> Does applicant 1 receive any bonus or commission? </label>
@@ -1019,43 +1129,85 @@
                                                 </div>
                                              </div>
                                              <div id="earnAnyEmployedAllowancesBoard" style="display: none">
-                                                <h4> Please enter the annual equivalent </h4>
-                                                <div id="carAllowanceDiv" class="form-group">
+                                               <h4> Please enter the annual equivalent </h4>
+                                               <div id="earnAnyEmployedAllowancesApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
+                                               <h4>Applicant 1</h4>
+                                                <div id="carAllowanceDiv1" class="form-group">
                                                    <label class="control-label"> Car allowance </label>
-                                                   <div class="input-group col-md-3">
+                                                   <div class="input-group col-md-6">
                                                       <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="carAllowance" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      <input id="carAllowance1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                    </div>
                                                 </div>
-                                                <div id="weightingLargeTownDiv" class="form-group">
+                                                <div id="weightingLargeTownDiv1" class="form-group">
                                                    <label class="control-label"> London weighting/large town allowance </label>
-                                                   <div class="input-group col-md-3">
+                                                   <div class="input-group col-md-6">
                                                       <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="weightingLargeTown" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      <input id="weightingLargeTown1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                    </div>
                                                 </div>
-                                                <div id="permanentShiftAllowanceDiv" class="form-group">
+                                                <div id="permanentShiftAllowanceDiv1" class="form-group">
                                                    <label class="control-label"> Permanent shift allowance </label>
-                                                   <div class="input-group col-md-3">
+                                                   <div class="input-group col-md-6">
                                                       <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="permanentShiftAllowance" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      <input id="permanentShiftAllowance1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                    </div>
                                                 </div>
-                                                <div id="indefiniteMortgageSubsidiesDiv" class="form-group">
+                                                <div id="indefiniteMortgageSubsidiesDiv1" class="form-group">
                                                    <label class="control-label"> Indefinite mortgage subsidies or housing allowances </label>
-                                                   <div class="input-group col-md-3">
+                                                   <div class="input-group col-md-6">
                                                       <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="indefiniteMortgageSubsidies" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      <input id="indefiniteMortgageSubsidies1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                    </div>
                                                 </div>
-                                                <div id="long-termMortgageSubsidiesDiv" class="form-group">
+                                                <div id="long-termMortgageSubsidiesDiv1" class="form-group">
                                                    <label class="control-label"> Long-term mortgage subsidies or housing allowance </label>
-                                                   <div class="input-group col-md-3">
+                                                   <div class="input-group col-md-6">
                                                       <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="long-termMortgageSubsidies" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      <input id="long-termMortgageSubsidies1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                    </div>
                                                 </div>
-                                             </div>
+                                                </div>
+                                                <div id="earnAnyEmployedAllowancesApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                                <h4>Applicant 2</h4>
+                                                 <!-- <h4> Please enter the annual equivalent </h4> -->
+                                                 <div id="carAllowanceDiv2" class="form-group">
+                                                    <label class="control-label"> Car allowance </label>
+                                                    <div class="input-group col-md-6">
+                                                       <span style="background: white" class="input-group-addon">£</span>
+                                                       <input id="carAllowance2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                    </div>
+                                                 </div>
+                                                 <div id="weightingLargeTownDiv2" class="form-group">
+                                                    <label class="control-label"> London weighting/large town allowance </label>
+                                                    <div class="input-group col-md-6">
+                                                       <span style="background: white" class="input-group-addon">£</span>
+                                                       <input id="weightingLargeTown2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                    </div>
+                                                 </div>
+                                                 <div id="permanentShiftAllowanceDiv2" class="form-group">
+                                                    <label class="control-label"> Permanent shift allowance </label>
+                                                    <div class="input-group col-md-6">
+                                                       <span style="background: white" class="input-group-addon">£</span>
+                                                       <input id="permanentShiftAllowance2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                    </div>
+                                                 </div>
+                                                 <div id="indefiniteMortgageSubsidiesDiv2" class="form-group">
+                                                    <label class="control-label"> Indefinite mortgage subsidies or housing allowances </label>
+                                                    <div class="input-group col-md-6">
+                                                       <span style="background: white" class="input-group-addon">£</span>
+                                                       <input id="indefiniteMortgageSubsidies2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                    </div>
+                                                 </div>
+                                                 <div id="long-termMortgageSubsidiesDiv2" class="form-group">
+                                                    <label class="control-label"> Long-term mortgage subsidies or housing allowance </label>
+                                                    <div class="input-group col-md-6">
+                                                       <span style="background: white" class="input-group-addon">£</span>
+                                                       <input id="long-termMortgageSubsidies2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                    </div>
+                                                 </div>
+                                                 </div>
+                                              </div>
                                           </div>
                                           <div id="receiveAnyGovernmentBenefitsDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
                                              <div class="form-group">
@@ -1072,35 +1224,70 @@
                                                 </div>
                                              </div>
                                              <div id="receiveAnyGovernmentBenefitsBoard" style="display: none">
-                                                <h4> Please enter the annual equivalent </h4>
-                                                <div id="childBenefitbDiv" class="form-group">
+                                               <h4> Please enter the annual equivalent </h4>
+                                               <div id="receiveAnyGovernmentBenefitsApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
+                                                <h4>Applicant 1</h4>
+                                                <div id="childBenefitbDiv1" class="form-group">
                                                    <label class="control-label"> Child benefit </label>
-                                                   <div class="input-group col-md-3">
+                                                   <div class="input-group col-md-6">
                                                       <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="childBenefit" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      <input id="childBenefit1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                    </div>
                                                 </div>
-                                                <div id="childTaxCreditsDiv" class="form-group">
+                                                <div id="childTaxCreditsDiv1" class="form-group">
                                                    <label class="control-label"> Child tax credits </label>
-                                                   <div class="input-group col-md-3">
+                                                   <div class="input-group col-md-6">
                                                       <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="childTaxCredits" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      <input id="childTaxCredits1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                    </div>
                                                 </div>
-                                                <div id="workingTaxCreditsDiv" class="form-group">
+                                                <div id="workingTaxCreditsDiv1" class="form-group">
                                                    <label class="control-label"> Working tax credits </label>
-                                                   <div class="input-group col-md-3">
+                                                   <div class="input-group col-md-6">
                                                       <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="workingTaxCredits" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      <input id="workingTaxCredits1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                    </div>
                                                 </div>
-                                                <div id="indefiniteStateBenefitsDiv" class="form-group">
+                                                <div id="indefiniteStateBenefitsDiv1" class="form-group">
                                                    <label class="control-label"> Indefinite state benefits (DWP/HMRC) </label>
-                                                   <div class="input-group col-md-3">
+                                                   <div class="input-group col-md-6">
                                                       <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="indefiniteStateBenefits" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                      <input id="indefiniteStateBenefits1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                    </div>
                                                 </div>
+                                              </div>
+                                              <div id="receiveAnyGovernmentBenefitsApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                               <h4>Applicant 2</h4>
+                                               <!-- <h4> Please enter the annual equivalent </h4> -->
+                                               <div id="childBenefitbDiv2" class="form-group">
+                                                  <label class="control-label"> Child benefit </label>
+                                                  <div class="input-group col-md-6">
+                                                     <span style="background: white" class="input-group-addon">£</span>
+                                                     <input id="childBenefit2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                  </div>
+                                               </div>
+                                               <div id="childTaxCreditsDiv2" class="form-group">
+                                                  <label class="control-label"> Child tax credits </label>
+                                                  <div class="input-group col-md-6">
+                                                     <span style="background: white" class="input-group-addon">£</span>
+                                                     <input id="childTaxCredits2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                  </div>
+                                               </div>
+                                               <div id="workingTaxCreditsDiv2" class="form-group">
+                                                  <label class="control-label"> Working tax credits </label>
+                                                  <div class="input-group col-md-6">
+                                                     <span style="background: white" class="input-group-addon">£</span>
+                                                     <input id="workingTaxCredits2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                  </div>
+                                               </div>
+                                               <div id="indefiniteStateBenefitsDiv2" class="form-group">
+                                                  <label class="control-label"> Indefinite state benefits (DWP/HMRC) </label>
+                                                  <div class="input-group col-md-6">
+                                                     <span style="background: white" class="input-group-addon">£</span>
+                                                     <input id="indefiniteStateBenefits2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                  </div>
+                                               </div>
+                                             </div>
                                              </div>
                                           </div>
                                           <div id="earmAnyOtherAnnualIncome" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
@@ -1119,69 +1306,113 @@
                                              </div>
                                              <div id="earmAnyOtherAnnualIncomeBoard" style="display: none">
                                                 <h4> Please enter the annual equivalent </h4>
-                                                <div id="secondJobDiv" class="form-group">
-                                                   <label class="control-label"> Second job </label>
-                                                   <div class="input-group col-md-3">
-                                                      <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="secondJob" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                   </div>
-                                                </div>
-                                                <div id="investmentIncomeDiv" class="form-group">
-                                                   <label class="control-label"> Investment income  </label>
-                                                   <div class="input-group col-md-3">
-                                                      <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="investmentIncome" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                   </div>
-                                                </div>
-                                                <div id="maintenancePaymentsDiv" class="form-group">
-                                                   <label class="control-label"> Maintenance payments </label>
-                                                   <div class="input-group col-md-3">
-                                                      <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="maintenancePayments" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                   </div>
-                                                </div>
-                                                <div id="rentalIncomeDiv" class="form-group">
-                                                   <label class="control-label"> Rental income </label>
-                                                   <div class="input-group col-md-3">
-                                                      <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="rentalIncome" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                   </div>
-                                                </div>
-                                                <div id="fosteringIncomeDiv" class="form-group">
-                                                   <label class="control-label"> Fostering income </label>
-                                                   <div class="input-group col-md-3">
-                                                      <span style="background: white" class="input-group-addon">£</span>
-                                                      <input id="fosteringIncome" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                   </div>
-                                                </div>
+                                                <div id="earmAnyOtherAnnualIncomeApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
+                                                  <h4>Applicant 1</h4>
+                                                  <div id="secondJobDiv1" class="form-group">
+                                                     <label class="control-label"> Second job </label>
+                                                     <div class="input-group col-md-6">
+                                                        <span style="background: white" class="input-group-addon">£</span>
+                                                        <input id="secondJob1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                     </div>
+                                                  </div>
+                                                  <div id="investmentIncomeDiv1" class="form-group">
+                                                     <label class="control-label"> Investment income  </label>
+                                                     <div class="input-group col-md-6">
+                                                        <span style="background: white" class="input-group-addon">£</span>
+                                                        <input id="investmentIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                     </div>
+                                                  </div>
+                                                  <div id="maintenancePaymentsDiv1" class="form-group">
+                                                     <label class="control-label"> Maintenance payments </label>
+                                                     <div class="input-group col-md-6">
+                                                        <span style="background: white" class="input-group-addon">£</span>
+                                                        <input id="maintenancePayments1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                     </div>
+                                                  </div>
+                                                  <div id="rentalIncomeDiv1" class="form-group">
+                                                     <label class="control-label"> Rental income </label>
+                                                     <div class="input-group col-md-6">
+                                                        <span style="background: white" class="input-group-addon">£</span>
+                                                        <input id="rentalIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                     </div>
+                                                  </div>
+                                                  <div id="fosteringIncomeDiv1" class="form-group">
+                                                     <label class="control-label"> Fostering income </label>
+                                                     <div class="input-group col-md-6">
+                                                        <span style="background: white" class="input-group-addon">£</span>
+                                                        <input id="fosteringIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                     </div>
+                                                  </div>
+                                             </div>
+                                             <div id="earmAnyOtherAnnualIncomeApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                               <h4>Applicant 2</h4>
+                                               <div id="secondJobDiv2" class="form-group">
+                                                  <label class="control-label"> Second job </label>
+                                                  <div class="input-group col-md-6">
+                                                     <span style="background: white" class="input-group-addon">£</span>
+                                                     <input id="secondJob2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                  </div>
+                                               </div>
+                                               <div id="investmentIncomeDiv2" class="form-group">
+                                                  <label class="control-label"> Investment income  </label>
+                                                  <div class="input-group col-md-6">
+                                                     <span style="background: white" class="input-group-addon">£</span>
+                                                     <input id="investmentIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                  </div>
+                                               </div>
+                                               <div id="maintenancePaymentsDiv2" class="form-group">
+                                                  <label class="control-label"> Maintenance payments </label>
+                                                  <div class="input-group col-md-6">
+                                                     <span style="background: white" class="input-group-addon">£</span>
+                                                     <input id="maintenancePayments2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                  </div>
+                                               </div>
+                                               <div id="rentalIncomeDiv2" class="form-group">
+                                                  <label class="control-label"> Rental income </label>
+                                                  <div class="input-group col-md-6">
+                                                     <span style="background: white" class="input-group-addon">£</span>
+                                                     <input id="rentalIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                  </div>
+                                               </div>
+                                               <div id="fosteringIncomeDiv2" class="form-group">
+                                                  <label class="control-label"> Fostering income </label>
+                                                  <div class="input-group col-md-6">
+                                                     <span style="background: white" class="input-group-addon">£</span>
+                                                     <input id="fosteringIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                  </div>
+                                               </div>
+                                          </div>
                                              </div>
                                           </div>
+
                                           <div id="monthlyDeductions" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
-                                             <h4> Monthly deductions </h4>
-                                             <div id="monthlyDeductionsShownBeforeTaxDiv" class="form-group">
+                                             <h3> Monthly deductions </h3>
+                                            <div id="monthlyDeductionsApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
+                                             <h4>Applicant 1</h4>
+                                             <div id="monthlyDeductionsShownBeforeTaxDiv1" class="form-group">
                                                 <label class="control-label"> Monthly deductions shown on the payslip before tax </label>
-                                                <div class="input-group col-md-3">
+                                                <div class="input-group col-md-6">
                                                    <span style="background: white" class="input-group-addon">£</span>
-                                                   <input id="monthlyDeductionsShownBeforeTax" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   <input id="monthlyDeductionsShownBeforeTax1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                 </div>
                                              </div>
-                                             <div id="long-monthlyDeductionsShownAfterTaxDiv" class="form-group">
+                                             <div id="long-monthlyDeductionsShownAfterTaxDiv1" class="form-group">
                                                 <label class="control-label"> Monthly deductions shown on the payslip after tax </label>
-                                                <div class="input-group col-md-3">
+                                                <div class="input-group col-md-6">
                                                    <span style="background: white" class="input-group-addon">£</span>
-                                                   <input id="monthlyDeductionsShownAfterTax" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                   <input id="monthlyDeductionsShownAfterTax1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                                 </div>
                                              </div>
                                              <div class="form-group">
                                                 <label class="control-label"> Student loans? </label>
                                                 <div class="form-check">
                                                    <label class="form-check-label">
-                                                   <input type="radio" class="form-check-input" name="studentLoans" id="studentLoansYes" value="Yes"> Yes
+                                                   <input type="radio" class="form-check-input" name="studentLoans1" id="studentLoansYes1" value="Yes"> Yes
                                                    </label>
                                                 </div>
                                                 <div class="form-check disabled">
                                                    <label class="form-check-label">
-                                                   <input type="radio" class="form-check-input" name="studentLoans" id="studentLoansNo" value="No" checked> No
+                                                   <input type="radio" class="form-check-input" name="studentLoans1" id="studentLoansNo1" value="No" checked> No
                                                    </label>
                                                 </div>
                                              </div>
@@ -1189,16 +1420,60 @@
                                                 <label class="control-label"> On completion of the mortgage will the applicant's main residence be in Scotland? </label>
                                                 <div class="form-check">
                                                    <label class="form-check-label">
-                                                   <input type="radio" class="form-check-input" name="residenceInScotland" id="residenceInScotlandYes" value="Yes"> Yes
+                                                   <input type="radio" class="form-check-input" name="residenceInScotland1" id="residenceInScotlandYes1" value="Yes"> Yes
                                                    </label>
                                                 </div>
                                                 <div class="form-check disabled">
                                                    <label class="form-check-label">
-                                                   <input type="radio" class="form-check-input" name="residenceInScotland" id="residenceInScotlandNo" value="No" checked> No
+                                                   <input type="radio" class="form-check-input" name="residenceInScotland1" id="residenceInScotlandNo1" value="No" checked> No
                                                    </label>
                                                 </div>
                                              </div>
                                           </div>
+                                          <div id="monthlyDeductionsApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                           <h4>Applicant 2</h4>
+                                           <div id="monthlyDeductionsShownBeforeTaxDiv2" class="form-group">
+                                              <label class="control-label"> Monthly deductions shown on the payslip before tax </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="monthlyDeductionsShownBeforeTax2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+                                           <div id="long-monthlyDeductionsShownAfterTaxDiv2" class="form-group">
+                                              <label class="control-label"> Monthly deductions shown on the payslip after tax </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="monthlyDeductionsShownAfterTax2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+                                           <div class="form-group">
+                                              <label class="control-label"> Student loans? </label>
+                                              <div class="form-check">
+                                                 <label class="form-check-label">
+                                                 <input type="radio" class="form-check-input" name="studentLoans2" id="studentLoansYes2" value="Yes"> Yes
+                                                 </label>
+                                              </div>
+                                              <div class="form-check disabled">
+                                                 <label class="form-check-label">
+                                                 <input type="radio" class="form-check-input" name="studentLoans2" id="studentLoansNo2" value="No" checked> No
+                                                 </label>
+                                              </div>
+                                           </div>
+                                           <div class="form-group">
+                                              <label class="control-label"> On completion of the mortgage will the applicant's main residence be in Scotland? </label>
+                                              <div class="form-check">
+                                                 <label class="form-check-label">
+                                                 <input type="radio" class="form-check-input" name="residenceInScotland2" id="residenceInScotlandYes2" value="Yes"> Yes
+                                                 </label>
+                                              </div>
+                                              <div class="form-check disabled">
+                                                 <label class="form-check-label">
+                                                 <input type="radio" class="form-check-input" name="residenceInScotland2" id="residenceInScotlandNo2" value="No" checked> No
+                                                 </label>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        </div>
                                        </div>
                                     <!--/div-->
                                     <div id="advacedSalaryAanualIncomeClick" class="form-group">
@@ -1321,7 +1596,7 @@
                                             <label class="control-label"> Ground rent (monthly equivalent)  </label>
                                             <div class="input-group col-md-3">
                                                <span style="background: white" class="input-group-addon">£</span>
-                                               <input id="ground rent" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                               <input id="groundRent" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                             </div>
                                           </div>
                                           <div class="form-group">

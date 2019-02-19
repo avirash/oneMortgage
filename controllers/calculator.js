@@ -22,14 +22,13 @@ exports.aff_calc = async (ctx) => {
   if (input) {
     let results = []
     let currentRetry = 0
-    while ( currentRetry < 3 ) {
+//    while ( currentRetry < 3 ) {
       console.log('currentRetry: ' + currentRetry);
       try {
-
           results = await runtime.extract(input)
           if (results && results.length) {
             let result = results[0]
-            console.log('result: ' + JSON.stringify(result))
+            // console.log('result: ' + JSON.stringify(result))
             let priceObject = result.extarcted.find(x => x.price )
             console.log('priceObject: ' + priceObject)
             console.log('priceObject: ' + priceObject.price)
@@ -45,7 +44,7 @@ exports.aff_calc = async (ctx) => {
           console.log(err);
             currentRetry ++
         }
-    }
+    //}
     ctx.body = {
       input: ctx.request.body,
       results,

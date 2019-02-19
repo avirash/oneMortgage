@@ -4,6 +4,56 @@ let mortgageDetailsFree = [{index: 1 }]
 
 $(document).ready(function () {
 /// mortgage
+  $('[name="numOfApplying"]').on('click', function(ev) {
+
+    if (this.value === '1') {
+      console.log('1');
+      document.getElementById("numOfApplying1").checked = true
+      document.getElementById("numOfApplying2").checked = false
+
+      $('#advacedSalaryApplicant2').css('display', 'none')
+       $('#genericApplicant2').css('display', 'none')
+       $('#monthlyDeductionsApplicant2').css('display', 'none')
+       $('#earnAnyEmployedAllowancesApplicant2').css('display', 'none')
+       $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'none')
+       $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'none')
+    } else {
+      document.getElementById("numOfApplying1").checked = false
+     document.getElementById("numOfApplying2").checked = true
+      console.log('2');
+        $('#advacedSalaryApplicant2').css('display', 'block')
+        $('#genericApplicant2').css('display', 'block')
+        $('#monthlyDeductionsApplicant2').css('display', 'block')
+        $('#earnAnyEmployedAllowancesApplicant2').css('display', 'block')
+        $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'block')
+        $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'block')
+    }
+      // if ($(this).attr('value') === '1') {
+      //   console.log('here');
+      //   $('#advacedSalaryApplicant2').css('display', 'none')
+      //   $('#genericApplicant2').css('display', 'none')
+      //   $('#monthlyDeductionsApplicant2').css('display', 'none')
+      //   $('#earnAnyEmployedAllowancesApplicant2').css('display', 'none')
+      //   $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'none')
+      //   $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'none')
+      //
+      // //  $('#numOfApplying1').prop('checked', true)
+      //   // $('#numOfApplying2').prop('checked', false)
+      //   document.getElementById("numOfApplying1").checked = true
+      //   document.getElementById("numOfApplying2").checked = false
+      //
+      // } else {
+      //   $('#advacedSalaryApplicant2').css('display', 'block')
+      //   $('#genericApplicant2').css('display', 'block')
+      //   $('#monthlyDeductionsApplicant2').css('display', 'block')
+      //   $('#earnAnyEmployedAllowancesApplicant2').css('display', 'block')
+      //   $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'block')
+      //   $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'block')
+      //   document.getElementById("numOfApplying1").checked = false
+      //   document.getElementById("numOfApplying2").checked = true
+      // }
+  })
+
   $('#advancedQuestionsDiv > a').on('click', function(ev){
       if ($(this).attr('class')=='icon-plus') {
         $(this).attr('class','icon-close')
@@ -284,53 +334,72 @@ $(document).ready(function () {
   }
 
   function createRadioInput(id, labelText) {
-      let fieldset = document.createElement('fieldset')
-      fieldset.setAttribute('class', 'form-group')
+    let fieldset = document.createElement('fieldset')
+    fieldset.setAttribute('class', 'form-group')
 
-      let outterLabel = document.createElement('label')
-      outterLabel.innerHTML = labelText
-      outterLabel.setAttribute('class', 'control-label')
-
-      let divYes = document.createElement('div')
-      let divNo = document.createElement('div')
-
-      divYes.setAttribute('class', 'form-check')
-      divNo.setAttribute('class', 'form-check')
-
-      let labelYes = document.createElement('label')
-      let labelNo = document.createElement('label')
-
-      labelYes.setAttribute('class', 'control-label')
-      labelNo.setAttribute('class', 'control-label')
-
-      let inputYes = document.createElement('input')
-      let inputNo = document.createElement('input')
-
-      inputYes.id = id + 'Yes'
-      inputYes.name = id
-      inputYes.value = 'Yes'
-      inputYes.type = 'radio'
-      inputYes.setAttribute('class', 'form-check-input mortgageDetails')
-      inputYes.innerHTML = 'Yes'
-
-      inputNo.id = id + 'No'
-      inputNo.name = id
-      inputNo.type = 'radio'
-      inputNo.value = 'No'
-      inputNo.setAttribute('class', 'form-check-input mortgageDetails')
-      inputNo.innerHTML = 'No'
-      inputNo.checked = true
-
-      labelYes.appendChild(inputYes)
-      divYes.appendChild(labelYes)
-
-      labelNo.appendChild(inputNo)
-      divNo.appendChild(labelNo)
-
-      fieldset.appendChild(outterLabel)
-      fieldset.appendChild(divYes)
-      fieldset.appendChild(divNo)
-
+fieldset.innerHTML =
+    `
+        <label class="control-label">${labelText}</label>
+        <div class="form-check">
+           <label class="form-check-label">
+           <input type="radio" class="form-check-input" name="${id}" id="${id + 'Yes'}" value="Yes"> Yes
+           </label>
+        </div>
+        <div class="form-check disabled">
+           <label class="form-check-label">
+           <input type="radio" class="form-check-input" name="${id}" id="${id + 'No'}" value="No" checked=""> No
+           </label>
+        </div>
+    `
+      // let fieldset = document.createElement('fieldset')
+      // fieldset.setAttribute('class', 'form-group')
+      //
+      // let outterLabel = document.createElement('label')
+      // outterLabel.innerHTML = labelText
+      // outterLabel.setAttribute('class', 'control-label')
+      //
+      // let divYes = document.createElement('div')
+      // let divNo = document.createElement('div')
+      //
+      // divYes.setAttribute('class', 'form-check')
+      // divNo.setAttribute('class', 'form-check')
+      //
+      // let labelYes = document.createElement('label')
+      // labelYes.innerHTML = 'Yes'
+      // let labelNo = document.createElement('label')
+      // labelNo.innerHTML = 'No'
+      //
+      // labelYes.setAttribute('class', 'form-check-label')
+      // labelNo.setAttribute('class', 'form-check-label')
+      //
+      // let inputYes = document.createElement('input')
+      // let inputNo = document.createElement('input')
+      //
+      // inputYes.id = id + 'Yes'
+      // inputYes.name = id
+      // inputYes.value = 'Yes'
+      // inputYes.type = 'radio'
+      // inputYes.setAttribute('class', 'form-check-input mortgageDetails')
+      //
+      //
+      // inputNo.id = id + 'No'
+      // inputNo.name = id
+      // inputNo.type = 'radio'
+      // inputNo.value = 'No'
+      // inputNo.setAttribute('class', 'form-check-input mortgageDetails')
+      //
+      // inputNo.checked = true
+      //
+      // labelYes.appendChild(inputYes)
+      // divYes.appendChild(labelYes)
+      //
+      // labelNo.appendChild(inputNo)
+      // divNo.appendChild(labelNo)
+      //
+      // fieldset.appendChild(outterLabel)
+      // fieldset.appendChild(divYes)
+      // fieldset.appendChild(divNo)
+      //
       return fieldset
     }
 
@@ -543,6 +612,14 @@ $(document).ready(function () {
       $('#earnAnyEmployedAllowancesBoard').fadeOut('slow')
    } else {
      $('#earnAnyEmployedAllowancesBoard').fadeIn('slow')
+   }
+ })
+
+ $('[name="earnAnyEmployedAllowances2"]').on('change', function(ev){
+   if ($(this).attr('value') === 'No') {
+      $('#earnAnyEmployedAllowancesBoard2').fadeOut('slow')
+   } else {
+     $('#earnAnyEmployedAllowancesBoard2').fadeIn('slow')
    }
  })
 
@@ -820,6 +897,9 @@ $(document).ready(function () {
     if (el.tagName === 'INPUT') {
       if (['tel', 'text', 'number'].includes(el.type)) obj[el.id] = el.value.replace(/,/g,'') || 0
       if (el.type === 'radio' && $(el).is(':checked')) obj[$(el).attr('name')] = el.value
+
+
+
     }
     if (el.tagName === 'SELECT') {
       obj[el.id] = $(el).find(":selected").text()
@@ -840,9 +920,14 @@ $(document).ready(function () {
       }
     })
 
-    console.log(mortgageDetailsFree);
-    inputCollection['mortgageDetails'] = mortgageDetails
-    inputCollection['mortgageDetailsFree'] = mortgageDetailsFree
+    if (Object.keys(mortgageDetailsFree[0]).length > 1) {
+      inputCollection['mortgageDetailsFree'] = mortgageDetailsFree
+    }
+    if (Object.keys(mortgageDetails[0]).length > 1) {
+      inputCollection['mortgageDetails'] = mortgageDetails
+    }
+
+
     // $('.mortgageDetails').each(function(id, el) {
     //   if(el.id && el.id.includes("Free")){
     //
