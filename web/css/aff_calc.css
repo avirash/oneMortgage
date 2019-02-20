@@ -19,6 +19,9 @@ a::after {
 }
 a:hover {
 
+},
+a {
+  background-color: #ff9f07
 }
 
 .stepwizard-step p {
@@ -230,10 +233,13 @@ a:hover {
   border-radius: .3rem
 }
 
-.sidebar .nav-link:hover,
 .sidebar .nav-link.active:hover {
+  background-color: #ff9f07;
+}
 
-  background: #ff9f07;
+.sidebar .nav-link:hover {
+
+  background-color: #3a4248;
 }
 
 input[type='radio']:after {

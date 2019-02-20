@@ -306,18 +306,18 @@
          <div class="sidebar">
             <nav class="sidebar-nav ps ps--active-y">
                <ul class="nav">
-                  <li class="nav-item">
-                     <a class="nav-link active" href="#">
+                  <li class="nav-item" style="background-color: #3a4248;">
+                     <a class="nav-link" href="#">
                      <i class="nav-icon icon-speedometer"></i> Dashboard
                      </a>
                   </li>
                   <li class="nav-title">DIRECT CALCULATORS</li>
                   <li class="nav-item">
-                     <a class="nav-link" href="aff_calc.html">
-                     <i class="nav-icon icon-drop"></i> Affordability</a>
+                     <a class="nav-link active" href="index.html">
+                     <i class="nav-icon icon-calculator"></i> Affordability</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">
+                     <a class="nav-link" href="buy_to_let.html">
                      <i class="nav-icon icon-pencil"></i> Buy To Let</a>
                   </li>
                   <li class="nav-title">ORIGINATION</li>
@@ -376,28 +376,28 @@
                                     <img src="images/circleChecked.png" style="display: none" class='checkCircle'/>
                                     <p>Mortgage</p>
                                  </div>
-                                 <div id="newStep" class="stepwizard-step" style="display: none">
-                                    <a href="#otherProperty1b" type="button" class="btn btn-circled" disabled="disabled">1b</a>
+                                 <div id="newStep" class="stepwizard-step" style="display: none;">
+                                    <a href="#otherProperty1b" type="button" class="btn btn-circled" disabled="disabled" style="pointer-events: none;">1b</a>
                                     <img src="images/circleChecked.png" style="display: none" class='checkCircle'/>
-                                    <p style="margin-left: -30px">OtherProperty</p>
+                                    <p style="margin-left: -30px">Other Properties</p>
                                  </div>
                                  <div class="stepwizard-step">
-                                    <a href="#client" type="button" class="btn btn-circled" disabled="disabled">2</a>
+                                    <a href="#client" type="button" class="btn btn-circled" disabled="disabled"  style="pointer-events: none;">2</a>
                                     <img src="images/circleChecked.png" style="display: none" class='checkCircle'/>
                                     <p>Client(s)</p>
                                  </div>
                                  <div class="stepwizard-step">
-                                    <a href="#income" type="button" class="btn btn-circled" disabled="disabled">3</a>
+                                    <a href="#income" type="button" class="btn btn-circled" disabled="disabled"  style="pointer-events: none;">3</a>
                                     <img src="images/circleChecked.png" style="display: none" class='checkCircle'/>
                                     <p>Income</p>
                                  </div>
                                  <div class="stepwizard-step">
-                                    <a href="#outgoings" type="button" class="btn btn-circled" disabled="disabled">4</a>
+                                    <a href="#outgoings" type="button" class="btn btn-circled" disabled="disabled"  style="pointer-events: none;">4</a>
                                     <img src="images/circleChecked.png" style="display: none" class='checkCircle'/>
                                     <p>Outgoings</p>
                                  </div>
                                  <div class="stepwizard-step">
-                                    <a href="#results" type="button" class="btn btn-circled" disabled="disabled">5</a>
+                                    <a href="#results" type="button" class="btn btn-circled" disabled="disabled" style="pointer-events: none;">5</a>
                                     <p>Results</p>
                                  </div>
                               </div>
@@ -434,14 +434,14 @@
                                             <label class="control-label"> How much would your client(s) like to borrow? </label>
                                             <div class="input-group col-md-3">
                                                <span style="background: white" class="input-group-addon">£</span>
-                                               <input id="loanValue" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                               <input id="loanValue" maxlength="10" type="tel" class="form-control" placeholder="0" required="required"/>
                                             </div>
                                          </div>
                                          <div class="form-group">
                                             <label class="control-label"> How long does the mortgage term need to be? </label>
                                             <div class="control-group">
                                                <div class="controls form-inline">
-                                                  <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="YY" id="mortgageTermYears" required="required">
+                                                  <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="35" class="form-control" placeholder="YY" id="mortgageTermYears" required="required">
                                                   <label for="mortgageTermYears" style="margin-left: 5px;"> Years </label>&nbsp;
                                                   <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="0" max="12" class="form-control" placeholder="MM" id="mortgageTermMonths">
                                                   <label for="mortgageTermMonths" style="margin-left: 5px;"> Months </label>
@@ -622,46 +622,6 @@
                                              </label>
                                           </div>
                                        </fieldset>
-                                       <!-- <div id="mortgagedPropertiesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;display: none;" >
-                                          <div class="form-group" style="margin-top: 10px;">
-                                             <label class="control-label" for="mortgagedProperties">Number of mortgaged properties; including properties outside the UK?</label>
-                                             <div class="input-group col-md-5">
-                                                <select id="mortgagedProperties" class="form-control col-md-7">
-                                                   <option value="0" selected>0</option>
-                                                   <option value="1">1</option>
-                                                   <option value="2">2</option>
-                                                   <option value="3">3</option>
-                                                   <option value="4">4</option>
-                                                   <option value="5">5</option>
-                                                </select>
-                                             </div>
-                                          </div>
-                                          <div id="mortgagedPropertiesBoard">
-                                          </div>
-                                       </div>
-                                       <div id="mortgageFreePropertiesDiv" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px;display: none">
-                                          <div class="form-group" style="margin-top: 10px;">
-                                             <label class="control-label" for="mortgageFreeProperties">Number of mortgage-free properties; including properties outside the UK?</label>
-                                             <div class="input-group col-md-5">
-                                                <select id="mortgageFreeProperties" class="form-control col-md-7">
-                                                   <option value="0" selected>0</option>
-                                                   <option value="1">1</option>
-                                                   <option value="2">2</option>
-                                                   <option value="3">3</option>
-                                                   <option value="4">4</option>
-                                                   <option value="5">5</option>
-                                                   <option value="6">6</option>
-                                                   <option value="7">7</option>
-                                                   <option value="8">8</option>
-                                                   <option value="9">9</option>
-                                                   <option value="10">10</option>
-                                                </select>
-                                             </div>
-                                          </div>
-                                          <div id="mortgageFreePropertiesBoard">
-                                          </div>
-                                       </div> -->
-
                                      </div>
                                      <div id="advancedQuestionsDiv" class="form-group">
                                         <a  class="icon-plus" style="word-spacing: -4px; color: #20a8d8; cursor: pointer; font-size: 16px;"> Advanced Questions</a>
@@ -671,7 +631,6 @@
                                              <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
                                           </div>
                                        </div>
-                                    <!--/div-->
                                  </div>
                               </div>
                               <!-- 1b other properties -->
@@ -720,6 +679,7 @@
                                     </div>
                                     <div class="form-group ">
                                       <div class="input-group col-md-12">
+                                          <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn backBtn btn-lg left-right" type="button" >Back</button>
                                           <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
                                         </div>
                                       </div>
@@ -757,11 +717,11 @@
                                           <label class="control-label">What's your client's date of birth? </label>
                                           <div class="control-group">
                                              <div class="controls form-inline">
-                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="DD" id="dayOfBirth" required="required">
+                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="31" class="form-control" placeholder="DD" id="dayOfBirth" required="required">
                                                 <label for="dayOfBirth" style="margin-left: 5px;"> Day </label>&nbsp;
-                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="40" class="form-control" placeholder="MM" id="mountOfBirth" required="required">
+                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="12" class="form-control" placeholder="MM" id="mountOfBirth" required="required">
                                                 <label for="mountOfBirth" style="margin-left: 5px;"> Month </label>&nbsp;
-                                                <input type="tel" style="text-align: center;width:55px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="4" min="0" max="12" class="form-control" placeholder="YYYY" id="yearOfBirth" required="required">
+                                                <input type="tel" style="text-align: center;width:55px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="4" min="0" max="2500" class="form-control" placeholder="YYYY" id="yearOfBirth" required="required">
                                                 <label for="yearOfBirth" style="margin-left: 5px;"> Year </label>
                                              </div>
                                           </div>
@@ -789,6 +749,7 @@
                                     </div>
                                     <div class="form-group ">
                                        <div class="input-group col-md-12">
+                                         <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn backBtn btn-lg left-right" type="button" >Back</button>
                                           <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
                                        </div>
                                     </div>
@@ -1514,6 +1475,7 @@
                                     </div>
                                     <div class="form-group">
                                        <div class="input-group col-md-12">
+                                          <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn backBtn btn-lg left-right" type="button" >Back</button>
                                           <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
                                        </div>
                                     </div>
@@ -1661,6 +1623,7 @@
                                     </div>
                                     <div class="form-group">
                                        <div class="input-group col-md-12">
+                                          <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn backBtn btn-lg left-right" type="button" >Back</button>
                                           <button  style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn nextBtn btn-lg pull-right" type="button" >Next</button>
                                        </div>
                                     </div>
@@ -1668,25 +1631,29 @@
                                  </div>
                               </div>
                               <!-- Results -->
-                              <div class="row setup-content" id="results">
-                                 <div class="col-xs-6 col-md-offset-3">
-                                    <div class="col-md-12">
-                                       <h3> Results </h3>
-                                       <p>Please note our affordability calculator is only for guidance purposes. The maximum loan available may be impacted by the Loan to Value.</p>
-                                       <!-- <button style="background-color: #ff9f07;border-color: #ff9f07;" class="btn btn-success btn-lg pull-right" type="submit" id="calculate"> Calculate </button> -->
+                              <div class="row setup-content" id="results" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
+                                    <div class="col-xs-12 col-md-offset-0 form-group">
+                                      <h3> Results </h3>
+                                    <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px; margin-top: 0px">
+                                      <div class="form-group">
+                                         <label class="control-label">Please note our affordability calculator is only for guidance purposes. The maximum loan available may be impacted by the Loan to Value.</label>
+                                      </div>
                                     </div>
-                                    <div class="col-md-12 col-md-offset-3">
-                                       <image id="loader" style="display: none" class="col-md-offset-1" src="https://cdn-images-1.medium.com/max/1600/1*W8cj-FRc58UozzcMWqVPZw.gif" />
+                                      <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px; margin-top: 0px">
+                                    <div class="col-md-12">
+                                       <image id="loader" style="display: none" class="rounded mx-auto d-block" src="images/PwqR.gif" />
                                        <table id="tableResults"  class="table table-responsive-sm" style="width:100%;display: none">
                                           <thead>
                                              <tr>
-                                                <th>Lender Logo</th>
-                                                <th>Lender Name</th>
-                                                <th>Price</th>
+                                                <th style="width: 50%;">Lender Logo</th>
+                                                <th style="width: 50%;" >Lender Name</th>
+                                                <th style="width: 50%;">Price</th>
                                              </tr>
                                           </thead>
                                        </table>
+                                      </div>
                                     </div>
+                                    <a style="background-color: #ff9f07;border-color: #ff9f07;color: white" class="btn btn-success btn-lg pull-right" type="submit" onclick="location.reload()"> Reset </a>
                                  </div>
                               </div>
                            </form>

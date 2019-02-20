@@ -1,6 +1,8 @@
 var inputCollection = {}
 let mortgageDetails = [{index: 1 }]
 let mortgageDetailsFree = [{index: 1 }]
+var lendersReturned = 0
+var numOfLenders = 0
 
 $(document).ready(function () {
 /// mortgage
@@ -810,9 +812,26 @@ fieldset.innerHTML =
   var endPoint = 'http://localhost:3000'
   var navListItems = $('div.setup-panel div a,div.setup-panel div img'),
           allWells = $('.setup-content'),
-          allNextBtn = $('.nextBtn');
+          allNextBtn = $('.nextBtn'),
+          backBtn = $('.backBtn')
+
 
   allWells.hide();
+
+  backBtn.click(function (e) {
+      e.preventDefault();
+      var curStep = $(this).closest(".setup-content"),
+      curStepBtn = curStep.attr("id"),
+      curStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]'),
+      prev = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev()
+
+      if ($(prev).css('display') === 'none') {
+        prev = $(prev).prev()
+      }
+
+      let prevStepWizard = $(prev).children("img")
+      $(prevStepWizard).click()
+  })
 
   navListItems.click(function (e) {
       e.preventDefault();
@@ -829,7 +848,7 @@ fieldset.innerHTML =
           $target.show();
           $target.find('input:eq(0)').focus();
       }
-  });
+  })
 
   // next step in the form
   allNextBtn.click(function(){
@@ -845,7 +864,7 @@ fieldset.innerHTML =
       if (curStepBtn === 'mortgage' && !$('#provideMoreDetailsYes').prop('checked')) {
             nextStepWizard = $('div.setup-panel div a[href="#otherProperty1b"]').parent().next().children("a")
         }
-
+        $(nextStepWizard).css('pointer-events', 'auto')
       $(".form-group").removeClass("has-error");
       for(var i=0; i<curInputs.length; i++){
           if (!curInputs[i].validity.valid || ($(curInputs[i]).prop('required') && $(curInputs[i]).val() === "0" )){
@@ -858,6 +877,7 @@ fieldset.innerHTML =
       if (isValid) {
         collectInputs()
         $(curStepWizard).css('display', 'none')
+
         $(curStepWizard).next().css('display', 'inline-table')
         nextStepWizard.removeAttr('disabled').trigger('click');
         if (nextStepWizard[0].innerHTML === '5')  calculate()
@@ -878,7 +898,24 @@ fieldset.innerHTML =
           next.focus()
         }
       }
-    })
+    }),
+      $(this).keypress(function(ev) {
+        $(this).closest(".form-group").removeClass("has-error");
+
+        ev = (ev) ? ev : window.event;
+        var charCode = (ev.which) ? ev.which : ev.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        } else {
+          let inputId = $(this).attr('id')
+          if (inputId.includes('Years') || inputId.includes('Months') || inputId.includes('Birth'))  {
+            let max = parseInt($(this).attr('max'))
+            let inputValAfter = parseInt($(this).val().toString() + ev.key.toString())
+            if (max < inputValAfter) return false
+          }
+        }
+        return true;
+      })
   })
 
   function numberWithCommas(x) {
@@ -905,9 +942,6 @@ fieldset.innerHTML =
     if (el.tagName === 'INPUT') {
       if (['tel', 'text', 'number'].includes(el.type)) obj[el.id] = el.value.replace(/,/g,'') || 0
       if (el.type === 'radio' && $(el).is(':checked')) obj[$(el).attr('name')] = el.value
-
-
-
     }
     if (el.tagName === 'SELECT') {
       obj[el.id] = $(el).find(":selected").text()
@@ -934,24 +968,23 @@ fieldset.innerHTML =
     if (Object.keys(mortgageDetails[0]).length > 1) {
       inputCollection['mortgageDetails'] = mortgageDetails
     }
+  }
 
-
-    // $('.mortgageDetails').each(function(id, el) {
-    //   if(el.id && el.id.includes("Free")){
-    //
-    //   } else {
-    //
-    //   }
-    // }
-
+  function completeInputCollection() {
+    let monthlyCommitmented = Object.keys(inputCollection).find( x => x === 'monthlyCommitmented')
+    let otherProperty = Object.keys(inputCollection).find( x => x === 'otherProperty')
+    if (!monthlyCommitmented) inputCollection['monthlyCommitmented'] = 'No'
+    if (!otherProperty) inputCollection['otherProperty'] = 'No'
   }
 
   function calculate() {
     $("#loader").fadeIn('slow')
     $("#tableResults").find("tr:gt(0)").remove();
     $("#tableResults").fadeOut('slow')
-    console.log(inputCollection);
-
+    console.log(inputCollection)
+    completeInputCollection()
+    lendersReturned = 0
+    numOfLenders = 0
     $.ajax({
        url: `${endPoint}/getExtractionInput/`,
        method: 'POST',
@@ -962,14 +995,15 @@ fieldset.innerHTML =
        },
        data: inputCollection,
        success: function(data) {
+         numOfLenders = data.results.length
          for (var lender of data.results ) {
            sendRequerst(lender)
          }
        },
        error: function(request,msg,error) {
-         $("#loader").fadeOut('slow')
+         $("#loader").attr('style', 'display: none !important');
        }
-   });
+   })
   }
 
   $('div.setup-panel div a.btn-primary').trigger('click');
@@ -1010,7 +1044,12 @@ fieldset.innerHTML =
       }
     }
   }
-
+  function closeLoader(){
+    lendersReturned++
+    if (numOfLenders === lendersReturned) {
+      $("#loader").attr('style', 'display: none !important');
+    }
+  }
   // send request to affordability
   function sendRequerst(input) {
     let data = input
@@ -1021,7 +1060,6 @@ fieldset.innerHTML =
       contentType: 'application/x-www-form-urlencoded',
       url: `${endPoint}/aff_calc`,
        success: function(data) {
-         $("#loader").fadeOut('slow')
          if (data.results.length) {
            for (var result of data.results) {
              for ( var extracted of result.extarcted) {
@@ -1038,10 +1076,12 @@ fieldset.innerHTML =
            }
            sortTable("tableResults")
          }
+         closeLoader()
          console.log(data);
        },
        error: function(request,msg,error) {
          console.log(error);
+         closeLoader()
        //  alert(error)
        }
    })

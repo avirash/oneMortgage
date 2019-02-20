@@ -158,8 +158,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Repayment": {
              "YearsremainingTerm": {
@@ -188,8 +187,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Part and part": {
              "repaymentBalance": {
@@ -224,8 +222,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            }
          }
        },
@@ -259,8 +256,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Repayment": {
              "YearsremainingTerm": {
@@ -289,8 +285,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Part and part": {
              "repaymentBalance": {
@@ -325,8 +320,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            }
          }
        },
@@ -357,8 +351,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Repayment": {
              "YearsremainingTerm": {
@@ -384,8 +377,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Part and part": {
              "repaymentBalance": {
@@ -417,8 +409,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            }
          }
        },
@@ -449,8 +440,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Repayment": {
              "YearsremainingTerm": {
@@ -476,8 +466,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Part and part": {
              "repaymentBalance": {
@@ -509,8 +498,7 @@
              },
              "otherMonthlyCostsForproperty": {
                "css": "[id*='pnlMortgagedProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            }
          }
        }
@@ -551,8 +539,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Repayment": {
              "YearsremainingTermFree": {
@@ -581,8 +568,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Part and part": {
              "repaymentBalanceFree": {
@@ -617,8 +603,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            }
          }
        },
@@ -652,8 +637,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Repayment": {
              "YearsremainingTermFree": {
@@ -682,8 +666,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Part and part": {
              "repaymentBalanceFree": {
@@ -718,8 +701,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            }
          }
        },
@@ -750,8 +732,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Repayment": {
              "YearsremainingTermFree": {
@@ -777,8 +758,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Part and part": {
              "repaymentBalanceFree": {
@@ -810,8 +790,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            }
          }
        },
@@ -842,8 +821,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Repayment": {
              "YearsremainingTermFree": {
@@ -869,8 +847,7 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            },
            "Part and part": {
              "repaymentBalanceFree": {
@@ -902,13 +879,11 @@
              },
              "otherMonthlyCostsForpropertyFree": {
                "css": "[id*='pnlMortgageFreeProperty'] #tbOtherMonthlyCosts"
-             },
-             "click2": "btnMortgagedProperty"
+             }
            }
          }
        }
-     },
-     "click2": ""
+     }
    },
    "click3": "#btnContinue",
    "click4": "#btnContinue",
@@ -1110,7 +1085,7 @@
      "css": "#tbCreditCardsBalance"
    },
    "monthlyCommitmented": {
-     "css": "[for*='NonRegularMonthlyExpenditure']",
+     "css": "[name='NonRegularMonthlyExpenditure']",
      "Yes": {
        "css": "[for='rbNonRegularMonthlyExpenditureYes']",
        "childcareAndEducation": {

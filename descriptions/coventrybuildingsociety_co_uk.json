@@ -1,0 +1,32 @@
+{
+  "lender": "Coventry",
+  "logo": "coventry",
+  "domain": "coventrybuildingsociety.co.uk",
+  "affordability": "https://www.coventrybuildingsociety.co.uk/calculators/AffordabilityCalculator.aspx?ch=broker",
+  "mapping": {
+    "waitFor": 2000,
+    "numOfApplying": {
+      "css": "#MainContent_AffordabilityCalculator1_TB_421",
+      "logic": "(@value === 1) ? 'One': 'Single'"
+    },
+    "mortgageType": {
+      "css": "#MainContent_AffordabilityCalculator1_DDL_430",
+      "logic": "'New'",
+      "new": true
+    },
+    "propertyValue": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_421"
+    },
+    "loanValue": {
+
+    }
+
+
+
+  },
+  "extraction": {
+    "price": {
+      "css": "#ctl00_ContentPlaceHolder_ctl00_loanamount"
+    }
+  }
+}
