@@ -1031,7 +1031,7 @@ fieldset.innerHTML =
                var cell1 = row.insertCell(0)
                var cell2 = row.insertCell(1)
                var cell3 = row.insertCell(2)
-               cell1.innerHTML = '<img src="js/' + result.logo + '.png" width="150px" height="50px"/>'
+               cell1.innerHTML = '<img src="images/' + result.logo + '.png" width="150px" height="50px"/>'
                cell2.innerHTML = result.lender
                cell3.innerHTML = extracted.price
              }

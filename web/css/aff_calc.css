@@ -43,7 +43,7 @@ a:hover {
   bottom: 0;
   position: absolute;
   content: " ";
-  width: 84%;
+  width: 83.0%;
   height: 1px;
   /* background-color: #ccc; */
   z-order: 2;
@@ -53,7 +53,7 @@ a:hover {
   display: table-cell;
   /* text-align: center; */
   position: relative;
-  width: 200px;
+  width: 250px;
 }
 
 .btn-circled {

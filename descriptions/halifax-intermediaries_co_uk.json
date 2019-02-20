@@ -1,0 +1,84 @@
+{
+ "lender": "Halifax",
+ "logo": "halifax",
+ "domain": "halifax-intermediaries.co.uk",
+ "affordability": "https:www.halifax-intermediaries.co.uk/tools_and_calculators/mortgage_affordability_calculator/default.aspx",
+ "mapping": {
+   "waitFor": 2000,
+   "numOfApplying": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_adults"
+   },
+   "numOfdependants": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_children",
+     "logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18])",
+     "new": true
+   },
+   "residenceInScotland": {
+     "css": "#ctl00$ContentPlaceHolder$ctl00$ddlIsScottish"
+   },
+   "propertyValue": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_propertyValue"
+   },
+   "loanValue": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_amount"
+   },
+   "mortgageTermYears": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_term"
+   },
+   "typeOfOwnerShip": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_ddlhelptobuy",
+     "logic": "('@value' === 'Other') ? 'No': 'Yes'",
+     "new": true
+   },
+   "requiredInterest": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_interestonly"
+   },
+   "requiredInterestMonthly": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_monthlypremium"
+   },
+   "propertyLegalStatus": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_propertytype",
+     "logic": "('@value' === 'freehold' || '@value' === 'Interest only - endowment or investment' ) ? 'Freehold': 'Leashold'"
+   },
+   "annualIncome1": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_annualincome1"
+   },
+   "annualIncome2": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_annualincome2"
+   },
+   "totalOvertimeAnnually1": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_overtime1"
+   },
+   "totalOvertimeAnnually2": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_overtime2"
+   },
+   "annualBonus1": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_bonus1"
+   },
+   "annualBonus2": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_bonus2"
+   },
+   "totalCommission1Annually1": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_commission1"
+   },
+   "totalCommission1Annually2": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_commission2"
+   },
+   "otherIncome": {},
+   "totalCreditCards": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_credit1"
+   },
+   "creditCardBalances": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_card1"
+   },
+   "otherMortgagePayments": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_mortgage1"
+   },
+   "click1": "#ctl00_ContentPlaceHolder_ctl00_submitproduct"
+ },
+ "extraction": {
+   "price": {
+     "css": "#ctl00_ContentPlaceHolder_ctl00_loanamount"
+   }
+ }
+}

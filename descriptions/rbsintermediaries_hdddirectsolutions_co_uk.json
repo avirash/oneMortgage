@@ -1,0 +1,107 @@
+{
+	"lender": "Natwest",
+	"domain": "rbsintermediaries.hdddirectsolutions.co.uk",
+	"affordability": "https://rbsintermediaries.hdddirectsolutions.co.uk/Natwest",
+	"logo": "netwest",
+	"mapping": {
+		"waitFor": 2000,
+		"loanValue": {
+			"css": "#LoanToValue",
+			"logic": "((input[propertyValue] - input[loanValue]) / input[propertyValue]) * 100"
+		},
+		"methodOfRepayment": {
+			"css": "#RepaymentMethod",
+			"logic": "('@value' === 'Capital and interest') ? 'Capital and interest £' : ('@value'.includes('Interest only')) ?  'Interest Only £' : 'Mixed Repayment'",
+			"Capital and interest £": {
+				"mortgageTermYears": {
+					"css": "#TermOfMortgageYears"
+				},
+				"mortgageTermMonths": {
+					"css": "#TermOfMortgageMonths"
+				}
+			},
+			"Interest Only £": {
+				"requiredInterest": {
+					"css": "#InterestOnlyAmount"
+				},
+				"repaymentStrategyAmount": {
+					"css": "#RepaymentStrategyAmount"
+				},
+				"mortgageTermYears": {
+					"css": "#TermOfMortgageYears"
+				},
+				"mortgageTermMonths": {
+					"css": "#TermOfMortgageMonths"
+				}
+			},
+			"Mixed Repayment": {
+				"requiredInterest": {
+					"css": "#InterestOnlyAmount"
+				},
+				"repaymentStrategyAmount": {
+					"css": "#RepaymentStrategyAmount"
+				},
+				"capitalAndInterestAmount": {
+					"css": "#CapitalAndInterestAmount"
+				},
+				"isRepaymentStrategySale": {
+					"css": "#IsRepaymentStrategySale"
+				},
+				"mortgageTermYears": {
+					"css": "#TermOfMortgageYears"
+				},
+				"mortgageTermMonths": {
+					"css": "#TermOfMortgageMonths"
+				}
+			}
+		},
+		"typeOfOwnerShip": {
+			"css": "#IsSharedEquityMortgage",
+			"logic": "('@value' === 'Shared Equity') ? 'Yes' : 'No'"
+		},
+		"annualIncome1": {
+			"css": "#MainApplicantRegularGrossIncome"
+		},
+		"annualIncome2": {
+			"css": "#JointApplicantGrossIncome"
+		},
+		"annualBonus1": {
+			"css": "#MainApplicantOtherGrossIncome"
+		},
+		"annualBonus2": {
+			"css": "#JointApplicantOtherGrossIncome"
+		},
+		"monthlyLoanPayments": {
+			"css": "#MonthlyLoanPayments"
+		},
+		"monthlyHirePurchasePayments": {
+			"css": "#MonthlyHirePurchasePayments"
+		},
+		"rentCharge": {
+			"css": "#MonthlyLeaseAgreementPayments"
+		},
+		"otherMortgagePayments": {
+			"css": "#OtherMortgagePayments"
+		},
+		"otherCommittedPayments": {
+			"css": "#OtherCommittedExpenditure"
+		},
+		"creditCardBalances": {
+			"css": "#TotalCreditCardBalance"
+		},
+		"totalApplicantsAndDependants": {
+			"css": "#TotalNoApplicantsAndDependants",
+			"logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18]) + parseInt(input[numOfApplying])",
+			"new": true
+		},
+		"expectedChangeToFinancialCircumstances1": {
+			"css": "#ExpectedChangeToFinancialCircumstances"
+		},
+		"click1": "#btnCalculate"
+	},
+	"extraction": {
+		"price": {
+			"css": "#mortgage-calculator-results > strong"
+		}
+	}
+}
