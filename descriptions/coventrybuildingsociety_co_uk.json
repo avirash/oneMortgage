@@ -4,10 +4,10 @@
   "domain": "coventrybuildingsociety.co.uk",
   "affordability": "https://www.coventrybuildingsociety.co.uk/calculators/AffordabilityCalculator.aspx?ch=broker",
   "mapping": {
-    "waitFor": 2000,
+    "waitFor": 3000,
     "numOfApplying": {
-      "css": "#MainContent_AffordabilityCalculator1_TB_421",
-      "logic": "(@value === 1) ? 'One': 'Single'"
+      "css": "#MainContent_AffordabilityCalculator1_DDL_423",
+      "logic": "(@value === 1) ? 'One': 'Two'"
     },
     "mortgageType": {
       "css": "#MainContent_AffordabilityCalculator1_DDL_430",
@@ -17,11 +17,46 @@
     "propertyValue": {
         "css": "#MainContent_AffordabilityCalculator1_TB_421"
     },
+    "numOfAdults": {
+      "css": "#MainContent_AffordabilityCalculator1_TB_424",
+      "logic": "parseInt(input[numOfApplying])",
+      "new": true
+
+    },
+    "numOfAdultsAndDependants": {
+      "css": "#MainContent_AffordabilityCalculator1_TB_425",
+      "logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18]) +parseInt(input[numOfApplying])",
+      "new": true
+    },
+    "taxBenefit": {
+      "css":  "#MainContent_AffordabilityCalculator1_DDL_426",
+      "logic": "'No'",
+      "new": true
+    },
     "loanValue": {
-
-    }
-
-
+      "css": "#MainContent_AffordabilityCalculator1_TB_431"
+    },
+    "mortgageTermYears": {
+      "css": "#MainContent_AffordabilityCalculator1_TB_432"
+    },
+    "mortgageTermMonths": {
+      "css": "#MainContent_AffordabilityCalculator1_TB_433"
+    },
+    "dayOfBirth": {
+      "css": "#MainContent_AffordabilityCalculator1_AppDets1_TB_428_DAY"
+    },
+    "mountOfBirth": {
+      "css": "#MainContent_AffordabilityCalculator1_AppDets1_TB_428_MONTH"
+    },
+    "yearOfBirth": {
+      "css": "#MainContent_AffordabilityCalculator1_AppDets1_TB_428_YEAR"
+    },
+    "gender": {
+      "css": "#MainContent_AffordabilityCalculator1_AppDets1_DDL_429",
+      "logic": "'Male'",
+      "new": true
+    },
+    "click1": "#ContBtn"
 
   },
   "extraction": {

@@ -152,16 +152,16 @@ $(document).ready(function () {
     let scope = (container.toLowerCase().includes('free')) ? 'Free' : ''
     let div = document.createElement('div')
     div.id = `propertyUseBody${scope}Div${index}`
-    let currencyInput = createCurrencyInput(`estimatedPropertyValue${scope}${index}`, 'Estimated property value')
-    let mortgageBalance = createCurrencyInput(`mortgageBalance${scope}${index}`, 'Mortgage balance')
+    let currencyInput = createCurrencyInput(`estimatedPropertyValue${scope}${index}`, 'Estimated property value', true)
+    let mortgageBalance = createCurrencyInput(`mortgageBalance${scope}${index}`, 'Mortgage balance', true)
     let typeOfMortgage =  createDropdown([
       { text: "Interest only", value: 1 , selected: true},
       { text: "Repayment", value: 2  },
       { text: "Part and part", value: 3  }
     ], `typeOfMortgage${scope}${(index)}`, 'Type of mortgage')
     let monthlyMortgagePaymentInput = createCurrencyInput(`monthlyMortgagePayment${index}`, 'Monthly mortgage payment')
-    let monthlyUtilities = createCurrencyInput(`monthlyUtilities${scope}${index}`, 'Monthly utilities (gas, water, electric)')
-    let monthlyCouncilTax = createCurrencyInput(`monthlyCouncilTax${scope}${index}`, 'Monthly council tax')
+    let monthlyUtilities = createCurrencyInput(`monthlyUtilities${scope}${index}`, 'Monthly utilities (gas, water, electric)', true)
+    let monthlyCouncilTax = createCurrencyInput(`monthlyCouncilTax${scope}${index}`, 'Monthly council tax', true)
     let monthlyPropertyMaintenance = createCurrencyInput(`monthlyPropertyMaintenance${scope}${index}`, 'Monthly property maintenance')
     let monthlyGroundRent = createCurrencyInput(`monthlyGroundRent${scope}${index}`, 'Monthly ground rent / service charges')
     let otherMonthlyCostsForproperty = createCurrencyInput(`otherMonthlyCostsForproperty${scope}${index}`, 'Other monthly costs for this property')
@@ -187,8 +187,8 @@ $(document).ready(function () {
     let scope = (container.toLowerCase().includes('free')) ? 'Free' : ''
     let div = document.createElement('div')
     div.id = `propertyUseBody${scope}Div${index}`
-    let currencyInput = createCurrencyInput(`estimatedPropertyValue${scope}${(index)}`, 'Estimated property value')
-    let mortgageBalance = createCurrencyInput(`mortgageBalance${scope}${(index)}`, 'Mortgage balance')
+    let currencyInput = createCurrencyInput(`estimatedPropertyValue${scope}${(index)}`, 'Estimated property value', true)
+    let mortgageBalance = createCurrencyInput(`mortgageBalance${scope}${(index)}`, 'Mortgage balance', true)
 
     let typeOfMortgage =  createDropdown([
       { text: "Interest only", value: 1 , selected: true},
@@ -197,7 +197,7 @@ $(document).ready(function () {
     ], `typeOfMortgage${scope}${(index)}`, 'Type of mortgage')
 
     let monthlyMortgagePaymentInput = createCurrencyInput(`monthlyMortgagePayment${scope}${(index)}`, 'Monthly mortgage payment')
-    let monthlyGrossRent = createCurrencyInput(`monthlyGrossRent${scope}${(index)}`, 'Monthly gross rent')
+    let monthlyGrossRent = createCurrencyInput(`monthlyGrossRent${scope}${(index)}`, 'Monthly gross rent', true)
     let rentReceivedForeignCurrency = createRadioInput(`rentReceivedForeignCurrency${scope}${(index)}`, 'Will the rent be received in a foreign currency?')
 
     let monthlyAgentFees = createCurrencyInput(`monthlyAgentFees${scope}${(index)}`, `Monthly agent's fees (if applicable)`)
@@ -240,7 +240,7 @@ $(document).ready(function () {
       }
     } else {
       let repaymentBalance  = createCurrencyInput(`repaymentBalance${scope}${index}`, `Repayment balance `)
-      let interestOnlyBalance = createCurrencyInput(`interestOnlyBalance${scope}${index}`, 'Interest only balance')
+      let interestOnlyBalance = createCurrencyInput(`interestOnlyBalance${scope}${index}`, 'Interest only balance', true)
       let yearAndMonthsInput = createYearAndMonthsInput(`remainingTerm${scope}${index}`, 'Remaining term')
       $(selectDiv).after(repaymentBalance)
       $(repaymentBalance).after(interestOnlyBalance)
@@ -437,7 +437,7 @@ fieldset.innerHTML =
       return div
     }
 
-  function createCurrencyInput(id, labelText) {
+  function createCurrencyInput(id, labelText, required = false) {
       let div = document.createElement('div')
       div.setAttribute('class','form-group')
       div.id = `${id}Div`
@@ -463,6 +463,8 @@ fieldset.innerHTML =
       input.maxlength = '10'
       input.type = 'tel'
       input.placeholder = '0'
+      //$("[name='name_x']").prop("required", true);
+      if (required) $(input).attr('required', true)
 
       innerDiv.appendChild(span)
       innerDiv.appendChild(input)
@@ -551,7 +553,7 @@ fieldset.innerHTML =
        if ($(this).attr('value') === 'No' || '') {
          $('#provideMoreDetailsDiv').fadeIn('slow')
        } else {
-         alert('you cannot')
+         //alert('you cannot')
          $('#provideMoreDetailsNo').prop('checked', true)
          $('#provideMoreDetailsDiv').fadeOut('slow')
          $('#newStep').css('display', 'none')
@@ -866,7 +868,7 @@ fieldset.innerHTML =
         }
         $(nextStepWizard).css('pointer-events', 'auto')
       $(".form-group").removeClass("has-error");
-      for(var i=0; i<curInputs.length; i++){
+      for(var i=curInputs.length - 1; i >= 0 ; i--){
           if (!curInputs[i].validity.valid || ($(curInputs[i]).prop('required') && $(curInputs[i]).val() === "0" )){
               isValid = false;
               $(curInputs[i]).closest(".form-group").addClass("has-error");
