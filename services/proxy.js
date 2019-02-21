@@ -1,76 +1,60 @@
-const request = require('request')
-const Metrics = require('../../lib/metrics')
-
-Q.Errors.declare('FailedToAcquireProxyError', 'Unable to acquire proxy', {
-  retryAfter: Q.config.get('proxies.failureRetryAfterSeconds', 60)
-})
-
-const DEFAULT_HOST = 'https://localhost:3015'
+const _ = require('lodash')
+const proxies = [
+                  { host: '162.212.173.210',
+                    port: 80,
+                    user:'feat',
+                    pwd:'Aqswdefr!'
+                  },
+                  { host: '176.61.140.96',
+                    port: 80,
+                    user: 'feat',
+                    pwd: 'Aqswdefr!'
+                  },
+                  { host: '104.160.14.165',
+                    port: 80,
+                    user: 'feat',
+                    pwd: ':Aqswdefr!'
+                  },
+                  { host: '165.231.85.27',
+                    port: 80,
+                    user: 'feat',
+                    pwd: 'Aqswdefr!'
+                  },
+                  { host: '165.231.85.178',
+                    port: 80,
+                    user: 'feat',
+                    pwd: 'Aqswdefr!'
+                  },
+                  { host: '171.22.254.154',
+                    port: 80,
+                    user: 'feat',
+                    pwd: 'Aqswdefr!'
+                  },
+                  { host: '176.61.140.74',
+                    port: 80,
+                    user: 'feat',
+                    pwd: 'Aqswdefr!'
+                  },
+                  { host: '171.22.254.110',
+                    port: 80,
+                    user: 'feat',
+                    pwd: 'Aqswdefr!'
+                  },
+                  { host: '104.160.14.82',
+                    port: 80,
+                    user: 'feat',
+                    pwd: 'Aqswdefr!'
+                  },
+                  { host: '171.22.254.2',
+                    port: 80,
+                    user: 'feat',
+                    pwd: 'Aqswdefr!'
+                  }
+]
 
 module.exports = class Proxy {
-  constructor(config) {
-    this.config = config
-  }
-
-  async acquire(site) {
-    // Acquire proxy from proxy pool
-    let host = this.config.get('proxies.proxy_pool.host', DEFAULT_HOST)
-    let start = Date.now()
-    try {
-      var response = await request.getAsync({
-        url: `${host}/get_proxy/${site}`,
-        forever: true,
-        json: true
-      })
-    } catch (err) {
-      Q.log.error({ err, site }, 'Unable to acquire proxy')
-      throw new Q.Errors.FailedToAcquireProxyError({ site }, err)
-    } finally {
-      Metrics.proxyAcquireTime(Date.now() - start)
-    }
-
-    let body = response.body
-    if (response.statusCode !== 200 || !body || !body.proxy) {
-      throw new Q.Errors.FailedToAcquireProxyError(site, null, response.statusCode, response.body)
-    }
-
-    const { key, proxy: { USER, PASS, HOST, PORT, id } } = body
-    return { key, id, user: USER, pwd: PASS, host: HOST, port: PORT }
-  }
-
-  _getDetention(statusCode) {
-    switch(statusCode){
-        case 503: return 30;
-        case 200: return 10;
-        default: return 180;
-    }
-  }
-
-  async release(site, proxy, status) {
-    let detention = this._getDetention(status)
-    let host = this.config.get('proxies.proxy_pool.host', DEFAULT_HOST)
-    let start = Date.now()
-    if (!proxy.id) return
-    try {
-      var response = await request.postAsync({
-        url: `${host}/detain_proxy/${site}/${proxy.id}`,
-        forever: true,
-        json: true,
-        body: {
-          detention,
-          status
-        }
-      })
-    } catch (err) {
-      Q.log.error(new Q.Errors.FailedToReleaseProxyError('An error occured during release proxy', err))
-    } finally {
-      Metrics.proxyReleaseTime(Date.now() - start)
-    }
-    if (response && response.statusCode !== 200) {
-      Q.log.error(
-        new Q.Errors.FailedToReleaseProxyError({ statusCode: response.statusCode }),
-        `failed to release proxy -> statusCode: ${response.statusCode}`
-      )
-    }
+  static acquire() {
+    var randomProxy = _.sample(proxies)
+    return randomProxy
   }
 }
