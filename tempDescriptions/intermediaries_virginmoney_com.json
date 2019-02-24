@@ -1,0 +1,107 @@
+{
+ "lender": "Virginmoney",
+ "logo": "virginmoney",
+ "domain": "intermediaries.virginmoney.com",
+ "affordability": "https://intermediaries.virginmoney.com/tools/affordability-calculator/loan/9d60fb80-eec2-4b5d-9431-a89a604c8c0f",
+ "mapping": {
+   "waitFor": 2000,
+   "methodOfRepayment": {
+     "css": "[name='RepaymentMethod']",
+     "logic": "('@value' === 'Capital and interest') ? 'Repayment' : ('@value'.includes('Interest only')) ?  'Interest Only' : 'Part & Part'"
+   },
+   "mortgageTermYears": {
+     "css": "#LoanTerm"
+   },
+   "propertyValue": {
+     "css": "#PropertyValue"
+   },
+   "loanValue": {
+     "css": "#LoanRequired"
+   },
+   "requiredInterest": {
+     "css": "#IOLoanRequired",
+     "logic": "parseInt(input[propertyValue]) - parseInt(input[loanValue])"
+   },
+   "click1": "#affCalcForm > div.formContents > div.last > span > input",
+
+   "numOfApplying": {
+     "css": "[name='NumberOfApplicants']",
+     "logic": "(@value === 1) ? 'Single': 'Joint'"
+   },
+   "numOfdependants": {
+     "css": "#Dependants",
+     "logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18])",
+     "new": true
+   },
+   "applicantAge1": {
+     "css": "#Age0",
+     "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth]))",
+     "new": true
+   },
+   "employmentStatus1": {
+     "css": "#Employment0",
+     "logic": "'Employed'",
+     "new": true
+   },
+   "annualIncome1": {
+     "css": "#Applicant0_GrossAnnual"
+   },
+   "overtimeBonusComission1": {
+     "css": "",
+     "logic": "input[annualBonus1] + input[totalOvertimeAnnually1] + input[totalCommissionAnnually1]",
+     "new": true
+   },
+   "applicantAge2": {
+     "css": "#Age1",
+     "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth]))",
+     "new": true
+   },
+   "employmentStatus2": {
+     "css": "#Employment1",
+     "logic": "'Employed'",
+     "new": true
+   },
+   "annualIncome2": {
+     "css": "#Applicant1_GrossAnnual"
+   },
+   "overtimeBonusComission2": {
+     "css": "",
+     "logic": "input[annualBonus2] + input[totalOvertimeAnnually2] + input[totalCommissionAnnually2]",
+     "new": true
+   },
+
+   "click2": "#affCalcForm > div.formContents > div.last > span > input",
+
+   "monthlyLoanPayments": {
+     "css": "#a1totalMonthlyLoanPayments"
+   },
+   "creditCardBalances": {
+     "css": "#a1outstandingCreditCardBalances"
+   },
+   "rentCharge": {
+     "css": "#a1rentAndServiceCharge"
+   },
+   "childcareAndEducation": {
+     "css": "#a1childcareCosts"
+   },
+   "otherMortgagePayments": {
+     "css": "#a1otherExpenditure"
+   },
+   "click4": "#expenditureNextBtn",
+   "groundRent": {
+     "css": "#monthlyGroundRent"
+   },
+   "serviceCharge": {
+     "css": "#monthlyServiceCharge"
+   },
+   "maintenancePayments": {
+     "css": "#maintenanceCSA"
+   },
+   "click3": "#affCalcForm > div.formContents > div.last > span > input"
+ },
+ "extraction": {
+   "price": {
+     "css": "#affCalcForm > div.formContents > div.affCalcContainer > div:nth-child(2) > div > p > strong"
+   }
+ }
+}

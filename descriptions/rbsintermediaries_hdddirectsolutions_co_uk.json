@@ -7,7 +7,7 @@
 		"waitFor": 2000,
 		"loanValue": {
 			"css": "#LoanToValue",
-			"logic": "((input[propertyValue] - input[loanValue]) / input[propertyValue]) * 100"
+			"logic": "((input[loanValue] / input[propertyValue]) * 100).toFixed(2)"
 		},
 		"methodOfRepayment": {
 			"css": "#RepaymentMethod",

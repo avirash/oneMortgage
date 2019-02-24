@@ -975,7 +975,7 @@ fieldset.innerHTML =
   function completeInputCollection() {
     let monthlyCommitmented = Object.keys(inputCollection).find( x => x === 'monthlyCommitmented')
     let otherProperty = Object.keys(inputCollection).find( x => x === 'otherProperty')
-    if (!monthlyCommitmented) inputCollection['monthlyCommitmented'] = 'No'
+    // if (!monthlyCommitmented) inputCollection['monthlyCommitmented'] = 'No'
     if (!otherProperty) inputCollection['otherProperty'] = 'No'
   }
 

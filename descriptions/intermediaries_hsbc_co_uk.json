@@ -1,0 +1,74 @@
+{
+ "lender": "Hsbc",
+ "logo": "hsbc",
+ "domain": "portal.intermediaries.hsbc.co.uk",
+ "affordability": "https://portal.intermediaries.hsbc.co.uk/affordabilitycalculator/affordabilitycalculatorpage.php#editExpenditure",
+ "mapping": {
+   "waitFor": 2000,
+   "click1": "#editMortgage",
+   "numOfApplying": {
+     "css": "#isJointMortgage",
+     "logic": "(@value === 1) ? 'Sole': 'Joint'"
+   },
+   "applicantAge1": {
+     "css": "#a1applicantsAge",
+     "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth]))",
+     "new": true
+   },
+   "applicantAge2": {
+     "css": "#a2applicantsAge",
+     "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth]))",
+     "new": true
+   },
+   "numOfdependants": {
+     "css": "#noDependantChildren",
+     "logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18])",
+     "new": true
+   },
+   "deopsit": {
+     "css": "#depositAmount",
+     "logic": "parseInt(input[propertyValue]) - parseInt(input[loanValue])",
+     "new": true
+   },
+   "loanValue": {
+     "css": "#loanAmount"
+   },
+   "propertyValue": {
+     "css": "#estimatedPropertyValue"
+   },
+   "mortgageTermYears": {
+     "css": "#requiredMortgageTerm  "
+   },
+   "click2": "#mortgageNextBtn",
+   "annualIncome1": {
+     "css": "#a1grossIncome"
+   },
+   "annualIncome2": {
+     "css": "#a2grossIncome"
+   },
+   "otherIncome1": {},
+   "otherIncome2": {},
+   "click3": "#incomeNextBtn",
+   "monthlyLoanPayments": {
+     "css": "#a1totalMonthlyLoanPayments"
+   },
+   "creditCardBalances": {
+     "css": "#a1outstandingCreditCardBalances"
+   },
+   "rentCharge": {
+     "css": "#a1rentAndServiceCharge"
+   },
+   "childcareAndEducation": {
+     "css": "#a1childcareCosts"
+   },
+   "otherMortgagePayments": {
+     "css": "#a1otherExpenditure"
+   },
+   "click4": "#expenditureNextBtn"
+ },
+ "extraction": {
+   "price": {
+     "css": "#lendingBasedOnProperty"
+   }
+ }
+}

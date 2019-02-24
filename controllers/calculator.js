@@ -22,7 +22,7 @@ exports.aff_calc = async (ctx) => {
   if (input) {
     let results = []
     let currentRetry = 0
-//    while ( currentRetry < 3 ) {
+    while ( currentRetry < 2 ) {
       console.log('currentRetry: ' + currentRetry);
       try {
           results = await runtime.extract(input)
@@ -44,7 +44,7 @@ exports.aff_calc = async (ctx) => {
           console.log(err);
             currentRetry ++
         }
-    //}
+    }
     ctx.body = {
       input: ctx.request.body,
       results,
