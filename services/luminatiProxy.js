@@ -6,8 +6,8 @@ module.exports = class LuminatiProxy {
     return {
       host: 'zproxy.luminati.io',
       port: 22225,
-      user: `lum-customer-aviram-zone-residential-country-uk-session-rand${random}`,
-      pwd: `8acda4c2a9d1`
+      user: `${process.env.lUser}${random}`,
+      pwd: process.env.lPwd
     }
   }
 }
