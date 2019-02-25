@@ -1182,12 +1182,14 @@
    },
    "monthlyCommitmented": {
      "css": "[for*='rbNonRegularMonthlyExpenditure']",
+     "logic": "(parseInt(input[otherCommittedPayments]) > 0) ? 'Yes': 'No'",
+     "new": true,
      "Yes": {
        "css": "[for='rbNonRegularMonthlyExpenditureYes']",
        "childcareAndEducation": {
          "css": "#tbNurserySchool"
        },
-       "maintenancePayments": {
+       "otherCommittedPayments": {
          "css": "#tbMaintenanceNonRegular"
        },
        "healthInsurancePayments": {

@@ -3,6 +3,7 @@ let mortgageDetails = [{index: 1 }]
 let mortgageDetailsFree = [{index: 1 }]
 var lendersReturned = 0
 var numOfLenders = 0
+var tempApplicant2 = {}
 
 $(document).ready(function () {
 /// mortgage
@@ -19,6 +20,7 @@ $(document).ready(function () {
        $('#earnAnyEmployedAllowancesApplicant2').css('display', 'none')
        $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'none')
        $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'none')
+       //removeApplicant2()
     } else {
       document.getElementById("numOfApplying1").checked = false
      document.getElementById("numOfApplying2").checked = true
@@ -30,31 +32,24 @@ $(document).ready(function () {
         $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'block')
         $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'block')
     }
-      // if ($(this).attr('value') === '1') {
-      //   console.log('here');
-      //   $('#advacedSalaryApplicant2').css('display', 'none')
-      //   $('#genericApplicant2').css('display', 'none')
-      //   $('#monthlyDeductionsApplicant2').css('display', 'none')
-      //   $('#earnAnyEmployedAllowancesApplicant2').css('display', 'none')
-      //   $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'none')
-      //   $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'none')
-      //
-      // //  $('#numOfApplying1').prop('checked', true)
-      //   // $('#numOfApplying2').prop('checked', false)
-      //   document.getElementById("numOfApplying1").checked = true
-      //   document.getElementById("numOfApplying2").checked = false
-      //
-      // } else {
-      //   $('#advacedSalaryApplicant2').css('display', 'block')
-      //   $('#genericApplicant2').css('display', 'block')
-      //   $('#monthlyDeductionsApplicant2').css('display', 'block')
-      //   $('#earnAnyEmployedAllowancesApplicant2').css('display', 'block')
-      //   $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'block')
-      //   $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'block')
-      //   document.getElementById("numOfApplying1").checked = false
-      //   document.getElementById("numOfApplying2").checked = true
-      // }
   })
+
+  function removeApplicant2() {
+    $('.applicant2 input').each(function(key, el) {
+      let id = $(this).attr('id')
+      if (id) {
+          tempApplicant2[id] = inputCollection[id]
+          delete inputCollection[id]
+      }
+    })
+  }
+
+  // function retrivaeApplicant2() {
+  //   Object.keys(tempApplicant2).forEach(function(key) {
+  //     if (!inputCollection[key]) inputCollection[key]
+  //   })
+  //   tempApplicant2 = {}
+  // }
 
   $('#advancedQuestionsDiv > a').on('click', function(ev){
       if ($(this).attr('class')=='icon-plus') {
@@ -866,7 +861,8 @@ fieldset.innerHTML =
       if (curStepBtn === 'mortgage' && !$('#provideMoreDetailsYes').prop('checked')) {
             nextStepWizard = $('div.setup-panel div a[href="#otherProperty1b"]').parent().next().children("a")
         }
-        $(nextStepWizard).css('pointer-events', 'auto')
+      $(nextStepWizard).css('pointer-events', 'auto')
+
       $(".form-group").removeClass("has-error");
       for(var i=curInputs.length - 1; i >= 0 ; i--){
           if (!curInputs[i].validity.valid || ($(curInputs[i]).prop('required') && $(curInputs[i]).val() === "0" )){
@@ -877,7 +873,16 @@ fieldset.innerHTML =
       }
 
       if (isValid) {
+        let allRelevantInputs = curStep.find("input[type='number'],input[type='tel'],input[type='url']")
+        console.log(allRelevantInputs)
+        allRelevantInputs.each( (x) => {
+          let id = allRelevantInputs[x].id
+          console.log(id);
+          console.log(inputCollection[id])
+           delete inputCollection[id]
+        })
         collectInputs()
+        console.log(inputCollection);
         $(curStepWizard).css('display', 'none')
 
         $(curStepWizard).next().css('display', 'inline-table')
@@ -977,14 +982,20 @@ fieldset.innerHTML =
     let otherProperty = Object.keys(inputCollection).find( x => x === 'otherProperty')
     // if (!monthlyCommitmented) inputCollection['monthlyCommitmented'] = 'No'
     if (!otherProperty) inputCollection['otherProperty'] = 'No'
+    let finalCollection = inputCollection
+    // Object.keys(inputCollection).forEach(function(key){
+    //   console.log(key);
+    //   if($(`#${key}:visible`)) delete finalCollection[key]
+    // })
+    //return finalCollection
   }
 
   function calculate() {
     $("#loader").fadeIn('slow')
     $("#tableResults").find("tr:gt(0)").remove();
     $("#tableResults").fadeOut('slow')
-    console.log(inputCollection)
     completeInputCollection()
+    //console.log(finalCollection)
     lendersReturned = 0
     numOfLenders = 0
     $.ajax({
@@ -1073,7 +1084,7 @@ fieldset.innerHTML =
                var cell3 = row.insertCell(2)
                cell1.innerHTML = '<img src="images/' + result.logo + '.png" width="150px" height="50px"/>'
                cell2.innerHTML = result.lender
-               cell3.innerHTML = extracted.price
+               cell3.innerHTML = (extracted.price.startsWith('£')) ? extracted.price : `£${extracted.price}`
              }
            }
            sortTable("tableResults")

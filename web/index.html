@@ -16,8 +16,30 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <link href="css/aff_calc.css" rel="stylesheet">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135108406-1"></script>
+      <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'UA-135108406-1');
+      </script>
+
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-TQPB3HT');</script>
+      <!-- End Google Tag Manager -->
+
    </head>
    <body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show">
+     <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQPB3HT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
       <div class="pace  pace-inactive">
          <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
             <div class="pace-progress-inner"></div>
@@ -402,7 +424,7 @@
                                  </div>
                               </div>
                            </div>
-                           <form role="form" action="" method="post">
+                           <form role="form" action="" method="post" autocomplete="on">
                               <!-- mortgage -->
                               <div class="row setup-content" id="mortgage" style="margin: 1.8rem 0 0; border: 1px solid #ccc;border-radius: .6rem;width: 70%;margin-left: 200px;">
                                  <div class="col-xs-12 col-md-offset-0">
@@ -441,9 +463,9 @@
                                             <label class="control-label"> How long does the mortgage term need to be? </label>
                                             <div class="control-group">
                                                <div class="controls form-inline">
-                                                  <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="35" class="form-control" placeholder="YY" id="mortgageTermYears" required="required">
+                                                  <input type="tel" onfocus="this.value = this.value;" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="35" class="form-control" placeholder="YY" id="mortgageTermYears" required="required">
                                                   <label for="mortgageTermYears" style="margin-left: 5px;"> Years </label>&nbsp;
-                                                  <input type="tel" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="0" max="12" class="form-control" placeholder="MM" id="mortgageTermMonths">
+                                                  <input type="tel" onfocus="this.value = this.value;" style="text-align: center;width:40px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="0" max="12" class="form-control" placeholder="MM" id="mortgageTermMonths">
                                                   <label for="mortgageTermMonths" style="margin-left: 5px;"> Months </label>
                                                </div>
                                             </div>
@@ -806,7 +828,7 @@
                                             </div>
                                          </fieldset>
                                        </div>
-                                     <div id="genericApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                     <div id="genericApplicant2" class="col-xs-6 form-group applicant2" style="padding-left: 0px;display: none">
                                         <!--label class="control-label"></label-->
                                         <h4>Applicant 2</h4>
                                         <div class="form-group">
@@ -915,7 +937,7 @@
                                                  </div>
                                               </div>
                                             </div>
-                                           <div id="advacedSalaryApplicant2" class="col-xs-6" style="padding-left: 0px;display: none">
+                                           <div id="advacedSalaryApplicant2" class="col-xs-6 applicant2" style="padding-left: 0px;display: none">
                                             <h4>Applicant 2</h4>
                                              <div class="form-group" id="fixedTermContractPAYEDiv2" >
                                                 <label class="control-label"> Fixed term contract (PAYE)  </label>
@@ -1162,7 +1184,7 @@
                                                    </div>
                                                 </div>
                                                 </div>
-                                                <div id="earnAnyEmployedAllowancesApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                                <div id="earnAnyEmployedAllowancesApplicant2" class="col-xs-6 form-group applicant2" style="padding-left: 0px;display: none">
                                                 <h4>Applicant 2</h4>
                                                  <!-- <h4> Please enter the annual equivalent </h4> -->
                                                  <div id="carAllowanceDiv2" class="form-group">
@@ -1250,7 +1272,7 @@
                                                    </div>
                                                 </div>
                                               </div>
-                                              <div id="receiveAnyGovernmentBenefitsApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                              <div id="receiveAnyGovernmentBenefitsApplicant2" class="col-xs-6 form-group applicant2" style="padding-left: 0px;display: none">
                                                <h4>Applicant 2</h4>
                                                <!-- <h4> Please enter the annual equivalent </h4> -->
                                                <div id="childBenefitbDiv2" class="form-group">
@@ -1338,7 +1360,7 @@
                                                      </div>
                                                   </div>
                                              </div>
-                                             <div id="earmAnyOtherAnnualIncomeApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                             <div id="earmAnyOtherAnnualIncomeApplicant2" class="col-xs-6 form-group applicant2" style="padding-left: 0px;display: none">
                                                <h4>Applicant 2</h4>
                                                <div id="secondJobDiv2" class="form-group">
                                                   <label class="control-label"> Second job </label>
@@ -1424,7 +1446,7 @@
                                                 </div>
                                              </div>
                                           </div>
-                                          <div id="monthlyDeductionsApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                          <div id="monthlyDeductionsApplicant2" class="col-xs-6 form-group applicant2" style="padding-left: 0px;display: none">
                                            <h4>Applicant 2</h4>
                                            <div id="monthlyDeductionsShownBeforeTaxDiv2" class="form-group">
                                               <label class="control-label"> Monthly deductions shown on the payslip before tax </label>
@@ -1489,14 +1511,14 @@
                                    <div class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px; margin-top: 0px">
                                        <label class="control-label"></label>
                                        <div class="form-group">
-                                          <label class="control-label"> What's the total your client owes on all credit cards? </label>
+                                          <label class="control-label"> What is the total monthly payments for all credit commitments? </label>
                                           <div class="input-group col-md-3">
                                              <span style="background: white" class="input-group-addon">£</span>
                                              <input id="totalCreditCards" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                           </div>
                                        </div>
                                        <div class="form-group">
-                                          <label class="control-label"> Total credit card balance </label>
+                                          <label class="control-label"> Total outstanding balance for all credit cards </label>
                                           <div class="input-group col-md-3">
                                              <span style="background: white" class="input-group-addon">£</span>
                                              <input id="creditCardBalances" maxlength="10" type="tel" class="form-control" placeholder="0" />
@@ -1554,7 +1576,7 @@
                                             <input id="totalCombinedOutstandingBalance" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                          </div>
                                          </div> -->
-                                        <fieldset class="form-group">
+                                        <!-- <fieldset class="form-group">
                                        <label class="control-label"> Do you want to enter any monthly committed expenditure? </label>
                                        <div class="form-check">
                                           <label class="form-check-label">
@@ -1566,10 +1588,10 @@
                                           <input type="radio" class="form-check-input" name="monthlyCommitmented" id="monthlyCommitmentedNo" value="No" checked> No
                                           </label>
                                        </div>
-                                    </fieldset>
+                                    </fieldset> -->
                                     <!-- </div> -->
-                                    <div id='outgoingsCommitmentsAndExpenditure' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px">
-                                      <h4>These expenditure items may apply to your client and should be included if appropriate.</h4>
+                                    <!-- <div id='outgoingsCommitmentsAndExpenditure' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px">
+                                      <h4>These expenditure items may apply to your client and should be included if appropriate.</h4> -->
                                       <div class="form-group">
                                          <label class="control-label"> Childcare and education </label>
                                          <div class="input-group col-md-3">
@@ -1578,13 +1600,13 @@
                                          </div>
                                       </div>
 
-                                      <div class="form-group">
+                                      <!-- <div class="form-group">
                                          <label class="control-label"> Maintenance payments </label>
                                          <div class="input-group col-md-3">
                                             <span style="background: white" class="input-group-addon">£</span>
                                             <input id="maintenancePayments" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                          </div>
-                                        </div>
+                                        </div> -->
 
                                          <div class="form-group">
                                             <label class="control-label"> Existing life and health insurance and private pensions </label>
@@ -1616,12 +1638,12 @@
                                                  <input id="additionalCommittedExpenditure" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                               </div>
                                            </div>
-                                    </div>
+                                    <!-- </div> -->
                                     </div>
                                      </div>
-                                    <div id="advacedOutgoingsClick" class="form-group">
+                                    <!-- <div id="advacedOutgoingsClick" class="form-group">
                                        <a  class="icon-plus" style="word-spacing: -4px; color: #20a8d8; cursor: pointer; font-size: 16px;"> Advaced Outgoings Question </a>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group">
                                        <div class="input-group col-md-12">
                                           <button style="background-color: #ff9f07;border-color: #ff9f07;color: white;" class="btn backBtn btn-lg left-right" type="button" >Back</button>
@@ -1648,13 +1670,13 @@
                                              <tr>
                                                 <th style="width: 50%;">Lender Logo</th>
                                                 <th style="width: 50%;" >Lender Name</th>
-                                                <th style="width: 50%;">Price</th>
+                                                <th style="width: 50%;">Amount</th>
                                              </tr>
                                           </thead>
                                        </table>
                                       </div>
                                     </div>
-                                    <a style="background-color: #ff9f07;border-color: #ff9f07;color: white" class="btn btn-success btn-lg pull-right" type="submit" onclick="location.reload()"> Reset </a>
+                                    <a style="background-color: #ff9f07;border-color: #ff9f07;color: white" class="btn btn-success btn-lg pull-right reset" type="submit" onclick="location.reload()"> Reset </a>
                                  </div>
                               </div>
                            </form>
