@@ -806,7 +806,8 @@ fieldset.innerHTML =
        $(howOftenOvertimePaidDiv).after(div)
      })
 
-  var endPoint = 'http://localhost:3000'
+
+  var endPoint = (window.location.host === '') ? 'http://localhost:3000' : `http://${window.location.host}:3000`
   var navListItems = $('div.setup-panel div a,div.setup-panel div img'),
           allWells = $('.setup-content'),
           allNextBtn = $('.nextBtn'),
