@@ -895,6 +895,9 @@ fieldset.innerHTML =
   // jump between inputs when maxlength is reached
   var inputs = $('input[type="tel"]');
   inputs.each(function(i) {
+    $(this).keydown(function(ev) {
+      console.log('hi');
+    }),
     $(this).keyup(function(ev) {
       var next = inputs.eq(i+1)
       if((ev.keyCode) < 48 || (ev.keyCode) > 90 ) {
@@ -918,7 +921,9 @@ fieldset.innerHTML =
           let inputId = $(this).attr('id')
           if (inputId.includes('Years') || inputId.includes('Months') || inputId.includes('Birth'))  {
             let max = parseInt($(this).attr('max'))
-            let inputValAfter = parseInt($(this).val().toString() + ev.key.toString())
+            // let inputValAfter = parseInt($(this).val().toString() + ev.key.toString())
+            let inputValAfter = $(this).val().length + 1
+            console.log(inputValAfter);
             if (max < inputValAfter) return false
           }
         }
@@ -1085,7 +1090,7 @@ fieldset.innerHTML =
                var cell3 = row.insertCell(2)
                cell1.innerHTML = '<img src="images/' + result.logo + '.png" width="150px" height="50px"/>'
                cell2.innerHTML = result.lender
-               cell3.innerHTML = (extracted.price.startsWith('£')) ? extracted.price : `£${extracted.price}`
+               cell3.innerHTML = (extracted.price.startsWith('£')) ? extracted.price.split('.')[0] : `£${extracted.price.split('.')[0]}`
              }
            }
            sortTable("tableResults")

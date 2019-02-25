@@ -1037,6 +1037,60 @@
      }
    },
 
+   "annualCommissionTotal1": {
+     "css": "[for*='rbReceiveBonusCommission1']",
+     "logic": "(input[totalCommissionAnnually1] > 0) ? 'Yes': 'No'",
+     "new": true,
+     "Yes": {
+       "css": "[for='rbReceiveBonusCommission1Yes']",
+       "bonusPaidLeastMonthly1": {
+           "css": "[for='rbBonusOrCommission1MonthlyNo'",
+           "logic": "'No'",
+           "new": true
+      },
+       "notMonthlyHowOften1": {
+         "css": "#ddlBonusOrCommission1NotMonthlyHowOften",
+         "logic": "'Other'",
+         "new": true
+       },
+       "totalCommissionAnnually1": {
+         "css": "#tbBonusOrCommission1AnnualEquivalent1",
+         "logic": "@value + input[annualBonus1]"
+       },
+       "clickAdd": "#btnBonusOrCommission1Calculate1"
+     },
+     "No": {
+       "css": "[for='rbReceiveBonusCommission1No']"
+     }
+   },
+
+   "annualCommissionTotal2": {
+     "css": "[for*='rbReceiveBonusCommission2']",
+     "logic": "(input[totalCommissionAnnually2] > 0) ? 'Yes': 'No'",
+     "new": true,
+     "Yes": {
+       "css": "[for='rbReceiveBonusCommission2Yes']",
+       "bonusPaidLeastMonthly2": {
+           "css": "[for='rbBonusOrCommission2MonthlyNo'",
+           "logic": "'No'",
+           "new": true
+      },
+       "notMonthlyHowOften2": {
+         "css": "#ddlBonusOrCommission2NotMonthlyHowOften",
+         "logic": "'Other'",
+         "new": true
+       },
+       "totalCommissionAnnually2": {
+         "css": "#tbBonusOrCommission1AnnualEquivalent2",
+         "logic": "@value + input[annualBonus2]"
+       },
+       "clickAdd": "#btnBonusOrCommission2Calculate2"
+     },
+     "No": {
+       "css": "[for='rbReceiveBonusCommission2No']"
+     }
+   },
+
    "earnAnyEmployedAllowances": {
      "css": "[for*='rbEmployedAllowances']",
      "Yes": {

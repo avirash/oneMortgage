@@ -58,10 +58,10 @@
    "annualBonus2": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_bonus2"
    },
-   "totalCommission1Annually1": {
+   "totalCommissionAnnually1": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_commission1"
    },
-   "totalCommission1Annually2": {
+   "totalCommissionAnnually2": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_commission2"
    },
    "otherIncome": {},
