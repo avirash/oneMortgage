@@ -3,22 +3,8 @@ const co = require('co')
 
 let metadata = new Metadata()
 
-// function initialize() {
-//
-//   let runtime = new Runtime()
-//   await runtime.extract()
-//
-//   // new Promise(async resolve => {
-//   //   return resolve(await clicksHendler.initialize())
-//   // });
-// }
-//
-// initialize();
-
 exports.getExtractionInput = async (ctx) => {
-  //console.log('body ' + JSON.stringify(ctx.request.body));
-  const input = ctx.request.body
-  // console.log(input)
+  const input = ctx.request.body  
   if (input) {
     let results = await metadata.generateExtractionInput(input)
     ctx.body = {

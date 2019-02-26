@@ -4,13 +4,13 @@ let mortgageDetailsFree = [{index: 1 }]
 var lendersReturned = 0
 var numOfLenders = 0
 var tempApplicant2 = {}
+var isBack = false
 
 $(document).ready(function () {
-/// mortgage
+  /// mortgage
   $('[name="numOfApplying"]').on('click', function(ev) {
 
     if (this.value === '1') {
-      console.log('1');
       document.getElementById("numOfApplying1").checked = true
       document.getElementById("numOfApplying2").checked = false
 
@@ -20,11 +20,9 @@ $(document).ready(function () {
        $('#earnAnyEmployedAllowancesApplicant2').css('display', 'none')
        $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'none')
        $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'none')
-       //removeApplicant2()
     } else {
       document.getElementById("numOfApplying1").checked = false
      document.getElementById("numOfApplying2").checked = true
-      console.log('2');
         $('#advacedSalaryApplicant2').css('display', 'block')
         $('#genericApplicant2').css('display', 'block')
         $('#monthlyDeductionsApplicant2').css('display', 'block')
@@ -833,9 +831,27 @@ fieldset.innerHTML =
 
   navListItems.click(function (e) {
       e.preventDefault();
+      if (isBack === true && hasInputChanged() === false) {
+        let num = $('.stepwizard-step a[class*="primary"]').text()
+        $('.stepwizard-step a').each(function(id, el) {
+          if (parseInt($(el).text()) > parseInt(num)) {
+             $(el).css('pointer-events', 'none')
+             $(el).attr('disabled', 'disabled')
+             $(el).css('display', 'block')
+             $(el).parent().find('img').css('display', 'none')
+          }
+        })
+        // $(this).parent().nextAll().find('a').css('pointer-events', 'none')
+        // $(this).parent().nextAll().find('a').css('display', 'block')
+        // $(this).parent().nextAll().find('img').css('display', 'none')
+        // $(this).prev().parent().find('a').css('display', 'block')
+        // $(this).prev().parent().find('img').css('display', 'none')
+        return
+      }
       if($(this).prop("tagName") === 'IMG') {
         $target = $($(this).prev().attr('href'))
         $item = $(this);
+        isBack = true
       } else {
         var $target = $($(this).attr('href')),
                 $item =$(this).prev();
@@ -848,6 +864,30 @@ fieldset.innerHTML =
       }
   })
 
+
+  function hasInputChanged() {
+    var tempInputCollection = {}
+    let tempMortgageDetails = [{index: 1 }]
+    let tempMortgageDetailsFree = [{index: 1 }]
+    $('form input:visible, form select:visible').each(function(id, el) {
+      if ($(el).attr('class') && $(el).attr('class').includes('mortgageDetails')) {
+        let cleanedId = el.id.replace('Yes','').replace('No','')
+        if(el.id && el.id.includes("Free")){
+          insertToMortgageArray(el,ortgageDetailsFree)
+        } else {
+          insertToMortgageArray(el,tempMortgageDetails)
+        }
+      } else {
+         insertToInputObject(el, tempInputCollection)
+      }
+    })
+      for (const key of Object.keys(tempInputCollection)) {
+        if (inputCollection[key] && inputCollection[key] !== tempInputCollection[key]) {
+          return false
+        }
+      }
+      return true
+  }
   // next step in the form
   allNextBtn.click(function(){
       var curStep = $(this).closest(".setup-content"),
@@ -874,16 +914,13 @@ fieldset.innerHTML =
       }
 
       if (isValid) {
+        isBack = false
         let allRelevantInputs = curStep.find("input[type='number'],input[type='tel'],input[type='url']")
-        console.log(allRelevantInputs)
         allRelevantInputs.each( (x) => {
           let id = allRelevantInputs[x].id
-          console.log(id);
-          console.log(inputCollection[id])
            delete inputCollection[id]
         })
         collectInputs()
-        console.log(inputCollection);
         $(curStepWizard).css('display', 'none')
 
         $(curStepWizard).next().css('display', 'inline-table')
@@ -895,9 +932,6 @@ fieldset.innerHTML =
   // jump between inputs when maxlength is reached
   var inputs = $('input[type="tel"]');
   inputs.each(function(i) {
-    $(this).keydown(function(ev) {
-      console.log('hi');
-    }),
     $(this).keyup(function(ev) {
       var next = inputs.eq(i+1)
       if((ev.keyCode) < 48 || (ev.keyCode) > 90 ) {
@@ -923,7 +957,6 @@ fieldset.innerHTML =
             let max = parseInt($(this).attr('max'))
             // let inputValAfter = parseInt($(this).val().toString() + ev.key.toString())
             let inputValAfter = $(this).val().length + 1
-            console.log(inputValAfter);
             if (max < inputValAfter) return false
           }
         }
@@ -990,7 +1023,6 @@ fieldset.innerHTML =
     if (!otherProperty) inputCollection['otherProperty'] = 'No'
     let finalCollection = inputCollection
     // Object.keys(inputCollection).forEach(function(key){
-    //   console.log(key);
     //   if($(`#${key}:visible`)) delete finalCollection[key]
     // })
     //return finalCollection
@@ -1001,7 +1033,6 @@ fieldset.innerHTML =
     $("#tableResults").find("tr:gt(0)").remove();
     $("#tableResults").fadeOut('slow')
     completeInputCollection()
-    //console.log(finalCollection)
     lendersReturned = 0
     numOfLenders = 0
     $.ajax({

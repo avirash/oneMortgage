@@ -887,7 +887,6 @@
      }
    },
    "click3": "#btnContinue",
-   "click4": "#btnContinue",
    "annualIncome1": {
      "css": "#tbPermanentEmploymentBasicSalary1"
    },
@@ -1227,7 +1226,7 @@
    "residenceInScotland2": {
      "css": "[name='ScotlandTax2'] + label"
    },
-   "click5": "#btnContinue",
+   "click4": "#btnContinue",
    "totalCreditCards": {
      "css": "#tbCreditCommitmentsMonthlySum"
    },
@@ -1266,7 +1265,7 @@
        "css": "[for='rbNonRegularMonthlyExpenditureNo']"
      }
    },
-   "click6": "#btnContinue"
+   "click5": "#btnContinue"
  },
  "extraction": {
    "price": {
