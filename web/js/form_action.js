@@ -935,6 +935,9 @@ fieldset.innerHTML =
     $(this).keyup(function(ev) {
       var next = inputs.eq(i+1)
       if((ev.keyCode) < 48 || (ev.keyCode) > 90 ) {
+        if (ev.keyCode === 8) {
+          if ($(this).prop('maxlength') > 4) $(this).val(numberWithCommas($(this).val()))
+        }
       } else if (ev.keyCode > 65 && ev.keyCode < 90 ) {
         return false
       } else if ($(this) && $(this).length) {
@@ -1023,7 +1026,7 @@ fieldset.innerHTML =
     if (!otherProperty) inputCollection['otherProperty'] = 'No'
     let finalCollection = inputCollection
     // Object.keys(inputCollection).forEach(function(key){
-    //   if($(`#${key}:visible`)) delete finalCollection[key]
+      //   if($(`#${key}:visible`)) delete finalCollection[key]
     // })
     //return finalCollection
   }
