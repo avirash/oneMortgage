@@ -1166,6 +1166,7 @@
    },
    "earmAnyOtherAnnualIncome": {
      "css": "[for*='rbOtherAnnualIncome']",
+     "logic": "('@value' === 'Yes' && (input[secondJob1] > 0 || input[investmentIncome1] > 0 || input[maintenancePayments1] > 0 || input[rentalIncome1] > 0  || (input[secondJob2] && input[secondJob2] > 0) || (input[investmentIncome2] && input[investmentIncome2] > 0) || (input[maintenancePayments2] && input[maintenancePayments2] > 0) ||  (input[rentalIncome2] && input[rentalIncome2] > 0) )) ? 'Yes' : 'No'",
      "Yes": {
        "css": "[for='rbOtherAnnualIncomeYes']",
        "secondJob1": {

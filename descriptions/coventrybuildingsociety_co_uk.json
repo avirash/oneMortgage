@@ -4,7 +4,7 @@
   "domain": "coventrybuildingsociety.co.uk",
   "affordability": "https://www.coventrybuildingsociety.co.uk/calculators/AffordabilityCalculator.aspx?ch=broker",
   "mapping": {
-    "waitFor": 2500,
+    "waitFor": 1500,
     "numOfApplying": {
       "css": "#MainContent_AffordabilityCalculator1_DDL_423",
       "logic": "(@value === 1) ? 'One': 'Two'"
