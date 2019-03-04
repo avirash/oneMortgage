@@ -97,7 +97,9 @@
 			"new": true
 		},
 		"expectedChangeToFinancialCircumstances1": {
-			"css": "#ExpectedChangeToFinancialCircumstances"
+			"css": "#ExpectedChangeToFinancialCircumstances",
+			"logic": "'No'",
+			"new": true
 		},
 		"click1": "#btnCalculate"
 	},
