@@ -18,6 +18,19 @@
       <link href="css/aff_calc.css" rel="stylesheet">
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135108406-1"></script>
+
+      <script type="text/javascript">
+      (function() {
+        window.__insp = window.__insp || [];
+        __insp.push(['wid', 2078899159]);
+        var ldinsp = function(){
+          if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script');
+          insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=2078899159&r=' + Math.floor(new Date().getTime()/3600000);
+          var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+          setTimeout(ldinsp, 0);
+        })();
+        </script>
+
       <script>
        window.dataLayer = window.dataLayer || [];
        function gtag(){dataLayer.push(arguments);}
@@ -488,19 +501,28 @@
                                                   <option value="1">Help to Buy</option>
                                                   <option value="2">Shared Equity</option>
                                                   <option value="3">Shared Ownership</option>
-                                                  <option value="4" selected>Other</option>
+                                                  <option value="4">Custom Build</option>
+                                                  <option value="5" selected>Other</option>
                                                </select>
                                             </div>
                                          </div>
 
                                          <div id="equityLoanDiv" class="form-group" style="display: none">
-                                            <label class="control-label"> How much is the equity loan?? </label>
+                                            <label class="control-label"> How much is the equity loan? </label>
                                             <div class="input-group col-md-3">
                                                <span style="background: white" class="input-group-addon">£</span>
                                                <input id="equityLoan" maxlength="10" type="tel" class="form-control" placeholder="0" required/>
                                             </div>
                                          </div>
-                                         <div id="methodOfRepaymentDiv"class="form-group">
+
+                                         <div id="percentageShareToPurchasedDiv" class="form-group" style="display: none">
+                                            <label class="control-label"> Percentage share to be purchased? </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="percentageShareToPurchased" maxlength="10" type="tel" class="form-control" placeholder="0" required/>
+                                            </div>
+                                         </div>
+                                         <!-- <div id="methodOfRepaymentDiv"class="form-group">
                                             <label class="control-label" for="methodOfRepayment">Method of repayment </label>
                                             <div class="input-group col-md-5">
                                                <select id="methodOfRepayment" class="form-control col-md-7">
@@ -511,8 +533,30 @@
                                                   <option value="5" >Part and part - endowment or investmen</option>
                                                </select>
                                             </div>
+                                         </div> -->
+                                         <div id="methodOfRepaymentDiv"class="form-group">
+                                            <label class="control-label" for="methodOfRepayment">Method of repayment </label>
+                                            <div class="input-group col-md-5">
+                                               <select id="methodOfRepayment" class="form-control col-md-7">
+                                                  <option value="1" selected>Capital and interest</option>
+                                                  <option value="2">Interest only</option>
+                                                  <option value="3">Mixed Repayment</option>
+                                               </select>
+                                            </div>
                                          </div>
-
+                                          <fieldset id="isRepaymentStrategySaleDiv" class="form-group" style="display: none">
+                                             <label class="control-label"> Is repayment strategy sale of main residence? </label>
+                                             <div class="form-check">
+                                                <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="isRepaymentStrategySale" id="isRepaymentStrategySaleYes" value="Yes"> Yes
+                                                </label>
+                                             </div>
+                                             <div class="form-check">
+                                                <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="isRepaymentStrategySale" id="isRepaymentStrategySaleNo" value="No" checked> No
+                                                </label>
+                                             </div>
+                                          </fieldset>
                                          <div id="requiredInterestDiv" class="form-group" style="display: none">
                                             <label class="control-label"> What is the amount required on interest only? </label>
                                             <div class="input-group col-md-3">
@@ -536,21 +580,6 @@
                                                <input id="repaymentStrategyAmount" maxlength="10" type="tel" class="form-control" placeholder="0"/>
                                             </div>
                                          </div>
-
-                                         <fieldset id="isRepaymentStrategySaleDiv" class="form-group" style="display: none">
-                                            <label class="control-label"> Is repayment strategy sale of main residence? </label>
-                                            <div class="form-check">
-                                               <label class="form-check-label">
-                                               <input type="radio" class="form-check-input" name="isRepaymentStrategySale" id="isRepaymentStrategySaleYes" value="Yes" checked> Yes
-                                               </label>
-                                            </div>
-                                            <div class="form-check">
-                                               <label class="form-check-label">
-                                               <input type="radio" class="form-check-input" name="isRepaymentStrategySale" id="isRepaymentStrategySaleNo" value="No"> No
-                                               </label>
-                                            </div>
-                                         </fieldset>
-
 
                                          <div id="requiredInterestMonthlyDiv" class="form-group" style="display: none">
                                             <label class="control-label"> What is the monthly premium paid on the repayment plan(s)? </label>
@@ -735,38 +764,108 @@
                                              </div>
                                           </div>
                                        </div>
+                                       <div id="birthDayApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
+                                         <h4>Applicant 1</h4>
+
                                        <div class="form-group">
                                           <label class="control-label">What's your client's date of birth? </label>
                                           <div class="control-group">
                                              <div class="controls form-inline">
-                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="31" class="form-control" placeholder="DD" id="dayOfBirth" required="required">
-                                                <label for="dayOfBirth" style="margin-left: 5px;"> Day </label>&nbsp;
-                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="12" class="form-control" placeholder="MM" id="mountOfBirth" required="required">
-                                                <label for="mountOfBirth" style="margin-left: 5px;"> Month </label>&nbsp;
-                                                <input type="tel" style="text-align: center;width:55px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="4" min="0" max="2500" class="form-control" placeholder="YYYY" id="yearOfBirth" required="required">
-                                                <label for="yearOfBirth" style="margin-left: 5px;"> Year </label>
+                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="31" class="form-control" placeholder="DD" id="dayOfBirth1" required="required">
+                                                <label for="dayOfBirth1" style="margin-left: 5px;"> Day </label>&nbsp;
+                                                <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="12" class="form-control" placeholder="MM" id="mountOfBirth1" required="required">
+                                                <label for="mountOfBirth1" style="margin-left: 5px;"> Month </label>&nbsp;
+                                                <input type="tel" style="text-align: center;width:55px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="4" min="0" max="2500" class="form-control" placeholder="YYYY" id="yearOfBirth1" required="required">
+                                                <label for="yearOfBirth1" style="margin-left: 5px;"> Year </label>
                                              </div>
                                           </div>
                                        </div>
+
                                        <div class="form-group">
-                                          <label class="control-label">Is your client retired? </label>
+                                          <label class="control-label">Gender</label>
                                           <div class="form-check">
                                              <label class="form-check-label">
-                                             <input type="radio" class="form-check-input" name="retired" id="retiredYes" value="Yes" checked> Yes
+                                             <input type="radio" class="form-check-input" name="gender1" id="genderMale1" value="Male" checked> Male
                                              </label>
                                           </div>
                                           <div class="form-check disabled">
                                              <label class="form-check-label">
-                                             <input type="radio" class="form-check-input" name="retired" id="retiredNo" value="No"> No
+                                             <input type="radio" class="form-check-input" name="gender1" id="genderFemale1" value="Female"> Female
                                              </label>
                                           </div>
                                        </div>
-                                       <div id="retirementAgeDiv" class="form-group" style="display: none">
-                                          <label class="control-label">What's their planned retirement age? </label>
-                                          <div class="input-group col-md-3">
-                                             <input style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" id="retirementAge" maxlength="10" type="tel" class="form-control" placeholder="0" />
+
+                                       <div id="employmentStatusDiv1" class="form-group">
+                                          <label class="control-label" for="employmentStatus1"> What is your client's Employment status? </label>
+                                          <div class="input-group">
+                                             <select id="employmentStatus1" class="form-control col-md-7">
+                                                <option value="Employed" selected>Employed</option>
+                                                <option value="Self-employed">Self-employed</option>
+                                                <option value="Retired">Retired</option>
+                                                <option value="On Contract" >On Contract</option>
+                                                <option value="Not Employed">Not Employed</option>
+                                             </select>
                                           </div>
                                        </div>
+
+                                       <div id="retirementAgeDiv1" class="form-group">
+                                          <label class="control-label">What's their planned retirement age? </label>
+                                          <div class="input-group col-md-3">
+                                             <input style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" id="retirementAge1" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                          </div>
+                                       </div>
+                                     </div>
+
+                                     <div id="birthDayApplicant2" class="col-xs-6 form-group" style="padding-left: 0px;display: none">
+                                       <h4>Applicant 2</h4>
+
+                                     <div class="form-group">
+                                        <label class="control-label">What's your client's date of birth? </label>
+                                        <div class="control-group">
+                                           <div class="controls form-inline">
+                                              <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="31" class="form-control" placeholder="DD" id="dayOfBirth2" required="required">
+                                              <label for="dayOfBirth2" style="margin-left: 5px;"> Day </label>&nbsp;
+                                              <input type="tel" style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="2" min="1" max="12" class="form-control" placeholder="MM" id="mountOfBirth2" required="required">
+                                              <label for="mountOfBirth2" style="margin-left: 5px;"> Month </label>&nbsp;
+                                              <input type="tel" style="text-align: center;width:55px;line-height: 28px;padding: 0 .6rem;height: 40px;" maxlength="4" min="0" max="2500" class="form-control" placeholder="YYYY" id="yearOfBirth2" required="required">
+                                              <label for="yearOfBirth2" style="margin-left: 5px;"> Year </label>
+                                           </div>
+                                        </div>
+                                     </div>
+
+                                     <div class="form-group">
+                                        <label class="control-label">Gender</label>
+                                        <div class="form-check">
+                                           <label class="form-check-label">
+                                           <input type="radio" class="form-check-input" name="gender2" id="genderMale2" value="Male" checked> Male
+                                           </label>
+                                        </div>
+                                        <div class="form-check disabled">
+                                           <label class="form-check-label">
+                                           <input type="radio" class="form-check-input" name="gender2" id="genderFemale2" value="Female"> Female
+                                           </label>
+                                        </div>
+                                     </div>
+
+                                     <div id="employmentStatusDiv2" class="form-group">
+                                        <label class="control-label" for="employmentStatus2"> What is your client's Employment status? </label>
+                                        <div class="input-group">
+                                           <select id="employmentStatus2" class="form-control col-md-7">
+                                              <option value="Employed" selected>Employed</option>
+                                              <option value="Self-employed">Self-employed</option>
+                                              <option value="Retired">Retired</option>
+                                              <option value="On Contract" >On Contract</option>
+                                              <option value="Not Employed">Not Employed</option>
+                                           </select>
+                                        </div>
+                                     </div>
+                                     <div id="retirementAgeDiv2" class="form-group">
+                                        <label class="control-label">What's their planned retirement age? </label>
+                                        <div class="input-group col-md-3">
+                                           <input style="text-align: center;width:50px;line-height: 28px;padding: 0 .6rem;height: 40px;" id="retirementAge2" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                        </div>
+                                     </div>
+                                   </div>
 
                                     </div>
                                     <div class="form-group ">
@@ -786,34 +885,35 @@
                                        <div id="genericApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
                                          <h4>Applicant 1</h4>
                                          <!--label class="control-label"></label-->
-                                         <div class="form-group">
+                                         <div class="form-group employed">
                                             <label class="control-label">What is the annual salary before tax? </label>
                                             <div class="input-group col-md-6">
                                                <span style="background: white" class="input-group-addon">£</span>
                                                <input id="annualIncome1" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
                                             </div>
                                          </div>
-                                         <div class="form-group">
+                                         <div class="form-group employed">
                                             <label class="control-label">What's your annual bonus? (optional) </label>
                                             <div class="input-group col-md-6">
                                                <span style="background: white" class="input-group-addon">£</span>
                                                <input id="annualBonus1" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                             </div>
                                          </div>
-                                         <div class="form-group">
+                                         <div class="form-group employed">
                                             <label class="control-label">What's your total overtime annually? (optional) </label>
                                             <div class="input-group col-md-6">
                                                <span style="background: white" class="input-group-addon">£</span>
                                                <input id="totalOvertimeAnnually1" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                             </div>
                                          </div>
-                                         <div class="form-group">
+                                         <div class="form-group employed">
                                             <label class="control-label">What's your total commission annually? (optional) </label>
                                             <div class="input-group col-md-6">
                                                <span style="background: white" class="input-group-addon">£</span>
                                                <input id="totalCommissionAnnually1" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                             </div>
                                          </div>
+
                                          <fieldset class="form-group">
                                             <label class="control-label">Are you aware of any future changes to personal/ financial circumstances (optional) </label>
                                             <div class="form-check">
@@ -828,37 +928,39 @@
                                             </div>
                                          </fieldset>
                                        </div>
+
                                      <div id="genericApplicant2" class="col-xs-6 form-group applicant2" style="padding-left: 0px;display: none">
                                         <!--label class="control-label"></label-->
                                         <h4>Applicant 2</h4>
-                                        <div class="form-group">
+                                        <div class="form-group employed">
                                            <label class="control-label">What is the annual salary before tax? </label>
                                            <div class="input-group col-md-6">
                                               <span style="background: white" class="input-group-addon">£</span>
                                               <input id="annualIncome2" maxlength="10" type="tel" class="form-control" placeholder="0" required="required" />
                                            </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group employed">
                                            <label class="control-label">What's your annual bonus? (optional) </label>
                                            <div class="input-group col-md-6">
                                               <span style="background: white" class="input-group-addon">£</span>
                                               <input id="annualBonus2" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                            </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group employed">
                                            <label class="control-label">What's your total overtime annually? (optional) </label>
                                            <div class="input-group col-md-6">
                                               <span style="background: white" class="input-group-addon">£</span>
                                               <input id="totalOvertimeAnnually2" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                            </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group employed">
                                            <label class="control-label">What's your total commission annually? (optional) </label>
                                            <div class="input-group col-md-6">
                                               <span style="background: white" class="input-group-addon">£</span>
                                               <input id="totalCommissionAnnually2" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                            </div>
                                         </div>
+
                                         <fieldset class="form-group">
                                            <label class="control-label">Are you aware of any future changes to personal/ financial circumstances (optional) </label>
                                            <div class="form-check">
@@ -872,6 +974,183 @@
                                               </label>
                                            </div>
                                         </fieldset>
+                                      </div>
+
+                                      <div id="earmAnyOtherAnnualIncome" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
+                                         <div class="form-group">
+                                            <label class="control-label"> Do they earn or receive any other annual income?  </label>
+                                            <div class="form-check">
+                                               <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="earmAnyOtherAnnualIncome" id="earmAnyOtherAnnualIncomeYes" value="Yes"> Yes
+                                               </label>
+                                            </div>
+                                            <div class="form-check disabled">
+                                               <label class="form-check-label">
+                                               <input type="radio" class="form-check-input" name="earmAnyOtherAnnualIncome" id="earmAnyOtherAnnualIncomeNo" value="No" checked> No
+                                               </label>
+                                            </div>
+                                         </div>
+                                         <div id="earmAnyOtherAnnualIncomeBoard" style="display: none">
+                                            <h4> Please enter the annual equivalent </h4>
+                                            <div id="earmAnyOtherAnnualIncomeApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
+                                              <h4>Applicant 1</h4>
+                                              <div id="secondJobDiv1" class="form-group">
+                                                 <label class="control-label"> Second job </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="secondJob1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+
+                                              <div id="occupationalPensionDiv1" class="form-group">
+                                                 <label class="control-label"> State/company/occupational pension </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="occupationalPension1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+
+                                              <div id="drawdownOnPensionFundDiv1" class="form-group">
+                                                 <label class="control-label"> Drawdown on pension fund </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="drawdownOnPensionFund1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+
+                                              <div id="dividendIncomeDiv1" class="form-group">
+                                                 <label class="control-label"> Dividend income </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="dividendIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+
+                                              <div id="investmentIncomeDiv1" class="form-group">
+                                                 <label class="control-label"> Investment income  </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="investmentIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+
+                                              <div id="companyOwnerIncomeDiv1" class="form-group">
+                                                 <label class="control-label">  Company owner income  </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="companyOwnerIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+
+                                              <div id="maintenancePaymentsDiv1" class="form-group">
+                                                 <label class="control-label"> Maintenance payments </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="maintenancePayments1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div id="rentalIncomeDiv1" class="form-group">
+                                                 <label class="control-label"> Rental income </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="rentalIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div id="fosteringIncomeDiv1" class="form-group">
+                                                 <label class="control-label"> Fostering income </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="fosteringIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                              <div id="otherIncomeDiv1" class="form-group">
+                                                 <label class="control-label"> Other </label>
+                                                 <div class="input-group col-md-6">
+                                                    <span style="background: white" class="input-group-addon">£</span>
+                                                    <input id="otherIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                                 </div>
+                                              </div>
+                                         </div>
+                                         <div id="earmAnyOtherAnnualIncomeApplicant2" class="col-xs-6 form-group applicant2" style="padding-left: 0px;display: none">
+                                           <h4>Applicant 2</h4>
+                                           <div id="secondJobDiv2" class="form-group">
+                                              <label class="control-label"> Second job </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="secondJob2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+
+                                           <div id="occupationalPensionDiv2" class="form-group">
+                                              <label class="control-label"> State/company/occupational pension </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="occupationalPension2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+
+                                           <div id="drawdownOnPensionFundDiv2" class="form-group">
+                                              <label class="control-label"> Drawdown on pension fund </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="drawdownOnPensionFund2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+
+                                           <div id="dividendIncomeDiv2" class="form-group">
+                                              <label class="control-label"> Dividend income </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="dividendIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+
+                                           <div id="investmentIncomeDiv2" class="form-group">
+                                              <label class="control-label"> Investment income  </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="investmentIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+
+                                           <div id="companyOwnerIncomeDiv2" class="form-group">
+                                              <label class="control-label">  Company owner income  </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="companyOwnerIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+                                           <div id="maintenancePaymentsDiv2" class="form-group">
+                                              <label class="control-label"> Maintenance payments </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="maintenancePayments2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+                                           <div id="rentalIncomeDiv2" class="form-group">
+                                              <label class="control-label"> Rental income </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="rentalIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+                                           <div id="fosteringIncomeDiv2" class="form-group">
+                                              <label class="control-label"> Fostering income </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="fosteringIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+
+                                           <div id="otherIncomeDiv2" class="form-group">
+                                              <label class="control-label"> Other </label>
+                                              <div class="input-group col-md-6">
+                                                 <span style="background: white" class="input-group-addon">£</span>
+                                                 <input id="otherIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
+                                              </div>
+                                           </div>
+                                      </div>
+                                         </div>
                                       </div>
                                      </div>
                                        <!--div id='incomingAffPageSecondTab' class="col-md-12 form-group" style="display: none;border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px"-->
@@ -1306,100 +1585,7 @@
                                              </div>
                                              </div>
                                           </div>
-                                          <div id="earmAnyOtherAnnualIncome" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
-                                             <div class="form-group">
-                                                <label class="control-label"> Do they earn or receive any other annual income?  </label>
-                                                <div class="form-check">
-                                                   <label class="form-check-label">
-                                                   <input type="radio" class="form-check-input" name="earmAnyOtherAnnualIncome" id="earmAnyOtherAnnualIncomeYes" value="Yes"> Yes
-                                                   </label>
-                                                </div>
-                                                <div class="form-check disabled">
-                                                   <label class="form-check-label">
-                                                   <input type="radio" class="form-check-input" name="earmAnyOtherAnnualIncome" id="earmAnyOtherAnnualIncomeNo" value="No" checked> No
-                                                   </label>
-                                                </div>
-                                             </div>
-                                             <div id="earmAnyOtherAnnualIncomeBoard" style="display: none">
-                                                <h4> Please enter the annual equivalent </h4>
-                                                <div id="earmAnyOtherAnnualIncomeApplicant1" class="col-xs-6 form-group" style="padding-left: 0px;">
-                                                  <h4>Applicant 1</h4>
-                                                  <div id="secondJobDiv1" class="form-group">
-                                                     <label class="control-label"> Second job </label>
-                                                     <div class="input-group col-md-6">
-                                                        <span style="background: white" class="input-group-addon">£</span>
-                                                        <input id="secondJob1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                     </div>
-                                                  </div>
-                                                  <div id="investmentIncomeDiv1" class="form-group">
-                                                     <label class="control-label"> Investment income  </label>
-                                                     <div class="input-group col-md-6">
-                                                        <span style="background: white" class="input-group-addon">£</span>
-                                                        <input id="investmentIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                     </div>
-                                                  </div>
-                                                  <div id="maintenancePaymentsDiv1" class="form-group">
-                                                     <label class="control-label"> Maintenance payments </label>
-                                                     <div class="input-group col-md-6">
-                                                        <span style="background: white" class="input-group-addon">£</span>
-                                                        <input id="maintenancePayments1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                     </div>
-                                                  </div>
-                                                  <div id="rentalIncomeDiv1" class="form-group">
-                                                     <label class="control-label"> Rental income </label>
-                                                     <div class="input-group col-md-6">
-                                                        <span style="background: white" class="input-group-addon">£</span>
-                                                        <input id="rentalIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                     </div>
-                                                  </div>
-                                                  <div id="fosteringIncomeDiv1" class="form-group">
-                                                     <label class="control-label"> Fostering income </label>
-                                                     <div class="input-group col-md-6">
-                                                        <span style="background: white" class="input-group-addon">£</span>
-                                                        <input id="fosteringIncome1" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                     </div>
-                                                  </div>
-                                             </div>
-                                             <div id="earmAnyOtherAnnualIncomeApplicant2" class="col-xs-6 form-group applicant2" style="padding-left: 0px;display: none">
-                                               <h4>Applicant 2</h4>
-                                               <div id="secondJobDiv2" class="form-group">
-                                                  <label class="control-label"> Second job </label>
-                                                  <div class="input-group col-md-6">
-                                                     <span style="background: white" class="input-group-addon">£</span>
-                                                     <input id="secondJob2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                  </div>
-                                               </div>
-                                               <div id="investmentIncomeDiv2" class="form-group">
-                                                  <label class="control-label"> Investment income  </label>
-                                                  <div class="input-group col-md-6">
-                                                     <span style="background: white" class="input-group-addon">£</span>
-                                                     <input id="investmentIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                  </div>
-                                               </div>
-                                               <div id="maintenancePaymentsDiv2" class="form-group">
-                                                  <label class="control-label"> Maintenance payments </label>
-                                                  <div class="input-group col-md-6">
-                                                     <span style="background: white" class="input-group-addon">£</span>
-                                                     <input id="maintenancePayments2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                  </div>
-                                               </div>
-                                               <div id="rentalIncomeDiv2" class="form-group">
-                                                  <label class="control-label"> Rental income </label>
-                                                  <div class="input-group col-md-6">
-                                                     <span style="background: white" class="input-group-addon">£</span>
-                                                     <input id="rentalIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                  </div>
-                                               </div>
-                                               <div id="fosteringIncomeDiv2" class="form-group">
-                                                  <label class="control-label"> Fostering income </label>
-                                                  <div class="input-group col-md-6">
-                                                     <span style="background: white" class="input-group-addon">£</span>
-                                                     <input id="fosteringIncome2" maxlength="10" type="tel" class="form-control" placeholder="0"/>
-                                                  </div>
-                                               </div>
-                                          </div>
-                                             </div>
-                                          </div>
+
 
                                           <div id="monthlyDeductions" class="col-md-12 form-group" style="border-width: thin;border-color: #F0F0F0;border-style: ridge;border-radius: 4px" >
                                              <h3> Monthly deductions </h3>
@@ -1609,10 +1795,26 @@
                                         </div> -->
 
                                          <div class="form-group">
-                                            <label class="control-label"> Existing life and health insurance and private pensions </label>
+                                            <label class="control-label"> Existing life and health insurance  </label>
                                             <div class="input-group col-md-3">
                                                <span style="background: white" class="input-group-addon">£</span>
                                                <input id="healthInsurancePayments" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                            </div>
+                                         </div>
+
+                                         <div class="form-group">
+                                            <label class="control-label"> Private pensions </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="privatePensions" maxlength="10" type="tel" class="form-control" placeholder="0" />
+                                            </div>
+                                         </div>
+
+                                         <div class="form-group">
+                                            <label class="control-label"> Building/contents insurance </label>
+                                            <div class="input-group col-md-3">
+                                               <span style="background: white" class="input-group-addon">£</span>
+                                               <input id="buildingContentsInsurance" maxlength="10" type="tel" class="form-control" placeholder="0" />
                                             </div>
                                          </div>
 

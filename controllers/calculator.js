@@ -15,13 +15,14 @@ exports.aff_calc = async (ctx) => {
           if (results && results.length) {
             let result = results[0]
             let priceObject = result.extarcted.find(x => x.price )
-            log.info('priceObject: ' + priceObject.lender)
+            log.info('priceObject: ' + result.lender)
             log.info('priceObject: ' + priceObject.price)
-            if (priceObject && Math.round(priceObject.price.replace(/[^\d.-]/g, '')) === 0) {
-              currentRetry ++
-            } else {
-              currentRetry = 3
-            }
+            currentRetry = 3
+            // if (priceObject && Math.round(priceObject.price.replace(/[^\d.-]/g, '')) === 0) {
+            //   currentRetry ++
+            // } else {
+            //   currentRetry = 3
+            // }
           } else {
             currentRetry ++
           }

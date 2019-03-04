@@ -12,12 +12,12 @@
    },
    "applicantAge1": {
      "css": "#a1applicantsAge",
-     "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth]))",
+     "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth1]))",
      "new": true
    },
    "applicantAge2": {
      "css": "#a2applicantsAge",
-     "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth]))",
+     "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth2]))",
      "new": true
    },
    "numOfdependants": {

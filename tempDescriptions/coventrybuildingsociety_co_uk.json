@@ -4,7 +4,7 @@
   "domain": "coventrybuildingsociety.co.uk",
   "affordability": "https://www.coventrybuildingsociety.co.uk/calculators/AffordabilityCalculator.aspx?ch=broker",
   "mapping": {
-    "waitFor": 3000,
+    "waitFor": 2500,
     "numOfApplying": {
       "css": "#MainContent_AffordabilityCalculator1_DDL_423",
       "logic": "(@value === 1) ? 'One': 'Two'"
@@ -42,26 +42,179 @@
     "mortgageTermMonths": {
       "css": "#MainContent_AffordabilityCalculator1_TB_433"
     },
-    "dayOfBirth": {
+    "dayOfBirth1": {
       "css": "#MainContent_AffordabilityCalculator1_AppDets1_TB_428_DAY"
     },
-    "mountOfBirth": {
+    "mountOfBirth1": {
       "css": "#MainContent_AffordabilityCalculator1_AppDets1_TB_428_MONTH"
     },
-    "yearOfBirth": {
+    "yearOfBirth1": {
       "css": "#MainContent_AffordabilityCalculator1_AppDets1_TB_428_YEAR"
     },
-    "gender": {
-      "css": "#MainContent_AffordabilityCalculator1_AppDets1_DDL_429",
-      "logic": "'Male'",
-      "new": true
+    "gender1": {
+      "css": "#MainContent_AffordabilityCalculator1_AppDets1_DDL_429"
     },
-    "click1": "#ContBtn"
+    "dayOfBirth2": {
+      "css": "#MainContent_AffordabilityCalculator1_AppDets2_TB_428_DAY"
+    },
+    "mountOfBirth2": {
+      "css": "#MainContent_AffordabilityCalculator1_AppDets2_TB_428_MONTH"
+    },
+    "yearOfBirth2": {
+      "css": "#MainContent_AffordabilityCalculator1_AppDets2_TB_428_YEAR"
+    },
+    "gender2": {
+      "css": "#MainContent_AffordabilityCalculator1_AppDets2_DDL_429"
+    },
+    "click1": "#ContBtn",
+    "employmentStatus1": {
+      "css": "#MainContent_AffordabilityCalculator1_EmpInc1_DDL_434",
+      "logic": "('@value' === 'Self-employed') ? 'Sole trader/Partnership/Sub-Contracting' : ('@value' === 'On Contract') ? 'Contract' : ('@value' === 'Not Employed') ? 'Unemployed' : '@value'",
+      "Employed": {
+        "annualIncome1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_436"
+        },
+        "annualBonus1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_439"
+        },
+        "totalOvertimeAnnually1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_440",
+          "logic": "input[totalCommissionAnnually1] + @value"
+        },
+        "retirementAge1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_445"
+        }
+      },
+      "Sole trader/Partnership/Sub-Contracting": {
+        "annualIncome1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_443"
+        },
+        "retirementAge1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_445"
+        }
+      },
+      "Retired": {
 
+      },
+      "Contract": {
+        "annualIncome1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_436"
+        },
+        "annualBonus1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_439"
+        },
+        "totalOvertimeAnnually1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_440",
+          "logic": "input[totalCommissionAnnually1] + @value"
+        },
+        "retirementAge1": {
+          "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_445"
+        }
+      },
+      "Unemployed": {
+
+      }
+    },
+
+    "earmAnyOtherAnnualIncome": {
+      "css": "#MainContent_AffordabilityCalculator1_AddInc1_DDL_448",
+      "Yes": {
+        "occupationalPensionSelect1": {
+          "css": "#MainContent_AffordabilityCalculator1_AddInc1_DDL_449",
+          "logic": "'State/company/occupational pension'",
+          "new": true,
+          "State/company/occupational pension": {
+            "occupationalPension1": {
+              "css": "#MainContent_AffordabilityCalculator1_AddInc1_TB_450"
+            },
+            "click": "#MainContent_AffordabilityCalculator1_AddInc1_AddIncBtn"
+            }
+        },
+        "drawdownOnPensionFundSelect1": {
+          "css": "#MainContent_AffordabilityCalculator1_AddInc1_DDL_449",
+          "logic": "'Private pension'",
+          "new": true,
+          "Private pension": {
+            "drawdownOnPensionFund1": {
+              "css": "#MainContent_AffordabilityCalculator1_AddInc1_TB_450"
+            },
+            "click": "#MainContent_AffordabilityCalculator1_AddInc1_AddIncBtn"
+          }
+        },
+        "dividendIncomeSelect1": {
+          "css": "#MainContent_AffordabilityCalculator1_AddInc1_DDL_449",
+          "logic": "'Dividend income'",
+          "new": true,
+          "Dividend income": {
+            "dividendIncome1": {
+              "css": "#MainContent_AffordabilityCalculator1_AddInc1_TB_450"
+            },
+            "click": "#MainContent_AffordabilityCalculator1_AddInc1_AddIncBtn"
+          }
+        },
+        "companyOwnerIncomeSelect1": {
+          "css": "#MainContent_AffordabilityCalculator1_AddInc1_DDL_449",
+          "logic": "'Company owner income'",
+          "new": true,
+          "Company owner income": {
+            "companyOwnerIncome1": {
+              "css": "#MainContent_AffordabilityCalculator1_AddInc1_TB_450"
+            },
+            "click": "#MainContent_AffordabilityCalculator1_AddInc1_AddIncBtn"
+          }
+        },
+        "rentalIncomeSelect1": {
+          "css": "#MainContent_AffordabilityCalculator1_AddInc1_DDL_449",
+          "logic": "'Rental income'",
+          "new": true,
+          "Rental income": {
+            "rentalIncome1": {
+              "css": "#MainContent_AffordabilityCalculator1_AddInc1_TB_450"
+            }
+          }
+        }
+      },
+      "No": {}
+      },
+      "click2": "#ContBtn",
+      "childcareAndEducation": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_495_1"
+      },
+      "healthInsurancePayments": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_497_1"
+      },
+      "buildingContentsInsurance": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_498_1"
+      },
+      "groundRent": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_499_1"
+      },
+      "monthlyLoanPayments": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_500_1"
+      },
+      "monthlyHirePurchasePayments": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_501_1"
+      },
+      "additionalCommittedExpenditure": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_502_1"
+      },
+      "otherMortgagePayments": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_504_1"
+      },
+      "otherCommittedPayments": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_505_1"
+      },
+      "privatePensions": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_455_1"
+      },
+      "creditCardBalances": {
+        "css": "#MainContent_AffordabilityCalculator1_TB_453_1"
+      },
+      "click3": "#ContBtn"
   },
   "extraction": {
     "price": {
-      "css": "#ctl00_ContentPlaceHolder_ctl00_loanamount"
+      "css": "#MainContent_AffordabilityCalculator1_MaxLoanAmtLbl"
     }
   }
 }

@@ -5,7 +5,7 @@
  "logo": "santander",
  "mapping": {
    "when": "#pnlStep1",
-   "waitFor": 1000,
+   "waitFor": 500,
    "numOfApplying": {
      "css": "[name='ApplicationType']",
      "logic": "(@value === 1) ? 'Single': 'Joint'"
@@ -28,6 +28,7 @@
    },
    "methodOfRepayment": {
      "css": "#ddlMethodRepayment",
+     "logic": "('@value' === 'Capital and interest') ? 'Capital and interest' : ('@value' === 'Interest only' && input[isRepaymentStrategySale] === 'No') ? 'Interest only - endowment or investment' : ('@value' === 'Interest only' && input[isRepaymentStrategySale] === 'Yes') ? 'sale of mortgaged property' : ('@value' === 'Mixed Repayment' && input[isRepaymentStrategySale] === 'Yes') ? 'Part and part - sale of mortgaged property' : 'Part and part - endowment or investment'",
      "Capital and interest": {
        "mortgageTermYears": {
          "css": "#tbLoanTermYears"
@@ -56,9 +57,9 @@
        "mortgageTermMonths": {
          "css": "#tbLoanTermMonths"
        },
-       "ageNextBirthday": {
+       "ageNextBirthday1": {
          "css": "#tbHowOldApplicant",
-         "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth])) + 1",
+         "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth1])) + 1",
          "new": true
 
        }
@@ -70,9 +71,9 @@
        "mortgageTermMonths": {
          "css": "#tbLoanTermMonths"
        },
-       "ageNextBirthday": {
+       "ageNextBirthday1": {
          "css": "#tbHowOldApplicant",
-         "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth])) + 1",
+         "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth1])) + 1",
          "new": true
 
        }
@@ -84,9 +85,9 @@
        "mortgageTermMonths": {
          "css": "#tbLoanTermMonths"
        },
-       "ageNextBirthday": {
+       "ageNextBirthday1": {
          "css": "#tbHowOldApplicant",
-         "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth])) + 1",
+         "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth1])) + 1",
          "new": true
 
        },
@@ -102,9 +103,9 @@
        "mortgageTermMonths": {
          "css": "#tbLoanTermMonths"
        },
-       "ageNextBirthday": {
+       "ageNextBirthday1": {
          "css": "#tbHowOldApplicant",
-         "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth])) + 1",
+         "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth1])) + 1",
          "new": true
 
        },

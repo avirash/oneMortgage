@@ -20,6 +20,8 @@ $(document).ready(function () {
        $('#earnAnyEmployedAllowancesApplicant2').css('display', 'none')
        $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'none')
        $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'none')
+       $('#birthDayApplicant2').css('display', 'none')
+
     } else {
       document.getElementById("numOfApplying1").checked = false
      document.getElementById("numOfApplying2").checked = true
@@ -29,6 +31,7 @@ $(document).ready(function () {
         $('#earnAnyEmployedAllowancesApplicant2').css('display', 'block')
         $('#receiveAnyGovernmentBenefitsApplicant2').css('display', 'block')
         $('#earmAnyOtherAnnualIncomeApplicant2').css('display', 'block')
+        $('#birthDayApplicant2').css('display', 'block')
     }
   })
 
@@ -508,26 +511,42 @@ fieldset.innerHTML =
         $('#isRepaymentStrategySaleDiv').fadeIn('slow')
         $('#requiredInterestMonthlyDiv').fadeOut('slow')
         $('#capitalAndInterestAmountDiv').fadeOut('slow')
-      } else if (['4', '5'].includes(value)) {
-        $('#requiredInterestDiv').fadeIn('slow')
-        $('#repaymentStrategyAmountDiv').fadeIn('slow')
-        $('#isRepaymentStrategySaleDiv').fadeIn('slow')
-        $('#requiredInterestMonthlyDiv').fadeIn('slow')
-        $('#capitalAndInterestAmountDiv').fadeIn('slow')
-      } else {
-        $('#requiredInterestDiv').fadeOut("slow")
-        $('#requiredInterestMonthlyDiv').fadeOut("slow")
-        $('#capitalAndInterestAmountDiv').fadeOut('slow')
-        $('#repaymentStrategyAmountDiv').fadeOut("slow")
-        $('#isRepaymentStrategySaleDiv').fadeOut("slow")
+        if (value === '3') {
+          $('#capitalAndInterestAmountDiv').fadeIn('slow')
+          $('#requiredInterestMonthlyDiv').fadeIn('slow')
+         }
+        } else {
+          $('#requiredInterestMonthlyDiv').fadeOut("slow")
+          $('#capitalAndInterestAmountDiv').fadeOut('slow')
+          $('#repaymentStrategyAmountDiv').fadeOut("slow")
+          $('#isRepaymentStrategySaleDiv').fadeOut("slow")
+          $('#requiredInterestDiv').fadeOut("slow")
       }
+      // } else if (['4', '5'].includes(value)) {
+      //   $('#requiredInterestDiv').fadeIn('slow')
+      //   $('#repaymentStrategyAmountDiv').fadeIn('slow')
+      //   $('#isRepaymentStrategySaleDiv').fadeIn('slow')
+      //   $('#requiredInterestMonthlyDiv').fadeIn('slow')
+      //   $('#capitalAndInterestAmountDiv').fadeIn('slow')
+      // } else {
+      //   $('#requiredInterestDiv').fadeOut("slow")
+      //   $('#requiredInterestMonthlyDiv').fadeOut("slow")
+      //   $('#capitalAndInterestAmountDiv').fadeOut('slow')
+      //   $('#repaymentStrategyAmountDiv').fadeOut("slow")
+      //   $('#isRepaymentStrategySaleDiv').fadeOut("slow")
+      // }
     })
 
   $('#typeOfOwnerShip').on('change', function(ev) {
       if ($(this).find(":selected").attr('value') === '1') {
           $('#equityLoanDiv').fadeIn('slow')
+          $('#percentageShareToPurchasedDiv').fadeOut('slow')
+      } else if ($(this).find(":selected").attr('value') === '3') {
+        $('#equityLoanDiv').fadeOut('slow')
+        $('#percentageShareToPurchasedDiv').fadeIn('slow')
       } else {
         $('#equityLoanDiv').fadeOut('slow')
+        $('#percentageShareToPurchasedDiv').fadeOut('slow')
       }
     })
 
@@ -575,13 +594,41 @@ fieldset.innerHTML =
       $(this).prop('checked', true)
     })
 /// incomings
- $('[name="retired"]').on('change', function(ev){
-   if ($(this).attr('value') === 'Yes') {
-      $('#retirementAgeDiv').fadeOut('slow')
+ $('#employmentStatus1').on('change', function(ev){
+   let value = $(this).find(":selected").attr('value')
+   if (value === 'Not Employed') {
+     $('#genericApplicant1 .employed').fadeOut('slow')
    } else {
-     $('#retirementAgeDiv').fadeIn('slow')
+     $('#genericApplicant1 .employed').fadeIn('slow')
+   }
+   if (value === 'Retired') {
+     $('#retirementAgeDiv1').fadeOut('slow')
+   } else {
+     $('#retirementAgeDiv1').fadeIn('slow')
    }
  })
+
+ $('#employmentStatus2').on('change', function(ev){
+   let value = $(this).find(":selected").attr('value')
+   if (value === 'Not Employed') {
+     $('#genericApplicant2 .employed').fadeOut('slow')
+   } else {
+     $('#genericApplicant2 .employed').fadeIn('slow')
+   }
+   if (value === 'Retired') {
+     $('#retirementAgeDiv2').fadeOut('slow')
+   } else {
+     $('#retirementAgeDiv2').fadeIn('slow')
+   }
+ })
+ // $('#employmentStatus2').on('change', function(ev){
+ //   let value = $(this).find(":selected").attr('value')
+ //   if (value === 'Retired') {
+ //     $('#retirementAgeDiv2').fadeIn('slow')
+ //   } else {
+ //     $('#retirementAgeDiv2').fadeOut('slow')
+ //   }
+ // })
 
  $('#advacedSalaryAanualIncomeClick > a').on('click', function(ev){
      if ($(this).attr('class')=='icon-plus') {

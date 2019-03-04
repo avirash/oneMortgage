@@ -84,8 +84,9 @@
 		"otherMortgagePayments": {
 			"css": "#OtherMortgagePayments"
 		},
-		"otherCommittedPayments": {
-			"css": "#OtherCommittedExpenditure"
+		"totalCreditCards": {
+			"css": "#OtherCommittedExpenditure",
+			"logic": "@value + input[otherCommittedPayments]"
 		},
 		"creditCardBalances": {
 			"css": "#TotalCreditCardBalance"
