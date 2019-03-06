@@ -596,28 +596,27 @@ fieldset.innerHTML =
 /// incomings
  $('#employmentStatus1').on('change', function(ev){
    let value = $(this).find(":selected").attr('value')
-   if (value === 'Not Employed') {
+   if (value === 'Not Employed' || value === 'Retired') {
      $('#genericApplicant1 .employed').fadeOut('slow')
+     if (value === 'Retired') {
+       $('#retirementAgeDiv1').fadeOut('slow')
+     }
    } else {
      $('#genericApplicant1 .employed').fadeIn('slow')
+      $('#retirementAgeDiv1').fadeIn('slow')
    }
-   if (value === 'Retired') {
-     $('#retirementAgeDiv1').fadeOut('slow')
-   } else {
-     $('#retirementAgeDiv1').fadeIn('slow')
-   }
+
  })
 
  $('#employmentStatus2').on('change', function(ev){
    let value = $(this).find(":selected").attr('value')
-   if (value === 'Not Employed') {
+   if (value === 'Not Employed' || value === 'Retired') {
      $('#genericApplicant2 .employed').fadeOut('slow')
+     if (value === 'Retired') {
+       $('#retirementAgeDiv2').fadeOut('slow')
+     }
    } else {
      $('#genericApplicant2 .employed').fadeIn('slow')
-   }
-   if (value === 'Retired') {
-     $('#retirementAgeDiv2').fadeOut('slow')
-   } else {
      $('#retirementAgeDiv2').fadeIn('slow')
    }
  })
@@ -930,6 +929,12 @@ fieldset.innerHTML =
     })
       for (const key of Object.keys(tempInputCollection)) {
         if (inputCollection[key] && inputCollection[key] !== tempInputCollection[key]) {
+          $('form input, form select').each(function(id, el) {
+            if (!($(el).is(":visible"))) {
+              delete inputCollection[el.id]
+              delete inputCollection[el.name]
+            }
+          })
           return false
         }
       }
@@ -1067,9 +1072,10 @@ fieldset.innerHTML =
   }
 
   function completeInputCollection() {
-    let monthlyCommitmented = Object.keys(inputCollection).find( x => x === 'monthlyCommitmented')
+    // let earmAnyOtherAnnualIncome = Object.keys(inputCollection).find( x => x === 'earmAnyOtherAnnualIncome')
+
     let otherProperty = Object.keys(inputCollection).find( x => x === 'otherProperty')
-    // if (!monthlyCommitmented) inputCollection['monthlyCommitmented'] = 'No'
+    // if (earmAnyOtherAnnualIncome.value === 'Yes') inputCollection['monthlyCommitmented'] = 'No'
     if (!otherProperty) inputCollection['otherProperty'] = 'No'
     let finalCollection = inputCollection
     // Object.keys(inputCollection).forEach(function(key){
@@ -1130,7 +1136,7 @@ fieldset.innerHTML =
         x = rows[i].getElementsByTagName("TD")[2];
         y = rows[i + 1].getElementsByTagName("TD")[2];
         //check if the two rows should switch place:
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
           //if so, mark as a switch and break the loop:
           shouldSwitch = true;
           break;
@@ -1169,9 +1175,11 @@ fieldset.innerHTML =
                var cell1 = row.insertCell(0)
                var cell2 = row.insertCell(1)
                var cell3 = row.insertCell(2)
+               var amount = extracted.price.split('.')[0]
+               amount = amount.replace('£','')
                cell1.innerHTML = '<img src="images/' + result.logo + '.png" width="150px" height="50px"/>'
                cell2.innerHTML = result.lender
-               cell3.innerHTML = (extracted.price.startsWith('£')) ? extracted.price.split('.')[0] : `£${extracted.price.split('.')[0]}`
+               cell3.innerHTML = `£${numberWithCommas(amount)}`
              }
            }
            sortTable("tableResults")

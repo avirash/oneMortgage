@@ -1,5 +1,5 @@
 {
- "lender": "Hsbc",
+ "lender": "HSBC",
  "logo": "hsbc",
  "domain": "portal.intermediaries.hsbc.co.uk",
  "affordability": "https://portal.intermediaries.hsbc.co.uk/affordabilitycalculator/affordabilitycalculatorpage.php#editExpenditure",
@@ -10,6 +10,11 @@
      "css": "#isJointMortgage",
      "logic": "(@value === 1) ? 'Sole': 'Joint'"
    },
+   "maximumLTV": {
+     "css": "#maximumLTV",
+     "logic": "(((input[loanValue] / input[propertyValue]) * 100).toFixed(2) < 95 ) ? 'Up to 90% (Max LTI of 4.75x)' : 'Up to 95% (Max LTI of 4.49x)'"  ,
+     "new": true
+   },
    "applicantAge1": {
      "css": "#a1applicantsAge",
      "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth1]))",
@@ -19,6 +24,14 @@
      "css": "#a2applicantsAge",
      "logic": "(new Date().getFullYear() - parseInt(input[yearOfBirth2]))",
      "new": true
+   },
+   "employmentStatus1": {
+     "css": "#a1employmentStatus",
+     "logic": "('@value' === 'Not Employed') ? 'Unemployed' : ('@value' === 'On Contract') ? 'none' : ('@value' === 'Retired') ? 'Receiving Pension / Disablity Benifit' : '@value'"
+   },
+   "employmentStatus2": {
+     "css": "#a2employmentStatus",
+     "logic": "('@value' === 'Not Employed') ? 'Unemployed' : ('@value' === 'On Contract') ? 'none' : ('@value' === 'Retired') ? 'Receiving Pension / Disablity Benifit' : '@value'"
    },
    "numOfdependants": {
      "css": "#noDependantChildren",
@@ -37,7 +50,7 @@
      "css": "#estimatedPropertyValue"
    },
    "mortgageTermYears": {
-     "css": "#requiredMortgageTerm  "
+     "css": "#requiredMortgageTerm"
    },
    "click2": "#mortgageNextBtn",
    "annualIncome1": {
@@ -46,9 +59,18 @@
    "annualIncome2": {
      "css": "#a2grossIncome"
    },
-   "otherIncome1": {},
-   "otherIncome2": {},
+   "earmAnyOtherAnnualIncome": {
+     "css": "#a1additionalIncome",
+     "logic": "('@value' === 'Yes') ? input[secondJob1] + input[occupationalPension1] + input[drawdownOnPensionFund1] + input[dividendIncome1] + input[investmentIncome1] + input[companyOwnerIncome1] + input[maintenancePayments1] + input[rentalIncome1] + input[fosteringIncome1] + input[otherIncome1] : 0",
+     "secondJob2": {
+       "css": "#a2additionalIncome",
+       "logic": "input[secondJob2] + input[occupationalPension2] + input[drawdownOnPensionFund2] + input[dividendIncome2] + input[investmentIncome2] + input[companyOwnerIncome2] + input[maintenancePayments2] + input[rentalIncome2] + input[fosteringIncome2] + input[otherIncome2]"
+     }
+   },
    "click3": "#incomeNextBtn",
+   "otherMortgagePayments": {
+     "css": "#a1existingBTLOutgoings"
+   },
    "monthlyLoanPayments": {
      "css": "#a1totalMonthlyLoanPayments"
    },
@@ -61,7 +83,7 @@
    "childcareAndEducation": {
      "css": "#a1childcareCosts"
    },
-   "otherMortgagePayments": {
+   "additionalCommittedExpenditure": {
      "css": "#a1otherExpenditure"
    },
    "click4": "#expenditureNextBtn"
