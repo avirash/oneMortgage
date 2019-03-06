@@ -186,7 +186,7 @@
  },
  "extraction": {
    "price": {
-     "css": "#affCalcForm > div.formContents > div.affCalcContainer > div:nth-child(2) > div > p > strong, #affCalcForm > div.formContents > div.affCalcContainer > div:nth-child(4) > div > p > strong"
+     "css": "#affCalcForm > div.formContents > div.affCalcContainer > div:nth-child(4) > div > p > strong"
    }
  }
 }

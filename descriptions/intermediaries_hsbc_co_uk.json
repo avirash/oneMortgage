@@ -90,7 +90,7 @@
  },
  "extraction": {
    "price": {
-     "css": "#lendingBasedOnProperty"
+     "css": "#lendingBasedOnAffordability"
    }
  }
 }
