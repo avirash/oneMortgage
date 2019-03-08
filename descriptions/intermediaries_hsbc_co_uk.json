@@ -92,5 +92,14 @@
    "price": {
      "css": "#lendingBasedOnAffordability"
    }
+ },
+ "screenshot": {
+   "removeAttr": {
+     "css": "body > div.pageWrapper > div > div > div > main > div:nth-child(2) > div > form",
+     "attr": "target"
+   },
+   "type": "screenshot",
+   "css": "#resultsTabPanel > div:nth-child(5) > div > span > a",
+   "waitFor": 3000
  }
 }

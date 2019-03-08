@@ -1273,5 +1273,11 @@
    "price": {
      "css": "#pnlStep4 > div > div > div > div > div.affordResultsWrap > p.resultSuccess.noImg > strong > span"
    }
+ },
+ "screenshot": {
+    "css": "#btnPrint",
+    "type": "download",
+    "waitFor": 5000,
+    "regex": "DownloadPDF"
  }
 }

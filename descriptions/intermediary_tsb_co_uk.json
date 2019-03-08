@@ -116,5 +116,8 @@
      "price": {
        "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_loanamount"
      }
+   },
+   "screenshot": {
+     "type": "screenshot"
    }
 }

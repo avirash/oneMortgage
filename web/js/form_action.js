@@ -1156,6 +1156,16 @@ fieldset.innerHTML =
       $("#loader").attr('style', 'display: none !important');
     }
   }
+
+  function pdfDownload(e){
+    e.preventDefault();
+    var iframe = '<iframe src="' + $(e.target).attr('data-uri') + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
+    var x = window.open();
+    x.document.open();
+    x.document.write(iframe);
+    x.document.close();
+  }
+  
   // send request to affordability
   function sendRequerst(input) {
     let data = input
@@ -1175,11 +1185,15 @@ fieldset.innerHTML =
                var cell1 = row.insertCell(0)
                var cell2 = row.insertCell(1)
                var cell3 = row.insertCell(2)
+               var cell4 = row.insertCell(3)
                var amount = extracted.price.split('.')[0]
                amount = amount.replace('£','')
                cell1.innerHTML = '<img src="images/' + result.logo + '.png" width="150px" height="50px"/>'
                cell2.innerHTML = result.lender
                cell3.innerHTML = `£${numberWithCommas(amount)}`
+               cell4.innerHTML = '<a class="pdf-download"><img style="width: 50px;margin-top: -14px; height: 45px" src="images/pdf-download.png" data-uri="' + result.screenshot + '" /></a>'
+               $('.pdf-download').bind('click', pdfDownload)
+
              }
            }
            sortTable("tableResults")

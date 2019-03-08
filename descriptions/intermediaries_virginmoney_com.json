@@ -1,5 +1,5 @@
 {
- "lender": "Virginmoney",
+ "lender": "Virgin Money",
  "logo": "virginmoney",
  "domain": "intermediaries.virginmoney.com",
  "affordability": "https://intermediaries.virginmoney.com/tools/affordability-calculator/loan/9d60fb80-eec2-4b5d-9431-a89a604c8c0f",
@@ -188,5 +188,14 @@
    "price": {
      "css": ".results  strong:last"
    }
+ },
+ "screenshot": {
+   "removeAttr": {
+     "css": "#affCalcForm > div.formContents > div.last > a.learnmore.print",
+     "attr": "target"
+   },
+   "css": "#affCalcForm > div.formContents > div.last > a.learnmore.print",
+   "type": "screenshot",
+   "waitFor": 5000
  }
 }

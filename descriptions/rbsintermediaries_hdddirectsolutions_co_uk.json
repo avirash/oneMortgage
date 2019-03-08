@@ -107,5 +107,8 @@
 		"price": {
 			"css": "#mortgage-calculator-results > strong"
 		}
+	},
+	"screenshot": {
+		"type": "screenshot"
 	}
 }

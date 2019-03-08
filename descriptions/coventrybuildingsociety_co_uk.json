@@ -4,7 +4,7 @@
   "domain": "coventrybuildingsociety.co.uk",
   "affordability": "https://www.coventrybuildingsociety.co.uk/calculators/AffordabilityCalculator.aspx?ch=broker",
   "mapping": {
-    "waitFor": 2000,
+    "waitFor": 2200,
     "numOfApplying": {
       "css": "#MainContent_AffordabilityCalculator1_DDL_423",
       "logic": "(@value === 1) ? 'One': 'Two'"
@@ -263,5 +263,11 @@
     "price": {
       "css": "#MainContent_AffordabilityCalculator1_MaxLoanAmtLbl"
     }
+  },
+  "screenshot": {
+    "css": "#MainContent_AffordabilityCalculator1_PrintBtn",
+    "waitFor": 5000,
+    "type": "download",
+    "regex": "Result.aspx"
   }
 }

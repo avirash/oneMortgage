@@ -80,5 +80,8 @@
    "price": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_loanamount"
    }
+ },
+ "screenshot": {
+   "type": "screenshot"
  }
 }
