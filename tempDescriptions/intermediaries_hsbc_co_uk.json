@@ -4,7 +4,7 @@
  "domain": "portal.intermediaries.hsbc.co.uk",
  "affordability": "https://portal.intermediaries.hsbc.co.uk/affordabilitycalculator/affordabilitycalculatorpage.php#editExpenditure",
  "mapping": {
-   "waitFor": 2000,
+   "waitFor": 7000,
    "click1": "#editMortgage",
    "numOfApplying": {
      "css": "#isJointMortgage",
@@ -59,13 +59,13 @@
    "annualIncome2": {
      "css": "#a2grossIncome"
    },
-   "earmAnyOtherAnnualIncome": {
-     "css": "#a1additionalIncome",
-     "logic": "('@value' === 'Yes') ? input[secondJob1] + input[occupationalPension1] + input[drawdownOnPensionFund1] + input[dividendIncome1] + input[investmentIncome1] + input[companyOwnerIncome1] + input[maintenancePayments1] + input[rentalIncome1] + input[fosteringIncome1] + input[otherIncome1] : 0",
-     "secondJob2": {
-       "css": "#a2additionalIncome",
-       "logic": "input[secondJob2] + input[occupationalPension2] + input[drawdownOnPensionFund2] + input[dividendIncome2] + input[investmentIncome2] + input[companyOwnerIncome2] + input[maintenancePayments2] + input[rentalIncome2] + input[fosteringIncome2] + input[otherIncome2]"
-     }
+   "secondJob1": {
+        "css": "#a1additionalIncome",
+        "logic": "input[secondJob1] + input[occupationalPension1] + input[drawdownOnPensionFund1] + input[dividendIncome1] + input[investmentIncome1] + input[companyOwnerIncome1] + input[maintenancePayments1] + input[rentalIncome1] + input[fosteringIncome1] + input[otherIncome1]"
+   },
+   "secondJob2": {
+     "css": "#a2additionalIncome",
+     "logic": "input[secondJob2] + input[occupationalPension2] + input[drawdownOnPensionFund2] + input[dividendIncome2] + input[investmentIncome2] + input[companyOwnerIncome2] + input[maintenancePayments2] + input[rentalIncome2] + input[fosteringIncome2] + input[otherIncome2]"
    },
    "click3": "#incomeNextBtn",
    "otherMortgagePayments": {

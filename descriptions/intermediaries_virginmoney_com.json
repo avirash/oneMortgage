@@ -72,10 +72,8 @@
      }
    },
    "click1": "#affCalcForm > div.formContents > div.last > span > input",
-
    "numOfApplying": {
-     "css": "[name='NumberOfApplicants']",
-     "logic": "(@value === 1) ? 'Single': 'Joint'"
+     "css": "[name='NumberOfApplicants']"
    },
    "numOfdependants": {
      "css": "#Dependants",

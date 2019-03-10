@@ -91,6 +91,10 @@
 		"creditCardBalances": {
 			"css": "#TotalCreditCardBalance"
 		},
+		"numOfApplying": {
+			"css": "[name='NumberofApplicants']",
+			"logic": "(@value === 1) ? 'Solo': 'Joint'"
+		},
 		"totalApplicantsAndDependants": {
 			"css": "#TotalNoApplicantsAndDependants",
 			"logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18]) + parseInt(input[numOfApplying])",

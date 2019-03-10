@@ -1165,7 +1165,7 @@ fieldset.innerHTML =
     x.document.write(iframe);
     x.document.close();
   }
-  
+
   // send request to affordability
   function sendRequerst(input) {
     let data = input
