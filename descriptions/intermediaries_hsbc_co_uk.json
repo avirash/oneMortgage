@@ -4,7 +4,7 @@
  "domain": "portal.intermediaries.hsbc.co.uk",
  "affordability": "https://portal.intermediaries.hsbc.co.uk/affordabilitycalculator/affordabilitycalculatorpage.php#editExpenditure",
  "mapping": {
-   "waitFor": 7000,
+   "waitFor": 2000,
    "click1": "#editMortgage",
    "numOfApplying": {
      "css": "#isJointMortgage",
