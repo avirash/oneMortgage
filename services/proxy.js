@@ -1,51 +1,51 @@
 const _ = require('lodash')
 const proxies = [
-                  { host: '162.212.173.210',
+                  { host: '134.255.243.24',
                     port: 80,
                     user:'feat',
                     pwd:'Aqswdefr!'
                   },
-                  { host: '176.61.140.96',
+                  { host: '109.230.203.32',
                     port: 80,
                     user: 'feat',
                     pwd: 'Aqswdefr!'
                   },
-                  { host: '104.160.14.165',
+                  { host: '185.121.138.177',
                     port: 80,
                     user: 'feat',
                     pwd: ':Aqswdefr!'
                   },
-                  { host: '165.231.85.27',
+                  { host: '191.101.116.153',
                     port: 80,
                     user: 'feat',
                     pwd: 'Aqswdefr!'
                   },
-                  { host: '165.231.85.178',
+                  { host: '185.121.138.96',
                     port: 80,
                     user: 'feat',
                     pwd: 'Aqswdefr!'
                   },
-                  { host: '171.22.254.154',
+                  { host: '134.255.243.189',
                     port: 80,
                     user: 'feat',
                     pwd: 'Aqswdefr!'
                   },
-                  { host: '176.61.140.74',
+                  { host: '165.231.45.107',
                     port: 80,
                     user: 'feat',
                     pwd: 'Aqswdefr!'
                   },
-                  { host: '171.22.254.110',
+                  { host: '191.101.116.136',
                     port: 80,
                     user: 'feat',
                     pwd: 'Aqswdefr!'
                   },
-                  { host: '104.160.14.82',
+                  { host: '109.230.203.82',
                     port: 80,
                     user: 'feat',
                     pwd: 'Aqswdefr!'
                   },
-                  { host: '171.22.254.2',
+                  { host: '165.231.45.167',
                     port: 80,
                     user: 'feat',
                     pwd: 'Aqswdefr!'

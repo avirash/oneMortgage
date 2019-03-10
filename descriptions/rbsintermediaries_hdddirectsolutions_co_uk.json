@@ -67,10 +67,11 @@
 		},
 		"totalCommissionAnnually1": {
 			"css": "#MainApplicantOtherGrossIncome",
-			"logic":  "@value  + input[annualBonus1] + input[totalOvertimeAnnually1]"
+			"logic":  "input[annualBonus1] + input[totalOvertimeAnnually1]"
 		},
 		"totalCommissionAnnually2": {
-			"logic":  "@value  + input[annualBonus2] + input[totalOvertimeAnnually2]"
+			"css": "#JointApplicantOtherGrossIncome",
+			"logic":  "input[annualBonus2] + input[totalOvertimeAnnually2]"
 		},
 		"monthlyLoanPayments": {
 			"css": "#MonthlyLoanPayments"

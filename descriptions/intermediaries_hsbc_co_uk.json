@@ -59,13 +59,13 @@
    "annualIncome2": {
      "css": "#a2grossIncome"
    },
-   "secondJob1": {
+   "annualBonus1": {
         "css": "#a1additionalIncome",
-        "logic": "input[secondJob1] + input[occupationalPension1] + input[drawdownOnPensionFund1] + input[dividendIncome1] + input[investmentIncome1] + input[companyOwnerIncome1] + input[maintenancePayments1] + input[rentalIncome1] + input[fosteringIncome1] + input[otherIncome1]"
+        "logic": "input[annualBonus1] + input[totalOvertimeAnnually1] + input[totalCommissionAnnually1] + (input[secondJob1] || 0) + (input[occupationalPension1] || 0) + (input[drawdownOnPensionFund1] || 0) + (input[dividendIncome1] || 0) + (input[investmentIncome1] || 0) + (input[companyOwnerIncome1] || 0) + (input[maintenancePayments1] || 0) + (input[rentalIncome1] || 0) + (input[fosteringIncome1] || 0) + (input[otherIncome1] || 0)"
    },
-   "secondJob2": {
+   "annualBonus2": {
      "css": "#a2additionalIncome",
-     "logic": "input[secondJob2] + input[occupationalPension2] + input[drawdownOnPensionFund2] + input[dividendIncome2] + input[investmentIncome2] + input[companyOwnerIncome2] + input[maintenancePayments2] + input[rentalIncome2] + input[fosteringIncome2] + input[otherIncome2]"
+     "logic": "input[annualBonus2] + input[totalOvertimeAnnually2] + input[totalCommissionAnnually2] + (input[secondJob2] || 0) + (input[occupationalPension2] || 0) + (input[drawdownOnPensionFund2] || 0) + (input[dividendIncome2] || 0) + (input[investmentIncome2] || 0) + (input[companyOwnerIncome2] || 0) + (input[maintenancePayments2] || 0) + (input[rentalIncome2] || 0) + (input[fosteringIncome2] || 0) + (input[otherIncome2] || 0)"
    },
    "click3": "#incomeNextBtn",
    "otherMortgagePayments": {
