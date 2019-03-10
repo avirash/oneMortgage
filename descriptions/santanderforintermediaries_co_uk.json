@@ -5,7 +5,7 @@
  "logo": "santander",
  "mapping": {
    "when": "#pnlStep1",
-   "waitFor": 500,
+   "waitFor": 1000,
    "numOfApplying": {
      "css": "[name='ApplicationType']",
      "logic": "(@value === 1) ? 'Single': 'Joint'"
@@ -970,7 +970,7 @@
    },
    "annualBonusTotal2": {
      "css": "[for*='rbReceiveBonusCommission2']",
-     "logic": "(input[annualBonus2] > 0) ? 'Yes': 'No'",
+     "logic": "(input[annualBonus2] > 0 || input[totalCommissionAnnually2] > 0) ? 'Yes': 'No'",
      "new": true,
      "Yes": {
        "css": "[for='rbReceiveBonusCommission2Yes']",
@@ -985,10 +985,10 @@
          "new": true
        },
        "annualBonus2": {
-         "css": "#tbBonusOrCommission2AnnualEquivalent2",
+         "css": "#tbBonusOrCommission2AnnualEquivalent1",
          "logic": "@value + input[totalCommissionAnnually2]"
        },
-       "clickAdd": "#btnBonusOrCommission1Calculate2"
+       "clickAdd": "#btnBonusOrCommission2Calculate1"
      },
      "No": {
        "css": "[for='rbReceiveBonusCommission2No']"
@@ -1028,66 +1028,12 @@
            "new": true
       },
        "totalOvertimeAnnually2": {
-         "css": "#tbOvertime2AnnualEquivalent2"
+         "css": "#tbOvertime2AnnualEquivalent1"
        },
-       "clickAdd": "#btnOvertime1Calculate2"
+       "clickAdd": "#btnOvertime2Calculate1"
      },
      "No": {
        "css": "[for='rbReceiveOvertime2No']"
-     }
-   },
-
-   "annualCommissionTotal1": {
-     "css": "[for*='rbReceiveBonusCommission1']",
-     "logic": "(input[totalCommissionAnnually1] > 0) ? 'Yes': 'No'",
-     "new": true,
-     "Yes": {
-       "css": "[for='rbReceiveBonusCommission1Yes']",
-       "bonusPaidLeastMonthly1": {
-           "css": "[for='rbBonusOrCommission1MonthlyNo'",
-           "logic": "'No'",
-           "new": true
-      },
-       "notMonthlyHowOften1": {
-         "css": "#ddlBonusOrCommission1NotMonthlyHowOften",
-         "logic": "'Other'",
-         "new": true
-       },
-       "totalCommissionAnnually1": {
-         "css": "#tbBonusOrCommission1AnnualEquivalent1",
-         "logic": "@value + input[annualBonus1]"
-       },
-       "clickAdd": "#btnBonusOrCommission1Calculate1"
-     },
-     "No": {
-       "css": "[for='rbReceiveBonusCommission1No']"
-     }
-   },
-
-   "annualCommissionTotal2": {
-     "css": "[for*='rbReceiveBonusCommission2']",
-     "logic": "(input[totalCommissionAnnually2] > 0) ? 'Yes': 'No'",
-     "new": true,
-     "Yes": {
-       "css": "[for='rbReceiveBonusCommission2Yes']",
-       "bonusPaidLeastMonthly2": {
-           "css": "[for='rbBonusOrCommission2MonthlyNo'",
-           "logic": "'No'",
-           "new": true
-      },
-       "notMonthlyHowOften2": {
-         "css": "#ddlBonusOrCommission2NotMonthlyHowOften",
-         "logic": "'Other'",
-         "new": true
-       },
-       "totalCommissionAnnually2": {
-         "css": "#tbBonusOrCommission1AnnualEquivalent2",
-         "logic": "@value + input[annualBonus2]"
-       },
-       "clickAdd": "#btnBonusOrCommission2Calculate2"
-     },
-     "No": {
-       "css": "[for='rbReceiveBonusCommission2No']"
      }
    },
 
