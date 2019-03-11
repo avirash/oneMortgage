@@ -5,31 +5,59 @@
   "affordability": "https://resources.barclays.co.uk/mortgage-calculators/residential-affordability",
   "mapping": {
     "waitFor": 3000,
-    "isFlatOrMaisonette": {
-      "css": "#IsFlatOrMaisonette",
-      "logic": "'Yes'",
-      "new": true
-    },
-    "propertyValue": {
-      "css": "#PropertyValue"
-    },
-    "methodOfRepayment": {
-      "css": "#MortgageParts_0__InterestOnly",
-      "logic": "('@value' !== 'Capital and interest') ? 'Interest Only' : 'Capital and Interest'"
-    },
-    "loanValue": {
-      "css": "#MortgageParts_0__Amount"
-    },
-    "MortgageParts_0__Rate": {
-      "css": "#MortgageParts_0__Rate",
-      "logic": "2",
-      "new": true
-    },
-    "mortgageTermYears": {
-      "css": "#MortgageParts_0__TermYears"
-    },
-    "mortgageTermMonths": {
-      "css": "#MortgageParts_0__TermMonths"
+    "typeOfOwnerShip": {
+      "css": "#MortgageType",
+      "logic": "('@value' === 'Other') ? 'Barclays Residential Mortgage' : 'Help to Buy: Equity Loan'",
+      "Barclays Residential Mortgage": {
+        "isFlatOrMaisonette": {
+          "css": "#IsFlatOrMaisonette",
+          "logic": "'Yes'",
+          "new": true
+        },
+        "propertyValue": {
+          "css": "#PropertyValue"
+        },
+        "methodOfRepayment": {
+          "css": "#MortgageParts_0__InterestOnly",
+          "logic": "('@value' !== 'Capital and interest') ? 'Interest Only' : 'Capital and Interest'"
+        },
+        "loanValue": {
+          "css": "#MortgageParts_0__Amount"
+        },
+        "MortgageParts_0__Rate": {
+          "css": "#MortgageParts_0__Rate",
+          "logic": "2",
+          "new": true
+        },
+        "mortgageTermYears": {
+          "css": "#MortgageParts_0__TermYears"
+        },
+        "mortgageTermMonths": {
+          "css": "#MortgageParts_0__TermMonths"
+        }
+      },
+      "Help to Buy: Equity Loan": {
+        "propertyValue": {
+          "css": "#PropertyValue"
+        },
+        "equityLoan": {
+          "css": "#HTBEquityLoan"
+        },
+        "loanValue": {
+          "css": "#MortgageParts_0__Amount"
+        },
+        "MortgageParts_0__Rate": {
+          "css": "#MortgageParts_0__Rate",
+          "logic": "2",
+          "new": true
+        },
+        "mortgageTermYears": {
+          "css": "#MortgageParts_0__TermYears"
+        },
+        "mortgageTermMonths": {
+          "css": "#MortgageParts_0__TermMonths"
+        }
+      }
     },
     "numOfApplying": {
       "css": "#NoOfApplicants"
@@ -45,11 +73,21 @@
     "annualBonus1": {
       "css": "#Applicants_0__EmployedBonusCurrent"
     },
+    "annualBonusPrev1": {
+      "css": "#Applicants_0__EmployedBonusPrevious",
+      "logic": "input[annualBonus1]",
+      "new": true
+    },
     "annualIncome2": {
       "css": "#Applicants_1__EmployedBasicIncome"
     },
     "annualBonus2": {
       "css": "#Applicants_1__EmployedBonusCurrent"
+    },
+    "annualBonusPrev2": {
+      "css": "#Applicants_1__EmployedBonusPrevious",
+      "logic": "input[annualBonus2]",
+      "new": true
     },
     "earnAnyEmployedAllowances": {
       "css": "#Applicants_0__EmployedMonthlySustainableAllowances",

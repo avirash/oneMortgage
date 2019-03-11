@@ -28,7 +28,7 @@
    },
    "methodOfRepayment": {
      "css": "#ddlMethodRepayment",
-     "logic": "('@value' === 'Capital and interest') ? 'Capital and interest' : ('@value' === 'Interest only' && input[isRepaymentStrategySale] === 'No') ? 'Interest only - endowment or investment' : ('@value' === 'Interest only' && input[isRepaymentStrategySale] === 'Yes') ? 'sale of mortgaged property' : ('@value' === 'Mixed Repayment' && input[isRepaymentStrategySale] === 'Yes') ? 'Part and part - sale of mortgaged property' : 'Part and part - endowment or investment'",
+     "logic": "('@value' === 'Capital and interest') ? 'Capital and interest' : ('@value' === 'Interest only' && 'input[isRepaymentStrategySale]' === 'No') ? 'Interest only - endowment or investment' : ('@value' === 'Interest only' && 'input[isRepaymentStrategySale]' === 'Yes') ? 'sale of mortgaged property' : ('@value' === 'Mixed Repayment' && 'input[isRepaymentStrategySale]' === 'Yes') ? 'Part and part - sale of mortgaged property' : 'Part and part - endowment or investment'",
      "Capital and interest": {
        "mortgageTermYears": {
          "css": "#tbLoanTermYears"

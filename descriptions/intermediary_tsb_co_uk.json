@@ -2,6 +2,7 @@
  "lender": "TSB",
  "logo": "tsb",
  "domain": "intermediary.tsb.co.uk",
+ "proxy": "luminati",
  "affordability": "http://intermediary.tsb.co.uk/tools-and-calculators/mortgage-affordability-calculator/",
  "mapping": {
    "waitFor": 1500,
