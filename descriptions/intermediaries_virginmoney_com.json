@@ -41,6 +41,11 @@
        },
        "loanValue": {
          "css": "#LoanRequired"
+       },
+       "HelpToBuyLocation": {
+         "css": "#HelpToBuyLocation",
+         "logic": "'England'",
+         "new": true
        }
      },
      "Custom Build": {
