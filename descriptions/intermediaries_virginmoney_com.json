@@ -3,16 +3,16 @@
  "logo": "virginmoney",
  "domain": "intermediaries.virginmoney.com",
  "affordability": "https://intermediaries.virginmoney.com/tools/affordability-calculator/loan/9d60fb80-eec2-4b5d-9431-a89a604c8c0f",
+ "proxy": "luminati",
  "mapping": {
    "waitFor": 500,
    "typeOfOwnerShip": {
      "css": "[name='ApplicationType']",
      "logic": "('@value' === 'Help to Buy') ? 'Help to Buy Equity Loan' : (['Shared Equity','Other'].includes('@value')) ? 'Residential' : 'Custom Build'",
      "Residential": {
-       "css": "#ApplicationTypeResidential",
        "methodOfRepayment": {
          "css": "[name='RepaymentMethod']",
-         "logic": "('@value' === 'Capital and interest') ? 'Repayment' : ('@value'.includes('Interest only')) ?  'Interest Only' : 'Part & Part'"
+         "logic": "('@value' === 'Capital and interest') ? 'Repayment' : ('@value' === 'Interest Only') ?  'Interest Only' : 'Part And Part'"
        },
        "mortgageTermYears": {
          "css": "#LoanTerm"
