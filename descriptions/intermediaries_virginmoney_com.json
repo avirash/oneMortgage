@@ -5,27 +5,58 @@
  "affordability": "https://intermediaries.virginmoney.com/tools/affordability-calculator/loan/9d60fb80-eec2-4b5d-9431-a89a604c8c0f",
  "proxy": "luminati",
  "mapping": {
-   "waitFor": 500,
+   "waitFor": 1500,
    "typeOfOwnerShip": {
      "css": "[name='ApplicationType']",
      "logic": "('@value' === 'Help to Buy') ? 'Help to Buy Equity Loan' : (['Shared Equity','Other'].includes('@value')) ? 'Residential' : 'Custom Build'",
      "Residential": {
        "methodOfRepayment": {
          "css": "[name='RepaymentMethod']",
-         "logic": "('@value' === 'Capital and interest') ? 'Repayment' : ('@value' === 'Interest Only') ?  'Interest Only' : 'Part And Part'"
-       },
-       "mortgageTermYears": {
-         "css": "#LoanTerm"
-       },
-       "propertyValue": {
-         "css": "#PropertyValue"
-       },
-       "loanValue": {
-         "css": "#LoanRequired"
-       },
-       "requiredInterest": {
-         "css": "#IOLoanRequired",
-         "logic": "parseInt(input[propertyValue]) - parseInt(input[loanValue])"
+         "logic": "('@value' === 'Capital and interest') ? 'Repayment' : ('@value' === 'Interest Only') ?  'Interest Only' : 'Part And Part'",
+         "Repayment": {
+           "mortgageTermYears": {
+             "css": "#LoanTerm"
+           },
+           "propertyValue": {
+             "css": "#PropertyValue"
+           },
+           "loanValue": {
+             "css": "#LoanRequired"
+           },
+           "requiredInterest": {
+             "css": "#IOLoanRequired",
+             "logic": "parseInt(input[propertyValue]) - parseInt(input[loanValue])"
+           }
+         },
+         "Interest Only": {
+           "mortgageTermYears": {
+             "css": "#LoanTerm"
+           },
+           "propertyValue": {
+             "css": "#PropertyValue"
+           },
+           "loanValue": {
+             "css": "#LoanRequired"
+           },
+           "requiredInterest": {
+             "css": "#IOLoanRequired",
+             "logic": "parseInt(input[propertyValue]) - parseInt(input[loanValue])"
+           }
+         },
+         "Part And Part": {
+           "mortgageTermYears": {
+             "css": "#LoanTerm"
+           },
+           "propertyValue": {
+             "css": "#PropertyValue"
+           },
+           "capitalAndInterestAmount": {
+             "css": "#RepayLoanRequired"
+           },
+           "requiredInterest": {
+             "css": "#IOLoanRequired"
+           }
+         }
        }
      },
      "Help to Buy Equity Loan": {
