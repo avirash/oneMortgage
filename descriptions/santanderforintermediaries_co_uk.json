@@ -111,7 +111,7 @@
        },
        "requiredInterest": {
          "css": "#tbAmountInterestOnly",
-         "logic": "parseInt(input[propertyValue]) - parseInt(input[loanValue])"
+         "logic": "parseInt(input[requiredInterest]) + parseInt(input[capitalAndInterestAmount])"
        }
      }
    },

@@ -133,7 +133,7 @@
   },
   "extraction": {
      "price": {
-       "css": "#results > div > div.result-values.result-affordable > div:nth-child(1) > div > p > b"
+       "css": "#results > div > div.result-values.result-affordable > div:nth-child(1) > div > p > b, #results > div > div.result-values.result-unaffordable > div:nth-child(1) > div > p > b"
      }
    },
    "screenshot": {

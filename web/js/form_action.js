@@ -1173,6 +1173,7 @@ fieldset.innerHTML =
       type: 'POST',
       data: data,
       dataType: 'json',
+      timeout: 180000,
       contentType: 'application/x-www-form-urlencoded',
       url: `${endPoint}/aff_calc`,
        success: function(data) {
