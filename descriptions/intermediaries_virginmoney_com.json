@@ -3,7 +3,6 @@
  "logo": "virginmoney",
  "domain": "intermediaries.virginmoney.com",
  "affordability": "https://intermediaries.virginmoney.com/tools/affordability-calculator/loan/9d60fb80-eec2-4b5d-9431-a89a604c8c0f",
- "proxy": "luminati",
  "mapping": {
    "waitFor": 1500,
    "typeOfOwnerShip": {
