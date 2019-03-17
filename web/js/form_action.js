@@ -1198,7 +1198,7 @@ fieldset.innerHTML =
                var cell2 = row.insertCell(1)
                var cell3 = row.insertCell(2)
                var cell4 = row.insertCell(3)
-               var amount = (extracted && extracted.price) ? extracted.price.split('.')[0] : 0
+               var amount = (extracted && extracted.price) ? extracted.price.split('.')[0] : '0'
                amount = amount.replace('£','')
                cell1.innerHTML = '<img src="images/' + result.logo + '.png" width="150px" height="50px"/>'
                cell2.innerHTML = result.lender
