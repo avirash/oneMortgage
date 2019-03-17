@@ -86,7 +86,7 @@
         }
       },
       "Sole trader/Partnership/Sub-Contracting": {
-        "annualIncome1": {
+        "netProfitLatestPeriod1": {
           "css": "#MainContent_AffordabilityCalculator1_EmpInc1_TB_443"
         },
         "retirementAge1": {
@@ -134,7 +134,7 @@
         }
       },
       "Sole trader/Partnership/Sub-Contracting": {
-        "annualIncome2": {
+        "netProfitLatestPeriod2": {
           "css": "#MainContent_AffordabilityCalculator1_EmpInc2_TB_443"
         },
         "retirementAge2": {

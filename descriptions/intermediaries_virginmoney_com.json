@@ -134,8 +134,11 @@
         }
       },
       "Self-employed": {
-        "annualIncome1": {
+        "netProfitLatestPeriod1": {
           "css": "#Applicant0_NetProfitMostRecent"
+        },
+        "netProfitPreviousPeriod1": {
+          "css": "#Applicant0_NetProfitNextMostRecent"
         }
       },
       "Retired": {
@@ -171,8 +174,11 @@
         }
       },
       "Self-employed": {
-        "annualIncome2": {
-          "css": "#Applicant0_NetProfitMostRecent"
+        "netProfitLatestPeriod2": {
+          "css": "#Applicant1_NetProfitMostRecent"
+        },
+        "netProfitPreviousPeriod2": {
+          "css": "#Applicant1_NetProfitNextMostRecent"
         }
       },
       "Retired": {

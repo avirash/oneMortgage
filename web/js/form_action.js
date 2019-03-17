@@ -598,12 +598,21 @@ fieldset.innerHTML =
    let value = $(this).find(":selected").attr('value')
    if (value === 'Not Employed' || value === 'Retired') {
      $('#genericApplicant1 .employed').fadeOut('slow')
+     $('#genericApplicant1 .self-employed').fadeOut('slow')
      if (value === 'Retired') {
        $('#retirementAgeDiv1').fadeOut('slow')
      }
    } else {
-     $('#genericApplicant1 .employed').fadeIn('slow')
-      $('#retirementAgeDiv1').fadeIn('slow')
+     if (value === 'Self-employed') {
+       $('#genericApplicant1 .employed').fadeOut('slow')
+       $('#genericApplicant1 .self-employed').fadeIn('slow')
+       $('#retirementAgeDiv1').fadeIn('slow')
+     } else {
+       $('#genericApplicant1 .self-employed').fadeOut('slow')
+       $('#genericApplicant1 .employed').fadeIn('slow')
+        $('#retirementAgeDiv1').fadeIn('slow')
+     }
+
    }
 
  })
@@ -612,22 +621,24 @@ fieldset.innerHTML =
    let value = $(this).find(":selected").attr('value')
    if (value === 'Not Employed' || value === 'Retired') {
      $('#genericApplicant2 .employed').fadeOut('slow')
+     $('#genericApplicant2 .self-employed').fadeOut('slow')
      if (value === 'Retired') {
        $('#retirementAgeDiv2').fadeOut('slow')
      }
    } else {
-     $('#genericApplicant2 .employed').fadeIn('slow')
-     $('#retirementAgeDiv2').fadeIn('slow')
+     if (value === 'Self-employed') {
+       $('#genericApplicant2 .employed').fadeOut('slow')
+       $('#genericApplicant2 .self-employed').fadeIn('slow')
+       $('#retirementAgeDiv2').fadeIn('slow')
+     } else {
+       $('#genericApplicant2 .self-employed').fadeOut('slow')
+       $('#genericApplicant2 .employed').fadeIn('slow')
+        $('#retirementAgeDiv2').fadeIn('slow')
+     }
+
    }
+
  })
- // $('#employmentStatus2').on('change', function(ev){
- //   let value = $(this).find(":selected").attr('value')
- //   if (value === 'Retired') {
- //     $('#retirementAgeDiv2').fadeIn('slow')
- //   } else {
- //     $('#retirementAgeDiv2').fadeOut('slow')
- //   }
- // })
 
  $('#advacedSalaryAanualIncomeClick > a').on('click', function(ev){
      if ($(this).attr('class')=='icon-plus') {

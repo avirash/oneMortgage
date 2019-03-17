@@ -12,6 +12,14 @@
    "annualIncome2": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_annualincome2"
    },
+   "netProfitLatestPeriod1": {
+     "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_annualincome1",
+     "logic": "((input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) > 0) ? (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 2 : 0 "
+   },
+   "netProfitLatestPeriod2": {
+     "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_annualincome2",
+     "logic": "((input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) > 0) ? (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 2 : 0"
+   },
    "totalOvertimeAnnually1": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_overtime1"
    },

@@ -92,8 +92,7 @@
 
        },
        "requiredInterest": {
-         "css": "#tbAmountInterestOnly",
-         "logic": "parseInt(input[propertyValue]) - parseInt(input[loanValue])"
+         "css": "#tbAmountInterestOnly"
        }
      },
      "Part and part - endowment or investment": {
@@ -110,8 +109,7 @@
 
        },
        "requiredInterest": {
-         "css": "#tbAmountInterestOnly",
-         "logic": "parseInt(input[requiredInterest]) + parseInt(input[capitalAndInterestAmount])"
+         "css": "#tbAmountInterestOnly"
        }
      }
    },
@@ -912,11 +910,13 @@
    "salaryForDirectorLimit2": {
      "css": "#tbSelfEmployedSalaryDirector2"
    },
-   "netProfitSoleTrader1": {
-     "css": "#tbSelfEmployedNetProfit1"
+   "netProfitLatestPeriod1": {
+     "css": "#tbSelfEmployedNetProfit1",
+     "logic": "(input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1])"
    },
-   "netProfitSoleTrader2": {
-     "css": "#tbSelfEmployedNetProfit1"
+   "netProfitLatestPeriod2": {
+     "css": "#tbSelfEmployedNetProfit2",
+     "logic": "(input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2])"
    },
    "directorDividends1": {
      "css": "#tbNetDividendsDirectors1"

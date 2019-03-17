@@ -59,6 +59,14 @@
    "annualIncome2": {
      "css": "#a2grossIncome"
    },
+   "netProfitLatestPeriod1": {
+     "css": "#a1grossIncome",
+     "logic": "((input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) > 0) ? (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 2 : 0 "
+   },
+   "netProfitLatestPeriod2": {
+     "css": "#a2grossIncome",
+     "logic": "((input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) > 0) ? (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 2 : 0"
+   },
    "annualBonus1": {
         "css": "#a1additionalIncome",
         "logic": "input[annualBonus1] + input[totalOvertimeAnnually1] + input[totalCommissionAnnually1] + (input[secondJob1] || 0) + (input[occupationalPension1] || 0) + (input[drawdownOnPensionFund1] || 0) + (input[dividendIncome1] || 0) + (input[investmentIncome1] || 0) + (input[companyOwnerIncome1] || 0) + (input[maintenancePayments1] || 0) + (input[rentalIncome1] || 0) + (input[fosteringIncome1] || 0) + (input[otherIncome1] || 0)"

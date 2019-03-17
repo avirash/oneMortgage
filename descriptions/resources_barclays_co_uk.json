@@ -67,27 +67,59 @@
       "logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18])",
       "new": true
     },
-    "annualIncome1": {
-      "css": "#Applicants_0__EmployedBasicIncome"
+    "employmentStatus1": {
+      "css": "[name='Applicants[0].IsEmployed']",
+      "logic": "('@value' === 'Employed') ? 'true' : false",
+      "true": {
+        "annualIncome1": {
+          "css": "#Applicants_0__EmployedBasicIncome"
+        },
+        "annualBonus1": {
+          "css": "#Applicants_0__EmployedBonusCurrent"
+        },
+        "annualBonusPrev1": {
+          "css": "#Applicants_0__EmployedBonusPrevious",
+          "logic": "input[annualBonus1]",
+          "new": true
+        }
+      },
+      "false" : {
+        "click1": "#Applicants_0__IsEmployed",
+        "click2": "#Applicants_0__IsSelfEmployed",
+        "netProfitLatestPeriod1": {
+          "css": "#Applicants_0__SelfEmployedIncomeCurrent"
+        },
+        "netProfitPreviousPeriod1": {
+          "css": "#Applicants_0__SelfEmployedIncomePrevious"
+        }
+      }
     },
-    "annualBonus1": {
-      "css": "#Applicants_0__EmployedBonusCurrent"
-    },
-    "annualBonusPrev1": {
-      "css": "#Applicants_0__EmployedBonusPrevious",
-      "logic": "input[annualBonus1]",
-      "new": true
-    },
-    "annualIncome2": {
-      "css": "#Applicants_1__EmployedBasicIncome"
-    },
-    "annualBonus2": {
-      "css": "#Applicants_1__EmployedBonusCurrent"
-    },
-    "annualBonusPrev2": {
-      "css": "#Applicants_1__EmployedBonusPrevious",
-      "logic": "input[annualBonus2]",
-      "new": true
+    "employmentStatus2": {
+      "css": "[name='Applicants[1].IsEmployed']",
+      "logic": "('@value' === 'Employed') ? 'true' : false",
+      "true": {
+        "annualIncome2": {
+          "css": "#Applicants_1__EmployedBasicIncome"
+        },
+        "annualBonus2": {
+          "css": "#Applicants_1__EmployedBonusCurrent"
+        },
+        "annualBonusPrev2": {
+          "css": "#Applicants_1__EmployedBonusPrevious",
+          "logic": "input[annualBonus2]",
+          "new": true
+        }
+      },
+      "false" : {
+        "click1": "#Applicants_1__IsEmployed",
+        "click2": "#Applicants_1__IsSelfEmployed",
+        "netProfitLatestPeriod2": {
+          "css": "#Applicants_1__SelfEmployedIncomeCurrent"
+        },
+        "netProfitPreviousPeriod12": {
+          "css": "#Applicants_1__SelfEmployedIncomePrevious"
+        }
+      }
     },
     "earnAnyEmployedAllowances": {
       "css": "#Applicants_0__EmployedMonthlySustainableAllowances",
