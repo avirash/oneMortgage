@@ -509,11 +509,11 @@ fieldset.innerHTML =
         $('#requiredInterestDiv').fadeIn('slow')
         $('#repaymentStrategyAmountDiv').fadeIn('slow')
         $('#isRepaymentStrategySaleDiv').fadeIn('slow')
-        $('#requiredInterestMonthlyDiv').fadeOut('slow')
+        $('#requiredInterestMonthlyDiv').fadeIn('slow')
         $('#capitalAndInterestAmountDiv').fadeOut('slow')
         if (value === '3') {
           $('#capitalAndInterestAmountDiv').fadeIn('slow')
-          $('#requiredInterestMonthlyDiv').fadeIn('slow')
+          // $('#requiredInterestMonthlyDiv').fadeIn('slow')
          }
         } else {
           $('#requiredInterestMonthlyDiv').fadeOut("slow")

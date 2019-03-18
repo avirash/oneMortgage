@@ -45,14 +45,14 @@
    },
    "netProfitLatestPeriod1": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_annualincome1",
-     "logic": "((input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) > 0) ? (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 2 : 0 "
+     "logic": "(input[netProfitLatestPeriod1] === 0 || input[netProfitPreviousPeriod1] === 0) ? (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 1 : (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 2"
    },
    "annualIncome2": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_annualincome2"
    },
    "netProfitLatestPeriod2": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_annualincome2",
-     "logic": "((input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) > 0) ? (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 2 : 0 "
+     "logic": "(input[netProfitLatestPeriod2] === 0 || input[netProfitPreviousPeriod2] === 0) ? (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 1 : (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 2"
    },
    "totalOvertimeAnnually1": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_overtime1"

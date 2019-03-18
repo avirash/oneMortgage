@@ -13,11 +13,11 @@
    },
    "netProfitLatestPeriod1": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_annualincome1",
-     "logic": "((input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) > 0) ? (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 2 : 0 "
+     "logic": "(input[netProfitLatestPeriod1] === 0 || input[netProfitPreviousPeriod1] === 0) ? (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 1 : (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 2"
    },
    "netProfitLatestPeriod2": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_annualincome2",
-     "logic": "((input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) > 0) ? (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 2 : 0"
+     "logic": "(input[netProfitLatestPeriod2] === 0 || input[netProfitPreviousPeriod2] === 0) ? (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 1 : (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 2"
    },
    "totalOvertimeAnnually1": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_overtime1"
@@ -57,12 +57,12 @@
      "Other Income" : {
      "sumFixedTerm": {
        "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome12",
-       "logic": "input[fixedTermContract1] + input[renewableContractPAYE1] + input[drawdownOnPensionFund1] + input[netProfitSoleTrader1] + input[directorDividends1] + input[pensionsAndAnnuities1] + input[statePension1] + input[employedInFfamilyBusiness1]",
+       "logic": "input[fixedTermContract1] + input[renewableContractPAYE1] + input[drawdownOnPensionFund1] + input[pensionsAndAnnuities1] + input[statePension1] + input[employedInFfamilyBusiness1]",
        "new": true
      },
      "fixedTermContract2": {
        "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome22",
-       "logic": "input[fixedTermContract2] + input[renewableContractPAYE2] + input[drawdownOnPensionFund2] + input[netProfitSoleTrader2] + input[directorDividends2] + input[pensionsAndAnnuities2] + input[statePension2] + input[employedInFfamilyBusiness2]"
+       "logic": "input[fixedTermContract2] + input[renewableContractPAYE2] + input[drawdownOnPensionFund2] + input[pensionsAndAnnuities2] + input[statePension2] + input[employedInFfamilyBusiness2]"
      }
    }
    },
