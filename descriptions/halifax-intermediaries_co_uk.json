@@ -38,7 +38,7 @@
    },
    "propertyLegalStatus": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_propertytype",
-     "logic": "('@value' === 'freehold' || '@value' === 'Interest only - endowment or investment' ) ? 'Freehold': 'Leashold'"
+     "logic": "('@value' === 'freehold' || '@value' === 'Interest only - endowment or investment' ) ? 'freehold': 'leasehold'"
    },
    "annualIncome1": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_annualincome1"
