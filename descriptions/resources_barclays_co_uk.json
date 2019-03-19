@@ -148,18 +148,21 @@
     "creditCardBalances": {
       "css": "#Applicants_0__CreditCardBalance"
     },
-    "otherCommittedPayments": {
-      "css": "#Applicants_0__OtherMonthlyCreditCommitments"
+    "totalCreditCards": {
+      "css": "#Applicants_0__OtherMonthlyCreditCommitments",
+      "logic": "input[totalCreditCards] + input[monthlyHirePurchasePayments] + input[privatePensions] + input[monthlyLoanPayments]"
     },
     "serviceCharge": {
       "css": "#Applicants_0__ServiceCharges",
       "logic": "input[serviceCharge] + input[groundRent]"
     },
     "childcareAndEducation": {
-      "css": "#Applicants_0__ChildCare"
+      "css": "#Applicants_0__ChildCare",
+      "logic": "input[childcareAndEducation] + input[otherCommittedPayments]"
     },
     "additionalCommittedExpenditure": {
-      "css": "#Applicants_0__OtherMonthlyCommitments"
+      "css": "#Applicants_0__OtherMonthlyCommitments",
+      "logic": "input[otherMortgagePayments] + input[healthInsurancePayments] + input[buildingContentsInsurance] + input[additionalCommittedExpenditure]"
     },
     "click1": "#btnCalculate"
   },

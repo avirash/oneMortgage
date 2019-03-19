@@ -914,7 +914,7 @@
      "css": "#tbSelfEmployedNetProfit1"
    },
    "netProfitLatestPeriod2": {
-     "css": "#tbSelfEmployedNetProfit2"     
+     "css": "#tbSelfEmployedNetProfit2"
    },
    "directorDividends1": {
      "css": "#tbNetDividendsDirectors1"
@@ -1174,7 +1174,8 @@
    },
    "click4": "#btnContinue",
    "totalCreditCards": {
-     "css": "#tbCreditCommitmentsMonthlySum"
+     "css": "#tbCreditCommitmentsMonthlySum",
+     "logic": "input[totalCreditCards] + input[monthlyHirePurchasePayments] + input[monthlyLoanPayments]"
    },
    "creditCardBalances": {
      "css": "#tbCreditCardsBalance"

@@ -95,13 +95,18 @@
      }
    },
    "monthlyHirePurchasePayments": {
-     "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_credit1"
+     "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_credit1",
+     "logic": "input[totalCreditCards] + input[monthlyHirePurchasePayments] + input[monthlyLoanPayments]"
    },
    "creditCardBalances": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_card1"
    },
-   "monthlyLoanPayments": {
-     "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_additionalcosts1"
+   "otherCommittedPayments": {
+     "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_additionalcosts1",
+     "logic": "input[otherCommittedPayments] + input[childcareAndEducation] + input[healthInsurancePayments] + input[privatePensions] + input[buildingContentsInsurance] + input[groundRent] + input[serviceCharge] + input[additionalCommittedExpenditure]"
+   },
+   "otherMortgagePayments": {
+     "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_txtMonthlyPaymentCompletion"
    },
    "numOfApplying": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_adults"

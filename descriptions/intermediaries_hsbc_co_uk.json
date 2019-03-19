@@ -61,11 +61,11 @@
    },
    "netProfitLatestPeriod1": {
      "css": "#a1grossIncome",
-     "logic": "((input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) > 0) ? (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 2 : 0 "
+     "logic": "(input[netProfitLatestPeriod1] === 0 || input[netProfitPreviousPeriod1] === 0) ? (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 1 : (input[netProfitLatestPeriod1] + input[netProfitPreviousPeriod1] + input[directorDividends1]) / 2"
    },
    "netProfitLatestPeriod2": {
      "css": "#a2grossIncome",
-     "logic": "((input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) > 0) ? (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 2 : 0"
+     "logic": "(input[netProfitLatestPeriod2] === 0 || input[netProfitPreviousPeriod2] === 0) ? (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 1 : (input[netProfitLatestPeriod2] + input[netProfitPreviousPeriod2] + input[directorDividends2]) / 2"
    },
    "annualBonus1": {
         "css": "#a1additionalIncome",
@@ -91,8 +91,9 @@
    "childcareAndEducation": {
      "css": "#a1childcareCosts"
    },
-   "additionalCommittedExpenditure": {
-     "css": "#a1otherExpenditure"
+   "monthlyHirePurchasePayments": {
+     "css": "#a1otherExpenditure",
+      "logic": "input[monthlyHirePurchasePayments] + input[otherCommittedPayments]"
    },
    "click4": "#expenditureNextBtn"
  },

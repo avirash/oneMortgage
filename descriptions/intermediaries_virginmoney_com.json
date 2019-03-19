@@ -196,27 +196,40 @@
       }
    },
    "click2": "#affCalcForm > div.formContents > div.last > span > input",
-   "additionalCommittedExpenditure": {
-     "css": "#totalExpenditure"
+   "detailedFormExpanded" :{
+     "css": "[name='detailedFormExpanded']",
+     "logic": "(input[childcareAndEducation] > 0 || input[healthInsurancePayments] > 0 || input[privatePensions] > 0 || input[buildingContentsInsurance] > 0 || input[groundRent] > 0 || input[serviceCharge] > 0) ? 'Yes' : 'No'",
+     "new": true,
+     "Yes": {
+       "childcareAndEducation": {
+         "css": "#childcareEducation"
+       },
+       "healthInsurancePayments": {
+         "css": "#insuranceInvestment",
+         "logic": "input[healthInsurancePayments] + input[privatePensions] + input[buildingContentsInsurance]"
+       }
+     },
+     "No": {
+       "additionalCommittedExpenditure": {
+         "css": "#totalExpenditure"
+       }
+     }
    },
    "groundRent": {
      "css": "#monthlyGroundRent"
-   },
-   "otherCommittedPayments": {
+   }       ,
+   "serviceCharge": {
      "css": "#monthlyServiceCharge"
    },
    "otherMortgagePayments": {
      "css": "[name='otherMortgages']",
-     "logic": "(@value > 0) ? 'Yes' : 'No'",
-     "Yes": {
-       "css": "#otherMortgagesYes"
-     },
-     "No": {
-       "css": "#otherMortgagesNo"
-     }
+     "logic": "(@value > 0) ? 'Yes' : 'No'"
    },
    "creditCardBalances": {
      "css": "#cardDebtToRemain"
+   },
+   "monthlyHirePurchasePayments": {
+     "css": "#currentMonthlyLoanPayments"
    },
    "monthlyLoanPayments": {
      "css": "#monthlyLoanToRemain"

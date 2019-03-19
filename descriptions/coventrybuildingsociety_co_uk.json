@@ -242,7 +242,7 @@
       "monthlyHirePurchasePayments": {
         "css": "#MainContent_AffordabilityCalculator1_TB_501_1"
       },
-      "additionalCommittedExpenditure": {
+      "totalCreditCards": {
         "css": "#MainContent_AffordabilityCalculator1_TB_502_1"
       },
       "otherMortgagePayments": {

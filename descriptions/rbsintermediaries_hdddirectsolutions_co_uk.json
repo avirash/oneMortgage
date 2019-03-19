@@ -95,7 +95,8 @@
 		},
 		"totalCreditCards": {
 			"css": "#OtherCommittedExpenditure",
-			"logic": "@value + input[otherCommittedPayments]"
+			"logic": "input[totalCreditCards] + input[otherCommittedPayments]  + input[childcareAndEducation] + input[healthInsurancePayments] + input[privatePensions] + input[buildingContentsInsurance] + input[groundRent] + input[serviceCharge] + input[additionalCommittedExpenditure]"
+
 		},
 		"creditCardBalances": {
 			"css": "#TotalCreditCardBalance"
