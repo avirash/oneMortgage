@@ -234,7 +234,8 @@
         "css": "#MainContent_AffordabilityCalculator1_TB_498_1"
       },
       "groundRent": {
-        "css": "#MainContent_AffordabilityCalculator1_TB_499_1"
+        "css": "#MainContent_AffordabilityCalculator1_TB_499_1",
+        "logic": "input[rentCharge] + input[groundRent] + input[serviceCharge]"
       },
       "monthlyLoanPayments": {
         "css": "#MainContent_AffordabilityCalculator1_TB_500_1"

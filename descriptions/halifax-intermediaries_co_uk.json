@@ -75,7 +75,7 @@
    "otherIncome": {},
    "totalCreditCards": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_credit1",
-     "logic": "input[totalCreditCards] + input[monthlyHirePurchasePayments] + input[otherCommittedPayments] + input[monthlyLoanPayments] + input[childcareAndEducation] + input[healthInsurancePayments] + input[privatePensions] + input[buildingContentsInsurance] + input[groundRent] + input[serviceCharge] + input[additionalCommittedExpenditure]"
+     "logic": "input[totalCreditCards] + input[monthlyHirePurchasePayments] + input[otherCommittedPayments] + input[monthlyLoanPayments] + input[childcareAndEducation] + input[healthInsurancePayments] + input[privatePensions] + input[buildingContentsInsurance] + input[groundRent] + input[rentCharge] + input[serviceCharge] + input[additionalCommittedExpenditure]"
    },
    "creditCardBalances": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_card1"

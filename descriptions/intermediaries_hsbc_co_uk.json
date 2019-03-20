@@ -76,24 +76,22 @@
      "logic": "input[annualBonus2] + input[totalOvertimeAnnually2] + input[totalCommissionAnnually2] + (input[secondJob2] || 0) + (input[occupationalPension2] || 0) + (input[drawdownOnPensionFund2] || 0) + (input[dividendIncome2] || 0) + (input[investmentIncome2] || 0) + (input[companyOwnerIncome2] || 0) + (input[maintenancePayments2] || 0) + (input[rentalIncome2] || 0) + (input[fosteringIncome2] || 0) + (input[otherIncome2] || 0)"
    },
    "click3": "#incomeNextBtn",
-   "otherMortgagePayments": {
-     "css": "#a1existingBTLOutgoings"
-   },
    "monthlyLoanPayments": {
      "css": "#a1totalMonthlyLoanPayments"
    },
    "creditCardBalances": {
      "css": "#a1outstandingCreditCardBalances"
    },
-   "rentCharge": {
-     "css": "#a1rentAndServiceCharge"
+   "groundRent": {
+     "css": "#a1rentAndServiceCharge",
+     "logic": "input[serviceCharge] + input[groundRent]"
    },
    "childcareAndEducation": {
      "css": "#a1childcareCosts"
    },
    "monthlyHirePurchasePayments": {
      "css": "#a1otherExpenditure",
-      "logic": "input[monthlyHirePurchasePayments] + input[otherCommittedPayments]"
+      "logic": "input[totalCreditCards] + input[monthlyHirePurchasePayments] + input[otherCommittedPayments] + input[otherMortgagePayments] + input[healthInsurancePayments] + input[privatePensions] + input[buildingContentsInsurance] + input[rentCharge] + input[additionalCommittedExpenditure]"
    },
    "click4": "#expenditureNextBtn"
  },

@@ -134,7 +134,8 @@
       },
       "Self-employed": {
         "netProfitLatestPeriod1": {
-          "css": "#Applicant0_NetProfitMostRecent"
+          "css": "#Applicant0_NetProfitMostRecent",
+          "logic": "input[dividendIncome1] + input[netProfitLatestPeriod1]"
         },
         "netProfitPreviousPeriod1": {
           "css": "#Applicant0_NetProfitNextMostRecent"
@@ -219,7 +220,8 @@
      "css": "#monthlyGroundRent"
    }       ,
    "serviceCharge": {
-     "css": "#monthlyServiceCharge"
+     "css": "#monthlyServiceCharge",
+     "logic": "input[otherCommittedPayments] + input[serviceCharge]"
    },
    "otherMortgagePayments": {
      "css": "[name='otherMortgages']",

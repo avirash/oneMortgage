@@ -154,7 +154,7 @@
     },
     "serviceCharge": {
       "css": "#Applicants_0__ServiceCharges",
-      "logic": "input[serviceCharge] + input[groundRent]"
+      "logic": "input[serviceCharge] + input[groundRent] + input[rentCharge]"
     },
     "childcareAndEducation": {
       "css": "#Applicants_0__ChildCare",

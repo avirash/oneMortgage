@@ -103,7 +103,7 @@
    },
    "otherCommittedPayments": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_additionalcosts1",
-     "logic": "input[otherCommittedPayments] + input[childcareAndEducation] + input[healthInsurancePayments] + input[privatePensions] + input[buildingContentsInsurance] + input[groundRent] + input[serviceCharge] + input[additionalCommittedExpenditure]"
+     "logic": "input[otherCommittedPayments] + input[childcareAndEducation] + input[healthInsurancePayments] + input[privatePensions] + input[buildingContentsInsurance] + input[groundRent] + input[rentCharge] + input[serviceCharge] + input[additionalCommittedExpenditure]"
    },
    "otherMortgagePayments": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_txtMonthlyPaymentCompletion"
