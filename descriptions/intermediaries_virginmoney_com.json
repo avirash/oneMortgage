@@ -230,11 +230,9 @@
    "creditCardBalances": {
      "css": "#cardDebtToRemain"
    },
-   "monthlyHirePurchasePayments": {
-     "css": "#currentMonthlyLoanPayments"
-   },
    "monthlyLoanPayments": {
-     "css": "#monthlyLoanToRemain"
+     "css": "#monthlyLoanToRemain",
+     "logic": "input[monthlyHirePurchasePayments] + input[monthlyLoanPayments] + input[totalCreditCards]"
    },
    "click3": "#affCalcForm > div.formContents > div.last > span > input"
  },
