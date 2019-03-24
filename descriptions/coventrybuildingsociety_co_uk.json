@@ -193,7 +193,7 @@
           "logic": "'Dividend income'",
           "new": true,
           "Dividend income": {
-            "dividendIncome1": {
+            "directorDividends1": {
               "css": "#MainContent_AffordabilityCalculator1_AddInc1_TB_450"
             },
             "click": "#MainContent_AffordabilityCalculator1_AddInc1_AddIncBtn"

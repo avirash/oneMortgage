@@ -11,7 +11,7 @@
      "Residential": {
        "methodOfRepayment": {
          "css": "[name='RepaymentMethod']",
-         "logic": "('@value' === 'Capital and interest') ? 'Repayment' : ('@value' === 'Interest Only') ?  'Interest Only' : 'Part And Part'",
+         "logic": "('@value' === 'Capital and interest') ? 'Repayment' : ('@value' === 'Interest only') ?  'Interest Only' : 'Part And Part'",
          "Repayment": {
            "mortgageTermYears": {
              "css": "#LoanTerm"
@@ -135,7 +135,7 @@
       "Self-employed": {
         "netProfitLatestPeriod1": {
           "css": "#Applicant0_NetProfitMostRecent",
-          "logic": "input[dividendIncome1] + input[netProfitLatestPeriod1]"
+          "logic": "input[directorDividends1] + input[netProfitLatestPeriod1]"
         },
         "netProfitPreviousPeriod1": {
           "css": "#Applicant0_NetProfitNextMostRecent"
