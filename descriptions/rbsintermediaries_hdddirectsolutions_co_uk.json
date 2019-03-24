@@ -59,6 +59,16 @@
 			"css": "#IsSharedEquityMortgage",
 			"logic": "('@value' === 'Shared Equity') ? 'Yes' : 'No'"
 		},
+		"numOfApplying": {
+			"css": "[name='NumberofApplicants']",
+			"logic": "(@value === 1) ? 'Solo': 'Joint'"
+		},
+		"occupationalPension1": {
+			"css": "#MainApplicantRegularGrossIncome"
+		},
+		"occupationalPension2": {
+			"css": "#JointApplicantGrossIncome"
+		},
 		"annualIncome1": {
 			"css": "#MainApplicantRegularGrossIncome"
 		},
@@ -101,10 +111,7 @@
 		"creditCardBalances": {
 			"css": "#TotalCreditCardBalance"
 		},
-		"numOfApplying": {
-			"css": "[name='NumberofApplicants']",
-			"logic": "(@value === 1) ? 'Solo': 'Joint'"
-		},
+
 		"totalApplicantsAndDependants": {
 			"css": "#TotalNoApplicantsAndDependants",
 			"logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18])",

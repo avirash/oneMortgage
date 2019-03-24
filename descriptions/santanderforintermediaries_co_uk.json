@@ -28,7 +28,7 @@
    },
    "methodOfRepayment": {
      "css": "#ddlMethodRepayment",
-     "logic": "('@value' === 'Capital and interest') ? 'Capital and interest' : ('@value' === 'Interest only' && 'input[isRepaymentStrategySale]' === 'No') ? 'Interest only - endowment or investment' : ('@value' === 'Interest only' && 'input[isRepaymentStrategySale]' === 'Yes') ? 'sale of mortgaged property' : ('@value' === 'Mixed Repayment' && 'input[isRepaymentStrategySale]' === 'Yes') ? 'Part and part - sale of mortgaged property' : 'Part and part - endowment or investment'",
+     "logic": "('@value' === 'Capital and interest') ? 'Capital and interest' : ('@value' === 'Interest only' && 'input[isRepaymentStrategySale]' === 'No') ? 'Interest only - endowment or investment' : ('@value' === 'Interest only' && 'input[isRepaymentStrategySale]' === 'Yes') ? 'Interest only - sale of mortgaged property' : ('@value' === 'Mixed Repayment' && 'input[isRepaymentStrategySale]' === 'Yes') ? 'Part and part - sale of mortgaged property' : 'Part and part - endowment or investment'",
      "Capital and interest": {
        "mortgageTermYears": {
          "css": "#tbLoanTermYears"
@@ -123,7 +123,9 @@
      "css": "[name='ProvideDetails']"
    },
    "click1": "#btnContinue",
+   "delay": 6000,
    "mortgageDetails": {
+     "click": "#ddlMortgagedPropertiesSelectBoxIt",
      "css": "#ddlMortgagedProperties",
      "logic": "input[mortgageDetails].length",
      "propertyUse": {
@@ -505,6 +507,7 @@
      }
    },
    "mortgageDetailsFree": {
+     "clickMortgageDetailsFree": "#ddlMortgageFreePropertiesSelectBoxIt",
      "css": "#ddlMortgageFreeProperties",
      "logic": "input[mortgageFreeDetails].length",
      "propertyUseFree": {
@@ -886,6 +889,7 @@
      }
    },
    "click3": "#btnContinue",
+   "click123": "#btnContinue",
    "annualIncome1": {
      "css": "#tbPermanentEmploymentBasicSalary1"
    },

@@ -1147,7 +1147,9 @@ fieldset.innerHTML =
         x = rows[i].getElementsByTagName("TD")[2];
         y = rows[i + 1].getElementsByTagName("TD")[2];
         //check if the two rows should switch place:
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        let firstNum = (x.innerHTML.toLowerCase().replace(/[^\d+]/g, '').length > 0) ? parseInt(x.innerHTML.toLowerCase().replace(/[^\d+]/g,'')) : 0
+        let secondNum = (y.innerHTML.toLowerCase().replace(/[^\d+]/g, '').length > 0) ? parseInt(y.innerHTML.toLowerCase().replace(/[^\d+]/g,'')) : 0
+        if (firstNum < secondNum) {
           //if so, mark as a switch and break the loop:
           shouldSwitch = true;
           break;
@@ -1193,20 +1195,26 @@ fieldset.innerHTML =
            for (var result of data.results) {
              for ( var extracted of result.extarcted) {
                var table = document.getElementById('tableResults')
-               table.style.display = 'block'
-               var row = table.insertRow(1)
-               var cell1 = row.insertCell(0)
-               var cell2 = row.insertCell(1)
-               var cell3 = row.insertCell(2)
-               var cell4 = row.insertCell(3)
-               var amount = (extracted && extracted.price) ? extracted.price.split('.')[0] : '0'
-               amount = amount.replace('£','')
-               cell1.innerHTML = '<img src="images/' + result.logo + '.png" width="150px" height="50px"/>'
-               cell2.innerHTML = result.lender
-               cell3.innerHTML = `£${numberWithCommas(amount)}`
-               cell4.innerHTML = '<a class="pdf-download"><img style="width: 50px;margin-top: -14px; height: 45px" src="images/pdf-download.png" data-uri="' + result.screenshot + '" /></a>'
-               $('.pdf-download').bind('click', pdfDownload)
-
+               let allExistedLenders = document.querySelectorAll('#tableResults td:nth-child(2)')
+               let lenders = []
+               for (var i=0 ; i<allExistedLenders.length; i++) {
+                  lenders.push(allExistedLenders[i].innerHTML)
+               }
+               if (!lenders.includes(result.lender)) {
+                 table.style.display = 'block'
+                 var row = table.insertRow(1)
+                 var cell1 = row.insertCell(0)
+                 var cell2 = row.insertCell(1)
+                 var cell3 = row.insertCell(2)
+                 var cell4 = row.insertCell(3)
+                 var amount = (extracted && extracted.price) ? extracted.price.split('.')[0] : '0'
+                 amount = amount.replace('£','')
+                 cell1.innerHTML = '<img src="images/' + result.logo + '.png" width="150px" height="50px"/>'
+                 cell2.innerHTML = result.lender
+                 cell3.innerHTML = `£${numberWithCommas(amount)}`
+                 cell4.innerHTML = '<a class="pdf-download"><img style="width: 50px;margin-top: -14px; height: 45px" src="images/pdf-download.png" data-uri="' + result.screenshot + '" /></a>'
+                 $('.pdf-download').bind('click', pdfDownload)
+               }
              }
            }
            sortTable("tableResults")
