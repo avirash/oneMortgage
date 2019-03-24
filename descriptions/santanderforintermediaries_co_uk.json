@@ -5,7 +5,7 @@
  "logo": "santander",
  "mapping": {
    "when": "#pnlStep1",
-   "waitFor": 1500,
+   "waitFor": 500,
    "numOfApplying": {
      "css": "[name='ApplicationType']",
      "logic": "(@value === 1) ? 'Single': 'Joint'"
@@ -123,8 +123,8 @@
      "css": "[name='ProvideDetails']"
    },
    "click1": "#btnContinue",
-   "delay": 6000,
    "mortgageDetails": {
+     "delay": 5000,
      "click": "#ddlMortgagedPropertiesSelectBoxIt",
      "css": "#ddlMortgagedProperties",
      "logic": "input[mortgageDetails].length",
