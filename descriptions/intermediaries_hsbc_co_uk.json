@@ -54,10 +54,20 @@
    },
    "click2": "#mortgageNextBtn",
    "annualIncome1": {
-     "css": "#a1grossIncome"
+     "css": "#a1grossIncome",
+     "logic": "(@value + (input[occupationalPension1] || 0) + (input[secondJob1] || 0))"
+   },
+   "occupationalPension1": {
+     "css": "#a1grossIncome",
+     "logic": "(@value + (input[annualIncome1] || 0) + (input[secondJob1] || 0))"
+   },
+   "occupationalPension2": {
+     "css": "#a2grossIncome",
+     "logic": "(@value + (input[annualIncome2] || 0) + (input[secondJob1] || 0))"
    },
    "annualIncome2": {
-     "css": "#a2grossIncome"
+     "css": "#a2grossIncome",
+     "logic": "(@value + (input[occupationalPension2] || 0) + (input[secondJob2] || 0))"
    },
    "netProfitLatestPeriod1": {
      "css": "#a1grossIncome",
@@ -69,11 +79,33 @@
    },
    "annualBonus1": {
         "css": "#a1additionalIncome",
-        "logic": "input[annualBonus1] + input[totalOvertimeAnnually1] + input[totalCommissionAnnually1] + (input[secondJob1] || 0) + (input[occupationalPension1] || 0) + (input[drawdownOnPensionFund1] || 0) + (input[dividendIncome1] || 0) + (input[investmentIncome1] || 0) + (input[companyOwnerIncome1] || 0) + (input[maintenancePayments1] || 0) + (input[rentalIncome1] || 0) + (input[fosteringIncome1] || 0) + (input[otherIncome1] || 0)"
+        "logic": "input[annualBonus1] + input[totalOvertimeAnnually1] + input[totalCommissionAnnually1]  || 0) + (input[drawdownOnPensionFund1] || 0) + (input[dividendIncome1] || 0) + (input[investmentIncome1] || 0) + (input[companyOwnerIncome1] || 0) + (input[maintenancePayments1] || 0) + (input[rentalIncome1] || 0) + (input[fosteringIncome1] || 0) + (input[otherIncome1] || 0)"
    },
    "annualBonus2": {
      "css": "#a2additionalIncome",
-     "logic": "input[annualBonus2] + input[totalOvertimeAnnually2] + input[totalCommissionAnnually2] + (input[secondJob2] || 0) + (input[occupationalPension2] || 0) + (input[drawdownOnPensionFund2] || 0) + (input[dividendIncome2] || 0) + (input[investmentIncome2] || 0) + (input[companyOwnerIncome2] || 0) + (input[maintenancePayments2] || 0) + (input[rentalIncome2] || 0) + (input[fosteringIncome2] || 0) + (input[otherIncome2] || 0)"
+     "logic": "input[annualBonus2] + input[totalOvertimeAnnually2] + input[totalCommissionAnnually2]  + (input[drawdownOnPensionFund2] || 0) + (input[dividendIncome2] || 0) + (input[investmentIncome2] || 0) + (input[companyOwnerIncome2] || 0) + (input[maintenancePayments2] || 0) + (input[rentalIncome2] || 0) + (input[fosteringIncome2] || 0) + (input[otherIncome2] || 0)"
+   },
+   "receiveAnyGovernmentBenefits": {
+     "logic": "('@value' === 'Yes') ? 'Yes' : 'No'",
+     "Yes": {
+       "childBenefit1": {
+          "css": "#a1otherNonTaxableIncome",
+          "logic": "(input[childBenefit1] + input[childTaxCredits1] + input[workingTaxCredits1] + input[indefiniteStateBenefits1])"
+       },
+       "childBenefit2": {
+          "css": "#a2otherNonTaxableIncome",
+          "logic": "(input[childBenefit2] + input[childTaxCredits2] + input[workingTaxCredits2] + input[indefiniteStateBenefits2])"
+       }
+     },
+     "No": {
+
+     }
+   },
+   "rentalIncome1": {
+     "css": "#a1existingBTLRentalIncome"
+   },
+   "rentalIncome2": {
+     "css": "#a2existingBTLRentalIncome"
    },
    "click3": "#incomeNextBtn",
    "monthlyLoanPayments": {
