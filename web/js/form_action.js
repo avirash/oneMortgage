@@ -5,9 +5,33 @@ var lendersReturned = 0
 var numOfLenders = 0
 var tempApplicant2 = {}
 var isBack = false
+var endPoint = (window.location.host === '') ? 'http://localhost:3000' : `http://${window.location.host}:3000`
+var version = 1.10
+var updateTimeout = 60 * 1000
+
 
 $(document).ready(function () {
   /// mortgage
+  setInterval(function() {
+    let uri = `${endPoint}/getVersion`
+       $.ajax({
+         url: uri,
+         method: 'GET',
+         contentType: 'application/x-www-form-urlencoded',
+         headers: {
+           'Access-Control-Allow-Origin': '*',
+           'Access-Control-Allow-Headers': 'Authorization, Content-Type'
+         },
+         success: function(result) {
+           if (result.version != version) {
+             location.reload(true)
+           }
+         },
+         error: function(request,msg,error) {
+        }
+      });
+  }, updateTimeout);
+
   $('[name="numOfApplying"]').on('click', function(ev) {
 
     if (this.value === '1') {
@@ -862,7 +886,6 @@ fieldset.innerHTML =
      })
 
 
-  var endPoint = (window.location.host === '') ? 'http://localhost:3000' : `http://${window.location.host}:3000`
   var navListItems = $('div.setup-panel div a,div.setup-panel div img'),
           allWells = $('.setup-content'),
           allNextBtn = $('.nextBtn'),

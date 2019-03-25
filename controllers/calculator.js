@@ -4,6 +4,16 @@ const co = require('co')
 let runtime = new Runtime()
 const retries = 3
 
+exports.getVersion = async (ctx) => {
+  ctx.body = {
+    version: 1.10
+  }
+  ctx.status = 200
+  ctx.set('Access-Control-Allow-Origin', '*');
+  ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');  
+}
+
 exports.aff_calc = async (ctx) => {
   ctx.request.socket.setTimeout(5 * 60 * 1000);
   const input = ctx.request.body
