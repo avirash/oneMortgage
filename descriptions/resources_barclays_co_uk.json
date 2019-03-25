@@ -69,8 +69,8 @@
     },
     "employmentStatus1": {
       "css": "[name='Applicants[0].IsEmployed']",
-      "logic": "('@value' === 'Employed') ? 'true' : false",
-      "true": {
+      "logic": "('@value' === 'Employed') ? 'Employed' : ('@value' === 'Self-employed') ? 'Self-employed' : 'Retired'" ,
+      "Employed": {
         "annualIncome1": {
           "css": "#Applicants_0__EmployedBasicIncome"
         },
@@ -83,7 +83,7 @@
           "new": true
         }
       },
-      "false" : {
+      "Self-employed" : {
         "click1": "#Applicants_0__IsEmployed",
         "click2": "#Applicants_0__IsSelfEmployed",
         "netProfitLatestPeriod1": {
@@ -92,12 +92,15 @@
         "netProfitPreviousPeriod1": {
           "css": "#Applicants_0__SelfEmployedIncomePrevious"
         }
+      },
+      "Retired": {
+        "click1": "#Applicants_0__IsEmployed"
       }
     },
     "employmentStatus2": {
       "css": "[name='Applicants[1].IsEmployed']",
-      "logic": "('@value' === 'Employed') ? 'true' : false",
-      "true": {
+      "logic": "('@value' === 'Employed') ? 'Employed' : ('@value' === 'Self-employed') ? 'Self-employed' : 'Retired'" ,
+      "Employed": {
         "annualIncome2": {
           "css": "#Applicants_1__EmployedBasicIncome"
         },
@@ -110,16 +113,39 @@
           "new": true
         }
       },
-      "false" : {
+      "Self-employed" : {
         "click1": "#Applicants_1__IsEmployed",
         "click2": "#Applicants_1__IsSelfEmployed",
         "netProfitLatestPeriod2": {
           "css": "#Applicants_1__SelfEmployedIncomeCurrent"
         },
-        "netProfitPreviousPeriod12": {
+        "netProfitPreviousPeriod2": {
           "css": "#Applicants_1__SelfEmployedIncomePrevious"
         }
+      },
+      "Retired": {
+        "click1": "#Applicants_1__IsEmployed"
       }
+    },
+    "earmAnyOtherAnnualIncome": {
+      "logic": "('@value' === 'Yes') ? 'Yes' : 'No'",
+      "Yes": {
+        "maintenancePayments1": {
+          "css": "#Applicants_0__NonTaxableIncome",
+          "logic": "input[maintenancePayments1] + input[fosteringIncome1]"
+        },
+        "occupationalPension1": {
+          "css": "#Applicants_0__PensionIncome"
+        },
+        "maintenancePayments2": {
+          "css": "#Applicants_1__NonTaxableIncome",
+          "logic": "input[maintenancePayments2] + input[fosteringIncome2]"
+        },
+        "occupationalPension2": {
+          "css": "#Applicants_1__PensionIncome"
+        }
+      },
+      "No": {}
     },
     "earnAnyEmployedAllowances": {
       "css": "#Applicants_0__EmployedMonthlySustainableAllowances",
