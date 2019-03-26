@@ -63,7 +63,7 @@
    },
    "occupationalPension2": {
      "css": "#a2grossIncome",
-     "logic": "(@value + (input[annualIncome2] || 0) + (input[secondJob1] || 0))"
+     "logic": "(@value + (input[annualIncome2] || 0) + (input[secondJob2] || 0))"
    },
    "annualIncome2": {
      "css": "#a2grossIncome",
@@ -79,7 +79,7 @@
    },
    "annualBonus1": {
         "css": "#a1additionalIncome",
-        "logic": "input[annualBonus1] + input[totalOvertimeAnnually1] + input[totalCommissionAnnually1]  || 0) + (input[drawdownOnPensionFund1] || 0) + (input[dividendIncome1] || 0) + (input[investmentIncome1] || 0) + (input[companyOwnerIncome1] || 0) + (input[maintenancePayments1] || 0) + (input[rentalIncome1] || 0) + (input[fosteringIncome1] || 0) + (input[otherIncome1] || 0)"
+        "logic": "input[annualBonus1] + input[totalOvertimeAnnually1] + input[totalCommissionAnnually1] + (input[drawdownOnPensionFund1] || 0) + (input[dividendIncome1] || 0) + (input[investmentIncome1] || 0) + (input[companyOwnerIncome1] || 0) + (input[maintenancePayments1] || 0) + (input[rentalIncome1] || 0) + (input[fosteringIncome1] || 0) + (input[otherIncome1] || 0)"
    },
    "annualBonus2": {
      "css": "#a2additionalIncome",
