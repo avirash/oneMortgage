@@ -2,7 +2,8 @@
  "lender": "Halifax",
  "logo": "halifax",
  "domain": "halifax-intermediaries.co.uk",
- "affordability": "https:www.halifax-intermediaries.co.uk/tools_and_calculators/mortgage_affordability_calculator/default.aspx",
+ "affordability": "https://www.halifax-intermediaries.co.uk/tools_and_calculators/mortgage_affordability_calculator/default.aspx",
+
  "mapping": {
    "waitFor": 2000,
    "numOfApplying": {
