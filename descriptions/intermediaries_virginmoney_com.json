@@ -142,8 +142,10 @@
         }
       },
       "Retired": {
-        "annualIncome1": {
-          "css": "#Applicant0_GrossAnnual"
+        "retiredIncome1": {
+          "css": "#Applicant0_GrossAnnual",
+          "logic": "(input[secondJob1] || 0) + (input[occupationalPension1] || 0) + (input[disablementBenefit1] || 0) + (input[drawdownOnPensionFund1] || 0) + (input[dividendIncome1] || 0) + (input[investmentIncome1] || 0) + (input[companyOwnerIncome1] || 0) + (input[maintenancePayments1] || 0) + (input[rentalIncome1] || 0) + (input[fosteringIncome1] || 0) + (input[otherIncome1] || 0) + (input[carAllowance1] || 0) + (input[weightingLargeTown1] || 0) + (input[permanentShiftAllowance1] || 0) + (input[indefiniteMortgageSubsidies1] || 0) + (input[long-termMortgageSubsidies1] || 0) + (input[childBenefit1] || 0) + (input[childTaxCredits1] || 0) + (input[workingTaxCredits1] || 0) + (input[indefiniteStateBenefits1] || 0) + (input[pensionsAndAnnuities1] || 0) + (input[statePension1] || 0)",
+          "new": true
         }
       },
       "On Contract": {
@@ -152,8 +154,10 @@
         }
       },
       "Not Employed": {
-        "css": "#Applicant0_GrossAnnual",
-        "logic": "input[secondJob1] + input[occupationalPension1] + input[drawdownOnPensionFund1] + input[dividendIncome1] + input[investmentIncome1] + input[maintenancePayments1] + input[rentalIncome1] + input[fosteringIncome1] + input[otherIncome1]"
+        "notEmployed1": {
+          "css": "#Applicant0_GrossAnnual",
+          "logic": "(input[secondJob1] || 0) + (input[occupationalPension1] || 0) + (input[disablementBenefit1] || 0) + (input[drawdownOnPensionFund1] || 0) + (input[dividendIncome1] || 0) + (input[investmentIncome1] || 0) + (input[companyOwnerIncome1] || 0) + (input[maintenancePayments1] || 0) + (input[rentalIncome1] || 0) + (input[fosteringIncome1] || 0) + (input[otherIncome1] || 0) + (input[carAllowance1] || 0) + (input[weightingLargeTown1] || 0) + (input[permanentShiftAllowance1] || 0) + (input[indefiniteMortgageSubsidies1] || 0) + (input[long-termMortgageSubsidies1] || 0) + (input[childBenefit1] || 0) + (input[childTaxCredits1] || 0) + (input[workingTaxCredits1] || 0) + (input[indefiniteStateBenefits1] || 0) + (input[pensionsAndAnnuities1] || 0) + (input[statePension1] || 0)",
+          "new": true
       }
    },
    "applicantAge2": {
@@ -183,8 +187,10 @@
         }
       },
       "Retired": {
-        "annualIncome2": {
-          "css": "#Applicant1_GrossAnnual"
+        "retiredIncome2": {
+          "css": "#Applicant1_GrossAnnual",
+          "logic": "(input[secondJob2] || 0) + (input[occupationalPension2] || 0) + (input[disablementBenefit2] || 0) + (input[drawdownOnPensionFund2] || 0) + (input[dividendIncome2] || 0) + (input[investmentIncome2] || 0) + (input[companyOwnerIncome2] || 0) + (input[maintenancePayments2] || 0) + (input[rentalIncome2] || 0) + (input[fosteringIncome2] || 0) + (input[otherIncome2] || 0) + (input[carAllowance2] || 0) + (input[weightingLargeTown2] || 0) + (input[permanentShiftAllowance2] || 0) + (input[indefiniteMortgageSubsidies2] || 0) + (input[long-termMortgageSubsidies2] || 0) + (input[childBenefit2] || 0) + (input[childTaxCredits2] || 0) + (input[workingTaxCredits2] || 0) + (input[indefiniteStateBenefits2] || 0) + (input[pensionsAndAnnuities2] || 0) + (input[statePension2] || 0)",
+          "new": true
         }
       },
       "On Contract": {
@@ -193,8 +199,11 @@
         }
       },
       "Not Employed": {
-        "css": "#Applicant1_GrossAnnual",
-        "logic": "input[secondJob2] + input[occupationalPension2] + input[drawdownOnPensionFund2] + input[dividendIncome2] + input[investmentIncome2] + input[maintenancePayments2] + input[rentalIncome2] + input[fosteringIncome2] + input[otherIncome2]"
+        "notEmployed2": {
+          "css": "#Applicant1_GrossAnnual",
+          "logic": "(input[secondJob2] || 0) + (input[occupationalPension2] || 0) + (input[disablementBenefit2] || 0) + (input[drawdownOnPensionFund2] || 0) + (input[dividendIncome2] || 0) + (input[investmentIncome2] || 0) + (input[companyOwnerIncome2] || 0) + (input[maintenancePayments2] || 0) + (input[rentalIncome2] || 0) + (input[fosteringIncome2] || 0) + (input[otherIncome2] || 0) + (input[carAllowance2] || 0) + (input[weightingLargeTown2] || 0) + (input[permanentShiftAllowance2] || 0) + (input[indefiniteMortgageSubsidies2] || 0) + (input[long-termMortgageSubsidies2] || 0) + (input[childBenefit2] || 0) + (input[childTaxCredits2] || 0) + (input[workingTaxCredits2] || 0) + (input[indefiniteStateBenefits2] || 0) + (input[pensionsAndAnnuities2] || 0) + (input[statePension2] || 0)",
+          "new": true
+        }
       }
    },
    "click2": "#affCalcForm > div.formContents > div.last > span > input",
