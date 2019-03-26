@@ -52,6 +52,10 @@
    "mortgageTermYears": {
      "css": "#requiredMortgageTerm"
    },
+   "methodOfRepayment": {
+     "css": "#assessOnInterestOnlyBasis",
+     "logic": "('@value' === 'methodOfRepayment') ? 'Yes' : 'No'"
+   },
    "click2": "#mortgageNextBtn",
    "annualIncome1": {
      "css": "#a1grossIncome",

@@ -225,7 +225,15 @@
    },
    "otherMortgagePayments": {
      "css": "[name='otherMortgages']",
-     "logic": "(@value > 0) ? 'Yes' : 'No'"
+     "logic": "(@value > 0) ? 'Yes' : 'No'",
+     "Yes": {
+       "otherMortgagePayments": {
+          "css": "#mortgageRemain"
+       }       
+     },
+     "No": {
+
+     }
    },
    "creditCardBalances": {
      "css": "#cardDebtToRemain"

@@ -97,9 +97,6 @@
 		"monthlyHirePurchasePayments": {
 			"css": "#MonthlyHirePurchasePayments"
 		},
-		"rentCharge": {
-			"css": "#MonthlyLeaseAgreementPayments"
-		},
 		"otherMortgagePayments": {
 			"css": "#OtherMortgagePayments"
 		},

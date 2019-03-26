@@ -244,7 +244,8 @@
         "css": "#MainContent_AffordabilityCalculator1_TB_501_1"
       },
       "totalCreditCards": {
-        "css": "#MainContent_AffordabilityCalculator1_TB_502_1"
+        "css": "#MainContent_AffordabilityCalculator1_TB_502_1",
+        "logic": "@value + input[additionalCommittedExpenditure]"
       },
       "otherMortgagePayments": {
         "css": "#MainContent_AffordabilityCalculator1_TB_504_1"

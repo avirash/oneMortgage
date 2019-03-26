@@ -6,7 +6,7 @@ var numOfLenders = 0
 var tempApplicant2 = {}
 var isBack = false
 var endPoint = (window.location.host === '') ? 'http://localhost:3000' : `http://${window.location.host}:3000`
-var version = 1.10
+var version = 1.12
 var updateTimeout = 60 * 1000
 
 
