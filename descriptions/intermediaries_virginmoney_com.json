@@ -135,7 +135,7 @@
       "Self-employed": {
         "netProfitLatestPeriod1": {
           "css": "#Applicant0_NetProfitMostRecent",
-          "logic": "input[directorDividends1] + input[netProfitLatestPeriod1]"
+          "logic": "(input[salaryForDirectorLimit1] || 0) + input[netProfitLatestPeriod1]"
         },
         "netProfitPreviousPeriod1": {
           "css": "#Applicant0_NetProfitNextMostRecent"
@@ -175,7 +175,8 @@
       },
       "Self-employed": {
         "netProfitLatestPeriod2": {
-          "css": "#Applicant1_NetProfitMostRecent"
+          "css": "#Applicant1_NetProfitMostRecent",
+          "logic": "(input[salaryForDirectorLimit2] || 0) + input[netProfitLatestPeriod2]"
         },
         "netProfitPreviousPeriod2": {
           "css": "#Applicant1_NetProfitNextMostRecent"
@@ -229,7 +230,7 @@
      "Yes": {
        "otherMortgagePayments": {
           "css": "#mortgageRemain"
-       }       
+       }
      },
      "No": {
 
