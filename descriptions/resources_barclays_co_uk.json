@@ -76,11 +76,6 @@
         },
         "annualBonus1": {
           "css": "#Applicants_0__EmployedBonusCurrent"
-        },
-        "annualBonusPrev1": {
-          "css": "#Applicants_0__EmployedBonusPrevious",
-          "logic": "input[annualBonus1]",
-          "new": true
         }
       },
       "Self-employed" : {
@@ -106,11 +101,6 @@
         },
         "annualBonus2": {
           "css": "#Applicants_1__EmployedBonusCurrent"
-        },
-        "annualBonusPrev2": {
-          "css": "#Applicants_1__EmployedBonusPrevious",
-          "logic": "input[annualBonus2]",
-          "new": true
         }
       },
       "Self-employed" : {

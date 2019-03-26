@@ -54,7 +54,7 @@
    },
    "methodOfRepayment": {
      "css": "#assessOnInterestOnlyBasis",
-     "logic": "('@value' === 'methodOfRepayment') ? 'Yes' : 'No'"
+     "logic": "('@value' === 'Interest only') ? 'Yes' : 'No'"
    },
    "click2": "#mortgageNextBtn",
    "annualIncome1": {
