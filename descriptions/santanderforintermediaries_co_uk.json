@@ -1197,7 +1197,8 @@
          "css": "#tbMaintenanceNonRegular"
        },
        "healthInsurancePayments": {
-         "css": "#tbExistingLifeAssurance"
+         "css": "#tbExistingLifeAssurance",
+         "logic": "@value + input[privatePensions]"
        },
        "groundRent": {
          "css": "#tbGroundRent"
@@ -1210,7 +1211,7 @@
        },
        "additionalCommittedExpenditure": {
          "css": "#tbOtherNonRegularExpenditure",
-         "logic": "input[buildingContentsInsurance] + @value"
+         "logic": "input[buildingContentsInsurance] + @value + input[otherMortgagePayments]"
        },
        "click5": "#btnContinue"
      },
