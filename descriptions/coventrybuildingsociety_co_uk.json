@@ -19,7 +19,7 @@
     },
     "numOfAdults": {
       "css": "#MainContent_AffordabilityCalculator1_TB_424",
-      "logic": "parseInt(input[numOfApplying]) + parseInt(input[childOver18]",
+      "logic": "parseInt(input[numOfApplying]) + parseInt(input[childOver18])",
       "new": true
     },
     "numOfAdultsAndDependants": {
