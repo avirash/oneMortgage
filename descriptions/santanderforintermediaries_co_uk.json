@@ -1209,7 +1209,8 @@
          "css": "#tbFeudalDuty"
        },
        "additionalCommittedExpenditure": {
-         "css": "#tbOtherNonRegularExpenditure"
+         "css": "#tbOtherNonRegularExpenditure",
+         "logic": "input[buildingContentsInsurance] + @value"
        },
        "click5": "#btnContinue"
      },
