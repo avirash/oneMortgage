@@ -1186,7 +1186,7 @@
    },
    "monthlyCommitmented": {
      "css": "[for*='rbNonRegularMonthlyExpenditure']",
-     "logic": "(parseInt(input[otherCommittedPayments]) > 0) ? 'Yes': 'No'",
+     "logic": "(input[otherCommittedPayments] > 0 || input[serviceCharge] > 0 || input[groundRent] > 0 || input[rentCharge] > 0 || input[buildingContentsInsurance] > 0 || input[additionalCommittedExpenditure] > 0 ||  input[otherMortgagePayments] > 0 || input[healthInsurancePayments] > 0) ? 'Yes': 'No'",
      "new": true,
      "Yes": {
        "css": "[for='rbNonRegularMonthlyExpenditureYes']",
@@ -1211,7 +1211,7 @@
        },
        "additionalCommittedExpenditure": {
          "css": "#tbOtherNonRegularExpenditure",
-         "logic": "input[buildingContentsInsurance] + @value + input[otherMortgagePayments]"
+         "logic": "input[buildingContentsInsurance] + input[additionalCommittedExpenditure] + input[otherMortgagePayments]"
        },
        "click5": "#btnContinue"
      },
