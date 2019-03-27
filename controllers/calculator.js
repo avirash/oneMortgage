@@ -6,7 +6,7 @@ const retries = 3
 
 exports.getVersion = async (ctx) => {
   ctx.body = {
-    version: 1.12
+    version: 1.13
   }
   ctx.status = 200
   ctx.set('Access-Control-Allow-Origin', '*');
