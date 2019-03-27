@@ -165,7 +165,7 @@
    },
    "earnAnyEmployedAllowances": {
      "css": "#ctl00_ContentPlaceHolder_ctl00_otherincome3",
-     "logic": "('@value' === 'Yes' && input[carAllowance1] > 0 && input[weightingLargeTown1] > 0 ) ? 'Town, Area or Car Allowance' : 'None'",
+     "logic": "('@value' === 'Yes' && (input[carAllowance1] > 0 || input[weightingLargeTown1] > 0) ) ? 'Town, Area or Car Allowance' : 'None'",
       "Town, Area or Car Allowance": {
         "carAllowance1": {
           "css": "#ctl00_ContentPlaceHolder_ctl00_otherincome13",

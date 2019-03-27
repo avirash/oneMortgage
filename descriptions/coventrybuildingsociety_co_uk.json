@@ -19,13 +19,12 @@
     },
     "numOfAdults": {
       "css": "#MainContent_AffordabilityCalculator1_TB_424",
-      "logic": "parseInt(input[numOfApplying])",
+      "logic": "parseInt(input[numOfApplying]) + parseInt(input[childOver18]",
       "new": true
-
     },
     "numOfAdultsAndDependants": {
       "css": "#MainContent_AffordabilityCalculator1_TB_425",
-      "logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18]) +parseInt(input[numOfApplying])",
+      "logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18])",
       "new": true
     },
     "taxBenefit": {
