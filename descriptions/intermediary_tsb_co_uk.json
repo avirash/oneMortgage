@@ -37,62 +37,124 @@
    "totalCommissionAnnually2": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_commission2"
    },
-   "earmAnyOtherAnnualIncome": {
+   "firstOtherIncome1": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome1",
-     "logic": "('@value' === 'Yes')  ? 'Other Income' : 'none' ",
-     "Other Income": {
-       "secondJob1": {
-         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome11",
-         "logic": "input[secondJob1] + input[occupationalPension1] + input[drawdownOnPensionFund1] + input[dividendIncome1] + input[investmentIncome1] + input[companyOwnerIncome1] + input[maintenancePayments1] + input[rentalIncome1] + input[fosteringIncome1] + input[otherIncome1]"
-       },
-       "secondJob2": {
-         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome21",
-         "logic": "input[secondJob2] + input[occupationalPension2] + input[drawdownOnPensionFund2] + input[dividendIncome2] + input[investmentIncome2] + input[companyOwnerIncome2] + input[maintenancePayments2] + input[rentalIncome2] + input[fosteringIncome2] + input[otherIncome2]"
+     "logic": "(input[disablementBenefit1] > 0) ? 'Disability Living Allowance' : (input[occupationalPension1] > 0) ?  'Pension - Private' : (input[maintenancePayments1] > 0) ? 'Maintenance' : (input[investmentIncome1] > 0) ? 'Investment Income' : (input[rentalIncome1] > 0) ? 'Rental income (from Buy to Let properties owned)' : 'None'",
+     "new": true,
+     "Disability Living Allowance": {
+       "disablementBenefit1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome11"
+       }
+     },
+     "Pension - Private": {
+       "occupationalPension1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome11"
+       }
+     },
+     "Maintenance": {
+       "maintenancePayments1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome11"
+       }
+     },
+     "Investment Income": {
+       "investmentIncome1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome11"
+       }
+     },
+     "Rental income (from Buy to Let properties owned)": {
+       "rentalIncome1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome11"
        }
      }
    },
-   "fixedTermContract1": {
+   "secondOtherIncome1": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome2",
-     "logic": "'Other Income'",
-     "Other Income" : {
-     "sumFixedTerm": {
-       "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome12",
-       "logic": "input[fixedTermContract1] + input[renewableContractPAYE1] + input[drawdownOnPensionFund1] + input[pensionsAndAnnuities1] + input[statePension1] + input[employedInFfamilyBusiness1]",
-       "new": true
+     "logic": "(input[disablementBenefit1] > 0 && input[occupationalPension1] > 0) ?  'Pension - Private' : (input[disablementBenefit1] > 0  && input[maintenancePayments1] > 0) ? 'Maintenance' : (input[disablementBenefit1] > 0 && input[investmentIncome1] > 0) ? 'Investment Income' : (input[disablementBenefit1] > 0 && input[rentalIncome1] > 0) ? 'Rental income (from Buy to Let properties owned)' : 'None'",
+     "new": true,
+     "Pension - Private": {
+       "occupationalPension1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome12"
+       }
      },
-     "fixedTermContract2": {
-       "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome22",
-       "logic": "input[fixedTermContract2] + input[renewableContractPAYE2] + input[drawdownOnPensionFund2] + input[pensionsAndAnnuities2] + input[statePension2] + input[employedInFfamilyBusiness2]"
+     "Maintenance": {
+       "maintenancePayments1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome12"
+       }
+     },
+     "Investment Income": {
+       "investmentIncome1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome12"
+       }
+     },
+     "Rental income (from Buy to Let properties owned)": {
+       "rentalIncome1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome12"
+       }
      }
-   }
+   },
+   "thirdOtherIncome3": {
+     "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome3",
+     "logic": "(input[disablementBenefit1] > 0 && input[occupationalPension1] > 0 && input[maintenancePayments1] > 0) ? 'Maintenance' : (input[disablementBenefit1] > 0  && input[occupationalPension1] > 0 && input[investmentIncome1] > 0) ? 'Investment Income' : (input[disablementBenefit1] > 0  && input[occupationalPension1] > 0 && input[rentalIncome1] > 0) ? 'Rental income (from Buy to Let properties owned)' : 'None'",
+     "new": true,
+     "Maintenance": {
+       "maintenancePayments1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome13"
+       }
+     },
+     "Investment Income": {
+       "investmentIncome1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome13"
+        }
+     },
+     "Rental income (from Buy to Let properties owned)": {
+       "rentalIncome1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome13"
+       }
+     }
+   },
+   "forthOtherIncome4": {
+     "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome4",
+     "logic": "(input[disablementBenefit1] > 0  && input[occupationalPension1] > 0 && input[maintenancePayments1] > 0 && input[investmentIncome1] > 0) ? 'Investment Income' : (input[disablementBenefit1] > 0  && input[occupationalPension1] > 0 && input[maintenancePayments1] > 0 && input[rentalIncome1] > 0) ? 'Rental income (from Buy to Let properties owned)' : 'None'",
+     "new": true,
+     "Investment Income": {
+        "investmentIncome1": {
+          "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome14"
+        }
+      },
+     "Rental income (from Buy to Let properties owned)": {
+       "rentalIncome1": {
+         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome14"
+       }
+     }
    },
    "earnAnyEmployedAllowances": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome3",
-     "logic": "('@value' === 'Yes')  ? 'Other Income' : 'none' ",
-     "Other Income": {
-       "carAllowance1": {
-         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome13",
-         "logic": "input[carAllowance1] + input[weightingLargeTown1] + input[permanentShiftAllowance1] + input[indefiniteMortgageSubsidies1] + input[long-termMortgageSubsidies1]"
-       },
-       "carAllowance2": {
-         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome23",
-         "logic": "input[carAllowance2] + input[weightingLargeTown2] + input[permanentShiftAllowance2] + input[indefiniteMortgageSubsidies2] + input[long-termMortgageSubsidies2]"
-       }
-     }
+     "logic": "('@value' === 'Yes' && input[carAllowance1] > 0 && input[weightingLargeTown1] > 0 ) ? 'Town, Area or Car Allowance' : 'None'",
+      "Town, Area or Car Allowance": {
+        "carAllowance1": {
+          "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome13",
+          "logic": "input[carAllowance1] + input[weightingLargeTown1]"
+        }
+      }
    },
    "receiveAnyGovernmentBenefits": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome4",
-     "logic": "('@value' === 'Yes')  ? 'Other Income' : 'none' ",
-     "Other Income": {
-       "childBenefit1": {
-         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome14",
-         "logic": "input[childBenefit1] + input[childTaxCredits1] + input[workingTaxCredits1] + input[indefiniteStateBenefits1]"
-       },
-       "childBenefit2": {
-         "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome24",
-         "logic": "input[childBenefit2] + input[childTaxCredits2] + input[workingTaxCredits2] + input[indefiniteStateBenefits2]"
-       }
-     }
+     "logic": "('@value' === 'Yes' && input[childBenefit1] > 0) ? 'Child Benefit' : (input[childTaxCredits1] > 0 && '@value' === 'Yes' ) ? 'Child Tax Credit' : (input[workingTaxCredits1] > 0 && '@value' === 'Yes') ? 'Working Tax Credit' : 'No'",
+      "Child Benefit": {
+        "childBenefit1": {
+          "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome14"
+        }
+      },
+      "Child Tax Credit": {
+        "childTaxCredits1": {
+          "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome14"
+        }
+      },
+      "Working Tax Credit": {
+        "workingTaxCredits1": {
+          "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_otherincome14"
+        }
+      }
    },
    "monthlyHirePurchasePayments": {
      "css": "#ctl00_mainContentPlaceHolder_dzMain_uxColumnDisplay_ctl00_uxControlColumn_ctl01_uxWidgetHost_uxWidgetHost_widget_ctl00_credit1",
