@@ -7,7 +7,7 @@
 		"waitFor": 3000,
 		"typeOfOwnerShip": {
 			"css": "#MortgageType",
-			"logic": "('@value' === 'Other') ? 'Barclays Residential Mortgage' : 'Help to Buy: Equity Loan'",
+			"logic": "(['Shared Ownership', 'Custom Build', 'Other'].includes('@value')) ? 'Barclays Residential Mortgage' : 'Help to Buy: Equity Loan'",
 			"Barclays Residential Mortgage": {
 				"isFlatOrMaisonette": {
 					"css": "#IsFlatOrMaisonette",
