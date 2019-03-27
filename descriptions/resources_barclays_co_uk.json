@@ -7,7 +7,7 @@
 		"waitFor": 3000,
 		"typeOfOwnerShip": {
 			"css": "#MortgageType",
-			"logic": "(['Shared Ownership', 'Custom Build', 'Other'].includes('@value')) ? 'Barclays Residential Mortgage' : 'Help to Buy: Equity Loan'",
+      "logic": "(['Shared Ownership', 'Custom Build', 'Other'].includes('@value')) ? 'Barclays Residential Mortgage' : 'Help to Buy: Equity Loan'",
 			"Barclays Residential Mortgage": {
 				"isFlatOrMaisonette": {
 					"css": "#IsFlatOrMaisonette",
@@ -79,7 +79,7 @@
 				},
 				"annualBonusPrev1": {
 					"css": "#Applicants_0__EmployedBonusPrevious",
-					"logic": "(input[annualBonus1] === 0) ? '' :  (input[annualBonusPrev1] > 0) ? input[annualBonusPrev1] : 1"
+					"logic": "(input[annualBonus1] === 0) ? '' :  input[annualBonusPrev1] > 0) ? input[annualBonusPrev1] : 1"
 				},
 				"Self-employed": {
 					"click1": "#Applicants_0__IsEmployed",
@@ -108,7 +108,7 @@
 				},
 				"annualBonusPrev2": {
 					"css": "#Applicants_1__EmployedBonusPrevious",
-					"logic": "(input[annualBonusPrev2] > 0) ? input[annualBonusPrev2] : 1"
+          "logic": "(input[annualBonus2] === 0) ? '' :  input[annualBonusPrev2] > 0) ? input[annualBonusPrev2] : 1"
 				}
 			},
 			"Self-employed": {
