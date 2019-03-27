@@ -12,25 +12,25 @@ var updateTimeout = 60 * 1000
 
 $(document).ready(function () {
   /// mortgage
-  setInterval(function() {
-    let uri = `${endPoint}/getVersion`
-       $.ajax({
-         url: uri,
-         method: 'GET',
-         contentType: 'application/x-www-form-urlencoded',
-         headers: {
-           'Access-Control-Allow-Origin': '*',
-           'Access-Control-Allow-Headers': 'Authorization, Content-Type'
-         },
-         success: function(result) {
-           if (result.version != version) {
-             location.reload(true)
-           }
-         },
-         error: function(request,msg,error) {
-        }
-      });
-  }, updateTimeout);
+  // setInterval(function() {
+  //   let uri = `${endPoint}/getVersion`
+  //      $.ajax({
+  //        url: uri,
+  //        method: 'GET',
+  //        contentType: 'application/x-www-form-urlencoded',
+  //        headers: {
+  //          'Access-Control-Allow-Origin': '*',
+  //          'Access-Control-Allow-Headers': 'Authorization, Content-Type'
+  //        },
+  //        success: function(result) {
+  //          if (result.version != version) {
+  //            location.reload(true)
+  //          }
+  //        },
+  //        error: function(request,msg,error) {
+  //       }
+  //     });
+  // }, updateTimeout);
 
   $('[name="numOfApplying"]').on('click', function(ev) {
 
