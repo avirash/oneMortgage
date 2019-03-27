@@ -79,7 +79,7 @@
 				},
 				"annualBonusPrev1": {
 					"css": "#Applicants_0__EmployedBonusPrevious",
-					"logic": "(input[annualBonusPrev1] > 0) ? input[annualBonusPrev1] : 1"
+					"logic": "(input[annualBonus1] === 0) ? '' :  (input[annualBonusPrev1] > 0) ? input[annualBonusPrev1] : 1"
 				},
 				"Self-employed": {
 					"click1": "#Applicants_0__IsEmployed",
