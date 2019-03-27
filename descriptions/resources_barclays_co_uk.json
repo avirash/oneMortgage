@@ -1,203 +1,204 @@
 {
-  "lender": "Barclays",
-  "logo": "barclays",
-  "domain": "barclays.co.uk",
-  "affordability": "https://resources.barclays.co.uk/mortgage-calculators/residential-affordability",
-  "mapping": {
-    "waitFor": 3000,
-    "typeOfOwnerShip": {
-      "css": "#MortgageType",
-      "logic": "('@value' === 'Other') ? 'Barclays Residential Mortgage' : 'Help to Buy: Equity Loan'",
-      "Barclays Residential Mortgage": {
-        "isFlatOrMaisonette": {
-          "css": "#IsFlatOrMaisonette",
-          "logic": "'Yes'",
-          "new": true
-        },
-        "propertyValue": {
-          "css": "#PropertyValue"
-        },
-        "methodOfRepayment": {
-          "css": "#MortgageParts_0__InterestOnly",
-          "logic": "('@value' !== 'Capital and interest') ? 'Interest Only' : 'Capital and Interest'"
-        },
-        "loanValue": {
-          "css": "#MortgageParts_0__Amount"
-        },
-        "MortgageParts_0__Rate": {
-          "css": "#MortgageParts_0__Rate",
-          "logic": "2",
-          "new": true
-        },
-        "mortgageTermYears": {
-          "css": "#MortgageParts_0__TermYears"
-        },
-        "mortgageTermMonths": {
-          "css": "#MortgageParts_0__TermMonths"
-        }
-      },
-      "Help to Buy: Equity Loan": {
-        "propertyValue": {
-          "css": "#PropertyValue"
-        },
-        "equityLoan": {
-          "css": "#HTBEquityLoan"
-        },
-        "loanValue": {
-          "css": "#MortgageParts_0__Amount"
-        },
-        "MortgageParts_0__Rate": {
-          "css": "#MortgageParts_0__Rate",
-          "logic": "2",
-          "new": true
-        },
-        "mortgageTermYears": {
-          "css": "#MortgageParts_0__TermYears"
-        },
-        "mortgageTermMonths": {
-          "css": "#MortgageParts_0__TermMonths"
-        }
-      }
-    },
-    "numOfApplying": {
-      "css": "#NoOfApplicants"
-    },
-    "numOfdependants": {
-      "css": "#NoOfDependants",
-      "logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18])",
-      "new": true
-    },
-    "employmentStatus1": {
-      "css": "[name='Applicants[0].IsEmployed']",
-      "logic": "('@value' === 'Employed') ? 'Employed' : ('@value' === 'Self-employed') ? 'Self-employed' : 'Retired'" ,
-      "Employed": {
-        "annualIncome1": {
-          "css": "#Applicants_0__EmployedBasicIncome"
-        },
-        "annualBonus1": {
-          "css": "#Applicants_0__EmployedBonusCurrent"
-        },
-        "annualBonusPrev1": {
-          "css": "#Applicants_0__EmployedBonusPrevious",
-          "logic": "(input[annualBonusPrev1] > 0) ? input[annualBonusPrev1] : 1"        
-      },
-      "Self-employed" : {
-        "click1": "#Applicants_0__IsEmployed",
-        "click2": "#Applicants_0__IsSelfEmployed",
-        "netProfitLatestPeriod1": {
-          "css": "#Applicants_0__SelfEmployedIncomeCurrent"
-        },
-        "netProfitPreviousPeriod1": {
-          "css": "#Applicants_0__SelfEmployedIncomePrevious"
-        }
-      },
-      "Retired": {
-        "click1": "#Applicants_0__IsEmployed"
-      }
-    },
-    "employmentStatus2": {
-      "css": "[name='Applicants[1].IsEmployed']",
-      "logic": "('@value' === 'Employed') ? 'Employed' : ('@value' === 'Self-employed') ? 'Self-employed' : 'Retired'" ,
-      "Employed": {
-        "annualIncome2": {
-          "css": "#Applicants_1__EmployedBasicIncome"
-        },
-        "annualBonus2": {
-          "css": "#Applicants_1__EmployedBonusCurrent"
-        },
-        "annualBonusPrev2": {
-          "css": "#Applicants_1__EmployedBonusPrevious",
-          "logic": "(input[annualBonusPrev2] > 0) ? input[annualBonusPrev2] : 1"
-        }
-      },
-      "Self-employed" : {
-        "click1": "#Applicants_1__IsEmployed",
-        "click2": "#Applicants_1__IsSelfEmployed",
-        "netProfitLatestPeriod2": {
-          "css": "#Applicants_1__SelfEmployedIncomeCurrent"
-        },
-        "netProfitPreviousPeriod2": {
-          "css": "#Applicants_1__SelfEmployedIncomePrevious"
-        }
-      },
-      "Retired": {
-        "click1": "#Applicants_1__IsEmployed"
-      }
-    },
-    "earmAnyOtherAnnualIncome": {
-      "logic": "('@value' === 'Yes') ? 'Yes' : 'No'",
-      "Yes": {
-        "maintenancePayments1": {
-          "css": "#Applicants_0__NonTaxableIncome",
-          "logic": "input[maintenancePayments1] + input[fosteringIncome1]"
-        },
-        "occupationalPension1": {
-          "css": "#Applicants_0__PensionIncome"
-        },
-        "maintenancePayments2": {
-          "css": "#Applicants_1__NonTaxableIncome",
-          "logic": "input[maintenancePayments2] + input[fosteringIncome2]"
-        },
-        "occupationalPension2": {
-          "css": "#Applicants_1__PensionIncome"
-        }
-      },
-      "No": {}
-    },
-    "earnAnyEmployedAllowances": {
-      "css": "#Applicants_0__EmployedMonthlySustainableAllowances",
-      "logic": "('@value' === 'Yes') ? Math.floor( (input[carAllowance1] + input[weightingLargeTown1] + input[permanentShiftAllowance1] + input[indefiniteMortgageSubsidies1] + input[long-termMortgageSubsidies1])/12) : 0",
-      "carAllowance2": {
-        "css": "#Applicants_1__EmployedMonthlySustainableAllowances",
-        "logic": "('@value' === 'Yes') ? Math.floor((input[carAllowance2] + input[weightingLargeTown2] + input[permanentShiftAllowance2] + input[indefiniteMortgageSubsidies2] + input[long-termMortgageSubsidies2])/12) : 0"
-      }
-    },
-    "totalOvertimeAnnually1": {
-      "css": "#Applicants_0__EmployedMonthlyOvertime",
-      "logic": "(@value > 0) ? Math.floor(@value / 12) : 0"
-    },
-    "totalOvertimeAnnually2": {
-      "css": "#Applicants_1__EmployedMonthlyOvertime",
-      "logic": "(@value > 0) ? Math.floor(@value / 12) : 0"
-    },
-    "totalCommissionAnnually1": {
-      "css": "#Applicants_0__EmployedMonthlyCommission",
-      "logic": "(@value > 0) ? Math.floor(@value / 12) : 0"
-    },
-    "totalCommissionAnnually2": {
-      "css": "#Applicants_1__EmployedMonthlyCommission",
-      "logic": "(@value > 0) ? Math.floor(@value / 12) : 0"
-    },
-    "creditCardBalances": {
-      "css": "#Applicants_0__CreditCardBalance"
-    },
-    "totalCreditCards": {
-      "css": "#Applicants_0__OtherMonthlyCreditCommitments",
-      "logic": "input[totalCreditCards] + input[monthlyHirePurchasePayments] + input[privatePensions] + input[monthlyLoanPayments]"
-    },
-    "serviceCharge": {
-      "css": "#Applicants_0__ServiceCharges",
-      "logic": "input[serviceCharge] + input[groundRent] + input[rentCharge]"
-    },
-    "childcareAndEducation": {
-      "css": "#Applicants_0__ChildCare",
-      "logic": "input[childcareAndEducation] + input[otherCommittedPayments]"
-    },
-    "additionalCommittedExpenditure": {
-      "css": "#Applicants_0__OtherMonthlyCommitments",
-      "logic": "input[otherMortgagePayments] + input[healthInsurancePayments] + input[buildingContentsInsurance] + input[additionalCommittedExpenditure]"
-    },
-    "click1": "#btnCalculate"
-  },
-  "extraction": {
-     "price": {
-       "css": "#results > div > div.result-values.result-affordable > div:nth-child(1) > div > p > b, #results > div > div.result-values.result-unaffordable > div:nth-child(1) > div > p > b"
-     }
-   },
-   "screenshot": {
-     "css": "#btnDownload",
-     "waitFor": 4000,
-     "type": "download",
-     "regex": "residential-affordability"
-   }
+	"lender": "Barclays",
+	"logo": "barclays",
+	"domain": "barclays.co.uk",
+	"affordability": "https://resources.barclays.co.uk/mortgage-calculators/residential-affordability",
+	"mapping": {
+		"waitFor": 3000,
+		"typeOfOwnerShip": {
+			"css": "#MortgageType",
+			"logic": "('@value' === 'Other') ? 'Barclays Residential Mortgage' : 'Help to Buy: Equity Loan'",
+			"Barclays Residential Mortgage": {
+				"isFlatOrMaisonette": {
+					"css": "#IsFlatOrMaisonette",
+					"logic": "'Yes'",
+					"new": true
+				},
+				"propertyValue": {
+					"css": "#PropertyValue"
+				},
+				"methodOfRepayment": {
+					"css": "#MortgageParts_0__InterestOnly",
+					"logic": "('@value' !== 'Capital and interest') ? 'Interest Only' : 'Capital and Interest'"
+				},
+				"loanValue": {
+					"css": "#MortgageParts_0__Amount"
+				},
+				"MortgageParts_0__Rate": {
+					"css": "#MortgageParts_0__Rate",
+					"logic": "2",
+					"new": true
+				},
+				"mortgageTermYears": {
+					"css": "#MortgageParts_0__TermYears"
+				},
+				"mortgageTermMonths": {
+					"css": "#MortgageParts_0__TermMonths"
+				}
+			},
+			"Help to Buy: Equity Loan": {
+				"propertyValue": {
+					"css": "#PropertyValue"
+				},
+				"equityLoan": {
+					"css": "#HTBEquityLoan"
+				},
+				"loanValue": {
+					"css": "#MortgageParts_0__Amount"
+				},
+				"MortgageParts_0__Rate": {
+					"css": "#MortgageParts_0__Rate",
+					"logic": "2",
+					"new": true
+				},
+				"mortgageTermYears": {
+					"css": "#MortgageParts_0__TermYears"
+				},
+				"mortgageTermMonths": {
+					"css": "#MortgageParts_0__TermMonths"
+				}
+			}
+		},
+		"numOfApplying": {
+			"css": "#NoOfApplicants"
+		},
+		"numOfdependants": {
+			"css": "#NoOfDependants",
+			"logic": "parseInt(input[childUnder5]) + parseInt(input[childUnder11]) + parseInt(input[childUnder17]) + parseInt(input[childOver18])",
+			"new": true
+		},
+		"employmentStatus1": {
+			"css": "[name='Applicants[0].IsEmployed']",
+			"logic": "('@value' === 'Employed') ? 'Employed' : ('@value' === 'Self-employed') ? 'Self-employed' : 'Retired'",
+			"Employed": {
+				"annualIncome1": {
+					"css": "#Applicants_0__EmployedBasicIncome"
+				},
+				"annualBonus1": {
+					"css": "#Applicants_0__EmployedBonusCurrent"
+				},
+				"annualBonusPrev1": {
+					"css": "#Applicants_0__EmployedBonusPrevious",
+					"logic": "(input[annualBonusPrev1] > 0) ? input[annualBonusPrev1] : 1"
+				},
+				"Self-employed": {
+					"click1": "#Applicants_0__IsEmployed",
+					"click2": "#Applicants_0__IsSelfEmployed",
+					"netProfitLatestPeriod1": {
+						"css": "#Applicants_0__SelfEmployedIncomeCurrent"
+					},
+					"netProfitPreviousPeriod1": {
+						"css": "#Applicants_0__SelfEmployedIncomePrevious"
+					}
+				},
+				"Retired": {
+					"click1": "#Applicants_0__IsEmployed"
+				}
+			}
+		},
+		"employmentStatus2": {
+			"css": "[name='Applicants[1].IsEmployed']",
+			"logic": "('@value' === 'Employed') ? 'Employed' : ('@value' === 'Self-employed') ? 'Self-employed' : 'Retired'",
+			"Employed": {
+				"annualIncome2": {
+					"css": "#Applicants_1__EmployedBasicIncome"
+				},
+				"annualBonus2": {
+					"css": "#Applicants_1__EmployedBonusCurrent"
+				},
+				"annualBonusPrev2": {
+					"css": "#Applicants_1__EmployedBonusPrevious",
+					"logic": "(input[annualBonusPrev2] > 0) ? input[annualBonusPrev2] : 1"
+				}
+			},
+			"Self-employed": {
+				"click1": "#Applicants_1__IsEmployed",
+				"click2": "#Applicants_1__IsSelfEmployed",
+				"netProfitLatestPeriod2": {
+					"css": "#Applicants_1__SelfEmployedIncomeCurrent"
+				},
+				"netProfitPreviousPeriod2": {
+					"css": "#Applicants_1__SelfEmployedIncomePrevious"
+				}
+			},
+			"Retired": {
+				"click1": "#Applicants_1__IsEmployed"
+			}
+		},
+		"earmAnyOtherAnnualIncome": {
+			"logic": "('@value' === 'Yes') ? 'Yes' : 'No'",
+			"Yes": {
+				"maintenancePayments1": {
+					"css": "#Applicants_0__NonTaxableIncome",
+					"logic": "input[maintenancePayments1] + input[fosteringIncome1]"
+				},
+				"occupationalPension1": {
+					"css": "#Applicants_0__PensionIncome"
+				},
+				"maintenancePayments2": {
+					"css": "#Applicants_1__NonTaxableIncome",
+					"logic": "input[maintenancePayments2] + input[fosteringIncome2]"
+				},
+				"occupationalPension2": {
+					"css": "#Applicants_1__PensionIncome"
+				}
+			},
+			"No": {}
+		},
+		"earnAnyEmployedAllowances": {
+			"css": "#Applicants_0__EmployedMonthlySustainableAllowances",
+			"logic": "('@value' === 'Yes') ? Math.floor( (input[carAllowance1] + input[weightingLargeTown1] + input[permanentShiftAllowance1] + input[indefiniteMortgageSubsidies1] + input[long-termMortgageSubsidies1])/12) : 0",
+			"carAllowance2": {
+				"css": "#Applicants_1__EmployedMonthlySustainableAllowances",
+				"logic": "('@value' === 'Yes') ? Math.floor((input[carAllowance2] + input[weightingLargeTown2] + input[permanentShiftAllowance2] + input[indefiniteMortgageSubsidies2] + input[long-termMortgageSubsidies2])/12) : 0"
+			}
+		},
+		"totalOvertimeAnnually1": {
+			"css": "#Applicants_0__EmployedMonthlyOvertime",
+			"logic": "(@value > 0) ? Math.floor(@value / 12) : 0"
+		},
+		"totalOvertimeAnnually2": {
+			"css": "#Applicants_1__EmployedMonthlyOvertime",
+			"logic": "(@value > 0) ? Math.floor(@value / 12) : 0"
+		},
+		"totalCommissionAnnually1": {
+			"css": "#Applicants_0__EmployedMonthlyCommission",
+			"logic": "(@value > 0) ? Math.floor(@value / 12) : 0"
+		},
+		"totalCommissionAnnually2": {
+			"css": "#Applicants_1__EmployedMonthlyCommission",
+			"logic": "(@value > 0) ? Math.floor(@value / 12) : 0"
+		},
+		"creditCardBalances": {
+			"css": "#Applicants_0__CreditCardBalance"
+		},
+		"totalCreditCards": {
+			"css": "#Applicants_0__OtherMonthlyCreditCommitments",
+			"logic": "input[totalCreditCards] + input[monthlyHirePurchasePayments] + input[privatePensions] + input[monthlyLoanPayments]"
+		},
+		"serviceCharge": {
+			"css": "#Applicants_0__ServiceCharges",
+			"logic": "input[serviceCharge] + input[groundRent] + input[rentCharge]"
+		},
+		"childcareAndEducation": {
+			"css": "#Applicants_0__ChildCare",
+			"logic": "input[childcareAndEducation] + input[otherCommittedPayments]"
+		},
+		"additionalCommittedExpenditure": {
+			"css": "#Applicants_0__OtherMonthlyCommitments",
+			"logic": "input[otherMortgagePayments] + input[healthInsurancePayments] + input[buildingContentsInsurance] + input[additionalCommittedExpenditure]"
+		},
+		"click1": "#btnCalculate"
+	},
+	"extraction": {
+		"price": {
+			"css": "#results > div > div.result-values.result-affordable > div:nth-child(1) > div > p > b, #results > div > div.result-values.result-unaffordable > div:nth-child(1) > div > p > b"
+		}
+	},
+	"screenshot": {
+		"css": "#btnDownload",
+		"waitFor": 4000,
+		"type": "download",
+		"regex": "residential-affordability"
+	}
 }
