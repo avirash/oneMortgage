@@ -7,7 +7,7 @@
 		"waitFor": 1500,
 		"typeOfOwnerShip": {
 			"css": "[name='ApplicationType']",
-			"logic": "('@value' === 'Help to Buy') ? 'Help to Buy Equity Loan' : (['Shared Equity','Other'].includes('@value')) ? 'Residential' : 'Custom Build'",
+			"logic": "('@value' === 'Help to Buy') ? 'Help to Buy Equity Loan' : (['Shared Equity','Other'].includes('@value')) ? 'Residential' : ('@value' === 'Shared Ownership') ? 'Shared Ownership' : 'Custom Build'",
 			"Residential": {
 				"methodOfRepayment": {
 					"css": "[name='RepaymentMethod']",
