@@ -27,6 +27,7 @@ exports.aff_calc = async (ctx) => {
             let result = results[0]
             let priceObject = result.extarcted.find(x => x.price )
             log.info('priceObject: ' + result.lender)
+            log.info('priceObject: ' + (priceObject && priceObject.price) ? priceObject.price : 0)
             //log.info('priceObject: ' + (priceObject && priceObject.price) ? priceObject.price : null)
             currentRetry = 3
             // if (priceObject && Math.round(priceObject.price.replace(/[^\d.-]/g, '')) === 0) {
